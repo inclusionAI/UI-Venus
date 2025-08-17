@@ -1,0 +1,7 @@
+transformers==4.49.0
+vllm==0.8.3
+qwen_agent
+qwen_vl_utils
+torch
+torchvision
+torchaudio
