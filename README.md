@@ -51,7 +51,7 @@ We introduce **UI-Venus**, a state-of-the-art UI agent that pushes the boundarie
   - 🔹 Full evaluation pipeline
   - 🔹 Inference scripts
 
-  👉 [GitHub Repository](https://github.com/ant/UI-Venus) | [Hugging Face Model](https://huggingface.co/ant/UI-Venus)
+  👉 [GitHub Repository](https://github.com/inclusionAI/UI-Venus) | [Hugging Face Model](https://huggingface.co/collections/inclusionAI/ui-venus-689f2fb01a4234cbce91c56a)
 
   ---
 
