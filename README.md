@@ -189,7 +189,7 @@ Scores are in percentage (%). `T` = Text, `I` = Icon.
 | **UI-Venus-Ground-7B** | 60.4 / 21.9 | 74.7 / 24.1 | 63.1 / 14.7 | 76.4 / 31.8 | 75.7 / 41.5 | 49.5 / 22.5 | 67.1 | 24.3 | **50.8** | Ours (RL) |
 | **UI-Venus-Ground-72B** | 66.5 / 29.7 | 84.4 / 33.1 | 73.2 / 30.8 | 84.7 / 42.7 | 83.1 / 60.4 | 75.7 / 36.0 | 77.4 | 36.8 | **61.9** | Ours (RL) |
 
-> 🔝 **Experimental results show that UI-Venus-Ground-72B achieves state-of-the-art performance on ScreenSpot-Pro with an average score of 61.7, while also setting new benchmarks on ScreenSpot-v2(95.3), OSWorld_G(69.8), AgentCPM(84.7), and UI-Vision(38.0), highlighting its effectiveness in complex visual grounding and action prediction tasks.**
+> 🔝 **Experimental results show that UI-Venus-Ground-72B achieves state-of-the-art performance on ScreenSpot-Pro with an average score of 61.9, while also setting new benchmarks on ScreenSpot-v2(95.3), OSWorld_G(70.4), AgentCPM(85), and UI-Vision(36.8), highlighting its effectiveness in complex visual grounding and action prediction tasks.**
 
 ### Results on AndroidWorld
 This is the compressed package of validation trajectories for **AndroidWorld**, including execution logs and navigation paths.  
