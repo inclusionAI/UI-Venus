@@ -255,5 +255,3 @@ Please consider citing if you find our work useful:
       url={https://arxiv.org/abs/2508.10833}, 
 }
 ```
-
-[![Star History Chart](https://api.star-history.com/svg?repos=inclusionAI/UI-Venus&type=Date)](https://www.star-history.com/#inclusionAI/UI-Venus&Date)
