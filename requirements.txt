@@ -1,5 +1,5 @@
-transformers==4.49.0
-vllm==0.8.3
+vllm<0.8.3
+transformers>=4.51.0
 qwen_agent
 qwen_vl_utils
 torch
