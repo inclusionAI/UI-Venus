@@ -20,7 +20,7 @@ class UI_Venus_Ground_7B():
         self.processor = AutoProcessor.from_pretrained(model_name_or_path)
 
         # Setting default generation config
-        self.generation_config = GenerationConfig.from_pretrained("/root/ckpt/huggingface/", trust_remote_code=True).to_dict()
+        self.generation_config = GenerationConfig.from_pretrained(model_name_or_path, trust_remote_code=True).to_dict()
         self.set_generation_config(
             max_length=2048,
             do_sample=False,
