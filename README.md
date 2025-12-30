@@ -30,7 +30,7 @@
 
 # 🚀 News
 
-* [2025/12] We have released the [VenusBench-GD](https://ui-venus.github.io/VenusBench-GD/), which is a comprehensive multi-platform GUI benchmark for diverse grounding tasks.
+* [2025/12] We have released the [VenusBench-GD](https://ui-venus.github.io/VenusBench-GD/), which is a comprehensive multi-platform GUI benchmark for diverse grounding tasks. For evaluation code, please visit the branch [VenusBench-GD](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-GD).
 
 --- 
 
