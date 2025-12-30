@@ -1,0 +1,10 @@
+transformers>=4.49.0
+vllm>=0.8.3
+qwen-agent
+qwen-vl-utils
+torch>=2.0.0
+torchvision
+torchaudio
+Pillow
+tqdm
+accelerate

@@ -1,0 +1,39 @@
+# Compiled python modules.
+*.pyc
+
+# Byte-compiled
+__pycache__/
+.cache/
+
+# Poetry, setuptools, PyPI distribution artifacts.
+/*.egg-info
+.eggs/
+build/
+dist/
+poetry.lock
+
+# Tests
+.pytest_cache/
+
+# Type checking
+.pytype/
+
+# Other
+*.DS_Store
+
+# PyCharm
+.idea
+
+# Results and logs
+results/
+logs/
+*.json
+!meta.json
+
+# Model weights and datasets
+models_cache/
+checkpoints/
+VenusBench-GD/
+
+# VSCode
+.vscode/
