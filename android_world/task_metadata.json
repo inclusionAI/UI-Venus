@@ -1,0 +1,2634 @@
+[
+  {
+    "task_name": "GSATimingAudioRecorderRecordAudioTime",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GSATimingAudioRecorderPauseAudioRecordingTime",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GSAClockStopWatchPausedatCertainTime",
+    "app": [
+      "clock"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GSATimingTomatoLongBreakTime",
+    "app": [
+      "pomodoro"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GSATrackingPhoneCall",
+    "app": [
+      "dialer"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GSATrackingWhitelistCallAnswer",
+    "app": [
+      "dialer"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GSATrackingBlacklistBlockAndSendSms",
+    "app": [
+      "simple sms messenger"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GSATrackingSimpleSmsNotifyDelivery",
+    "app": [
+      "simple sms messenger"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GSATrackingSMSHandleIncomingKeywords",
+    "app": [
+      "simple sms messenger"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GSATrackingSimpleSmsHandleFiveIncomingHard",
+    "app": [
+      "simple sms messenger"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "GSA"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":4, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIMDrawA",
+    "app": [
+      "simple draw pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMDrawRectangleHard",
+    "app": [
+      "simple draw pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMJoplinDrawCircle",
+    "app": [
+      "joplin"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMJoplinDrawCircleAndRectangle",
+    "app": [
+      "joplin"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMEraseObject1",
+    "app": [
+      "simple draw pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMEraseObject2",
+    "app": [
+      "simple draw pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMCircleObject1",
+    "app": [
+      "simple draw pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMCircleObject2",
+    "app": [
+      "simple draw pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":2, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "GUIMChangePicture",
+    "app": [
+      "simple gallery pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "GUIM"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "MultiRoundExpense1Add2Add3Delete",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundMarkorCreateNoteReverse",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundMarkorCreateNoteAndSms",
+    "app": [
+      "markor",
+      "messages"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundMarkorCreateTwoNote",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundMarkorCreateNoteHeading",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundMarkorAppendCopyRename",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundRecipe1AddImageRecipes2AddMarkor3DeleteImage",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundMarkorAdd4NotesDeleteNote",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundRetroSavePlaylist",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "MultiRoundVlcCreateTwoPlaylistsReverse",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "multiround",
+      "vague"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 4}
+  },
+  {
+    "task_name": "RefusalAudioRecorderRecordAudioWithFileNameConflict1",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalAudioRecorderRecordAudioWithFileNameConflict2",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalCameraTakeVideoConflict1",
+    "app": [
+      "camera"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalCameraTakeVideoConflict2",
+    "app": [
+      "camera"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalSimpleCalendarAddOneEventDateAmbigious1",
+    "app": [
+      "simple calendar pro"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalSimpleCalendarAddOneEventInTwoWeeksConflict1",
+    "app": [
+      "calendar"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":3, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalExpenseDeleteMultipleConflictAll",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalExpenseDeleteMultipleConflictMultiple",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalExpenseDeleteMultipleConflictSingle",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalFilesDeleteFileConflict1",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalMarkorDeleteMultipleNotesAmbigious1",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalMarkorDeleteMultipleNotesAmbigious2",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalMarkorDeleteMultipleNotesConflict1",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalRecipeAddSingleRecipeConflict1",
+    "app": [
+      "recipe"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalRecipeDeleteMultipleRecipesWithConstraintAmbigious1",
+    "app": [
+      "recipe"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalRetroPlayingQueueConflict1",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": true,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalSystemBluetoothTurnOffAlreadyOff",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalSystemBluetoothTurnOnAlreadyOn",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalTasksAddOneTaskAmbigious1",
+    "app": [
+      "tasksapp"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalTomotoSettingConflict1",
+    "app": [
+      "tomato"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalTomotoSettingConflict2",
+    "app": [
+      "tomato"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "RefusalZipxtractCreateFile",
+    "app": [
+      "tomato"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "refusal"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistExpenseExplainAllFunctionality",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistExpenseExplainOneFunctionality1",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistExpenseLocateOneFunctionality1",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistFitbookLocateOneFunctionality",
+    "app": [
+      "fitbook"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistMarkorLocateOneFunctionality1",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistMarkorExplainOneFunctionality1",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistMarkorExplainOneFunctionality2",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistMarkorExplainOneFunctionality3",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistRecipeExplainOneFunctionality1",
+    "app": [
+      "recipe"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistRecipeLocateOneFunctionality1",
+    "app": [
+      "recipe"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistLocateSystemInterfaceTaskEval2",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistJoblinExplainOneFunctionality1",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistLocateTasksInterface1",
+    "app": [
+      "tasksapp"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistTasksExplainOneFunctionality1",
+    "app": [
+      "tasksapp"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistVlcLocateOneFunctionality1",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "FuncAssistVlcExplainOneFunctionality1",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistMarkorJoplinTasks",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistMedilogExplainAllFunctionality",
+    "app": [
+      "MediLog"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistOpenTracksExplainOneFunctionality",
+    "app": [
+      "OpenTracks"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistRefusalMarkorExplainOneFunctionality",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist",
+      "refusal"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 4, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistVagueRecipeExplainOneFunctionality",
+    "app": [
+      "recipe"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist",
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":4, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "FuncAssistZipxtractExplainOneFunctionality",
+    "app": [
+      "zipxtract"
+    ],
+    "evaluation_method": "m",
+    "useExternalFile": false,
+    "tags": [
+      "func_assist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+     "ability": {"p":2, "u":4, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "NoiseResistAudioRecorderRecordAudioWithFilenameCall",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistSimpleCalendarAddOneEventTomorrowWithOrientation",
+    "app": [
+      "calendar"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistSimpleCalendarAddRepeatingEventCallandAPPCollapse",
+    "app": [
+      "calendar"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistContactsAddContactWithCall",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistExpenseAddSingleADs",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistExpenseAddSingleAPPCollapse",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistExpenseAddSingleAPPNumb",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistExpenseAddSingleWithCall",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistExpenseAddSingleWithOrientation",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistExpenseDeleteSingleWithOrientation",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistFilesMoveFileAPPCollapse",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistMarkorCreateNoteWithOrientation",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistOsmAndMarkerAPPCollapse",
+    "app": [
+      "osmand"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistRetroPlayingQueueAPPCollapse",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistVlcCreatePlaylistWithOrientation",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "NoiseResistVlcCreateTwoPlaylistsWithCallandCollapse",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "noise_resist"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "BrowsecompOpenAppTaskEvalUICompCreate1",
+    "app": [
+      "files",
+      "joplin",
+      "tasks",
+      "recipe",
+      "expense",
+      "markor",
+      "calendar"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompOpenAppTaskEvalUICompCreate2",
+    "app": [
+      "audio recorder",
+      "markor",
+      "recipe",
+      "medilog",
+      "expense",
+      "vlc",
+      "joplin"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindAppTaskEvalUI1",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindAppTaskEvalUI2",
+    "app": [
+      "audio recorder"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindAppTaskEvalUI3",
+    "app": [
+      "recipe"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindAppandAskInfo1",
+    "app": [
+      "vlc",
+      "retro",
+      "joplin",
+      "expense",
+      "markor",
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindAppandRelatedAppandAskInfo1",
+    "app": [
+      "markor",
+      "joplin"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompVlcFindVlcAPP1",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindImage",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "BrowsecompFindVideo",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "browsecomplike"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":3, "d": 2, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingFitbookCalories",
+    "app": [
+      "fitbook"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingMarkorFindFilesPath",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingMarkorFindFilesPathHard",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingMarkorFindCommonPackage",
+    "app": [
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingWatchVideo1",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":3, "u":3, "d": 3, "a":3, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingWatchVideo2",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":3, "u":3, "d": 3, "a":3, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingWatchVideo3",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":3, "u":3, "d": 3, "a":3, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingWatchVideo4",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":3, "u":3, "d": 3, "a":3, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingWatchVideo5",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":3, "u":3, "d": 3, "a":3, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingWatchVideo6",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":3, "u":3, "d": 3, "a":3, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingPaper1",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingPaper2",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingPaper3",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingAnswer1",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingAnswer2",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingPDF1",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingPDF2",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingOrder1",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingOrder2",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingOrder3",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingOnlineShopping1",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingOnlineShopping2",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingFindGameFromGalleryTaskEvalUI",
+    "app": [
+      "files"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingFindImageInPaper1",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingFindImageInPaper2",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingFindPDF1",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingFindPDF2",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":3, "u":3, "d": 3, "a":2, "m": 3}
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons1",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons2",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons3",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons4",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons5",
+    "app": [
+      "chrome"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "guibrowsing"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GUIBrowsingRefusalVlcWatchVideo",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing",
+      "refusal"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":2, "d": 4, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GUIBrowsingVagueVlcWatchVideo",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "guibrowsing",
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":4, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueBluetoothTurnOn1",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueBluetoothTurnOn2",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueCalculator",
+    "app": [
+      "calculator"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueCalendarDateOffset",
+    "app": [
+      "calendar"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueCurrencyExchange",
+    "app": [
+      "calcyou"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueDailyExpenseRecordTask",
+    "app": [
+      "expense"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueFindPhoneTaskEvalUI",
+    "app": [
+      "gallery"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueFoodCalorieCheck",
+    "app": [
+      "fitbook"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 3, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueGraphFunction",
+    "app": [
+      "calcyou"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueMarkorCreateNotewithCalculation",
+    "app": [
+      "calculator",
+      "markor"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueMarkorDeleteNewestTwoNotes",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueSaveBatteryWithoutLosingInternet",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueSystemBrightnessMax",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":3, "m": 2}
+  },
+  {
+    "task_name": "VagueWatchLocalVideo",
+    "app": [
+      "vlc"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": true,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "hard",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":2, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueZenModeTaskEvalUI",
+    "app": [
+      "system"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "easy",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "VagueZipxtractExtractFile",
+    "app": [
+      "zipxtract"
+    ],
+    "evaluation_method": "p",
+    "useExternalFile": false,
+    "tags": [
+      "vague"
+    ],
+    "difficulty": "challenging",
+    "task_template": "",
+    "optimal_steps": "10",
+    "ability": {"p":1, "u":4, "d": 2, "a":2, "m": 2}
+  },
+  {
+    "task_name": "GSATimingAudioRecorderRecordAudioTimeCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GSATimingAudioRecorderRecordAudioTimeENGVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GSATrackingPhoneCallCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GSATrackingPhoneCallENGVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIMDrawACHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIMDrawAENGVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIMEraseObject1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIMEraseObject1ENGVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "RefusalExpenseDeleteMultipleConflictMultipleCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "RefusalExpenseDeleteMultipleConflictMultipleVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "RefusalSystemBluetoothTurnOnAlreadyOnCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "RefusalSystemBluetoothTurnOnAlreadyOnVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "RefusalMarkorDeleteMultipleNotesAmbigious1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "RefusalMarkorDeleteMultipleNotesAmbigious1Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "FuncAssistExpenseExplainOneFunctionality1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "FuncAssistExpenseExplainOneFunctionality1Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "FuncAssistVlcLocateOneFunctionality1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "FuncAssistVlcLocateOneFunctionality1Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons2CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIBrowsingBrowserRandomButtons2Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIBrowsingPaper1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIBrowsingPaper1Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIBrowsingOrder2CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "GUIBrowsingOrder2Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "BrowsecompFindAppTaskEvalUI1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "BrowsecompFindAppTaskEvalUI1Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "BrowsecompVlcFindVlcAPP1CHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "BrowsecompVlcFindVlcAPP1Variation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "NoiseResistExpenseDeleteSingleWithOrientationCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "NoiseResistExpenseDeleteSingleWithOrientationVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "NoiseResistFilesMoveFileAPPCollapseCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "NoiseResistFilesMoveFileAPPCollapseVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "MultiRoundMarkorAppendCopyRenameCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "MultiRoundMarkorAppendCopyRenameVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "MultiRoundRetroSavePlaylistCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "MultiRoundRetroSavePlaylistVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "VagueSystemBrightnessMaxCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "VagueSystemBrightnessMaxVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "VagueMarkorDeleteNewestTwoNotesCHS",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  },
+  {
+    "task_name": "VagueMarkorDeleteNewestTwoNotesVariation",
+    "app": [],
+    "evaluation_method": "",
+    "useExternalFile": false,
+    "tags": [],
+    "difficulty": "",
+    "task_template": "",
+    "optimal_steps": ""
+  }
+]

@@ -1,0 +1,95 @@
+FuncAssistExpenseLocateOneFunctionality1:
+  type: image
+  value: locating_gt_screenshot/ExpenseLocate.png
+
+FuncAssistMarkorLocateOneFunctionality1:
+  type: image
+  value: locating_gt_screenshot/MarkorLocate.png
+
+FuncAssistRecipeLocateOneFunctionality1:
+  type: image
+  value: locating_gt_screenshot/RecipeLocate.png
+
+FuncAssistLocateSystemInterfaceTaskEval2:
+  type: image
+  value: locating_gt_screenshot/SystemLocate.png
+
+FuncAssistLocateTasksInterface1:
+  type: image
+  value: locating_gt_screenshot/TasksLocate.png
+
+FuncAssistVlcLocateOneFunctionality1:
+  type: image
+  value: locating_gt_screenshot/VlcLocate.png
+
+FuncAssistFitbookLocateOneFunctionality:
+  type: image
+  value: locating_gt_screenshot/FitbookLocate.png
+
+VagueGraphFunction:
+  type: image
+  value: locating_gt_screenshot/FunctionGraph.png
+
+GUIMChangePicture:
+  type: image
+  value: locating_gt_screenshot/GalleryChange.png
+
+GUIBrowsingVlcWatchVideo2:
+  type: image
+  value: "locating_gt_screenshot/Watch2_1.png, locating_gt_screenshot/Watch2_2.png, locating_gt_screenshot/Watch2_3.png, locating_gt_screenshot/Watch2_4.png"
+
+GUIBrowsingVlcWatchVideo4:
+  type: image
+  value: "locating_gt_screenshot/Watch4_1.png, locating_gt_screenshot/Watch4_2.png, locating_gt_screenshot/Watch4_3.png,locating_gt_screenshot/Watch4_4.png"
+
+GUIBrowsingVlcWatchVideo5:
+  type: image
+  value: "locating_gt_screenshot/Watch5_1.png, locating_gt_screenshot/Watch5_2.png, locating_gt_screenshot/Watch5_3.png, locating_gt_screenshot/Watch5_4.png"
+
+FuncAssistExpenseExplainAllFunctionality:                           
+  type: text
+  value: "Log expenses, income, and transfers quickly; organize by categories, tags, and accounts. Set budgets, track recurring bills, split transactions, and attach receipt photos. View summaries and charts by date, category, or account to spot trends. Support for multiple currencies and account balances keeps totals accurate. Back up or export your data to files."
+
+FuncAssistExpenseExplainOneFunctionality1:
+  type: text
+  value: "To add a new expense in Pro Expense, follow these steps: 1. Tap the plus (+) button to open the Expense Entry screen. 2. Enter the name of the expense in the 'Name' field. 3. Enter the amount in the 'Amount' field. 4. Optionally, add a note in the 'Note' field. 5. Select a category for the expense. 6. Tap the 'SAVE' button to save the new expense."
+
+FuncAssistMarkorExplainOneFunctionality1:
+  type: text
+  value: "To create a new note in Markor, follow these steps: 1. Click on the red plus button at the bottom right corner of the screen. 2. Enter the desired file name for the new note. 3. Choose to change the file type and template as well. 4. Click on the 'OK' button to proceed with the creation of the new note."
+
+FuncAssistMarkorExplainOneFunctionality2:
+  type: text
+  value: "Users can choose None for the type when creating a file and then change the file extension to .tex to obtain a LaTeX document, but it cannot be compiled into a PDF file."
+
+FuncAssistMarkorExplainOneFunctionality3:
+  type: text
+  value: "It is a checkbox icon, which is used for creating a new note or marking something as checked off."
+
+FuncAssistRecipeExplainOneFunctionality1:
+  type: text
+  value: "You can customize the details of your recipe, including the title, ingredients, description, source, servings, time, ingredients and directions. Optionally, you can add a photo of the dish by tapping on the camera icon."
+
+FuncAssistJoblinExplainOneFunctionality1:
+  type: text
+  value: "Users can choose to add attachments (files or photos), draw pictures, share the note, use voice typing, add tags, convert it into a to-do, copy the Markdown link, view properties, and delete the note."
+
+FuncAssistTasksExplainOneFunctionality1:
+  type: text
+  value: "Set the task’s start and end times, whether it repeats, task priority (four levels), add a location, add tags, choose a local list, add subtasks, enable or disable reminders, add attachments, add a description, choose whether to add it to the calendar, and set a timer."
+
+FuncAssistVlcExplainOneFunctionality1:
+  type: text
+  value: "View information, add to playlist, set as ringtone, remove, stop after this track, share, browse parent."
+
+FuncAssistMarkorJoplinTasks:
+  type: text
+  value: "Markor, Joplin and Tasks all allow users to create to-do items. Only Tasks allows users to set priority for to-do."
+
+FuncAssistRefusalMarkorExplainOneFunctionality:
+  type: text
+  value: "The bottom tab bar has only four tabs. There is no fifth tab."
+
+FuncAssistVagueRecipeExplainOneFunctionality:
+  type: text
+  value: "You can follow these steps: 1. Open the Broccoli app on your device. 2. Tap on the '+' button located at the bottom right corner of the screen to create a new recipe. 3. Fill in the details of your recipe, including the title, ingredients, description, and so on. 4. Optionally, you can add a photo of the dish by tapping on the camera icon. 5. Once you have entered all the necessary information, tap on the 'Save' button to save your new recipe."

@@ -1,0 +1,100 @@
+apk_root: ./android_world_files_backup/apk
+apk_files:
+  - ADBKeyboard.apk
+  - Calculator_9.0.apk
+  - com.google.android.apps.pdfviewer_2.19.381.03.80-193810380_minAPI16(x86_64).apk
+  - com.zell_mbc.medilog_5499.apk
+  - fitbook.apk
+  - net.youapps.calcyou_6.apk
+  - org.nsh07.pomodoro_10.apk
+  - vlc.apk
+  - zipxtract.apk
+
+# Local file paths for GUI browsing tasks
+local_paths:
+  gui_browsing_video: ./android_world_files_backup/files_gui_browsing/Video
+  gui_browsing_p1: ./android_world_files_backup/files_gui_browsing/p1
+  gui_browsing_p2: ./android_world_files_backup/files_gui_browsing/p2
+  gui_browsing_p3: ./android_world_files_backup/files_gui_browsing/p3
+  gui_browsing_p4: ./android_world_files_backup/files_gui_browsing/p4
+  gui_browsing_figure1: ./android_world_files_backup/files_gui_browsing/figure1
+  gui_browsing_figure2: ./android_world_files_backup/files_gui_browsing/figure2
+  gui_browsing_bestbuy: ./android_world_files_backup/files_gui_browsing/BestBuy
+  zipxtract_zip: ./android_world_files_backup/files_gui_browsing/zip
+  simple_draw_guim: ./android_world_files_backup/files_gui_browsing/GUIM
+  gt_locating_screenshot: ./android_world_files_backup/gt_answer/locating_gt_screenshot
+
+# Remote paths on device
+remote_paths:
+  gui_browsing: /sdcard/GUIBrowsing
+  test: /sdcard/test
+  sdcard: /sdcard
+
+verification_model_url: your model_url_here
+
+
+# Locating output
+locating_results_path: ./locating_results
+
+
+adb_path: your-path-to/android_basic/android_sdk/platform-tools/adb 
+models:
+  gd:
+    base_url: your model_url_here
+
+
+# Agent model configurations
+agents:
+  # Qwen3VL agent
+  qwen3vl:
+    base_url: your model_url_here
+    model: qwen
+
+  # GUI Owl agent
+  gui_owl:
+    base_url: your model_url_here
+    model: gui-owl
+
+  # EANT agents
+  eant:
+    base_url: your model_url_here
+
+  # Claude proxy
+  claude_proxy:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: claude-sonnet-4-20250514
+
+  # GPT-4o proxy
+  gpt4o_proxy:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: gpt-4o-2024-11-20
+
+  # Gemini proxy
+  gemini_proxy:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: gemini-2.5-pro
+
+  # Gemini 3 proxy
+  gemini3_proxy:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: gemini-3-pro-preview
+
+  QwenGD_V:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: "gemini-3-pro-preview"
+
+# GPT-5 proxy
+  gpt5_proxy:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: gpt-5.1-chat
+
+  QwenGD_GPT:
+    base_url: your model_url_here
+    api_key: your-api-key
+    model: "gpt-5.1-chat"

@@ -1,0 +1,612 @@
+{
+  "BrowsecompFindAppTaskEvalUI1": [
+    "Among Audio Recorder, Draw, Vlc, Pro Expense, Broccoli, MediLog and Markor,some apps support changing the interface language and the theme color.Among the apps that meet the requirements, find the one that offers more than 50 supported languages in its in-app settings. Tell me the name of the APP."
+  ],
+  "BrowsecompFindAppTaskEvalUI1CHS": [
+    "在 Audio Recorder、Draw、Vlc、Pro Expense、Broccoli、MediLog 和 Markor 之中，有些应用支持更改界面语言和主题颜色。请在满足条件的APP中找出在其应用内的设置中提供超过 50 种支持的语言的应用。告诉我该应用的名称。"
+  ],
+  "BrowsecompFindAppTaskEvalUI1Variation": [
+    "From the list of Audio Recorder, Draw, Vlc, Pro Expense, Broccoli, MediLog and Markor, certain applications allow users to modify both the UI language and the color scheme. Identify the application that provides support for over 50 languages within its settings or preferences menu. Report the name of that APP."
+  ],
+  "BrowsecompFindAppTaskEvalUI2": [
+    "Among VLC, Gallery, Photos, Draw, Markor, Pro Expense, Audio Recorder and Broccoli, find an app that can play recordings or videos.Which one offers more than 6 theme color options in its in-app settings. Tell me the name of the APP."
+  ],
+  "BrowsecompFindAppTaskEvalUI3": [
+    "Among Joplin, Markor, Canlendar, Files, Broccoli, MediLog and Vlc, there is an information-management app in which you can create individual information items. Each item can be favorited by tapping the heart-shaped button in the upper-right corner, and it can also be exported to PDF. Explore the device, identify this app, and tell me its name."
+  ],
+  "BrowsecompFindAppandAskInfo1": [
+    "I need to find an app among VLC, Retro Music, Joplin, Expense, Markor and Files. From its main screen, check the bottom navigation bar: it must have at least 4 buttons. Somewhere on the same main screen there is a magnifying-glass icon button. The app’s Theme settings offer more than 4 choices. Identify this app and tell me the name of its Project Team."
+  ],
+  "BrowsecompFindAppandRelatedAppandAskInfo1": [
+    "Among Joplin, Files, Broccoli, VLC, Markor, Calender and MediLog, there is an information-management app. When you create a new information item and start editing its content, a button (three horizontal dots) appears in the bottom button bar. Tapping it reveals additional editing tools. Explore the device to locate this app and tell me its name. "
+  ],
+  "BrowsecompFindImage": [
+    "There are some images located at sdk_gphone_x86_64. I want to find an image related to ball sports. Tell me the name of the ball sports."
+  ],
+  "BrowsecompFindVideo": [
+    "There are some videos located at sdk_gphone_x86_64.I need to find a video that meets the following requirements: 1. It contains animals. 2. It includes at least two animals. Tell me the name of the video including the file extension."
+  ],
+  "BrowsecompOpenAppTaskEvalUICompCreate1": [
+    "Among Files, Joplin, Tasks, Broccoli, Pro Expense, Markor and Calender, open an app whose icon contains blue color. After launching, the UI should not have any search bar or search button at the top. Find the APP and tell me its name. "
+  ],
+  "BrowsecompOpenAppTaskEvalUICompCreate2": [
+    "Among Audio Recorder, Markor, Broccoli, MediLog, Pro Expense, Vlc, and Joplin,open an app whose icon uses no more than two colors. After launching, the UI should display a \"+\" symbol at the bottom-right corner. Among such apps, select the one that requires the fewest input fields or rows after tapping \"+\". Find the APP and tell me its name. "
+  ],
+  "BrowsecompVlcFindVlcAPP1": [
+    "Among the apps Markor, Joplin, Tasks, Broccoli, Simple Calendar Pro, VLC, and Audio Recorder, identify the one whose settings screen contains four exclamation-mark buttons, each used to explain the meaning of the setting it is next to. Provide the app name. "
+  ],
+  "BrowsecompVlcFindVlcAPP1CHS": [
+    "在 Markor、Joplin、Tasks、Broccoli、Simple Calendar Pro、VLC 和 Audio Recorder 这些应用中，找出设置界面包含四个感叹号按钮的那个应用；每个按钮用于解释其旁边的设置含义。请告诉我该应用的名称。"
+  ],
+  "BrowsecompVlcFindVlcAPP1Variation": [
+    "From the apps Markor, Joplin, Tasks, Broccoli, Simple Calendar Pro, VLC, and Audio Recorder, determine which one has a Settings screen containing four exclamation mark buttons, each explaining the adjacent setting. Give the name of that app."
+  ],
+  "FuncAssistExpenseExplainAllFunctionality": [
+    "What can I do with pro expense? Explore this APP and tell me all its functionalities."
+  ],
+  "FuncAssistExpenseExplainOneFunctionality1": [
+    "Explore pro expense and tell me how to add a new expense.\nSpecifically, identify all available fields, options, and settings \nthat can be configured when creating an expense."
+  ],
+  "FuncAssistExpenseExplainOneFunctionality1CHS": [
+    "请深入探索 pro expense，并尽可能详细地告诉我如何新增一笔支出。\n请具体列出创建支出时可填写的所有字段、可配置选项与设置项。"
+  ],
+  "FuncAssistExpenseExplainOneFunctionality1Variation": [
+    "Open pro expense and walk me through adding a new expense in the most exhaustive way possible.\nEnumerate every field, option, and setting that appears while creating an expense."
+  ],
+  "FuncAssistExpenseLocateOneFunctionality1": [
+    "Explore Pro Expense and show me the interface where I can add a new expense."
+  ],
+  "FuncAssistFitbookLocateOneFunctionality": [
+    "Explore Fitbook and show me the interface where I can add a new weight record."
+  ],
+  "FuncAssistJoblinExplainOneFunctionality1": [
+    "In the Joplin app, when a user opens a note, there is a settings button in the top-right corner. What functions are available after clicking it? Please describe them."
+  ],
+  "FuncAssistLocateSystemInterfaceTaskEval2": [
+    "Find a phone screen that lets me toggle Bluetooth and Airplane mode, as well as adjust the brightness, all in one place. Navigate to that screen and show it to me."
+  ],
+  "FuncAssistLocateTasksInterface1": [
+    "Navigate to the setting in Tasks APP that allows you to change the task sort order and show me that interface."
+  ],
+  "FuncAssistMarkorExplainOneFunctionality1": [
+    "I want to create a new note in Markor. Explore this APP and tell me the settings of creating new note."
+  ],
+  "FuncAssistMarkorExplainOneFunctionality2": [
+    "I want to create a new latex file in Markor. Can I create a latex and complie it to a PDF?"
+  ],
+  "FuncAssistMarkorExplainOneFunctionality3": [
+    "Open Markor app. On its main screen, tap the third button in the bottom tab bar. A new button row will appear. Report what the first button in this new row does."
+  ],
+  "FuncAssistMarkorJoplinTasks": [
+    "Among the three apps—Markor, Joplin, and Tasks,which one allows you to create to-do items? Which one lets you set a priority for each to-do ?"
+  ],
+  "FuncAssistMarkorLocateOneFunctionality1": [
+    "I want to locate an interface in Markor, where I can config the Action Order of Markdown."
+  ],
+  "FuncAssistMedilogExplainAllFunctionality": [
+    "What can I do with Medilog? Explore this APP and tell me all its functionalities."
+  ],
+  "FuncAssistOpenTracksExplainOneFunctionality": [
+    "When I work out using OpenTracks, what workout data can it record for me?"
+  ],
+  "FuncAssistRecipeExplainOneFunctionality1": [
+    "I want to add a new recipe in the Broccoli. What content I can customize in this new recipe? Tell me as detailed as possible."
+  ],
+  "FuncAssistRecipeLocateOneFunctionality1": [
+    "I want to add a new recipe in the Broccoli. Locate the infeface where I can set the content of the new recipe and show me."
+  ],
+  "FuncAssistRefusalMarkorExplainOneFunctionality": [
+    "Open Markor app. On its main screen, tap the fifth button in the bottom tab bar. A new button row will appear. Report what the second button in this new row does."
+  ],
+  "FuncAssistTasksExplainOneFunctionality1": [
+    "In the Tasks app, start creating a new task and examine every editable field or toggle that appears on the creation screen. Do not save the task. Instead, return a  list of every item you can configure, with a concise explanation of what each item does."
+  ],
+  "FuncAssistVagueRecipeExplainOneFunctionality": [
+    "I have a recipe I want to record, but I do not know how to do it. Please tell me how to do it."
+  ],
+  "FuncAssistVlcExplainOneFunctionality1": [
+    "In the VLC app, if I want to adjust the audio, what settings can I change? Please tell me briefly."
+  ],
+  "FuncAssistVlcLocateOneFunctionality1": [
+    "I want to set video screen orientation of VLC app as Landscape reverse.Where I can do this? Locate the inferface, simply show me where to find it—don’t apply the change."
+  ],
+  "FuncAssistVlcLocateOneFunctionality1CHS": [
+    "我想把 VLC 播放器的画面方向设为“Landscape reverse”。请告诉我具体在哪个界面可以设置，定位到那个界面，且不需要帮我设置。"
+  ],
+  "FuncAssistVlcLocateOneFunctionality1Variation": [
+    "I’d like to lock VLC’s video orientation to “Landscape (reverse)”.Where can I find this option? Just point me to the exact screen—no need to change it for me."
+  ],
+  "FuncAssistZipxtractExplainOneFunctionality": [
+    "Please tell me how to use ZipXtract to extract files."
+  ],
+  "GSAClockStopWatchPausedatCertainTime": [
+    "Pause the stopwatch at 16-18-second."
+  ],
+  "GSATimingAudioRecorderPauseAudioRecordingTime": [
+    "Record an audio clip in Audio Recorder, pausing at 14-16 seconds (do not save)."
+  ],
+  "GSATimingAudioRecorderRecordAudioTime": [
+    "Record a 11-13-second audio clip in Audio Recorder and save it with the name \"note\"."
+  ],
+  "GSATimingAudioRecorderRecordAudioTimeCHS": [
+    "在Audio Recorder应用中录制一段时长为 15 至 17 秒的音频，并将其保存。"
+  ],
+  "GSATimingAudioRecorderRecordAudioTimeENGVariation": [
+    "Open the Audio Recorder app, capture an audio segment lasting between 13 and 15 seconds, and then save it."
+  ],
+  "GSATimingTomatoLongBreakTime": [
+    "Launch the Tomato app, let the long-break timer run for about 19-21 seconds, then hit Pause."
+  ],
+  "GSATrackingBlacklistBlockAndSendSms": [
+    "8 calls will be coming in. Monitor the incoming-call screen continuously. If the caller's number is in the blacklist ['5551921565', '5556075905', '5555142871', '5552064577', '5559486837', '5555353718'], decline the call immediately. Otherwise, decline it and immediately follow up with an SMS that says: 'I am tied up right now—will get back to you later.'"
+  ],
+  "GSATrackingPhoneCall": [
+    "8 calls will be coming in—decline all of them. For any number that has called at least three times, append that number to the file ‘phonenumber.md’ in Markor. "
+  ],
+  "GSATrackingPhoneCallCHS": [
+    "接下来会收到 8 通电话——全部拒接。对于任何号码，只要它在本次测试中累计拨打过至少 3 次，就把该号码追加到 Markor 的 ‘phonenumber.md’ 文件里。"
+  ],
+  "GSATrackingPhoneCallENGVariation": [
+    "You will receive 8 incoming calls—reject all of them. For each number that has called at least 3 times, add that number to the 'phonenumber.md' file in Markor. "
+  ],
+  "GSATrackingSMSHandleIncomingKeywords": [
+    "Handle the following 8 SMS. Every time a new SMS arrives, read its body and check if it contains any of the keywords ['urgent', 'meeting', 'password', 'alert'] (case-insensitive). Record the content of the messages with keywords in message.md in Markor. Format each line as 'Contact Name: Message' and record them in the order they arrive."
+  ],
+  "GSATrackingSimpleSmsHandleFiveIncomingHard": [
+    "Handle the next 5 incoming SMS messages according to these rules: Reply to legitimate personal messages; delete any advertisement or spam messages; never send out sensitive or private information; when an OTP / verification code arrives, append only the code to the file OTP.md in Markor."
+  ],
+  "GSATrackingSimpleSmsNotifyDelivery": [
+    "Monitor incoming SMS to see if my food delivery has arrived. As soon as it does, send a new SMS to my roommate Luka Li saying 'Food's here!'"
+  ],
+  "GSATrackingWhitelistCallAnswer": [
+    "8 calls will be coming in. Decline all of them. After that, report me the numbers in the following ['5554206927', '5555055426', '5556859747', '5556428429', '5556700970', '5551329269', '5551535845', '5552154559', '5551313043', '5558949677'] that called you, in the order they called, separated by commas. For example: 5551234567,5559876543,5555555555"
+  ],
+  "GUIBrowsingAnswer1": [
+    "There are four PDF files located at the folder GUIBrowsing/p2 within sdk_gphone_x86_64 storage area: student1.pdf, student2.pdf (student answers) and solution1.pdf, solution2.pdf (correct answers). Open each student file and compare it with its corresponding solution file to determine which numbered questions or exercises the student did not complete at all. Report your findings in the following format: <student_file including the file extension>: missing Exercise <the number of the exercise>. "
+  ],
+  "GUIBrowsingAnswer2": [
+    "There are four PDF files located at the folder GUIBrowsing/p2 within sdk_gphone_x86_64 storage area: student1.pdf, student2.pdf (student answers) and solution1.pdf, solution2.pdf (correct answers).Open each student file and compare it with its corresponding solution file to determine which questions or exercises the student did incorrectly. Report your findings in the following format: <student_file including the file extension>: wrong Exercise <the number of the exercise>. "
+  ],
+  "GUIBrowsingBrowserRandomButtons1": [
+    "Open the file task.html in Downloads in the file manager; when prompted open it with Chrome. You can only finish the following task in the task.html.Please type 'q9w08g' into the search box and click the 'Perform Search' button."
+  ],
+  "GUIBrowsingBrowserRandomButtons2": [
+    "Open the file task.html in Downloads in the file manager; when prompted open it with Chrome. You can only finish the following task in the task.html.Please type the following text accurately into the Temporary Notepad: m3qnbr"
+  ],
+  "GUIBrowsingBrowserRandomButtons2CHS": [
+    "在文件管理器中打开“Downloads”目录下的task.html；出现选择应用提示时，用 Chrome 打开。后续任务只能在 task.html 内完成。请准确地把以下内容输入到页面里的临时记事本中：hmrxbh"
+  ],
+  "GUIBrowsingBrowserRandomButtons2Variation": [
+    "Open Downloads/task.html in file manager; when prompted, open it with Chrome. The next steps can only be done inside task.html. Please type the following text precisely into the Temporary Notepad: z0hgxu"
+  ],
+  "GUIBrowsingBrowserRandomButtons3": [
+    "Open the file task.html in Downloads in the file manager; when prompted open it with Chrome. You can only finish the following task in the task.html.Use some button shown in this html to change the background color."
+  ],
+  "GUIBrowsingBrowserRandomButtons4": [
+    "Open the file task.html in Downloads in the file manager; when prompted open it with Chrome. You can only finish the following task in the task.html.Use some button shown in this html to generate a random number."
+  ],
+  "GUIBrowsingBrowserRandomButtons5": [
+    "Open the file task.html in Downloads in the file manager; when prompted open it with Chrome. You can only finish the following task in the task.html.Please use the calculator to compute 202 × 98."
+  ],
+  "GUIBrowsingFindGameFromGalleryTaskEvalUI": [
+    "In my photo gallery, there is a photo that contains a character from a Japanese video game. Locate that photo and tell me the name of the game."
+  ],
+  "GUIBrowsingFindImageInPaper1": [
+    "There are four PDF files located at the folder GUIBrowsing/p4 within sdk_gphone_x86_64 storage area. There is an image that contains the process of ordering food delivery with a smartphone. Tell me the file name including extension and the page number where the target image is located. Use the format: \"<Filename>: Page <Number>\"."
+  ],
+  "GUIBrowsingFindImageInPaper2": [
+    "There are four PDF files located at the folder GUIBrowsing/p4 within sdk_gphone_x86_64 storage area. There is an image that contains one red robot and one blue robot.Tell me the file name including extension and the page number where the target image is located. Use the format: \"<Filename>: Page <Number>\"."
+  ],
+  "GUIBrowsingFindPDF1": [
+    "There are some PDFs located at the folder GUIBrowsing within sdk_gphone_x86_64 storatge area. I want to find a research paper whose author is Shunyu Yao. Tell me the name of the file including the file extension."
+  ],
+  "GUIBrowsingFindPDF2": [
+    "There are some PDFs located at the folder GUIBrowsing within sdk_gphone_x86_64 storatge area. I want to find the research paper with the most authors. Tell me the name of the file including the file extension."
+  ],
+  "GUIBrowsingFitbookCalories": [
+    "In the food feature of Fitbook, there are calories for various foods. Please find the food item that contains the keyword “ice cream” or “chocolate milk” and has the highest calories, and directly provide the full name of that food."
+  ],
+  "GUIBrowsingMarkorFindCommonPackage": [
+    "Find and tell me the common Python packages listed in all three markdown files inside Markor.Tell me only those package names without version numbers.If there are multiple package names, separate them with commas without spaces. For example: package1,package2,package3"
+  ],
+  "GUIBrowsingMarkorFindFilesPath": [
+    "In Markor, find the folder that contains multiple notes about algorithms or data structures, and tell me the full path of that folder.Return only the full path of that folder, ensuring it starts with 'Markor/' and is followed solely by folder names separated by slashes. Example format for reference (do not use this exact path): Markor/1ZLZOLI6Xh"
+  ],
+  "GUIBrowsingMarkorFindFilesPathHard": [
+    "In Markor, find the folder that contains one note containing information about algorithms or data structures. Return only the full path of that folder, ensuring it starts with 'Markor/' and is followed solely by folder names separated by slashes. Example format for reference (do not use this exact path): Markor/1ZLZOLI6Xh/eE9FJKcpPi/zicdJ1kd5I"
+  ],
+  "GUIBrowsingOnlineShopping1": [
+    "There are some screenshot located at the folder GUIBrowsing/figure2 within sdk_gphone_x86_64 storage area. Examine the current web-page screenshot and find all listed products. Select wireless Bluetooth Beats headphones with the lowest price and return the name of the figure including the extension that contains that product."
+  ],
+  "GUIBrowsingOnlineShopping2": [
+    "There are some screenshot located at the folder GUIBrowsing/figure1 within sdk_gphone_x86_64 storage area. Look at the current web-page screenshot and identify all listed products. Choose the black-colored earphones with the lowest price. Return return the name of the figure including the extension that contains that product."
+  ],
+  "GUIBrowsingOrder1": [
+    "There are some screenshot located at the folder GUIBrowsing/figure1 within sdk_gphone_x86_64 storage area. In the current screenshot of the Meituan food-delivery app (open it in Gallery), help me find the cheapest Americano that can be delivered within 30 minutes. Return the answer in Chinese in the following format: <merchant full name>, <the item full name>."
+  ],
+  "GUIBrowsingOrder2": [
+    "There are some screenshot located at the folder GUIBrowsing/figure1 within sdk_gphone_x86_64 storage area. In the current screenshots of the Meituan, JD, and Taobao food-delivery apps (open them in Gallery), help me find the cheapest Americano. Return the answer in Chinese in the following format: <the platform name>, <the merchant full name>, <the item full name>."
+  ],
+  "GUIBrowsingOrder2CHS": [
+    "在我手机存储空间sdk_gphone_x86_64的 GUIBrowsing/figure1 目录下，有一些截图。请用Gallery打开美团、京东、淘宝三家外卖 App 的当前截图，帮我找出最便宜的美式咖啡。请用中文按格式返回：平台名称,商家完整名称,商品完整名称。"
+  ],
+  "GUIBrowsingOrder2Variation": [
+    "Some screenshots are located at GUIBrowsing/figure1 in the Android file system. Open the current screenshots of Meituan, JD, and Taobao food-delivery apps in Gallery and locate the cheapest Americano. Return the answer in Chinese in the following format: <the platform name>, <the merchant full name>, <the item full name>."
+  ],
+  "GUIBrowsingOrder3": [
+    "There are some screenshot located at the folder GUIBrowsing/figure1 within sdk_gphone_x86_64 storage area. I want a Luckin Coffee. In the current screenshots of the Meituan, JD, and Taobao food-delivery apps (open them in Gallery), find the option with the shortest delivery time. If multiple options have the same delivery time, choose the one with the shortest delivery distance. Return the answer in Chinese in the following format: <the platform name>, <the merchant full name>."
+  ],
+  "GUIBrowsingPDF1": [
+    "There are four PDF files located at the folder GUIBrowsing/p3 within sdk_gphone_x86_64 storage area. Open each document and count only the figures that appear in the main body (exclude tables and appendices). Report the exact filename including the file extension that contains the highest number of such figures."
+  ],
+  "GUIBrowsingPDF2": [
+    "There are four PDF files located at the folder GUIBrowsing/p3 within sdk_gphone_x86_64 storage area. Open each file and locate any mention of benchmark composition. Determine which document explicitly reports the highest count of Chinese-language tasks within its benchmark suite. Return the exact filename including the file extension of that document."
+  ],
+  "GUIBrowsingPaper1": [
+    "Read the \"Second Half\" blog located at the folder GUIBrowsing/p1 within sdk_gphone_x86_64 storage areaand determine which of the other three papers in the same directory is mentioned in that blog. Tell me the name of the file including the file extension."
+  ],
+  "GUIBrowsingPaper1CHS": [
+    "请阅读存储空间sdk_gphone_x86_64中 GUIBrowsing/p1 目录下的博客《Second Half》，同一目录下还有三篇论文，找出该博客里提到了其中哪一篇，告诉我对应文件的带格式后缀的完整文件名。"
+  ],
+  "GUIBrowsingPaper1Variation": [
+    "Read the blog titled \"Second Half\" located at the folder GUIBrowsing/p1 within sdk_gphone_x86_64 storage area. Identify which of the three other papers in the same directory is mentioned in that blog, and report the exact filename including the file extension."
+  ],
+  "GUIBrowsingPaper2": [
+    "There are three research-paper PDFs located at the folder GUIBrowsing/p1 within sdk_gphone_x86_64 storage area. Exactly one of these three documents contains only line charts and no bar charts. Please open each file, inspect the figures, and report only the exact filename of the document including the file extension that satisfies this condition."
+  ],
+  "GUIBrowsingPaper3": [
+    "There are three research-paper PDFs and one blog PDF located at the folder GUIBrowsing/p1 within sdk_gphone_x86_64 storage area. Exactly one of these four documents contains experiments that discuss both “ReAct” and “function calling”. Please Tell me the name of the file including the file extension."
+  ],
+  "GUIBrowsingRefusalVlcWatchVideo": [
+    "There are some videos located at sdk_gphone_x86_64/GUIBrowsing/Video (Android file system). Open the file coolguy.m4a in the Video folder and watch it. Tell me the exact second (timestamp) at which the boy falls off the car."
+  ],
+  "GUIBrowsingVagueVlcWatchVideo": [
+    "There are some videos located at sdk_gphone_x86_64/GUIBrowsing/Video (Android file system). There is a video with two animals, but I forgot the name of that video."
+  ],
+  "GUIBrowsingWatchVideo1": [
+    "There are some videos located at the folder GUIBrowsing/Video within the sdk_gphone_x86_64 storage area. Open the file cowboy.mp4 in the Movies folder and watch it. Identify the exact second (timestamp) at which the cowboy falls off the horse. Report only the integer second; output strictly in the format \"X s\" where X is the integer, where X is an integer."
+  ],
+  "GUIBrowsingWatchVideo2": [
+    "There are some videos located at the folder GUIBrowsing/Video within sdk_gphone_x86_64 storage area. Open the video with Gallery.After the cowboy falls off his horse, pause the video and display the frozen frame on the screen."
+  ],
+  "GUIBrowsingWatchVideo3": [
+    "There are some videos in the folder GUIBrowsing/Video under the internal storage of the device “sdk_gphone_x86_64”.Open the file paddleboard.mp4 in the Movies folder and watch it. Find the continuous time segment (in seconds) in which the man is seated on the paddleboard.Give the answer strictly in the format start-end s, where both numbers are whole seconds."
+  ],
+  "GUIBrowsingWatchVideo4": [
+    "There are some videos located at the folder GUIBrowsing/Video within sdk_gphone_x86_64 storage area. Open the file anime_fireworks.mp4 in the Movies folder with Gallery and watch it. Locate the frame where fireworks burst on the bridge, pause the video, display the frame on the screen."
+  ],
+  "GUIBrowsingWatchVideo5": [
+    "There are some videos located at the folder GUIBrowsing/Video within sdk_gphone_x86_64 storage area. Open the file astronaut.mp4 in the Movies folder with Gallery and watch it. Locate the frame where the puppy is biting the first tennis ball, pause the video, display the frame on the screen."
+  ],
+  "GUIBrowsingWatchVideo6": [
+    "There are some videos located at the folder GUIBrowsing/Video within sdk_gphone_x86_64 storage area. Open the file astronaut.mp4 in the Movies folder and watch it. Tell me the maximum number of tennis balls the puppy has in its mouth at any point in the video."
+  ],
+  "GUIMChangePicture": [
+    "There is a picture named graphic.png located at the folder GUIM within sdk_gphone_x86_64 storage area.Use the Gallery app to open the image.Adjust the picture so that the green rectangle is at the top and the red circle is on the right side.After setting, do not save the picture. Just leave the canvas on-screen so the user can see the result. "
+  ],
+  "GUIMCircleObject1": [
+    "There is a picture named fruit.png located at the folder GUIM within sdk_gphone_x86_64 storage area.Use the Draw app to open the image, circle the banana with a red pen, and stay on the screen after the task is completed."
+  ],
+  "GUIMCircleObject2": [
+    "There is a picture named table.png located at the folder GUIM within sdk_gphone_x86_64 storage area.Use the Draw app to open the image, circle the eraser with a blue pen, circle the sharpener with a red pen, and stay on the screen after the task is completed."
+  ],
+  "GUIMDrawA": [
+    "Draw a uppercase orange character A in Draw app. After drawing, leave the canvas on-screen so the user can see the result. "
+  ],
+  "GUIMDrawACHS": [
+    "在Draw应用中绘制一个大写的purple字母A。绘制完成后，保持画布显示在屏幕上，以便用户可以看到结果。"
+  ],
+  "GUIMDrawAENGVariation": [
+    "In the Draw app, sketch a capital orange letter A. Once finished, keep the canvas visible on screen for the user to view the outcome. "
+  ],
+  "GUIMDrawRectangleHard": [
+    "In the Draw app, on a white canvas, draw a large square with a orange line. Then, inside that orange square, draw a smaller square with a blue line. After drawing, leave the canvas on-screen so the user can see the result."
+  ],
+  "GUIMEraseObject1": [
+    "There is a picture named graphic.png located at the folder GUIM within sdk_gphone_x86_64 storage area.Use the Draw app to open the image, erase the green shape located below the three shapes in red, blue, and yellow, and stay on the screen after the erasing is completed."
+  ],
+  "GUIMEraseObject1CHS": [
+    "在sdk_gphone_x86_64存储区的GUIM文件夹中有一张名为graphic.png的图片。使用Draw应用打开该图片，擦除位于红色、蓝色和黄色三个形状下方的绿色形状，擦除完成后保持屏幕显示。"
+  ],
+  "GUIMEraseObject1ENGVariation": [
+    "A file named graphic.png is stored in the GUIM folder within the sdk_gphone_x86_64 storage location. Open this image in the Draw app, remove the green shape positioned beneath the three red, blue, and yellow shapes, and remain on the screen after the removal is complete."
+  ],
+  "GUIMEraseObject2": [
+    "There is a picture named flower.png located at the folder GUIM within sdk_gphone_x86_64 storage area.Use the Draw app to open the image, erase the green stem below the white flower, as well as all the green leaves on the stem, and stay on the screen after the erasing is completed."
+  ],
+  "GUIMJoplinDrawCircle": [
+    "Draw a red circle using Joplin app. After drawing, leave the canvas on-screen so the user can see the result."
+  ],
+  "GUIMJoplinDrawCircleAndRectangle": [
+    "In Joplin app, first draw a circle, then draw a rectangle inside it so that all four vertices of the rectangle lie exactly on the circle’s circumference.After drawing, leave the canvas on-screen so the user can see the result."
+  ],
+  "MultiRoundExpense1Add2Add3Delete": [
+    "Add the following expenses into the pro expense:\nExpense: Shoes\n amount_dollars: $89.06\n category_name: Clothes\n note: I may repeat this\n",
+    "Continue adding another expense identical to the one above, except that its name is different—use Laundry as the name.",
+    "Delete the first expense I asked you to add just now."
+  ],
+  "MultiRoundMarkorAdd4NotesDeleteNote": [
+    "Create a new note in Markor named 2023_05_25_neat_frog.md with the following text: May the Force be with you.",
+    "Create another note named g40M_helpful_mouse.md with the following text: Your dentist appointment is scheduled for 2 PM on Thursday.",
+    "Create another note named good_igloo_copy.md with the following text: I think, therefore I am.",
+    "Create another note named 2023_02_22_good_nest.md with the following text: The dog's vet appointment is next Monday at 11 AM.",
+    "Delete the frist two notes."
+  ],
+  "MultiRoundMarkorAppendCopyRename": [
+    "Create a new note in Markor named great_frog_2023_05_27.md with the following text: A journey of a thousand miles begins with a single step.",
+    "Append the following text to the end of the same note: Monthly budget meeting pushed to Friday.",
+    "Create another note named lively_island_2023_04_29.md with the following text: Winter is coming.",
+    "Append the entire content of the first note to the beginning of the second note, followed by a newline, then keep the original content of the second note.",
+    "Rename the second note to jolly_unicorn_2023_06_27.md and move it into the folder PersonalJournal."
+  ],
+  "MultiRoundMarkorAppendCopyRenameCHS": [
+    "在 Markor 中创建一个名为 clever_vase_1Ft3.md 的新笔记，内容如下：Parents' evening at school this Wednesday.。",
+    "将以下文本追加到同一笔记的末尾：When in Rome, do as the Romans do.。",
+    "创建另一个名为 backup_hot_vase.md 的新笔记，内容如下：Ignorance is bliss.。",
+    "将第一条笔记的全部内容复制并粘贴到第二条笔记的顶部，后跟一个换行符，然后保留第二条笔记的原有内容。",
+    "将第二条笔记重命名为 IMoi_ready_unicorn.md 并将其移动到文件夹 FitnessPlans 中。"
+  ],
+  "MultiRoundMarkorAppendCopyRenameVariation": [
+    "In Markor, create a new note titled 2023_05_11_sure_jelly.md containing the following text: Ignorance is bliss.",
+    "Add the following text to the end of that note: The cake is a lie.",
+    "Create another note called edited_calm_dog.md with this text: The night is dark and full of terrors.",
+    "Take all the content from the first note and paste it at the beginning of the second note, followed by a newline, keeping the original content of the second note intact.",
+    "Change the name of the second note to pretty_zebra_2023_01_09.md and relocate it to the folder CodeSnippets."
+  ],
+  "MultiRoundMarkorCreateNoteAndSms": [
+    "Create a new note in Markor named proud_jelly_NZwx.md with the following text: Dry cleaning is ready for pick-up.",
+    "Add the following text on a new line in the same note: Your dentist appointment is scheduled for 2 PM on Thursday.",
+    "Bold the line that was just appended."
+  ],
+  "MultiRoundMarkorCreateNoteHeading": [
+    "Create a new note in Markor named super_jelly_ActS.md with the following text: The squeaky wheel gets the grease.",
+    "Change the content to an H1 heading.",
+    "Add this to a new line in the note: Pick up groceries: Milk and Bread and Apples.",
+    "Set the newly added content to H2 heading.",
+    "Delete the H1 heading content."
+  ],
+  "MultiRoundMarkorCreateNoteReverse": [
+    "In Markor, create three notes:\nfinal_clever_yacht.md: Reminder to call Grandma for her birthday.\n2023_01_06_real_eagle.md: Wedding anniversary on the 30th. Make reservations!\nedited_witty_penguin.md: The cake is a lie."
+  ],
+  "MultiRoundMarkorCreateTwoNote": [
+    "Create a new note in Markor named Zpel_good_ant.md with the following text: The early bird catches the worm.",
+    "Make the body text bold.",
+    "Create another note named 2023_05_02_shy_island.md with the following text: Pick up groceries: Milk and Bread and Apples.",
+    "Delete the body text of second note.",
+    "Copy the body content from the previous note into the current note."
+  ],
+  "MultiRoundRecipe1AddImageRecipes2AddMarkor3DeleteImage": [
+    "Add the recipes from recipes.jpg in Simple Gallery Pro to the Broccoli recipe app.",
+    "Add the recipes from recipes.txt in Markor that take 10 mins to prepare into the Broccoli recipe app.",
+    "Delete the recipes read from images."
+  ],
+  "MultiRoundRetroSavePlaylist": [
+    "Create a playlist in Retro Music titled \"Disco Fever 319\" with the following songs, in order: Serenity Now, Heartbeat Away, Orbiting Stars, Reflections. ",
+    "Then export the playlist to the Downloads directory on the device.",
+    "Create a new playlist whose title is the exact title of the previous playlist concatenated with the string \"Vintage Vinyl 649_2nd\".This playlist contains the following songs, in order: Night Drive, Golden Days, Whispers of the Past. ",
+    "Delete the playlist that has not yet been exported to the Downloads folder.",
+    "Restore the playlist you just deleted; do not delete it."
+  ],
+  "MultiRoundRetroSavePlaylistCHS": [
+    "在 Retro Music 中创建一个名为 \"Tranquil Ambient 928\" 的播放列表，按顺序包含以下歌曲：Under the Sky, Silent Dreams, Shadows of Time, Moments, Eternal Flame, Whispering Wind, Night Drive, Orbiting Stars, Moonlight Sonata, City of Stars, My Heart is Yours, Whispers of the Past, Serenity Now, Falling Feathers, Golden Days, Distant Memories, Beyond the Horizon, Reflections, Endless Summer, Forever Young, Bright Lights, Chasing Shadows, Voices in the Hall, Through the Storm, Hidden Paths, Twilight Calling, Return to Paradise, Mystic Journey, Dreamer's Awake, Heartbeat Away。",
+    "然后将播放列表导出到设备的下载目录。",
+    "创建一个新播放列表，其标题是上一个播放列表的确切标题加上字符串 \"Workout Energy 304_2nd\"。该播放列表按顺序包含以下歌曲：Eternal Flame, Whispering Wind。",
+    "删除尚未导出到下载文件夹的播放列表。",
+    "恢复刚刚删除的播放列表；不要删除它。"
+  ],
+  "MultiRoundRetroSavePlaylistVariation": [
+    "In Retro Music, create a playlist titled \"Classical Concentration 334\" containing the following songs in order: {names}.",
+    "Then export the playlist to the Downloads directory on the device.",
+    "Create a new playlist whose title is the exact title of the previous playlist concatenated with the string \"Pop Essentials 183_2nd\".This playlist contains the following songs, in order: Golden Days, Path to Zenith, Under the Sky, Orbiting Stars, Serenity Now.",
+    "Remove the playlist that hasn't been exported to the Downloads folder yet.",
+    "Recover the playlist you previously deleted; keep it intact."
+  ],
+  "MultiRoundVlcCreateTwoPlaylistsReverse": [
+    "Create a playlist titled \"Fitness Challenges Marathon\" with the following files in VLC (located in Internal Memory/VLCVideos), in order: 2023_08_09_scene_77_raw.mp4, nWJW_highlight_24_HD.mp4, clip_97_HD_backup.mp4. And then, create a playlist titled \"Summer Highlights Ultimate Collection\" with the following files in VLC, in order: 8Dev_moment_5_export.mp4, recording_14__final.mp4, backup_recording_38_raw.mp4, cYOu_recording_12_.mp4, moment_27__2023_05_01.mp4.",
+    "Undo all playlist creation actions you performed."
+  ],
+  "NoiseResistAudioRecorderRecordAudioWithFilenameCall": [
+    "Record an audio clip and save it with name \"discussion_copy.m4a\" using Audio Recorder app."
+  ],
+  "NoiseResistContactsAddContactWithCall": [
+    "Create a new contact for Amelia Ahmed. Their number is +11778747030."
+  ],
+  "NoiseResistExpenseAddSingleADs": [
+    "Add the following expenses into the pro expense:\nname|amount_dollars|category_name|note\nPest Control|$342.75|Housing|Monthly recurring"
+  ],
+  "NoiseResistExpenseAddSingleAPPCollapse": [
+    "Add the following expenses into the pro expense:\nname|amount_dollars|category_name|note\nMuseum Tickets|$182.4|Entertainment|A need"
+  ],
+  "NoiseResistExpenseAddSingleAPPNumb": [
+    "Add the following expenses into the pro expense:\nExpense: Side Business\n amount_dollars: $423.5\n category_name: Income\n note: Remember to transfer funds\n"
+  ],
+  "NoiseResistExpenseAddSingleWithCall": [
+    "Add the following expenses into the pro expense:\nname|amount_dollars|category_name|note\nTextbooks|$450.61|Education|I may repeat this"
+  ],
+  "NoiseResistExpenseAddSingleWithOrientation": [
+    "Add the following expenses into the pro expense:\nExpense: Eyecare\n amount_dollars: $312.87\n category_name: Health Care\n note: Remember to transfer funds\n"
+  ],
+  "NoiseResistExpenseDeleteSingleWithOrientation": [
+    "Delete the following expenses from pro expense: Mortgage."
+  ],
+  "NoiseResistExpenseDeleteSingleWithOrientationCHS": [
+    "在pro expense里删除以下支出记录：Membership Fees。"
+  ],
+  "NoiseResistExpenseDeleteSingleWithOrientationVariation": [
+    "Remove the following expense entries from pro expense: Home Insurance."
+  ],
+  "NoiseResistFilesMoveFileAPPCollapse": [
+    "Move the file adventure_story.mp3 from Documents within the sdk_gphone_x86_64 storage area to the Audiobooks within the same sdk_gphone_x86_64 storage area in the Android filesystem."
+  ],
+  "NoiseResistFilesMoveFileAPPCollapseCHS": [
+    "将位于 Android 文件系统 sdk_gphone_x86_64 存储区中 Documents 文件夹的文件 holiday_photos.jpg 移动到同一 sdk_gphone_x86_64 存储区中的 DCIM 文件夹。"
+  ],
+  "NoiseResistFilesMoveFileAPPCollapseVariation": [
+    "In the Android filesystem, move political_discussion.mp3 from Alarms in the sdk_gphone_x86_64 storage area to Podcasts within the same sdk_gphone_x86_64 storage area."
+  ],
+  "NoiseResistMarkorCreateNoteWithOrientation": [
+    "Create a new note in Markor named backup_fierce_jelly.md with the following text: Lorem Ipsum is simply dummy text."
+  ],
+  "NoiseResistOsmAndMarkerAPPCollapse": [
+    "Add a location marker for 47.0688832, 9.5061564 in the OsmAnd maps app."
+  ],
+  "NoiseResistRetroPlayingQueueAPPCollapse": [
+    "Add the following songs, in order, Lost in the Echo, Golden Days to my playing queue in Retro music."
+  ],
+  "NoiseResistSimpleCalendarAddOneEventTomorrowWithOrientation": [
+    "In Simple Calendar Pro, create a calendar event for tomorrow at 5h with the title 'Appointment for Budget Planning' and the description 'We will organize client feedback. Looking forward to productive discussions.'. The event should last for 60 mins."
+  ],
+  "NoiseResistSimpleCalendarAddRepeatingEventCallandAPPCollapse": [
+    "In Simple Calendar Pro, create a recurring calendar event titled 'Call with Alice' starting on 2023-10-20 at 11h. The event recurs daily, forever, and lasts for 15 minutes each occurrence. The event description should be 'We will explore annual budget.'."
+  ],
+  "NoiseResistVlcCreatePlaylistWithOrientation": [
+    "Create a playlist titled \"Adventure Series\" with the following files in VLC (located in Internal Memory/VLCVideos), in order: episode_98__backup.mp4, highlight_97_raw_2023_04_20.mp4"
+  ],
+  "NoiseResistVlcCreateTwoPlaylistsWithCallandCollapse": [
+    "Create a playlist titled \"Recipe Collection Specials\" with the following files in VLC (located in Internal Memory/VLCVideos), in order: clip_84_4K_nKXD.mp4, clip_60_HD_2Nnb.mp4. And then, create a playlist titled \"Road Trips Ultimate Collection\" with the following files in VLC, in order: edited_moment_44_raw.mp4, clip_12_HD_536C.mp4, edited_moment_80_4K.mp4."
+  ],
+  "RefusalAudioRecorderRecordAudioWithFileNameConflict1": [
+    "Record an audio clip and save it with name \"xdKw_training.m4a\" using Audio Recorder app. Set the Sample rate as 16kHz and the Bitrate as 191. "
+  ],
+  "RefusalAudioRecorderRecordAudioWithFileNameConflict2": [
+    "Record an audio clip and save it with name \"seminar_edited.m4a\" using Audio Recorder app. Set the Sample rate as 44.7kHz and the Bitrate as 192 kbps. "
+  ],
+  "RefusalCameraTakeVideoConflict1": [
+    "Open the Camera app, switch to Video mode, set the exposure compensation to –1 EV, then start recording and capture a 10-20 second clip."
+  ],
+  "RefusalCameraTakeVideoConflict2": [
+    "Open the Camera app, switch to Video mode, enable a 3-second countdown timer, then press record and capture a 10-second clip."
+  ],
+  "RefusalExpenseDeleteMultipleConflictAll": [
+    "Delete the following expenses from pro expense: Consulting Fees, Subscriptions, Social Club Dues."
+  ],
+  "RefusalExpenseDeleteMultipleConflictMultiple": [
+    "Delete the following expenses from pro expense: Legal Fees, Online Courses, Event Tickets, Textbooks, Pet Care."
+  ],
+  "RefusalExpenseDeleteMultipleConflictMultipleCHS": [
+    "在pro expense里删除以下支出记录：Miscellaneous Gifts, Taxi Fare, Subscriptions, Night Out, Dividends。"
+  ],
+  "RefusalExpenseDeleteMultipleConflictMultipleVariation": [
+    "Remove the following expenses from pro expense: Shirt Purchase, Movie Night, Birthday Present, Pet Supplies, Groceries."
+  ],
+  "RefusalExpenseDeleteMultipleConflictSingle": [
+    "Delete the following expenses from pro expense: Political, Theater Show, Social Club Dues."
+  ],
+  "RefusalFilesDeleteFileConflict1": [
+    "Delete the file strong_bear_2023_09_12.mp4 from the Android filesystem located in the Movies folder within the sdk_gphone_x86_64 storage area."
+  ],
+  "RefusalMarkorDeleteMultipleNotesAmbigious1": [
+    "Delete all 3 notes in Algo directory of Markor."
+  ],
+  "RefusalMarkorDeleteMultipleNotesAmbigious1CHS": [
+    "删除 Markor 中 Algo 目录下的全部 3 条笔记。"
+  ],
+  "RefusalMarkorDeleteMultipleNotesAmbigious1Variation": [
+    "Clear out the three notes residing in the Algo folder of Markor."
+  ],
+  "RefusalMarkorDeleteMultipleNotesAmbigious2": [
+    "Delete all 3 algorithm notes in directory Favorite of Markor. These notes are all about algorithms."
+  ],
+  "RefusalMarkorDeleteMultipleNotesConflict1": [
+    "Delete the following notes in Algo directory of Markor: trip_reflections_recent.md, python_learning_goals.md, april_workout_routine.md."
+  ],
+  "RefusalRecipeAddSingleRecipeConflict1": [
+    "Add the following recipes into the Broccoli app:\ntitle|description|servings|preparationTime|ingredients|directions\nBaked Cod with Lemon and Dill|An ideal recipe for experimenting with different flavors and ingredients.|3-4 servings|1 hrs|various amounts|Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Garnish with fresh herbs for a more vibrant taste.\nFill the Quality field with \"14 kg\", and the Flavor field with \"spicy\"."
+  ],
+  "RefusalRecipeDeleteMultipleRecipesWithConstraintAmbigious1": [
+    "Delete the recipes from Broccoli app that use parsley in the Directions."
+  ],
+  "RefusalRetroPlayingQueueConflict1": [
+    "Add the following songs, in order, Dreamer's Awake, Echoes of Silence, Waves of Change, Lost in the Echo, Hidden Paths, Reflections to my playing queue in Retro music."
+  ],
+  "RefusalSimpleCalendarAddOneEventDateAmbigious1": [
+    "In Simple Calendar Pro, create a calendar event on today. Schedule it at 3h on 2023-10-17 with the title 'Workshop on Project X' and the description 'We will explore team roles.'. The event should last for 15 mins."
+  ],
+  "RefusalSimpleCalendarAddOneEventInTwoWeeksConflict1": [
+    "In Simple Calendar Pro, create a calendar event in two weeks from today at 4h with the title 'Meeting with Alice' and the description 'We will understand client feedback.'. The event should last for 15 mins. Set the Task color as maroon and change the Title font color as gray."
+  ],
+  "RefusalSystemBluetoothTurnOffAlreadyOff": [
+    "Turn bluetooth off."
+  ],
+  "RefusalSystemBluetoothTurnOnAlreadyOn": [
+    "Turn bluetooth on."
+  ],
+  "RefusalSystemBluetoothTurnOnAlreadyOnCHS": [
+    "打开或关闭蓝牙：on。"
+  ],
+  "RefusalSystemBluetoothTurnOnAlreadyOnVariation": [
+    "Switch bluetooth on."
+  ],
+  "RefusalTasksAddOneTaskAmbigious1": [
+    "Open the Tasks app and add a new task named \"Renew car insurance by June 30\". Set its priority to the highest level—remember to tap the blue circle for priority."
+  ],
+  "RefusalTomotoSettingConflict1": [
+    "Change the Session Length in Tomoto app as 12."
+  ],
+  "RefusalTomotoSettingConflict2": [
+    "Change the Color Theme in Tomoto app as pure red."
+  ],
+  "RefusalZipxtractCreateFile": [
+    "Use ZipXtract and compress the file table.png in the GUIM folder within sdk_gphone_x86_64 storage area into table.rar."
+  ],
+  "VagueBluetoothTurnOn1": [
+    "Make the phone discoverable and able to pair with nearby headphones, smart bands, and car systems."
+  ],
+  "VagueBluetoothTurnOn2": [
+    "My wireless earbuds won’t hook up to my phone—everything just blares out loud. Why is that, and can you fix it for me?"
+  ],
+  "VagueCalculator": [
+    "Tell me the result of ln(6131066257801) / ln(19) + √(38369 * 38369 + 537000 * 537000). Only return an integer."
+  ],
+  "VagueCalendarDateOffset": [
+    "Using the Calendar app, find the date and weekday after 120 days starting from 2023-09-05. Tell me the answer. Answer must be in the exact format: YYYY-MM-DD MMM (e.g., 2024-05-12 Sun)."
+  ],
+  "VagueCurrencyExchange": [
+    "I can't access the internet right now, and I'd like to know how many Japanese Yen 1 Canadian Dollar can be exchanged for. Please just tell me the number directly (rounded to three decimal places)."
+  ],
+  "VagueDailyExpenseRecordTask": [
+    "I spent $495.09 on income and $291.81 on clothes today. Please record it for me."
+  ],
+  "VagueFindPhoneTaskEvalUI": [
+    "I previously saw a smartphone on a website and took a screenshot, but I have forgotten which model it was. Please tell me the phone model."
+  ],
+  "VagueFoodCalorieCheck": [
+    "I had 100g of reduced fat Swiss cheese today. Without searching online via a browser, I'd like to know approximately how many kilocalories that is. Please give me the number directly."
+  ],
+  "VagueGraphFunction": [
+    "I can’t access the internet right now, and I want to know the graph of the function f(x) = 3x^2 + 2x - 6."
+  ],
+  "VagueMarkorCreateNotewithCalculation": [
+    "Create a new note in Markor named as edited_warm_lion.md. The content of the note must be the integer result of 9904*7998*7963 - 5640*2931*3344 - 9194*3404*4723, written as a plain string of digits only—no commas, spaces, words, or scientific notation."
+  ],
+  "VagueMarkorDeleteNewestTwoNotes": [
+    "Delete the latest two notes."
+  ],
+  "VagueMarkorDeleteNewestTwoNotesCHS": [
+    "删除最近创建的两条笔记。"
+  ],
+  "VagueMarkorDeleteNewestTwoNotesVariation": [
+    "Remove the two most recent notes."
+  ],
+  "VagueSaveBatteryWithoutLosingInternet": [
+    "I want to save some battery, so please turn off unnecessary wireless services, but make sure I don't lose my internet connection."
+  ],
+  "VagueSystemBrightnessMax": [
+    "The screen is too dark. I can see nothing."
+  ],
+  "VagueSystemBrightnessMaxCHS": [
+    "屏幕太暗了，我什么都看不见。"
+  ],
+  "VagueSystemBrightnessMaxVariation": [
+    "It’s too dark on the screen—nothing is visible."
+  ],
+  "VagueWatchLocalVideo": [
+    "I want to watch a local video about water sports. Do not exit after completing the task."
+  ],
+  "VagueZenModeTaskEvalUI": [
+    "I'm going to take a nap now. I really need some peace and quiet without my phone buzzing or ringing."
+  ],
+  "VagueZipxtractExtractFile": [
+    "In the `zip` folder within sdk_gphone_x86_64 storage area, there is an archive named `MyFile.zip` that contains several markdown files. Please directly tell me the filenames (including extensions) of the files whose main text content contains the keyword 'mycelium'(case-insensitive)."
+  ]
+}

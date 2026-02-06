@@ -23,3 +23,29 @@ poetry.lock
 
 # PyCharm
 .idea
+
+locating_results/
+results/
+temp/
+android_world/app_data/
+test_*
+Qwen2.5-VL-72B-Instruct/
+LOGS/
+UI-TARS-main/
+UI-TARS/
+.ossutil_checkpoint/
+app_data/
+OSWorld/
+*.mp4
+*.ttf
+OSWorld-339a13e1d5651c55a6b00799d1c7342b9980f4e6/
+log/
+results_*
+log_*.log
+files_gui_browsing/
+traj_*/
+# emulator log
+*.log
+nohup.out
+
+android_world/apk/
