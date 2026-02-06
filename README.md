@@ -29,7 +29,7 @@
 ---
 
 # 🚀 News
-
+* [2026/02] We have released **VenusBench-Mobile**, a challenging online benchmark featuring user-centric tasks and capability-oriented diagnostics for mobile GUI agents. For evaluation code and data, please visit the branch [VenusBench-Mobile](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-Mobile).
 * [2025/12] We have released the [VenusBench-GD](https://ui-venus.github.io/VenusBench-GD/), which is a comprehensive multi-platform GUI benchmark for diverse grounding tasks. For evaluation code, please visit the branch [VenusBench-GD](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-GD).
 
 --- 
