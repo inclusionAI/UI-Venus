@@ -1,0 +1,25 @@
+[
+  {
+      "img_filename": "pc_ede36f9b-1154-4f76-b7f8-c15d7d3f9b6e.png",
+      "bbox": [
+          910,
+          78,
+          954,
+          112
+      ],
+      "instruction": "close this window",
+      "application": "windows",
+      "id": "desktop_0",
+      "action": "Click the \"X\" button in the top-right corner of the window to close it.",
+      "decription": "A white \"X\" icon located in the top-right corner of the window.",
+      "negative_instruction": "save",
+      "negative_action": "Click on the blue button with the floppy disk icon to save the current file.",
+      "negative_description": "A small blue button with a floppy disk icon that is located to the left of the \"View\" tab",
+      "ui_type": "icon",
+      "platform": "desktop",
+      "img_size": [
+          960,
+          540
+      ]
+  }
+]

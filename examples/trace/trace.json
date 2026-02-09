@@ -1,0 +1,32 @@
+[
+    [
+        {
+            "image_path": "examples/trace/5842fa4411caad04cbcd67e514c2b426.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        },
+        {
+            "image_path": "examples/trace/9795177942c1ed0bc654517934ceeb31.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        },
+        {
+            "image_path": "examples/trace/1e5d64c1163a4fe1cee9fed0a76fdf88.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        },
+        {
+            "image_path": "examples/trace/b04967ff19d08cd4b935fdd6a230152e.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        },
+        {
+            "image_path": "examples/trace/29cf1a7a36dcbc065e28006ff7a688d7.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        },
+        {
+            "image_path": "examples/trace/b07c500b65336f687eeb3f7ee7ae3eed.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        },
+        {
+            "image_path": "examples/trace/a47e1b25d9939b3fc76e9be1acd7bdb6.png",
+            "task": "在夸克浏览器中，查看云图片中的\"壁纸_3.jpg\"的详细信息，并记住文件名，文件大小和文件ID，并以空格分隔符分隔，输出"
+        }
+    ]
+]

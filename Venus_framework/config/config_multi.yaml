@@ -1,0 +1,25 @@
+# 批量任务配置
+devices:
+  # - "6321e99f"
+  - "192.168.1.100:5555"
+
+ep_config:
+  step_limit: 30
+  mini_app_name: "Android App"
+
+policy:
+  type: "ui_venus"
+  params:
+    model_host: "http://your-model-server"
+    model_port: 8000
+    model_name: "model"
+
+record_config:
+  save_dir: "record/batch/"
+  enable: true
+
+trace_dir: "record/traces/"
+
+single_task_config: "config/ui_venus_single.yaml"
+
+

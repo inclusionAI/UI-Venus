@@ -1,0 +1,29 @@
+# UI-Venus 单任务最小配置（推荐从这个跑）
+
+device:
+  id: "192.168.1.100:5555"  # 例如 "192.168.1.100:5555" 或 adb 序列号
+
+ep_config:
+  step_limit: 30
+  # 默认 purpose 会被 main.py 的 --purpose 覆盖
+  purpose: ""
+  mini_app_name: "Android App"
+
+policy:
+  type: "ui_venus"  # 策略类型（自动绑定 UIVenusProcessor）
+  params:
+    model_host: "http://your-model-server"
+    model_port: 8000
+    model_name: "model"
+    temperature: 0.0  # 确定性输出
+
+# 轨迹输出目录（用 --trace-dir 指定）
+# 结构: trace_dir/{episode_id}/
+#       ├── trajectory.pkl.gz   # 轨迹数据
+#       └── screenshots/        # 截图目录
+#           ├── step_001.png
+#           └── ...
+
+# 应用映射（用于 Launch/REOPEN）
+app_mapping:
+  config_file: "config/app_mapping.yaml"

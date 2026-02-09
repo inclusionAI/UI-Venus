@@ -1,0 +1,30 @@
+{
+  "details": [
+      {
+          "img_path": "osworld/0FOB4CLBT2.png",
+          "group": null,
+          "platform": null,
+          "application": null,
+          "lang": "en",
+          "instruction_style": "instruction",
+          "prompt_to_evaluate": "Open the filter function for search settings.",
+          "gt_type": "positive",
+          "ui_type": null,
+          "task_filename": "osworld_g",
+          "pred": [
+              1435.5102040816325,
+              339.5089285714286
+          ],
+          "raw_response": [
+              "[1748,415,1769,430]"
+          ],
+          "bbox": [
+              1422,
+              326,
+              1449,
+              354
+          ],
+          "correctness": "correct"
+      }
+  ]
+}
