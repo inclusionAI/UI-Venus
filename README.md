@@ -51,6 +51,7 @@
 * [Venus Framework](#venus-framework)
 * [Quick Start](#-quick-start)
 * [Benchmark Results](#detailed-benchmark-results)
+* [Contact](#contact)
 * [Citation](#citation)
 
 ---
@@ -237,6 +238,19 @@ bash scripts/run_navi.sh
 | **UI-Venus-1.5-30B-A3B** | 30B | **77.6** | 52.9 / 68.1† | **21.5** | 76.0 |
 
 > \* Results evaluated by us. † Results manually verified by human evaluators.
+
+---
+
+## Contact
+
+For any questions or collaboration, please contact:
+
+- **Email**: Contact the maintainers
+- **WeChat Group**: Scan to join our discussion group
+
+<p align="center">
+  <img src="assets/wechat_qr.png" alt="WeChat Group QR Code" width="200">
+</p>
 
 ---
 
