@@ -6,6 +6,7 @@
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
   <a href="https://arxiv.org/abs/2602.09082"><img src="https://img.shields.io/badge/Report-Technical%20Report-blueviolet?logo=notion" alt="Report"></a>
+    <a href="https://ui-venus.github.io/UI-Venus-1.5/"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus--1.5-blue" alt="Website"></a>
   <a href="https://github.com/inclusionAI/UI-Venus"><img src="https://img.shields.io/badge/GitHub-Repository-green?logo=github" alt="GitHub"></a>
   <a href="https://huggingface.co/collections/inclusionAI/ui-venus-689f2fb01a4234cbce91c56a"><img src="https://img.shields.io/badge/Hugging%20Face-Model-orange?logo=huggingface" alt="Hugging Face"></a>
 </p>

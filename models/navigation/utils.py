@@ -47,8 +47,24 @@ You may execute one of the following functions:
 """
 
 MOBILE_USER_PROMPT = """
-**You are a GUI Agent.**  
+**You are a GUI Agent.** 
 Your task is to analyze a given user task, review current screenshot and previous actions, and determine the next action to complete the task.
+
+### Available Actions
+You may execute one of the following functions:
+- Click(box=(x1,y1))
+- Drag(start=(x1,y1), end=(x2,y2))
+- Scroll(start=(x1,y1), end=(x2,y2))
+- Type(content='')
+- Launch(app='')
+- Wait()
+- Finished(content='')
+- CallUser(content='')
+- LongPress(box=(x1,y1))
+- PressBack()
+- PressHome()
+- PressEnter()
+- PressRecent()
 
 ### User Task
 {user_task}
@@ -56,21 +72,10 @@ Your task is to analyze a given user task, review current screenshot and previou
 ### Previous Actions
 {previous_actions}
 
-### Available Actions
-You may execute one of the following functions:
-Click(box=(x1, y1))
-Drag(start=(x1, y1), end=(x2, y2))
-Scroll(start=(x1, y1), end=(x2, y2), direction='down/up/right/left')
-Type(content='')
-Launch(app='')
-Wait()
-Finished(content='')
-CallUser(content='')
-LongPress(box=(x1, y1))
-PressBack()
-PressHome()
-PressEnter()
-PressRecent()
+### Output Format
+<think> your thinking process </think>
+<action> the next action </action>
+<conclusion> the conclusion about the next action </conclusion>
 
 ### Instruction
 - Make sure you understand the task goal to avoid wrong actions.
@@ -79,7 +84,6 @@ PressRecent()
 - Consider exploring the screen by using the `scroll` action with different directions to reveal additional content.
 - To copy some text: first select the exact text you want to copy, which usually also brings up the text selection bar, then click the `copy` button in bar.
 - To paste text into a text box, first long press the text box, then usually the text selection bar will appear with a `paste` button in it.
-- You first thinks about the reasoning process in the mind, then provide the action. The reasoning and action are enclosed in <think></think> and <action></action> tags respectively. After providing action, summarize your action in <conclusion></conclusion> tags
 """
 
 
