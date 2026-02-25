@@ -3,6 +3,8 @@
 
 VenusBench-Mobile is a comprehensive evaluation platform designed for general-purpose mobile GUI agents. The benchmark incorporates 27 open-source Android applications, expanding significantly upon previous suites to enhance GUI diversity. It features a primary pool of 149 manually curated tasks, plus an additional 80 systematic variants specifically designed for stability and robustness testing. For verification, tasks are evaluated through either programmatic OS state inspection or MLLM-based judgment, depending on task characteristics. This infrastructure provides a reproducible environment for assessing agents in realistic, dynamic mobile settings.
 
+For more details, please refer to the paper included in the venusbench_mobile_paper.
+
 ## Performance Gap & Difficulty Distribution
 
 <!-- <img src="assets/figure1.png" style="zoom:30%;" /> -->
@@ -208,31 +210,17 @@ python -c "from android_world import registry; print('AndroidWorld installation 
 
 ## Step 2: Download Required Files
 
-All required files (APK applications and external data files) are hosted on Google Drive. Download them using the link below:
+All required files (APK applications and external data files) are stored in venusbench_mobile_files directory.
 
-### 2.1 Download from Google Drive
+### 2.1 Structure of venusbench_mobile_files
 
-**Google Drive Link**: `https://drive.google.com/file/d/1wNlcs62pnPA1tSyHRJfl_yTmGpdtAyO7/view?usp=sharing`
-
-The package includes:
+The required files include:
 
 - **APK files** (6 applications required for the benchmark)
 - **External data files** (videos, documents, images, web snapshots, etc.)
 - **Ground truth files** (for locating tasks)
 
-### 2.2 Extract
-
-```bash
-# Extract all files
-unzip venusbench_mobile_files.zip
-
-# This will create the following directory structure:
-# apk/                    - All required APK files
-# files_gui_browsing/     - External data files
-# gt_answer/              - Ground truth files
-```
-
-### 2.3 Verify Downloaded Files
+### 2.2 Check Files
 
 ```bash
 # Verify APK directory
