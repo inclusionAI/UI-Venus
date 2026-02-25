@@ -1,28 +1,26 @@
-apk_root: ./android_world_files_backup/apk
+apk_root: ./venusbench_mobile_files/apk
 apk_files:
   - ADBKeyboard.apk
   - Calculator_9.0.apk
-  - com.google.android.apps.pdfviewer_2.19.381.03.80-193810380_minAPI16(x86_64).apk
   - com.zell_mbc.medilog_5499.apk
   - fitbook.apk
   - net.youapps.calcyou_6.apk
   - org.nsh07.pomodoro_10.apk
-  - vlc.apk
   - zipxtract.apk
 
 # Local file paths for GUI browsing tasks
 local_paths:
-  gui_browsing_video: ./android_world_files_backup/files_gui_browsing/Video
-  gui_browsing_p1: ./android_world_files_backup/files_gui_browsing/p1
-  gui_browsing_p2: ./android_world_files_backup/files_gui_browsing/p2
-  gui_browsing_p3: ./android_world_files_backup/files_gui_browsing/p3
-  gui_browsing_p4: ./android_world_files_backup/files_gui_browsing/p4
-  gui_browsing_figure1: ./android_world_files_backup/files_gui_browsing/figure1
-  gui_browsing_figure2: ./android_world_files_backup/files_gui_browsing/figure2
-  gui_browsing_bestbuy: ./android_world_files_backup/files_gui_browsing/BestBuy
-  zipxtract_zip: ./android_world_files_backup/files_gui_browsing/zip
-  simple_draw_guim: ./android_world_files_backup/files_gui_browsing/GUIM
-  gt_locating_screenshot: ./android_world_files_backup/gt_answer/locating_gt_screenshot
+  gui_browsing_video: ./venusbench_mobile_files/files_gui_browsing/Video
+  gui_browsing_p1: ./venusbench_mobile_files/files_gui_browsing/p1
+  gui_browsing_p2: ./venusbench_mobile_files/files_gui_browsing/p2
+  gui_browsing_p3: ./venusbench_mobile_files/files_gui_browsing/p3
+  gui_browsing_p4: ./venusbench_mobile_files/files_gui_browsing/p4
+  gui_browsing_figure1: ./venusbench_mobile_files/files_gui_browsing/figure1
+  gui_browsing_figure2: ./venusbench_mobile_files/files_gui_browsing/figure2
+  gui_browsing_bestbuy: ./venusbench_mobile_files/files_gui_browsing/BestBuy
+  zipxtract_zip: ./venusbench_mobile_files/files_gui_browsing/zip
+  simple_draw_guim: ./venusbench_mobile_files/files_gui_browsing/GUIM
+  gt_locating_screenshot: ./venusbench_mobile_files/gt_answer/locating_gt_screenshot
 
 # Remote paths on device
 remote_paths:
