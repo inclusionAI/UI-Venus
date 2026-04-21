@@ -210,17 +210,27 @@ python -c "from android_world import registry; print('AndroidWorld installation 
 
 ## Step 2: Download Required Files
 
-All required files (APK applications and external data files) are stored in venusbench_mobile_files directory.
+All required files (APK applications and external data files) are stored in the `venusbench_mobile_files` directory.
 
 ### 2.1 Structure of venusbench_mobile_files
 
 The required files include:
 
-- **APK files** (6 applications required for the benchmark)
-- **External data files** (videos, documents, images, web snapshots, etc.)
-- **Ground truth files** (for locating tasks)
+- **APK files** (applications required for the benchmark) — included in the repository under `apk/`
+- **Ground truth files** (for locating tasks) — included in the repository under `gt_answer/`
+- **External data files** (videos, documents, images, web snapshots, etc.) — **hosted separately on Google Drive** (see Section 2.2 below)
 
-### 2.2 Check Files
+### 2.2 Download External Data Files (`files_gui_browsing/`)
+
+Because the external data files (videos, documents, images, web snapshots, etc.) are too large to be hosted directly in the Git repository, we have uploaded them to Google Drive. **You must download this folder separately before running the full benchmark** — otherwise only a subset of tasks will run successfully.
+
+**Download link:**
+
+https://drive.google.com/drive/folders/1cVK8_HdZWka_2POqqjjsQVrmipfyXAFU?usp=share_link
+
+After downloading, place the `files_gui_browsing/` folder under the `venusbench_mobile_files/` directory so that the final layout matches the structure shown in Section 2.3. The paths inside this folder are referenced by the `local_paths` section of `venus_benchmark_settings.yaml` (see Step 4.3).
+
+### 2.3 Check Files
 
 ```bash
 # Verify APK directory
@@ -292,6 +302,7 @@ adb shell pm list packages | grep -E "calculator|fitbook|pomodoro|zipper"
 # package:com.fitbook
 # package:org.nsh07.pomodoro
 # ...
+
 ```
 
 ---
@@ -305,6 +316,7 @@ adb shell pm list packages | grep -E "calculator|fitbook|pomodoro|zipper"
 vi venus_benchmark_settings.yaml
 # Or use another editor
 code venus_benchmark_settings.yaml
+
 ```
 
 ### 4.2 Modify APK Path
@@ -317,6 +329,7 @@ apk_root: /path/to/your/android_world/apk
 apk_root: /home/username/android_world/apk
 # or
 apk_root: /root/android_world/apk
+
 ```
 
 ### 4.3 Modify Local File Paths
@@ -336,6 +349,7 @@ local_paths:
   zipxtract_zip: /path/to/android_world/android_world/zip
   simple_draw_guim: /path/to/android_world/gt_answer/GUIM
   gt_locating_screenshot: /path/to/android_world/gt_answer/locating_gt_screenshot
+
 ```
 
 ### 4.4 Modify Remote Device Paths (Optional)
@@ -348,6 +362,7 @@ remote_paths:
   sdcard: /sdcard
 
 # Usually no need to modify these unless device configuration is special
+
 ```
 
 ### 4.5 Modify Locating Result Path
@@ -355,6 +370,7 @@ remote_paths:
 ```yaml
 # Modify the output path for locating results
 locating_results_path: /path/to/android_world/locating_results
+
 ```
 
 ### 4.6 Modify Verification Model URL 
@@ -362,6 +378,7 @@ locating_results_path: /path/to/android_world/locating_results
 ```yaml
 # ​Qwen3-VL-30B-A3B-Instruct
 verification_model_url: https://your-model-endpoint/v1
+
 ```
 
 ### 4.7 Configure ADB Path
@@ -369,6 +386,7 @@ verification_model_url: https://your-model-endpoint/v1
 ```yaml
 # Configure ADB tool path
 adb_path: ./android_basic/android_sdk/platform-tools/adb
+
 ```
 
 ### 4.8 Configure Agent Models
@@ -403,6 +421,7 @@ agents:
     base_url: your model_url_here
     api_key: your-gemini-api-key
     model: gemini-2.5-pro
+
 ```
 
 ### 4.9 Complete Configuration Example
@@ -470,6 +489,7 @@ agents:
     base_url: your model_url_here
     api_key: your-gemini-api-key
     model: gemini-2.5-pro
+
 ```
 
 ### 4.10 Verify Configuration File
@@ -480,6 +500,7 @@ python -c "import yaml; yaml.safe_load(open('venus_benchmark_settings.yaml'))"
 
 # If no error, configuration file format is correct
 # If error, fix it according to error message
+
 ```
 
 ---
@@ -498,6 +519,7 @@ python run_venusbenchnavi.py \
     --output_path="./results" \
     --grpc_port=8554 \
     --console_port=5554
+
 ```
 
 ### 5.2 Run All Modes (normal, dark, pad)
@@ -505,6 +527,7 @@ python run_venusbenchnavi.py \
 ```bash
 # Run all test modes
 bash run_all_tasks.sh
+
 ```
 
 ### 5.3 View Results
@@ -522,6 +545,7 @@ import pandas as pd
 df = pd.read_csv('results/result.csv')
 print(df[['task_template', 'mean_success_rate', 'total_output_chars']])
 "
+
 ```
 
 ### 5.4 Visualize Results
@@ -531,6 +555,7 @@ Use the visualization script to extract and display results in a web interface:
 ```bash
 # Edit the visualization script
 vi scripts/extract_vis.sh
+
 ```
 
 Modify the following parameters in the script:
@@ -546,6 +571,7 @@ port="5056"
 python vis/extract_data.py --folder_path=${folder_path}
 
 python vis/app2.py --path=${folder_path}_data --port=${port}
+
 ```
 
 Example configuration:
@@ -557,6 +583,7 @@ export PYTHONPATH=android_env:.
 python vis/extract_data.py --folder_path=${folder_path}
 
 python vis/app2.py --path=${folder_path}_data --port=${port}
+
 ```
 
 Run the visualization:
@@ -572,6 +599,7 @@ bash scripts/extract_vis.sh
 # 1. Extract data from the results folder
 # 2. Start a web server on the specified port
 # 3. Access the visualization at http://localhost:5072
+
 ```
 
 **Note**: Make sure the `folder_path` points to a valid results directory containing evaluation outputs.
@@ -587,6 +615,7 @@ bash scripts/extract_vis.sh
 export ANDROID_HOME=$HOME/android/android_sdk
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64  # Adjust according to actual path
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH
+
 ```
 
 ### Common Commands
@@ -607,6 +636,7 @@ python run_venusbenchnavi.py --agent_name="qwen3vl" --suite_family="venus" --out
 # View logs
 tail -f emulator.log
 tail -f result.csv
+
 ```
 
 ### Directory Structure Verification Checklist
@@ -624,6 +654,7 @@ venusbench_mobile_files/
 │   ├── figure1/ - figure2/
 │   └── BestBuy/            
 └── gt_answer/             # Locating results output
+
 ```
 
 ---
