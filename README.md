@@ -5,6 +5,14 @@ VenusBench-Mobile is a comprehensive evaluation platform designed for general-pu
 
 For more details, please refer to the paper included in the venusbench_mobile_paper.
 
+## Leaderboard
+
+The VenusBench-Mobile leaderboard is now available at:
+
+**https://ui-venus.github.io/VenusBench-Mobile-Leaderboard/**
+
+The leaderboard reports primary task success rate, stability evaluation, inference cost, and fine-grained PUDAM capability diagnostics for evaluated mobile GUI agents.
+
 ## Performance Gap & Difficulty Distribution
 
 <!-- <img src="assets/figure1.png" style="zoom:30%;" /> -->
