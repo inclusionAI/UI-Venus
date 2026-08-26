@@ -387,7 +387,7 @@ bash scripts/captcha.sh
       <th align="center"><sub>WebVoyager</sub></th>
       <th align="center"><sub>Online&#8209;Mind2Web</sub></th>
       <th align="center"><sub>REAL</sub></th>
-      <th align="center"><sub>Odysseys&nbsp;Perfect</sub></th>
+      <th align="center"><sub>Odysseys</sub></th>
     </tr>
   </thead>
   <tbody>
