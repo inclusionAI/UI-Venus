@@ -1,12 +1,12 @@
 <h1 align="center">
-  <img src="assets/ui-venus-logo-3.png" width="60" align="center"> UI-Venus 2
+  <img src="assets/ui-venus-logo-3.png" width="60" align="center"> UI-Venus-2
 </h1>
 
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/Report-Coming%20Soon-lightgrey" alt="Report: Coming Soon">
-  <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus%202-blue" alt="Website: UI-Venus 2"></a>
+  <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus%202-blue" alt="Website: UI-Venus-2"></a>
   <a href="https://github.com/inclusionAI/UI-Venus"><img src="https://img.shields.io/badge/GitHub-Repository-green?logo=github" alt="GitHub"></a>
   <a href="https://huggingface.co/inclusionAI/UI-Venus-2-9b"><img src="https://img.shields.io/badge/Hugging%20Face-Model-orange?logo=huggingface" alt="Hugging Face Model"></a>
 </p>
@@ -15,9 +15,9 @@
   <em>A <strong>general-purpose foundation GUI agent</strong> for mobile apps, web platforms, and desktop operating systems — scaling <strong>environments, tasks, and feedback</strong> jointly within one closed-loop perception–reasoning–action agent.</em>
 </p>
 
-## 🌟 What's New in UI-Venus 2
+## 🌟 What's New in UI-Venus-2
 
-Compared with UI-Venus 1.5, we introduce:
+Compared with UI-Venus-1.5, we introduce:
 
 - 📱 **Scaled multilingual mobile environments:** A substantially expanded executable mobile pool covering Chinese and English app ecosystems, paired with a **deep-research-driven query-generation** strategy that grounds task queries in real application functionality — improving the accuracy, validity, and executability of generated instructions.
 - 🖥️ **Computer use, built from the ground up:** Dedicated desktop operating-system capabilities constructed from scratch through computer-use data collection and task-specific training, extending the UI-Venus family to **mobile, web, and OS interaction in one unified end-to-end agent**.
@@ -28,11 +28,11 @@ Compared with UI-Venus 1.5, we introduce:
 
 # 📰 News
 
-* [2026/08] We release **UI-Venus 2**, a 9B/27B general-purpose foundation GUI agent that unifies mobile, web, and desktop interaction with scaled multilingual environments, keypoint-grounded verification, and verification-augmented reflection.
-* [2026/02] We release **[UI-Venus 1.5](https://ui-venus.github.io/UI-Venus-1.5/)**, an end-to-end GUI Agent designed for robust real-world applications.
+* [2026/08] We release **UI-Venus-2**, a 9B/27B general-purpose foundation GUI agent that unifies mobile, web, and desktop interaction with scaled multilingual environments, keypoint-grounded verification, and verification-augmented reflection.
+* [2026/02] We release **[UI-Venus-1.5](https://ui-venus.github.io/UI-Venus-1.5/)**, an end-to-end GUI Agent designed for robust real-world applications.
 * [2026/02] We release **VenusBench-Mobile**, a challenging online benchmark for mobile GUI agents. See branch [VenusBench-Mobile](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-Mobile).
 * [2025/12] We release [VenusBench-GD](https://ui-venus.github.io/VenusBench-GD/), a comprehensive multi-platform GUI grounding benchmark. See branch [VenusBench-GD](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-GD).
-* [2025/8] We release **[UI-Venus 1.0](https://github.com/inclusionAI/UI-Venus/tree/UI-Venus-1.0)**, the first version of our UI agent model.
+* [2025/8] We release **[UI-Venus](https://github.com/inclusionAI/UI-Venus/tree/UI-Venus-1.0)**, the first version of our UI agent model.
 
 ---
 
@@ -78,7 +78,7 @@ conda activate ui-venus-2
 pip install -r requirements.txt
 ```
 
-Python 3.10 or newer is required. All commands below are executed from the repository root. Configure the OpenAI-compatible model service through `MODEL_URL`, `MODEL_NAME`, and either `API_KEY` or `MODEL_API_KEY`; the same values can also be edited at the top of each domain script. `API_KEY` takes precedence when both key variables are set. Set `MODEL_NAME` to the served name of your UI-Venus 2 9B or 27B model.
+Python 3.10 or newer is required. All commands below are executed from the repository root. Configure the OpenAI-compatible model service through `MODEL_URL`, `MODEL_NAME`, and either `API_KEY` or `MODEL_API_KEY`; the same values can also be edited at the top of each domain script. `API_KEY` takes precedence when both key variables are set. Set `MODEL_NAME` to the served name of your UI-Venus-2 9B or 27B model.
 
 ### Mobile
 
@@ -152,102 +152,563 @@ bash scripts/captcha.sh
 
 ### Mobile
 
-| <sub>Models</sub> | <sub>MobileGym</sub> | <sub>VenusBench&#8209;Mobile</sub> | <sub>AndroidWorld</sub> | <sub>MobileWorld</sub> | <sub>KnowUBench</sub> | <sub>MemGUI</sub> |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |  |  |
-| <sub>Qwen3.5&#8209;9B</sub> | 9.0 | 15.3 | 57.8 | 17.9 | 33.3 | 6.2 |
-| <sub>Qwen3.6&#8209;27B</sub> | 24.6 | 28.0 | 70.3 | 41.9 | — | 25.7 |
-| <sub>Opus&nbsp;4.6</sub> | — | 36.5 | — | 44.5 | — | — |
-| <sub>Kimi&nbsp;K2.6</sub> | 38.7 | 31.2 | — | 55.6 | — | 39.1 |
-| <sub>Seed2.0&nbsp;Pro</sub> | 52.0 | 20.1 | — | 63.2 | 51.6 | <u>65.6</u> |
-| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |  |  |
-| <sub>UI&#8209;Venus&#8209;1.5&#8209;8B</sub> | 18.4 | 16.1 | 73.7 | 22.2 | 26.0 | 3.9 |
-| <sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub> | 21.5 | 21.5 | 77.6 | 17.1 | — | 10.9 |
-| <sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub> | 20.3 | — | 69.8 | 43.9 | — | 10.9 |
-| <sub>MAI&#8209;UI&#8209;8B</sub> | 21.5 | 12.7 | 70.7 | 27.5† | 26.0 | 12.0 |
-| <sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub> | — | — | — | **82.1** | — | — |
-| <sub>*Ours*</sub> |  |  |  |  |  |  |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | <u>52.7</u> | <u>46.5</u> | <u>80.2</u> | 65.8 (75.2) | <u>56.5</u> | 62.6 |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | **60.5** | **48.7** | **84.0** | <u>76.1 (82.9)</u> | **59.7** | **70.3** |
+<div align="center">
 
-> MobileWorld reports success rate on the GUI-only subset. MemGUI reports Main Results Pass@1.
+<table>
+  <thead>
+    <tr>
+      <th align="left"><sub>Models</sub></th>
+      <th align="center"><sub>MobileGym</sub></th>
+      <th align="center"><sub>VenusBench&#8209;Mobile</sub></th>
+      <th align="center"><sub>AndroidWorld</sub></th>
+      <th align="center"><sub>MobileWorld</sub></th>
+      <th align="center"><sub>KnowUBench</sub></th>
+      <th align="center"><sub>MemGUI</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="7" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
+      <td align="center">9.0</td>
+      <td align="center">15.3</td>
+      <td align="center">57.8</td>
+      <td align="center">17.9</td>
+      <td align="center">33.3</td>
+      <td align="center">6.2</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
+      <td align="center">24.6</td>
+      <td align="center">28.0</td>
+      <td align="center">70.3</td>
+      <td align="center">41.9</td>
+      <td align="center">-</td>
+      <td align="center">25.7</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Opus&nbsp;4.6</sub></td>
+      <td align="center">-</td>
+      <td align="center">36.5</td>
+      <td align="center">-</td>
+      <td align="center">44.5</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="center">38.7</td>
+      <td align="center">31.2</td>
+      <td align="center">-</td>
+      <td align="center">55.6</td>
+      <td align="center">-</td>
+      <td align="center">39.1</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="center">52.0</td>
+      <td align="center">20.1</td>
+      <td align="center">-</td>
+      <td align="center">63.2</td>
+      <td align="center">51.6</td>
+      <td align="center"><u>65.6</u></td>
+    </tr>
+    <tr>
+      <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;8B</sub></td>
+      <td align="center">18.4</td>
+      <td align="center">16.1</td>
+      <td align="center">73.7</td>
+      <td align="center">22.2</td>
+      <td align="center">26.0</td>
+      <td align="center">3.9</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub></td>
+      <td align="center">21.5</td>
+      <td align="center">21.5</td>
+      <td align="center">77.6</td>
+      <td align="center">17.1</td>
+      <td align="center">-</td>
+      <td align="center">10.9</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
+      <td align="center">20.3</td>
+      <td align="center">-</td>
+      <td align="center">69.8</td>
+      <td align="center">43.9</td>
+      <td align="center">-</td>
+      <td align="center">10.9</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>MAI&#8209;UI&#8209;8B</sub></td>
+      <td align="center">21.5</td>
+      <td align="center">12.7</td>
+      <td align="center">70.7</td>
+      <td align="center">27.5†</td>
+      <td align="center">26.0</td>
+      <td align="center">12.0</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center"><strong>82.1</strong></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td colspan="7" align="left"><sub><em>Ours</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
+      <td align="center"><u>52.7</u></td>
+      <td align="center"><u>46.5</u></td>
+      <td align="center"><u>80.2</u></td>
+      <td align="center">65.8 (75.2)</td>
+      <td align="center"><u>56.5</u></td>
+      <td align="center">62.6</td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
+      <td align="center"><strong>60.5</strong></td>
+      <td align="center"><strong>48.7</strong></td>
+      <td align="center"><strong>84.0</strong></td>
+      <td align="center"><u>76.1 (82.9)</u></td>
+      <td align="center"><strong>59.7</strong></td>
+      <td align="center"><strong>70.3</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+> In the MobileWorld column, success rates on the GUI-only subset are reported for maximum step limits of 50 and 100 (with the 100-step results shown in parentheses). MemGUI reports Main Results Pass@1.
 
 ### Computer
 
-| <sub>Models</sub> | <sub>OSWorld&#8209;Verified</sub> | <sub>OSWorld&#8209;V2</sub> | <sub>DeskCraft</sub> | <sub>OpenComputer</sub> |
-|---|:---:|:---:|:---:|:---:|
-| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |
-| <sub>Qwen3.5&#8209;9B</sub> | 41.8 | 2.53 | 14.6 | — |
-| <sub>Qwen3.6&#8209;27B</sub> | 62.0 | — | 28.7 | — |
-| <sub>Kimi&nbsp;K2.6</sub> | 73.1 | 7.1 | 41.4 | — |
-| <sub>Seed2.0&nbsp;Pro</sub> | — | 6.3 | 40.0 | — |
-| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |
-| <sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub> | 56.5 | — | — | — |
-| <sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub> | 79.5 | — | — | — |
-| <sub>*Ours*</sub> |  |  |  |  |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | 70.8 | — | 48.0 | — |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | 80.5 | — | 55.5 | — |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th align="left"><sub>Models</sub></th>
+      <th align="center"><sub>OSWorld&#8209;Verified</sub></th>
+      <th align="center"><sub>OSWorld&#8209;V2(150 Steps)</sub></th>
+      <th align="center"><sub>DeskCraft</sub></th>
+      <th align="center"><sub>OpenComputer</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
+      <td align="center">41.8</td>
+      <td align="center">0/2.53</td>
+      <td align="center">14.6</td>
+      <td align="center">7.8</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
+      <td align="center">62.0</td>
+      <td align="center">-</td>
+      <td align="center">28.7</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="center">73.1</td>
+      <td align="center"><strong>1.9/7.1</strong></td>
+      <td align="center">41.4</td>
+      <td align="center">58.8</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="center">-</td>
+      <td align="center"><u>-/6.3</u></td>
+      <td align="center">40.0</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
+      <td align="center">56.5</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
+      <td align="center"><u>79.5</u></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
+      <td align="center">70.8</td>
+      <td align="center">testing</td>
+      <td align="center"><u>48.0</u></td>
+      <td align="center">testing</td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
+      <td align="center"><strong>80.5</strong></td>
+      <td align="center">testing</td>
+      <td align="center"><strong>55.5</strong></td>
+      <td align="center">testing</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ### Browser
 
-| <sub>Models</sub> | <sub>WebVoyager</sub> | <sub>Online&#8209;Mind2Web</sub> | <sub>REAL</sub> | <sub>Odysseys&nbsp;Perfect</sub> |
-|---|:---:|:---:|:---:|:---:|
-| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |
-| <sub>Qwen3.5&#8209;9B</sub> | 46.9 | 27.3 | 18.2 | 13.5 |
-| <sub>Qwen3.6&#8209;27B</sub> | 84.3 | 55.3 | 27.3 | 18.5 |
-| <sub>OpenAI&nbsp;Operator</sub> | 87.0 | 61.3 | — | — |
-| <sub>Seed&#8209;2.0</sub> | 85.1 | 68.5 | 74.4 | 30.1 |
-| <sub>GLM&#8209;5V&#8209;Turbo</sub> | 88.5 | — | — | — |
-| <sub>Claude&nbsp;Opus&nbsp;4.6</sub> | 88.0 | — | — | 44.5 |
-| <sub>Kimi&#8209;K2.6</sub> | 76.8 | — | 74.4 | — |
-| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |
-| <sub>UI&#8209;TARS&#8209;1.5</sub> | 84.8 | <u>75.8</u> | — | — |
-| <sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub> | 76.0 | — | 38.0 | — |
-| <sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Thinking</sub> | 82.1 | — | 44.6 | — |
-| <sub>MolmoWeb&#8209;8B</sub> | 78.2 | 35.3 | — | — |
-| <sub>Fara&#8209;1.5&#8209;9B</sub> | 86.6 | 63.4 | — | — |
-| <sub>Fara&#8209;1.5&#8209;27B</sub> | 89.3 | 72.3 | — | — |
-| <sub>*Ours*</sub> |  |  |  |  |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | <u>90.8</u> | 74.0 | <u>76.9</u> | <u>62.0</u> |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | **93.4** | **78.3** | **80.2** | **66.3** |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th align="left"><sub>Models</sub></th>
+      <th align="center"><sub>WebVoyager</sub></th>
+      <th align="center"><sub>Online&#8209;Mind2Web</sub></th>
+      <th align="center"><sub>REAL</sub></th>
+      <th align="center"><sub>Odysseys&nbsp;Perfect</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
+      <td align="center">46.9</td>
+      <td align="center">27.3</td>
+      <td align="center">18.2</td>
+      <td align="center">13.5</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
+      <td align="center">84.3</td>
+      <td align="center">55.3</td>
+      <td align="center">27.3</td>
+      <td align="center">18.5</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>OpenAI&nbsp;Operator</sub></td>
+      <td align="center">87.0</td>
+      <td align="center">61.3</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.0</sub></td>
+      <td align="center">85.1</td>
+      <td align="center">68.5</td>
+      <td align="center">74.4</td>
+      <td align="center">30.1</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GLM&#8209;5V&#8209;Turbo</sub></td>
+      <td align="center">88.5</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&nbsp;Opus&nbsp;4.6</sub></td>
+      <td align="center">88.0</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">44.5</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
+      <td align="center">76.8</td>
+      <td align="center">-</td>
+      <td align="center">74.4</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>UI&#8209;TARS&#8209;1.5</sub></td>
+      <td align="center">84.8</td>
+      <td align="center"><u>75.8</u></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub></td>
+      <td align="center">76.0</td>
+      <td align="center">-</td>
+      <td align="center">38.0</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Thinking</sub></td>
+      <td align="center">82.1</td>
+      <td align="center">-</td>
+      <td align="center">44.6</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>MolmoWeb&#8209;8B</sub></td>
+      <td align="center">78.2</td>
+      <td align="center">35.3</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Fara&#8209;1.5&#8209;9B</sub></td>
+      <td align="center">86.6</td>
+      <td align="center">63.4</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Fara&#8209;1.5&#8209;27B</sub></td>
+      <td align="center">89.3</td>
+      <td align="center">72.3</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
+      <td align="center"><u>90.8</u></td>
+      <td align="center">74.0</td>
+      <td align="center"><u>76.9</u></td>
+      <td align="center"><u>62.0</u></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
+      <td align="center"><strong>93.4</strong></td>
+      <td align="center"><strong>78.3</strong></td>
+      <td align="center"><strong>80.2</strong></td>
+      <td align="center"><strong>66.3</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 > For Odysseys, we report the perfect rubric score (Perfect).
 
 ### Grounding
 
-| <sub>Models</sub> | <sub>VenusBench&#8209;GD</sub> | <sub>ScreenSpot&#8209;Pro</sub> | <sub>OSWorld&#8209;G&#8209;R</sub> | <sub>UI&#8209;Vision</sub> |
-|---|:---:|:---:|:---:|:---:|
-| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |
-| <sub>Qwen&nbsp;3.7&nbsp;Plus</sub> | — | 68.9 | 78.2 | 68.0 |
-| <sub>Seed&nbsp;2.1&nbsp;Pro</sub> | — | 65.3 | 78.0 | 62.0 |
-| <sub>Claude&nbsp;Opus&nbsp;4.6</sub> | — | — | — | — |
-| <sub>Kimi&nbsp;K2.6</sub> | — | — | — | — |
-| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |
-| <sub>UI&#8209;Venus&#8209;1.0&#8209;72B</sub> | 70.2 | 61.9 | 69.5 | 36.8 |
-| <sub>Holo2&#8209;30B&#8209;A3B</sub> | 59.5* | 66.1 | 76.1 | 40.9* |
-| <sub>Step&#8209;GUI&#8209;4B</sub> | 54.6* | 60.0 | 66.9 | 30.0* |
-| <sub>MAI&#8209;UI&#8209;32B</sub> | — | 67.9 | <u>73.9</u> | <u>47.1</u> |
-| <sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub> | 75.0 | 69.6 | 76.4 | 54.7 |
-| <sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub> | — | 76.6 | 78.5 | 70.0 |
-| <sub>*Ours*</sub> |  |  |  |  |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | 77.1 | 73.0 | 78.5 | 53.2 |
-| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | 80.1 | 74.1 | 79.1 | 66.9 |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th align="left"><sub>Models</sub></th>
+      <th align="center"><sub>VenusBench&#8209;GD</sub></th>
+      <th align="center"><sub>ScreenSpot&#8209;Pro</sub></th>
+      <th align="center"><sub>OSWorld&#8209;G&#8209;R</sub></th>
+      <th align="center"><sub>UI&#8209;Vision</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen&nbsp;3.7&nbsp;Plus</sub></td>
+      <td align="center">-</td>
+      <td align="center">68.9</td>
+      <td align="center">78.2</td>
+      <td align="center"><u>68.0</u></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&nbsp;2.1&nbsp;Pro</sub></td>
+      <td align="center">-</td>
+      <td align="center">65.3</td>
+      <td align="center">78.0</td>
+      <td align="center">62.0</td>
+    </tr>
+    <!-- <tr>
+      <td align="left"><sub>Claude&nbsp;Opus&nbsp;4.6</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr> -->
+    <!-- <tr>
+      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr> -->
+    <tr>
+      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>UI&#8209;Venus&#8209;1.0&#8209;72B</sub></td>
+      <td align="center">70.2</td>
+      <td align="center">61.9</td>
+      <td align="center">69.5</td>
+      <td align="center">36.8</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Holo2&#8209;30B&#8209;A3B</sub></td>
+      <td align="center">59.5*</td>
+      <td align="center">66.1</td>
+      <td align="center">76.1</td>
+      <td align="center">40.9*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Step&#8209;GUI&#8209;4B</sub></td>
+      <td align="center">54.6*</td>
+      <td align="center">60.0</td>
+      <td align="center">66.9</td>
+      <td align="center">30.0*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>MAI&#8209;UI&#8209;32B</sub></td>
+      <td align="center">-</td>
+      <td align="center">67.9</td>
+      <td align="center">73.9</td>
+      <td align="center">47.1</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub></td>
+      <td align="center">75.0</td>
+      <td align="center">69.6</td>
+      <td align="center">76.4</td>
+      <td align="center">54.7</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
+      <td align="center">-</td>
+      <td align="center"><strong>76.6</strong></td>
+      <td align="center"><u>78.5</u></td>
+      <td align="center"><strong>70.0</strong></td>
+    </tr>
+    <tr>
+      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
+      <td align="center"><u>77.1</u></td>
+      <td align="center">73.0</td>
+      <td align="center"><u>78.5</u></td>
+      <td align="center">53.2</td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
+      <td align="center"><strong>80.1</strong></td>
+      <td align="center"><u>74.1</u></td>
+      <td align="center"><strong>79.1</strong></td>
+      <td align="center">66.9</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 > For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates results that may require verification with the original sources.
 
 ### CAPTCHA
 
-| <sub>Models</sub> | <sub>VenusBench&#8209;CAPTCHA</sub> | <sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub> | <sub>MCA&#8209;Bench</sub> | <sub>NextGen&#8209;CAPTCHAs</sub> | <sub>OpenCaptcha</sub> |
-|---|:---:|:---:|:---:|:---:|:---:|
-| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |  |
-| <sub>Qwen3.5&#8209;9B</sub> | 29.7 | 4.9 | 30.4 | 2.8 | 36.4 |
-| <sub>Qwen3.6&#8209;27B</sub> | 54.8 | 31.0 | 51.7 | 14.1 | 47.7 |
-| <sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub> | 48.4 | <u>43.6</u> | 35.5 | 20.4 | <u>55.6</u> |
-| <sub>Kimi&#8209;K2.6</sub> | 40.6 | 24.8 | 38.7 | 7.2 | 47.8 |
-| <sub>Claude&#8209;Opus&#8209;4.6</sub> | 15.4 | 9.5 | 25.9 | 2.8 | 23.3 |
-| <sub>*Ours*</sub> |  |  |  |  |  |
-| <sub>**UI&#8209;Venus&#8209;2.0&#8209;9B**</sub> | <u>78.1</u> | 42.8 | <u>75.7</u> | <u>47.6</u> | 50.7 |
-| <sub>**UI&#8209;Venus&#8209;2.0&#8209;27B**</sub> | **79.9** | **48.6** | **79.6** | **54.5** | **56.3** |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th align="left"><sub>Models</sub></th>
+      <th align="center"><sub>VenusBench&#8209;CAPTCHA</sub></th>
+      <th align="center"><sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub></th>
+      <th align="center"><sub>MCA&#8209;Bench</sub></th>
+      <th align="center"><sub>NextGen&#8209;CAPTCHAs</sub></th>
+      <th align="center"><sub>OpenCaptcha</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="6" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
+      <td align="center">29.7</td>
+      <td align="center">4.9</td>
+      <td align="center">30.4</td>
+      <td align="center">2.8</td>
+      <td align="center">36.4</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
+      <td align="center">54.8</td>
+      <td align="center">31.0</td>
+      <td align="center">51.7</td>
+      <td align="center">14.1</td>
+      <td align="center">47.7</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub></td>
+      <td align="center">48.4</td>
+      <td align="center"><u>43.6</u></td>
+      <td align="center">35.5</td>
+      <td align="center">20.4</td>
+      <td align="center"><u>55.6</u></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
+      <td align="center">40.6</td>
+      <td align="center">24.8</td>
+      <td align="center">38.7</td>
+      <td align="center">7.2</td>
+      <td align="center">47.8</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
+      <td align="center">15.4</td>
+      <td align="center">9.5</td>
+      <td align="center">25.9</td>
+      <td align="center">2.8</td>
+      <td align="center">23.3</td>
+    </tr>
+    <tr>
+      <td colspan="6" align="left"><sub><em>Ours</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;9B</strong></sub></td>
+      <td align="center"><u>78.1</u></td>
+      <td align="center">42.8</td>
+      <td align="center"><u>75.7</u></td>
+      <td align="center"><u>47.6</u></td>
+      <td align="center">50.7</td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;27B</strong></sub></td>
+      <td align="center"><strong>79.9</strong></td>
+      <td align="center"><strong>48.6</strong></td>
+      <td align="center"><strong>79.6</strong></td>
+      <td align="center"><strong>54.5</strong></td>
+      <td align="center"><strong>56.3</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 > All results are Pass@1 percentages, and higher is better. We evaluate on VenusBench-CAPTCHA and four public benchmarks: Spatial-CAPTCHA-Bench, MCA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 OpenCaptcha task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best results in each column, respectively.
 
@@ -262,7 +723,18 @@ For any questions or collaboration, please contact the maintainers.
 # 📚 Citation
 
 ```bibtex
-# UI-Venus 1.5
+# UI-Venus-2
+@misc{venusteam2026uivenus2technicalreport,
+      title={UI-Venus-2 Technical Report}, 
+      author={Venus-Team and xxx},
+      year={2026},
+      eprint={xxx},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={comming soon}, 
+}
+
+# UI-Venus-1.5
 @misc{venusteam2026uivenus15technicalreport,
       title={UI-Venus-1.5 Technical Report}, 
       author={Venus-Team and Changlong Gao and Zhangxuan Gu and Yulin Liu and Xinyu Qiu and Shuheng Shen and Yue Wen and Tianyu Xia and Zhenyu Xu and Zhengwen Zeng and Beitong Zhou and Xingran Zhou and Weizhi Chen and Sunhao Dai and Jingya Dou and Yichen Gong and Yuan Guo and Zhenlin Guo and Feng Li and Qian Li and Jinzhen Lin and Yuqi Zhou and Linchao Zhu and Liang Chen and Zhenyu Guo and Changhua Meng and Weiqiang Wang},
