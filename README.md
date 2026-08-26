@@ -152,102 +152,102 @@ bash scripts/captcha.sh
 
 ### Mobile
 
-| Models | MobileGym | VenusBench-Mobile | AndroidWorld | MobileWorld | KnowUBench | MemGUI |
-|---|---:|---:|---:|---:|---:|---:|
-| *General VLMs* |  |  |  |  |  |  |
-| Qwen3.5-9B | 9.0 | 15.3 | 57.8 | 17.9 | 33.3 | 6.2 |
-| Qwen3.6-27B | 24.6 | 28.0 | 70.3 | 41.9 | — | 25.7 |
-| Opus 4.6 | — | 36.5 | — | 44.5 | — | — |
-| Kimi K2.6 | 38.7 | 31.2 | — | 55.6 | — | 39.1 |
-| Seed2.0 Pro | 52.0 | 20.1 | — | 63.2 | 51.6 | <u>65.6</u> |
-| *GUI-specific Models* |  |  |  |  |  |  |
-| UI-Venus-1.5-8B | 18.4 | 16.1 | 73.7 | 22.2 | 26.0 | 3.9 |
-| UI-Venus-1.5-30B-A3B | 21.5 | 21.5 | 77.6 | 17.1 | — | 10.9 |
-| GUI-Owl-1.5-32B-Instruct | 20.3 | — | 69.8 | 43.9 | — | 10.9 |
-| MAI-UI-8B | 21.5 | 12.7 | 70.7 | 27.5† | 26.0 | 12.0 |
-| Qwen-UI-Agent-27B | — | — | — | **82.1** | — | — |
-| *Ours* |  |  |  |  |  |  |
-| **UI-Venus-2-9B** | <u>52.7</u> | <u>46.5</u> | <u>80.2</u> | 65.8 (75.2) | <u>56.5</u> | 62.6 |
-| **UI-Venus-2-27B** | **60.5** | **48.7** | **84.0** | <u>76.1 (82.9)</u> | **59.7** | **70.3** |
+| <nobr>Models</nobr> | <nobr>MobileGym</nobr> | <nobr>VenusBench-Mobile</nobr> | <nobr>AndroidWorld</nobr> | <nobr>MobileWorld</nobr> | <nobr>KnowUBench</nobr> | <nobr>MemGUI</nobr> |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| <nobr>*General VLMs*</nobr> |  |  |  |  |  |  |
+| <nobr>Qwen3.5-9B</nobr> | 9.0 | 15.3 | 57.8 | 17.9 | 33.3 | 6.2 |
+| <nobr>Qwen3.6-27B</nobr> | 24.6 | 28.0 | 70.3 | 41.9 | — | 25.7 |
+| <nobr>Opus 4.6</nobr> | — | 36.5 | — | 44.5 | — | — |
+| <nobr>Kimi K2.6</nobr> | 38.7 | 31.2 | — | 55.6 | — | 39.1 |
+| <nobr>Seed2.0 Pro</nobr> | 52.0 | 20.1 | — | 63.2 | 51.6 | <u>65.6</u> |
+| <nobr>*GUI-specific Models*</nobr> |  |  |  |  |  |  |
+| <nobr>UI-Venus-1.5-8B</nobr> | 18.4 | 16.1 | 73.7 | 22.2 | 26.0 | 3.9 |
+| <nobr>UI-Venus-1.5-30B-A3B</nobr> | 21.5 | 21.5 | 77.6 | 17.1 | — | 10.9 |
+| <nobr>GUI-Owl-1.5-32B-Instruct</nobr> | 20.3 | — | 69.8 | 43.9 | — | 10.9 |
+| <nobr>MAI-UI-8B</nobr> | 21.5 | 12.7 | 70.7 | 27.5† | 26.0 | 12.0 |
+| <nobr>Qwen-UI-Agent-27B</nobr> | — | — | — | **82.1** | — | — |
+| <nobr>*Ours*</nobr> |  |  |  |  |  |  |
+| <nobr>**UI-Venus-2-9B**</nobr> | <u>52.7</u> | <u>46.5</u> | <u>80.2</u> | 65.8 (75.2) | <u>56.5</u> | 62.6 |
+| <nobr>**UI-Venus-2-27B**</nobr> | **60.5** | **48.7** | **84.0** | <u>76.1 (82.9)</u> | **59.7** | **70.3** |
 
 > MobileWorld reports success rate on the GUI-only subset. MemGUI reports Main Results Pass@1.
 
 ### Computer
 
-| Models | OSWorld-Verified | OSWorld-V2 | DeskCraft | OpenComputer |
-|---|---:|---:|---:|---:|
-| *General VLMs* |  |  |  |  |
-| Qwen3.5-9B | 41.8 | 2.53 | 14.6 | — |
-| Qwen3.6-27B | 62.0 | — | 28.7 | — |
-| Kimi K2.6 | 73.1 | 7.1 | 41.4 | — |
-| Seed2.0 Pro | — | 6.3 | 40.0 | — |
-| *GUI-specific Models* |  |  |  |  |
-| GUI-Owl-1.5-32B-Instruct | 56.5 | — | — | — |
-| Qwen-UI-Agent-27B | 79.5 | — | — | — |
-| *Ours* |  |  |  |  |
-| **UI-Venus-2-9B** | 70.8 | — | 48.0 | — |
-| **UI-Venus-2-27B** | 80.5 | — | 55.5 | — |
+| <nobr>Models</nobr> | <nobr>OSWorld-Verified</nobr> | <nobr>OSWorld-V2</nobr> | <nobr>DeskCraft</nobr> | <nobr>OpenComputer</nobr> |
+|---|:---:|:---:|:---:|:---:|
+| <nobr>*General VLMs*</nobr> |  |  |  |  |
+| <nobr>Qwen3.5-9B</nobr> | 41.8 | 2.53 | 14.6 | — |
+| <nobr>Qwen3.6-27B</nobr> | 62.0 | — | 28.7 | — |
+| <nobr>Kimi K2.6</nobr> | 73.1 | 7.1 | 41.4 | — |
+| <nobr>Seed2.0 Pro</nobr> | — | 6.3 | 40.0 | — |
+| <nobr>*GUI-specific Models*</nobr> |  |  |  |  |
+| <nobr>GUI-Owl-1.5-32B-Instruct</nobr> | 56.5 | — | — | — |
+| <nobr>Qwen-UI-Agent-27B</nobr> | 79.5 | — | — | — |
+| <nobr>*Ours*</nobr> |  |  |  |  |
+| <nobr>**UI-Venus-2-9B**</nobr> | 70.8 | — | 48.0 | — |
+| <nobr>**UI-Venus-2-27B**</nobr> | 80.5 | — | 55.5 | — |
 
 ### Browser
 
-| Models | Params. | WebVoyager | Online-Mind2Web | REAL | Odysseys Avg. | Odysseys Perfect |
-|---|---:|---:|---:|---:|---:|---:|
-| *General VLMs* |  |  |  |  |  |  |
-| Qwen3.5-9B | 9B | 46.9 | 27.3 | 18.2 | 42.6 | 13.5 |
-| Qwen3.6-27B | 27B | 84.3 | 55.3 | 27.3 | 39.5 | 18.5 |
-| OpenAI Operator | — | 87.0 | 61.3 | — | — | — |
-| Seed-2.0 | — | 85.1 | 68.5 | 74.4 | 60.2 | 30.1 |
-| GLM-5V-Turbo | — | 88.5 | — | — | — | — |
-| Claude Opus 4.6 | — | 88.0 | — | — | 68.9 | 44.5 |
-| Kimi-K2.6 | 1T | 76.8 | — | 74.4 | — | — |
-| *GUI-specific Models* |  |  |  |  |  |  |
-| UI-TARS-1.5 | — | 84.8 | <u>75.8</u> | — | — | — |
-| UI-Venus-1.5-30B-A3B | 30B | 76.0 | — | 38.0 | — | — |
-| GUI-Owl-1.5-32B-Thinking | 32B | 82.1 | — | 44.6 | — | — |
-| MolmoWeb-8B | 9B | 78.2 | 35.3 | — | — | — |
-| Fara-1.5-9B | 9B | 86.6 | 63.4 | — | — | — |
-| Fara-1.5-27B | 27B | 89.3 | 72.3 | — | — | — |
-| *Ours* |  |  |  |  |  |  |
-| **UI-Venus-2-9B** | 9B | <u>90.8</u> | 74.0 | <u>76.9</u> | <u>77.3</u> | <u>62.0</u> |
-| **UI-Venus-2-27B** | 27B | **93.4** | **78.3** | **80.2** | **80.4** | **66.3** |
+| <nobr>Models</nobr> | <nobr>WebVoyager</nobr> | <nobr>Online-Mind2Web</nobr> | <nobr>REAL</nobr> | <nobr>Odysseys Perfect</nobr> |
+|---|:---:|:---:|:---:|:---:|
+| <nobr>*General VLMs*</nobr> |  |  |  |  |
+| <nobr>Qwen3.5-9B</nobr> | 46.9 | 27.3 | 18.2 | 13.5 |
+| <nobr>Qwen3.6-27B</nobr> | 84.3 | 55.3 | 27.3 | 18.5 |
+| <nobr>OpenAI Operator</nobr> | 87.0 | 61.3 | — | — |
+| <nobr>Seed-2.0</nobr> | 85.1 | 68.5 | 74.4 | 30.1 |
+| <nobr>GLM-5V-Turbo</nobr> | 88.5 | — | — | — |
+| <nobr>Claude Opus 4.6</nobr> | 88.0 | — | — | 44.5 |
+| <nobr>Kimi-K2.6</nobr> | 76.8 | — | 74.4 | — |
+| <nobr>*GUI-specific Models*</nobr> |  |  |  |  |
+| <nobr>UI-TARS-1.5</nobr> | 84.8 | <u>75.8</u> | — | — |
+| <nobr>UI-Venus-1.5-30B-A3B</nobr> | 76.0 | — | 38.0 | — |
+| <nobr>GUI-Owl-1.5-32B-Thinking</nobr> | 82.1 | — | 44.6 | — |
+| <nobr>MolmoWeb-8B</nobr> | 78.2 | 35.3 | — | — |
+| <nobr>Fara-1.5-9B</nobr> | 86.6 | 63.4 | — | — |
+| <nobr>Fara-1.5-27B</nobr> | 89.3 | 72.3 | — | — |
+| <nobr>*Ours*</nobr> |  |  |  |  |
+| <nobr>**UI-Venus-2-9B**</nobr> | <u>90.8</u> | 74.0 | <u>76.9</u> | <u>62.0</u> |
+| <nobr>**UI-Venus-2-27B**</nobr> | **93.4** | **78.3** | **80.2** | **66.3** |
 
-> For Odysseys, we report both the averaged rubric score (Avg.) and the perfect rubric score (Perfect).
+> For Odysseys, we report the perfect rubric score (Perfect).
 
 ### Grounding
 
-| Models | VenusBench-GD | ScreenSpot-Pro | OSWorld-G-R | UI-Vision |
-|---|---:|---:|---:|---:|
-| *General VLMs* |  |  |  |  |
-| Qwen 3.7 Plus | — | 68.9 | 78.2 | 68.0 |
-| Seed 2.1 Pro | — | 65.3 | 78.0 | 62.0 |
-| Claude Opus 4.6 | — | — | — | — |
-| Kimi K2.6 | — | — | — | — |
-| *GUI-specific Models* |  |  |  |  |
-| UI-Venus-1.0-72B | 70.2 | 61.9 | 69.5 | 36.8 |
-| Holo2-30B-A3B | 59.5* | 66.1 | 76.1 | 40.9* |
-| Step-GUI-4B | 54.6* | 60.0 | 66.9 | 30.0* |
-| MAI-UI-32B | — | 67.9 | <u>73.9</u> | <u>47.1</u> |
-| UI-Venus-1.5-30B-A3B | 75.0 | 69.6 | 76.4 | 54.7 |
-| Qwen-UI-Agent-27B | — | 76.6 | 78.5 | 70.0 |
-| *Ours* |  |  |  |  |
-| **UI-Venus-2-9B** | 77.1 | 73.0 | 78.5 | 53.2 |
-| **UI-Venus-2-27B** | 80.1 | 74.1 | 79.1 | 66.9 |
+| <nobr>Models</nobr> | <nobr>VenusBench-GD</nobr> | <nobr>ScreenSpot-Pro</nobr> | <nobr>OSWorld-G-R</nobr> | <nobr>UI-Vision</nobr> |
+|---|:---:|:---:|:---:|:---:|
+| <nobr>*General VLMs*</nobr> |  |  |  |  |
+| <nobr>Qwen 3.7 Plus</nobr> | — | 68.9 | 78.2 | 68.0 |
+| <nobr>Seed 2.1 Pro</nobr> | — | 65.3 | 78.0 | 62.0 |
+| <nobr>Claude Opus 4.6</nobr> | — | — | — | — |
+| <nobr>Kimi K2.6</nobr> | — | — | — | — |
+| <nobr>*GUI-specific Models*</nobr> |  |  |  |  |
+| <nobr>UI-Venus-1.0-72B</nobr> | 70.2 | 61.9 | 69.5 | 36.8 |
+| <nobr>Holo2-30B-A3B</nobr> | 59.5* | 66.1 | 76.1 | 40.9* |
+| <nobr>Step-GUI-4B</nobr> | 54.6* | 60.0 | 66.9 | 30.0* |
+| <nobr>MAI-UI-32B</nobr> | — | 67.9 | <u>73.9</u> | <u>47.1</u> |
+| <nobr>UI-Venus-1.5-30B-A3B</nobr> | 75.0 | 69.6 | 76.4 | 54.7 |
+| <nobr>Qwen-UI-Agent-27B</nobr> | — | 76.6 | 78.5 | 70.0 |
+| <nobr>*Ours*</nobr> |  |  |  |  |
+| <nobr>**UI-Venus-2-9B**</nobr> | 77.1 | 73.0 | 78.5 | 53.2 |
+| <nobr>**UI-Venus-2-27B**</nobr> | 80.1 | 74.1 | 79.1 | 66.9 |
 
 > For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates results that may require verification with the original sources.
 
 ### CAPTCHA
 
-| Models | VenusBench-CAPTCHA | Spatial-CAPTCHA-Bench | MCA-Bench | NextGen-CAPTCHAs | OpenCaptcha |
-|---|---:|---:|---:|---:|---:|
-| *General VLMs* |  |  |  |  |  |
-| Qwen3.5-9B | 29.7 | 4.9 | 30.4 | 2.8 | 36.4 |
-| Qwen3.6-27B | 54.8 | 31.0 | 51.7 | 14.1 | 47.7 |
-| Doubao-Seed-2.0-Pro | 48.4 | <u>43.6</u> | 35.5 | 20.4 | <u>55.6</u> |
-| Kimi-K2.6 | 40.6 | 24.8 | 38.7 | 7.2 | 47.8 |
-| Claude-Opus-4.6 | 15.4 | 9.5 | 25.9 | 2.8 | 23.3 |
-| *Ours* |  |  |  |  |  |
-| **UI-Venus-2.0-9B** | <u>78.1</u> | 42.8 | <u>75.7</u> | <u>47.6</u> | 50.7 |
-| **UI-Venus-2.0-27B** | **79.9** | **48.6** | **79.6** | **54.5** | **56.3** |
+| <nobr>Models</nobr> | <nobr>VenusBench-CAPTCHA</nobr> | <nobr>Spatial-CAPTCHA-Bench</nobr> | <nobr>MCA-Bench</nobr> | <nobr>NextGen-CAPTCHAs</nobr> | <nobr>OpenCaptcha</nobr> |
+|---|:---:|:---:|:---:|:---:|:---:|
+| <nobr>*General VLMs*</nobr> |  |  |  |  |  |
+| <nobr>Qwen3.5-9B</nobr> | 29.7 | 4.9 | 30.4 | 2.8 | 36.4 |
+| <nobr>Qwen3.6-27B</nobr> | 54.8 | 31.0 | 51.7 | 14.1 | 47.7 |
+| <nobr>Doubao-Seed-2.0-Pro</nobr> | 48.4 | <u>43.6</u> | 35.5 | 20.4 | <u>55.6</u> |
+| <nobr>Kimi-K2.6</nobr> | 40.6 | 24.8 | 38.7 | 7.2 | 47.8 |
+| <nobr>Claude-Opus-4.6</nobr> | 15.4 | 9.5 | 25.9 | 2.8 | 23.3 |
+| <nobr>*Ours*</nobr> |  |  |  |  |  |
+| <nobr>**UI-Venus-2.0-9B**</nobr> | <u>78.1</u> | 42.8 | <u>75.7</u> | <u>47.6</u> | 50.7 |
+| <nobr>**UI-Venus-2.0-27B**</nobr> | **79.9** | **48.6** | **79.6** | **54.5** | **56.3** |
 
 > All results are Pass@1 percentages, and higher is better. We evaluate on VenusBench-CAPTCHA and four public benchmarks: Spatial-CAPTCHA-Bench, MCA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 OpenCaptcha task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best results in each column, respectively.
 
