@@ -152,102 +152,102 @@ bash scripts/captcha.sh
 
 ### Mobile
 
-| Models | MobileGym | VenusBench&#8209;Mobile | AndroidWorld | MobileWorld | KnowUBench | MemGUI |
+| <sub>Models</sub> | <sub>MobileGym</sub> | <sub>VenusBench&#8209;Mobile</sub> | <sub>AndroidWorld</sub> | <sub>MobileWorld</sub> | <sub>KnowUBench</sub> | <sub>MemGUI</sub> |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| *General&nbsp;VLMs* |  |  |  |  |  |  |
-| Qwen3.5&#8209;9B | 9.0 | 15.3 | 57.8 | 17.9 | 33.3 | 6.2 |
-| Qwen3.6&#8209;27B | 24.6 | 28.0 | 70.3 | 41.9 | — | 25.7 |
-| Opus&nbsp;4.6 | — | 36.5 | — | 44.5 | — | — |
-| Kimi&nbsp;K2.6 | 38.7 | 31.2 | — | 55.6 | — | 39.1 |
-| Seed2.0&nbsp;Pro | 52.0 | 20.1 | — | 63.2 | 51.6 | <u>65.6</u> |
-| *GUI&#8209;specific&nbsp;Models* |  |  |  |  |  |  |
-| UI&#8209;Venus&#8209;1.5&#8209;8B | 18.4 | 16.1 | 73.7 | 22.2 | 26.0 | 3.9 |
-| UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B | 21.5 | 21.5 | 77.6 | 17.1 | — | 10.9 |
-| GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct | 20.3 | — | 69.8 | 43.9 | — | 10.9 |
-| MAI&#8209;UI&#8209;8B | 21.5 | 12.7 | 70.7 | 27.5† | 26.0 | 12.0 |
-| Qwen&#8209;UI&#8209;Agent&#8209;27B | — | — | — | **82.1** | — | — |
-| *Ours* |  |  |  |  |  |  |
-| **UI&#8209;Venus&#8209;2&#8209;9B** | <u>52.7</u> | <u>46.5</u> | <u>80.2</u> | 65.8 (75.2) | <u>56.5</u> | 62.6 |
-| **UI&#8209;Venus&#8209;2&#8209;27B** | **60.5** | **48.7** | **84.0** | <u>76.1 (82.9)</u> | **59.7** | **70.3** |
+| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |  |  |
+| <sub>Qwen3.5&#8209;9B</sub> | 9.0 | 15.3 | 57.8 | 17.9 | 33.3 | 6.2 |
+| <sub>Qwen3.6&#8209;27B</sub> | 24.6 | 28.0 | 70.3 | 41.9 | — | 25.7 |
+| <sub>Opus&nbsp;4.6</sub> | — | 36.5 | — | 44.5 | — | — |
+| <sub>Kimi&nbsp;K2.6</sub> | 38.7 | 31.2 | — | 55.6 | — | 39.1 |
+| <sub>Seed2.0&nbsp;Pro</sub> | 52.0 | 20.1 | — | 63.2 | 51.6 | <u>65.6</u> |
+| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |  |  |
+| <sub>UI&#8209;Venus&#8209;1.5&#8209;8B</sub> | 18.4 | 16.1 | 73.7 | 22.2 | 26.0 | 3.9 |
+| <sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub> | 21.5 | 21.5 | 77.6 | 17.1 | — | 10.9 |
+| <sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub> | 20.3 | — | 69.8 | 43.9 | — | 10.9 |
+| <sub>MAI&#8209;UI&#8209;8B</sub> | 21.5 | 12.7 | 70.7 | 27.5† | 26.0 | 12.0 |
+| <sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub> | — | — | — | **82.1** | — | — |
+| <sub>*Ours*</sub> |  |  |  |  |  |  |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | <u>52.7</u> | <u>46.5</u> | <u>80.2</u> | 65.8 (75.2) | <u>56.5</u> | 62.6 |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | **60.5** | **48.7** | **84.0** | <u>76.1 (82.9)</u> | **59.7** | **70.3** |
 
 > MobileWorld reports success rate on the GUI-only subset. MemGUI reports Main Results Pass@1.
 
 ### Computer
 
-| Models | OSWorld&#8209;Verified | OSWorld&#8209;V2 | DeskCraft | OpenComputer |
+| <sub>Models</sub> | <sub>OSWorld&#8209;Verified</sub> | <sub>OSWorld&#8209;V2</sub> | <sub>DeskCraft</sub> | <sub>OpenComputer</sub> |
 |---|:---:|:---:|:---:|:---:|
-| *General&nbsp;VLMs* |  |  |  |  |
-| Qwen3.5&#8209;9B | 41.8 | 2.53 | 14.6 | — |
-| Qwen3.6&#8209;27B | 62.0 | — | 28.7 | — |
-| Kimi&nbsp;K2.6 | 73.1 | 7.1 | 41.4 | — |
-| Seed2.0&nbsp;Pro | — | 6.3 | 40.0 | — |
-| *GUI&#8209;specific&nbsp;Models* |  |  |  |  |
-| GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct | 56.5 | — | — | — |
-| Qwen&#8209;UI&#8209;Agent&#8209;27B | 79.5 | — | — | — |
-| *Ours* |  |  |  |  |
-| **UI&#8209;Venus&#8209;2&#8209;9B** | 70.8 | — | 48.0 | — |
-| **UI&#8209;Venus&#8209;2&#8209;27B** | 80.5 | — | 55.5 | — |
+| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |
+| <sub>Qwen3.5&#8209;9B</sub> | 41.8 | 2.53 | 14.6 | — |
+| <sub>Qwen3.6&#8209;27B</sub> | 62.0 | — | 28.7 | — |
+| <sub>Kimi&nbsp;K2.6</sub> | 73.1 | 7.1 | 41.4 | — |
+| <sub>Seed2.0&nbsp;Pro</sub> | — | 6.3 | 40.0 | — |
+| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |
+| <sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub> | 56.5 | — | — | — |
+| <sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub> | 79.5 | — | — | — |
+| <sub>*Ours*</sub> |  |  |  |  |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | 70.8 | — | 48.0 | — |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | 80.5 | — | 55.5 | — |
 
 ### Browser
 
-| Models | WebVoyager | Online&#8209;Mind2Web | REAL | Odysseys&nbsp;Perfect |
+| <sub>Models</sub> | <sub>WebVoyager</sub> | <sub>Online&#8209;Mind2Web</sub> | <sub>REAL</sub> | <sub>Odysseys&nbsp;Perfect</sub> |
 |---|:---:|:---:|:---:|:---:|
-| *General&nbsp;VLMs* |  |  |  |  |
-| Qwen3.5&#8209;9B | 46.9 | 27.3 | 18.2 | 13.5 |
-| Qwen3.6&#8209;27B | 84.3 | 55.3 | 27.3 | 18.5 |
-| OpenAI&nbsp;Operator | 87.0 | 61.3 | — | — |
-| Seed&#8209;2.0 | 85.1 | 68.5 | 74.4 | 30.1 |
-| GLM&#8209;5V&#8209;Turbo | 88.5 | — | — | — |
-| Claude&nbsp;Opus&nbsp;4.6 | 88.0 | — | — | 44.5 |
-| Kimi&#8209;K2.6 | 76.8 | — | 74.4 | — |
-| *GUI&#8209;specific&nbsp;Models* |  |  |  |  |
-| UI&#8209;TARS&#8209;1.5 | 84.8 | <u>75.8</u> | — | — |
-| UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B | 76.0 | — | 38.0 | — |
-| GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Thinking | 82.1 | — | 44.6 | — |
-| MolmoWeb&#8209;8B | 78.2 | 35.3 | — | — |
-| Fara&#8209;1.5&#8209;9B | 86.6 | 63.4 | — | — |
-| Fara&#8209;1.5&#8209;27B | 89.3 | 72.3 | — | — |
-| *Ours* |  |  |  |  |
-| **UI&#8209;Venus&#8209;2&#8209;9B** | <u>90.8</u> | 74.0 | <u>76.9</u> | <u>62.0</u> |
-| **UI&#8209;Venus&#8209;2&#8209;27B** | **93.4** | **78.3** | **80.2** | **66.3** |
+| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |
+| <sub>Qwen3.5&#8209;9B</sub> | 46.9 | 27.3 | 18.2 | 13.5 |
+| <sub>Qwen3.6&#8209;27B</sub> | 84.3 | 55.3 | 27.3 | 18.5 |
+| <sub>OpenAI&nbsp;Operator</sub> | 87.0 | 61.3 | — | — |
+| <sub>Seed&#8209;2.0</sub> | 85.1 | 68.5 | 74.4 | 30.1 |
+| <sub>GLM&#8209;5V&#8209;Turbo</sub> | 88.5 | — | — | — |
+| <sub>Claude&nbsp;Opus&nbsp;4.6</sub> | 88.0 | — | — | 44.5 |
+| <sub>Kimi&#8209;K2.6</sub> | 76.8 | — | 74.4 | — |
+| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |
+| <sub>UI&#8209;TARS&#8209;1.5</sub> | 84.8 | <u>75.8</u> | — | — |
+| <sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub> | 76.0 | — | 38.0 | — |
+| <sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Thinking</sub> | 82.1 | — | 44.6 | — |
+| <sub>MolmoWeb&#8209;8B</sub> | 78.2 | 35.3 | — | — |
+| <sub>Fara&#8209;1.5&#8209;9B</sub> | 86.6 | 63.4 | — | — |
+| <sub>Fara&#8209;1.5&#8209;27B</sub> | 89.3 | 72.3 | — | — |
+| <sub>*Ours*</sub> |  |  |  |  |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | <u>90.8</u> | 74.0 | <u>76.9</u> | <u>62.0</u> |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | **93.4** | **78.3** | **80.2** | **66.3** |
 
 > For Odysseys, we report the perfect rubric score (Perfect).
 
 ### Grounding
 
-| Models | VenusBench&#8209;GD | ScreenSpot&#8209;Pro | OSWorld&#8209;G&#8209;R | UI&#8209;Vision |
+| <sub>Models</sub> | <sub>VenusBench&#8209;GD</sub> | <sub>ScreenSpot&#8209;Pro</sub> | <sub>OSWorld&#8209;G&#8209;R</sub> | <sub>UI&#8209;Vision</sub> |
 |---|:---:|:---:|:---:|:---:|
-| *General&nbsp;VLMs* |  |  |  |  |
-| Qwen&nbsp;3.7&nbsp;Plus | — | 68.9 | 78.2 | 68.0 |
-| Seed&nbsp;2.1&nbsp;Pro | — | 65.3 | 78.0 | 62.0 |
-| Claude&nbsp;Opus&nbsp;4.6 | — | — | — | — |
-| Kimi&nbsp;K2.6 | — | — | — | — |
-| *GUI&#8209;specific&nbsp;Models* |  |  |  |  |
-| UI&#8209;Venus&#8209;1.0&#8209;72B | 70.2 | 61.9 | 69.5 | 36.8 |
-| Holo2&#8209;30B&#8209;A3B | 59.5* | 66.1 | 76.1 | 40.9* |
-| Step&#8209;GUI&#8209;4B | 54.6* | 60.0 | 66.9 | 30.0* |
-| MAI&#8209;UI&#8209;32B | — | 67.9 | <u>73.9</u> | <u>47.1</u> |
-| UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B | 75.0 | 69.6 | 76.4 | 54.7 |
-| Qwen&#8209;UI&#8209;Agent&#8209;27B | — | 76.6 | 78.5 | 70.0 |
-| *Ours* |  |  |  |  |
-| **UI&#8209;Venus&#8209;2&#8209;9B** | 77.1 | 73.0 | 78.5 | 53.2 |
-| **UI&#8209;Venus&#8209;2&#8209;27B** | 80.1 | 74.1 | 79.1 | 66.9 |
+| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |
+| <sub>Qwen&nbsp;3.7&nbsp;Plus</sub> | — | 68.9 | 78.2 | 68.0 |
+| <sub>Seed&nbsp;2.1&nbsp;Pro</sub> | — | 65.3 | 78.0 | 62.0 |
+| <sub>Claude&nbsp;Opus&nbsp;4.6</sub> | — | — | — | — |
+| <sub>Kimi&nbsp;K2.6</sub> | — | — | — | — |
+| <sub>*GUI&#8209;specific&nbsp;Models*</sub> |  |  |  |  |
+| <sub>UI&#8209;Venus&#8209;1.0&#8209;72B</sub> | 70.2 | 61.9 | 69.5 | 36.8 |
+| <sub>Holo2&#8209;30B&#8209;A3B</sub> | 59.5* | 66.1 | 76.1 | 40.9* |
+| <sub>Step&#8209;GUI&#8209;4B</sub> | 54.6* | 60.0 | 66.9 | 30.0* |
+| <sub>MAI&#8209;UI&#8209;32B</sub> | — | 67.9 | <u>73.9</u> | <u>47.1</u> |
+| <sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub> | 75.0 | 69.6 | 76.4 | 54.7 |
+| <sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub> | — | 76.6 | 78.5 | 70.0 |
+| <sub>*Ours*</sub> |  |  |  |  |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;9B**</sub> | 77.1 | 73.0 | 78.5 | 53.2 |
+| <sub>**UI&#8209;Venus&#8209;2&#8209;27B**</sub> | 80.1 | 74.1 | 79.1 | 66.9 |
 
 > For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates results that may require verification with the original sources.
 
 ### CAPTCHA
 
-| Models | VenusBench&#8209;CAPTCHA | Spatial&#8209;CAPTCHA&#8209;Bench | MCA&#8209;Bench | NextGen&#8209;CAPTCHAs | OpenCaptcha |
+| <sub>Models</sub> | <sub>VenusBench&#8209;CAPTCHA</sub> | <sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub> | <sub>MCA&#8209;Bench</sub> | <sub>NextGen&#8209;CAPTCHAs</sub> | <sub>OpenCaptcha</sub> |
 |---|:---:|:---:|:---:|:---:|:---:|
-| *General&nbsp;VLMs* |  |  |  |  |  |
-| Qwen3.5&#8209;9B | 29.7 | 4.9 | 30.4 | 2.8 | 36.4 |
-| Qwen3.6&#8209;27B | 54.8 | 31.0 | 51.7 | 14.1 | 47.7 |
-| Doubao&#8209;Seed&#8209;2.0&#8209;Pro | 48.4 | <u>43.6</u> | 35.5 | 20.4 | <u>55.6</u> |
-| Kimi&#8209;K2.6 | 40.6 | 24.8 | 38.7 | 7.2 | 47.8 |
-| Claude&#8209;Opus&#8209;4.6 | 15.4 | 9.5 | 25.9 | 2.8 | 23.3 |
-| *Ours* |  |  |  |  |  |
-| **UI&#8209;Venus&#8209;2.0&#8209;9B** | <u>78.1</u> | 42.8 | <u>75.7</u> | <u>47.6</u> | 50.7 |
-| **UI&#8209;Venus&#8209;2.0&#8209;27B** | **79.9** | **48.6** | **79.6** | **54.5** | **56.3** |
+| <sub>*General&nbsp;VLMs*</sub> |  |  |  |  |  |
+| <sub>Qwen3.5&#8209;9B</sub> | 29.7 | 4.9 | 30.4 | 2.8 | 36.4 |
+| <sub>Qwen3.6&#8209;27B</sub> | 54.8 | 31.0 | 51.7 | 14.1 | 47.7 |
+| <sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub> | 48.4 | <u>43.6</u> | 35.5 | 20.4 | <u>55.6</u> |
+| <sub>Kimi&#8209;K2.6</sub> | 40.6 | 24.8 | 38.7 | 7.2 | 47.8 |
+| <sub>Claude&#8209;Opus&#8209;4.6</sub> | 15.4 | 9.5 | 25.9 | 2.8 | 23.3 |
+| <sub>*Ours*</sub> |  |  |  |  |  |
+| <sub>**UI&#8209;Venus&#8209;2.0&#8209;9B**</sub> | <u>78.1</u> | 42.8 | <u>75.7</u> | <u>47.6</u> | 50.7 |
+| <sub>**UI&#8209;Venus&#8209;2.0&#8209;27B**</sub> | **79.9** | **48.6** | **79.6** | **54.5** | **56.3** |
 
 > All results are Pass@1 percentages, and higher is better. We evaluate on VenusBench-CAPTCHA and four public benchmarks: Spatial-CAPTCHA-Bench, MCA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 OpenCaptcha task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best results in each column, respectively.
 
