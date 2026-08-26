@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Venus Browser Agent</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <img src="assets/ui-venus-logo-3.png" alt="">
+          </div>
+          <h1>Venus Browser Agent</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="control-panel-toggle" class="panel-toggle" type="button" role="switch" aria-checked="true" aria-label="显示页面助手" title="显示或隐藏页面助手">
+            <span>页面助手</span>
+            <span class="toggle-track" aria-hidden="true"><span></span></span>
+          </button>
+          <button id="settings-toggle" class="icon-button" type="button" aria-label="打开模型设置" title="模型设置">⚙</button>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-live="polite">
+        <span id="status-dot" class="status-dot idle"></span>
+        <span id="status-label">空闲</span>
+        <span id="tab-label" class="tab-label">尚未接管页面</span>
+      </section>
+
+      <section class="conversation-nav" aria-label="会话管理">
+        <label class="conversation-picker">
+          <span>会话</span>
+          <select id="conversation-select" aria-label="选择历史会话"></select>
+        </label>
+        <button id="delete-conversation" class="text-button" type="button">删除</button>
+      </section>
+
+      <section id="settings-panel" class="settings-panel" aria-labelledby="settings-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="settings-title">模型设置</h2>
+            <p>OpenAI-compatible vision API</p>
+          </div>
+          <button id="settings-close" class="text-button" type="button">收起</button>
+        </div>
+
+        <label class="field">
+          <span>API URL</span>
+          <input id="api-url" type="url" placeholder="https://api.example.com/v1" autocomplete="off">
+          <small>可以填写 /v1 base URL 或完整 /chat/completions URL</small>
+        </label>
+
+        <label class="field">
+          <span>Model</span>
+          <input id="model" type="text" placeholder="vision-model-name" autocomplete="off">
+        </label>
+
+        <div class="runtime-fields">
+          <label class="field">
+            <span>最大步数</span>
+            <input id="max-steps" type="number" min="1" max="200" step="1" value="100" inputmode="numeric">
+          </label>
+          <label class="field">
+            <span>Temperature</span>
+            <input id="temperature" type="number" min="0" max="2" step="0.1" value="0.5" inputmode="decimal">
+          </label>
+        </div>
+
+        <label class="field">
+          <span>API Key</span>
+          <div class="secret-row">
+            <input id="api-key" type="password" placeholder="sk-..." autocomplete="off">
+            <button id="key-toggle" class="small-button" type="button">显示</button>
+          </div>
+        </label>
+
+        <label class="checkbox-row">
+          <input id="remember-key" type="checkbox">
+          <span>在本机记住 Key</span>
+        </label>
+        <p class="security-note">默认仅保存在当前浏览器会话。插件端无法提供服务端级别的密钥保密。</p>
+
+        <div class="field">
+          <span>文件 Workspace</span>
+          <div class="workspace-row">
+            <span id="workspace-label" class="workspace-label">尚未选择目录</span>
+            <button id="choose-workspace" class="small-button workspace-button" type="button">选择目录</button>
+          </div>
+          <small class="workspace-help">授权的workspace目录是Venus的工作目录，推荐选择一个空目录</small>
+        </div>
+
+        <div class="settings-actions">
+          <button id="test-model" class="secondary-button" type="button">测试连接</button>
+          <button id="save-settings" class="primary-button" type="button">保存设置</button>
+        </div>
+        <p id="settings-feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section id="conversation" class="conversation" aria-label="任务对话">
+        <div id="empty-state" class="empty-state">
+          <img class="empty-logo" src="assets/ui-venus-logo-3.png" alt="" aria-hidden="true">
+          <h2>让 Venus 操作当前页面</h2>
+          <p>输入任务后，插件会接管当前标签页并执行任务，把任务交给Venus吧！</p>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+      </section>
+
+      <section id="composer" class="composer">
+        <div id="image-preview" class="image-preview hidden" aria-label="待发送图片"></div>
+        <label for="task-input" class="sr-only">任务</label>
+        <textarea id="task-input" rows="3" placeholder="例如：帮我在淘宝找找有没有10块钱的雨伞"></textarea>
+        <input id="image-input" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple>
+        <div class="composer-footer">
+          <div class="composer-tools">
+            <button id="add-image" class="attach-button" type="button" title="添加图片">＋ 图片</button>
+            <span class="hint">可粘贴图片 · Ctrl/⌘ + Enter 运行</span>
+          </div>
+          <div class="composer-actions">
+            <button id="clear-chat" class="text-button" type="button">新会话</button>
+            <button id="stop-task" class="danger-button hidden" type="button">停止</button>
+            <button id="run-task" class="run-button" type="button">
+              <span>运行任务</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

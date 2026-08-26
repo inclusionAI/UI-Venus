@@ -1,0 +1,13 @@
+{
+  "task": "先打开酷我音乐取消之前设置的定时播放，然后重新设置周一到周五每天早上7点半自动播放\"我的收藏\"歌单。",
+  "screenshots": [
+    "screenshots/step_001.png",
+    "screenshots/step_002.png",
+    "screenshots/step_003.png",
+    "screenshots/step_004.png",
+    "screenshots/step_005.png",
+    "screenshots/step_006.png",
+    "screenshots/step_007.png",
+    "screenshots/step_008.png"
+  ]
+}

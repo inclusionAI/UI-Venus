@@ -1,0 +1,19 @@
+device:
+  id: "192.168.1.100:5555"
+
+ep_config:
+  step_limit: 30
+  purpose: ""
+  mini_app_name: "Android App"
+
+policy:
+  type: "ui_venus_2"
+  params:
+    model_url: "http://your-model-server/v1"
+    model_name: "model"
+    api_key: ""
+    temperature: 0.1
+    n_img: 0
+
+app_mapping:
+  config_file: "config/app_mapping.yaml"

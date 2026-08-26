@@ -1,0 +1,9 @@
+reflection:
+  params:
+    model_url: "http://your-model-server"
+    model_name: "model"
+    api_key: ""
+    temperature: 0.0
+    scale_factor: 1000
+    image_window: 3
+    max_retries: 3

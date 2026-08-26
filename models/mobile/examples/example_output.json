@@ -1,0 +1,111 @@
+{
+  "task": "先打开酷我音乐取消之前设置的定时播放，然后重新设置周一到周五每天早上7点半自动播放\"我的收藏\"歌单。",
+  "model_name": "UI-Venus-2",
+  "turns": [
+    {
+      "turn": 1,
+      "screenshot": "screenshots/step_001.png",
+      "think": "The user wants to open Kuwo Music, cancel the existing scheduled playback, and set it again for 7:30 AM from Monday to Friday with the My Favorites playlist. The first step is to open Kuwo Music.",
+      "action": "LaunchApp(app='酷我音乐')",
+      "parsed_action": {
+        "action_type": "REOPEN",
+        "action_pos": [],
+        "input": "",
+        "duration": -1,
+        "app_name": "酷我音乐"
+      },
+      "raw_response": "<think>The user wants to open Kuwo Music, cancel the existing scheduled playback, and set it again for 7:30 AM from Monday to Friday with the My Favorites playlist. The first step is to open Kuwo Music.</think>\n<action>LaunchApp(app='酷我音乐')</action>"
+    },
+    {
+      "turn": 2,
+      "screenshot": "screenshots/step_002.png",
+      "think": "Kuwo Music is open. I should enter the My page to look for scheduled playback settings.",
+      "action": "Click(point=(897, 937))",
+      "parsed_action": {
+        "action_type": "CLK",
+        "action_pos": [[968, 2213]],
+        "input": "",
+        "duration": -1
+      },
+      "raw_response": "<think>Kuwo Music is open. I should enter the My page to look for scheduled playback settings.</think>\n<action>Click(point=(897, 937))</action>"
+    },
+    {
+      "turn": 3,
+      "screenshot": "screenshots/step_003.png",
+      "think": "I am on the My page. The menu button in the upper-right corner should contain more settings.",
+      "action": "Click(point=(908, 77))",
+      "parsed_action": {
+        "action_type": "CLK",
+        "action_pos": [[980, 181]],
+        "input": "",
+        "duration": -1
+      },
+      "raw_response": "<think>I am on the My page. The menu button in the upper-right corner should contain more settings.</think>\n<action>Click(point=(908, 77))</action>"
+    },
+    {
+      "turn": 4,
+      "screenshot": "screenshots/step_004.png",
+      "think": "The More page contains Sleep Timer, which may include scheduled playback. I will open it to inspect the available tabs.",
+      "action": "Click(point=(382, 176))",
+      "parsed_action": {
+        "action_type": "CLK",
+        "action_pos": [[412, 415]],
+        "input": "",
+        "duration": -1
+      },
+      "raw_response": "<think>The More page contains Sleep Timer, which may include scheduled playback. I will open it to inspect the available tabs.</think>\n<action>Click(point=(382, 176))</action>"
+    },
+    {
+      "turn": 5,
+      "screenshot": "screenshots/step_005.png",
+      "think": "There are Sleep Timer and Scheduled Playback tabs. I need to open Scheduled Playback to inspect and change the current schedule.",
+      "action": "Click(point=(666, 76))",
+      "parsed_action": {
+        "action_type": "CLK",
+        "action_pos": [[719, 179]],
+        "input": "",
+        "duration": -1
+      },
+      "raw_response": "<think>There are Sleep Timer and Scheduled Playback tabs. I need to open Scheduled Playback to inspect and change the current schedule.</think>\n<action>Click(point=(666, 76))</action>"
+    },
+    {
+      "turn": 6,
+      "screenshot": "screenshots/step_006.png",
+      "think": "Scheduled playback is enabled and its settings already show 07:30, Monday to Friday, and My Favorites. The task requires canceling the previous schedule first, so I should turn the switch off.",
+      "action": "Click(point=(851, 152))",
+      "parsed_action": {
+        "action_type": "CLK",
+        "action_pos": [[919, 359]],
+        "input": "",
+        "duration": -1
+      },
+      "raw_response": "<think>Scheduled playback is enabled and its settings already show 07:30, Monday to Friday, and My Favorites. The task requires canceling the previous schedule first, so I should turn the switch off.</think>\n<action>Click(point=(851, 152))</action>"
+    },
+    {
+      "turn": 7,
+      "screenshot": "screenshots/step_007.png",
+      "think": "The previous schedule is now disabled. I need to turn scheduled playback back on and then verify its time, days, and playlist.",
+      "action": "Click(point=(851, 152))",
+      "parsed_action": {
+        "action_type": "CLK",
+        "action_pos": [[919, 359]],
+        "input": "",
+        "duration": -1
+      },
+      "raw_response": "<think>The previous schedule is now disabled. I need to turn scheduled playback back on and then verify its time, days, and playlist.</think>\n<action>Click(point=(851, 152))</action>"
+    },
+    {
+      "turn": 8,
+      "screenshot": "screenshots/step_008.png",
+      "think": "Scheduled playback is enabled again. The screen confirms 07:30, Monday to Friday, and My Favorites, so the task is complete.",
+      "action": "Finished(content='已打开酷我音乐，先取消原有定时播放，再重新开启并确认时间为早上7:30、播放周期为周一至周五、播放内容为“我的收藏”。')",
+      "parsed_action": {
+        "action_type": "SUCCESS",
+        "action_pos": [],
+        "input": "已打开酷我音乐，先取消原有定时播放，再重新开启并确认时间为早上7:30、播放周期为周一至周五、播放内容为“我的收藏”。",
+        "duration": -1
+      },
+      "raw_response": "<think>Scheduled playback is enabled again. The screen confirms 07:30, Monday to Friday, and My Favorites, so the task is complete.</think>\n<action>Finished(content='已打开酷我音乐，先取消原有定时播放，再重新开启并确认时间为早上7:30、播放周期为周一至周五、播放内容为“我的收藏”。')</action>"
+    }
+  ]
+}

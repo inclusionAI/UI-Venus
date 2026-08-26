@@ -1,0 +1,30 @@
+# Compiled python modules.
+*.pyc
+
+# Byte-compiled
+__pycache__/
+.cache/
+node_modules/
+
+# Poetry, setuptools, PyPI distribution artifacts.
+/*.egg-info
+.eggs/
+build/
+dist/
+poetry.lock
+
+# Tests
+.pytest_cache/
+
+# Type checking
+.pytype/
+
+# Other
+*.DS_Store
+/.venus-mini-profile/
+/results/
+/Venus_framework/Venus_framework_mobile/logs/
+/Venus_framework/Venus_framework_mobile/record/
+
+# PyCharm
+.idea

@@ -1,0 +1,22 @@
+# Batch task configuration
+devices:
+  # - "6321e99f"
+  - "192.168.1.100:5555"
+
+ep_config:
+  step_limit: 30
+  mini_app_name: "Android App"
+
+policy:
+  type: "ui_venus_2"
+  params:
+    model_url: "http://your-model-server/v1"
+    model_name: "model"
+
+record_config:
+  save_dir: "record/batch/"
+  enable: true
+
+trace_dir: "record/traces/"
+
+single_task_config: "config/ui_venus_2_single.yaml"

@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Venus Browser Agent",
+  "description": "A local, screenshot-driven browser agent that runs entirely inside Chrome.",
+  "version": "0.4.0",
+  "minimum_chrome_version": "118",
+  "permissions": [
+    "activeTab",
+    "debugger",
+    "downloads",
+    "scripting",
+    "sidePanel",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "content_scripts": [{
+    "matches": ["https://*/*", "http://*/*"],
+    "js": ["page-assistant.js"],
+    "run_at": "document_idle"
+  }],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "assets/icons/venus-16.png",
+    "32": "assets/icons/venus-32.png",
+    "48": "assets/icons/venus-48.png",
+    "128": "assets/icons/venus-128.png"
+  },
+  "action": {
+    "default_title": "Open Venus Browser Agent",
+    "default_icon": {
+      "16": "assets/icons/venus-16.png",
+      "32": "assets/icons/venus-32.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
