@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/Report-Coming%20Soon-lightgrey" alt="Report: Coming Soon">
-  <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus%202-blue" alt="Website: UI-Venus-2"></a>
+  <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus--2-blue" alt="Website: UI-Venus-2"></a>
   <a href="https://github.com/inclusionAI/UI-Venus"><img src="https://img.shields.io/badge/GitHub-Repository-green?logo=github" alt="GitHub"></a>
   <a href="https://huggingface.co/inclusionAI/UI-Venus-2-9b"><img src="https://img.shields.io/badge/Hugging%20Face-Model-orange?logo=huggingface" alt="Hugging Face Model"></a>
 </p>
@@ -213,7 +213,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
       <td align="center">63.2</td>
       <td align="center">51.6</td>
-      <td align="center"><u>65.6</u></td>
+      <td align="center"><ins>65.6</ins></td>
     </tr>
     <tr>
       <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
@@ -268,11 +268,11 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
-      <td align="center"><u>52.7</u></td>
-      <td align="center"><u>46.5</u></td>
-      <td align="center"><u>80.2</u></td>
+      <td align="center"><ins>52.7</ins></td>
+      <td align="center"><ins>46.5</ins></td>
+      <td align="center"><ins>80.2</ins></td>
       <td align="center">65.8 (75.2)</td>
-      <td align="center"><u>56.5</u></td>
+      <td align="center"><ins>56.5</ins></td>
       <td align="center">62.6</td>
     </tr>
     <tr>
@@ -280,7 +280,7 @@ bash scripts/captcha.sh
       <td align="center"><strong>60.5</strong></td>
       <td align="center"><strong>48.7</strong></td>
       <td align="center"><strong>84.0</strong></td>
-      <td align="center"><u>76.1 (82.9)</u></td>
+      <td align="center"><ins>76.1 (82.9)</ins></td>
       <td align="center"><strong>59.7</strong></td>
       <td align="center"><strong>70.3</strong></td>
     </tr>
@@ -333,7 +333,7 @@ bash scripts/captcha.sh
     <tr>
       <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
       <td align="center">-</td>
-      <td align="center"><u>-/6.3</u></td>
+      <td align="center"><ins>-/6.3</ins></td>
       <td align="center">40.0</td>
       <td align="center">-</td>
     </tr>
@@ -349,7 +349,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
-      <td align="center"><u>79.5</u></td>
+      <td align="center"><ins>79.5</ins></td>
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -360,16 +360,16 @@ bash scripts/captcha.sh
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center">70.8</td>
-      <td align="center">testing</td>
-      <td align="center"><u>48.0</u></td>
-      <td align="center">testing</td>
+      <td align="center">comming soon</td>
+      <td align="center"><ins>48.0</ins></td>
+      <td align="center">comming soon</td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
       <td align="center"><strong>80.5</strong></td>
-      <td align="center">testing</td>
+      <td align="center">comming soon</td>
       <td align="center"><strong>55.5</strong></td>
-      <td align="center">testing</td>
+      <td align="center">comming soon</td>
     </tr>
   </tbody>
 </table>
@@ -449,7 +449,7 @@ bash scripts/captcha.sh
     <tr>
       <td align="left"><sub>UI&#8209;TARS&#8209;1.5</sub></td>
       <td align="center">84.8</td>
-      <td align="center"><u>75.8</u></td>
+      <td align="center"><ins>75.8</ins></td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
@@ -493,10 +493,10 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
-      <td align="center"><u>90.8</u></td>
+      <td align="center"><ins>90.8</ins></td>
       <td align="center">74.0</td>
-      <td align="center"><u>76.9</u></td>
-      <td align="center"><u>62.0</u></td>
+      <td align="center"><ins>76.9</ins></td>
+      <td align="center"><ins>62.0</ins></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
@@ -535,7 +535,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
       <td align="center">68.9</td>
       <td align="center">78.2</td>
-      <td align="center"><u>68.0</u></td>
+      <td align="center"><ins>68.0</ins></td>
     </tr>
     <tr>
       <td align="left"><sub>Seed&nbsp;2.1&nbsp;Pro</sub></td>
@@ -600,7 +600,7 @@ bash scripts/captcha.sh
       <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
       <td align="center">-</td>
       <td align="center"><strong>76.6</strong></td>
-      <td align="center"><u>78.5</u></td>
+      <td align="center"><ins>78.5</ins></td>
       <td align="center"><strong>70.0</strong></td>
     </tr>
     <tr>
@@ -608,15 +608,15 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
-      <td align="center"><u>77.1</u></td>
+      <td align="center"><ins>77.1</ins></td>
       <td align="center">73.0</td>
-      <td align="center"><u>78.5</u></td>
+      <td align="center"><ins>78.5</ins></td>
       <td align="center">53.2</td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
       <td align="center"><strong>80.1</strong></td>
-      <td align="center"><u>74.1</u></td>
+      <td align="center"><ins>74.1</ins></td>
       <td align="center"><strong>79.1</strong></td>
       <td align="center">66.9</td>
     </tr>
@@ -665,10 +665,10 @@ bash scripts/captcha.sh
     <tr>
       <td align="left"><sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub></td>
       <td align="center">48.4</td>
-      <td align="center"><u>43.6</u></td>
+      <td align="center"><ins>43.6</ins></td>
       <td align="center">35.5</td>
       <td align="center">20.4</td>
-      <td align="center"><u>55.6</u></td>
+      <td align="center"><ins>55.6</ins></td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
@@ -691,10 +691,10 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;9B</strong></sub></td>
-      <td align="center"><u>78.1</u></td>
+      <td align="center"><ins>78.1</ins></td>
       <td align="center">42.8</td>
-      <td align="center"><u>75.7</u></td>
-      <td align="center"><u>47.6</u></td>
+      <td align="center"><ins>75.7</ins></td>
+      <td align="center"><ins>47.6</ins></td>
       <td align="center">50.7</td>
     </tr>
     <tr>
