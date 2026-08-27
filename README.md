@@ -70,7 +70,7 @@ Compared with UI-Venus-1.5, we introduce:
 
 ---
 
-# 🛠️ Venus Framework
+# 🛠 Venus Framework
 
 We provide two frameworks for running agents in real environments:
 
