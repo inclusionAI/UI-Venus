@@ -153,14 +153,14 @@ bash scripts/captcha.sh
 
 # 📊 基准测试结果
 
-### 移动端
+### Mobile
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>模型</sub></th>
+      <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>MobileGym</sub></th>
       <th align="center"><sub>VenusBench&#8209;Mobile</sub></th>
       <th align="center"><sub>AndroidWorld</sub></th>
@@ -171,7 +171,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="7" align="left"><sub><em>通用视觉语言模型</em></sub></td>
+      <td colspan="7" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -219,7 +219,7 @@ bash scripts/captcha.sh
       <td align="center"><ins>65.6</ins></td>
     </tr>
     <tr>
-      <td colspan="7" align="left"><sub><em>GUI 专用模型</em></sub></td>
+      <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;8B</sub></td>
@@ -267,7 +267,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="7" align="left"><sub><em>我们的方法</em></sub></td>
+      <td colspan="7" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -294,23 +294,23 @@ bash scripts/captcha.sh
 
 > MobileWorld 列报告了仅 GUI 子集在最大步数为 50 和 100 时的成功率（括号内为 100 步的结果）。MemGUI 报告主结果的 Pass@1。
 
-### 计算机
+### Computer
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>模型</sub></th>
+      <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>OSWorld&#8209;Verified</sub></th>
-      <th align="center"><sub>OSWorld&#8209;V2（150 步）</sub></th>
+      <th align="center"><sub>OSWorld&#8209;V2(150 Steps)</sub></th>
       <th align="center"><sub>DeskCraft</sub></th>
       <th align="center"><sub>OpenComputer</sub></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>通用视觉语言模型</em></sub></td>
+      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -341,7 +341,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI 专用模型</em></sub></td>
+      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
@@ -358,7 +358,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>我们的方法</em></sub></td>
+      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -379,14 +379,14 @@ bash scripts/captcha.sh
 
 </div>
 
-### 浏览器
+### Browser
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>模型</sub></th>
+      <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>WebVoyager</sub></th>
       <th align="center"><sub>Online&#8209;Mind2Web</sub></th>
       <th align="center"><sub>REAL</sub></th>
@@ -395,7 +395,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>通用视觉语言模型</em></sub></td>
+      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -447,7 +447,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI 专用模型</em></sub></td>
+      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;TARS&#8209;1.5</sub></td>
@@ -492,7 +492,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>我们的方法</em></sub></td>
+      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -515,14 +515,14 @@ bash scripts/captcha.sh
 
 > 对于 Odysseys，我们报告满分评分标准得分（Perfect）。
 
-### 定位
+### Grounding
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>模型</sub></th>
+      <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>VenusBench&#8209;GD</sub></th>
       <th align="center"><sub>ScreenSpot&#8209;Pro</sub></th>
       <th align="center"><sub>OSWorld&#8209;G&#8209;R</sub></th>
@@ -531,7 +531,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>通用视觉语言模型</em></sub></td>
+      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen&nbsp;3.7&nbsp;Plus</sub></td>
@@ -562,7 +562,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr> -->
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI 专用模型</em></sub></td>
+      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.0&#8209;72B</sub></td>
@@ -607,7 +607,7 @@ bash scripts/captcha.sh
       <td align="center"><strong>70.0</strong></td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>我们的方法</em></sub></td>
+      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -637,7 +637,7 @@ bash scripts/captcha.sh
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>模型</sub></th>
+      <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>VenusBench&#8209;CAPTCHA</sub></th>
       <th align="center"><sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub></th>
       <th align="center"><sub>MCA&#8209;Bench</sub></th>
@@ -647,7 +647,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="6" align="left"><sub><em>通用视觉语言模型</em></sub></td>
+      <td colspan="6" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -690,7 +690,7 @@ bash scripts/captcha.sh
       <td align="center">23.3</td>
     </tr>
     <tr>
-      <td colspan="6" align="left"><sub><em>我们的方法</em></sub></td>
+      <td colspan="6" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;9B</strong></sub></td>
