@@ -3,77 +3,77 @@
 </h1>
 
 <p align="center">
-  <strong>English</strong> | <a href="./README_CN.md">简体中文</a>
+  <a href="./README.md">English</a> | <strong>简体中文</strong>
 </p>
 
 <p align="center">
-  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
-  <img src="https://img.shields.io/badge/Report-Coming%20Soon-lightgrey" alt="Report: Coming Soon">
-  <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus--2-blue" alt="Website: UI-Venus-2"></a>
-  <a href="https://github.com/inclusionAI/UI-Venus"><img src="https://img.shields.io/badge/GitHub-Repository-green?logo=github" alt="GitHub"></a>
-  <a href="https://huggingface.co/inclusionAI/UI-Venus-2-9b"><img src="https://img.shields.io/badge/Hugging%20Face-Model-orange?logo=huggingface" alt="Hugging Face Model"></a>
+  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="许可证"></a>
+  <img src="https://img.shields.io/badge/Report-Coming%20Soon-lightgrey" alt="技术报告：即将发布">
+  <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus--2-blue" alt="网站：UI-Venus-2"></a>
+  <a href="https://github.com/inclusionAI/UI-Venus"><img src="https://img.shields.io/badge/GitHub-Repository-green?logo=github" alt="GitHub 仓库"></a>
+  <a href="https://huggingface.co/inclusionAI/UI-Venus-2-9b"><img src="https://img.shields.io/badge/Hugging%20Face-Model-orange?logo=huggingface" alt="Hugging Face 模型"></a>
 </p>
 
 <p align="center">
-  <em>A <strong>general-purpose foundation GUI agent</strong> for mobile apps, web platforms, and desktop operating systems — scaling <strong>environments, tasks, and feedback</strong> jointly within one closed-loop perception–reasoning–action agent.</em>
+  <em>一个面向移动应用、Web 平台和桌面操作系统的<strong>通用基础 GUI 智能体</strong>——在单一的感知—推理—动作闭环智能体中，联合扩展<strong>环境、任务与反馈</strong>。</em>
 </p>
 
-## 🌟 What's New in UI-Venus-2
+## 🌟 UI-Venus-2 新特性
 
-Compared with UI-Venus-1.5, we introduce:
+相较于 UI-Venus-1.5，我们引入了：
 
-- 📱 **Scaled multilingual mobile environments:** A substantially expanded executable mobile pool covering Chinese and English app ecosystems, paired with a **deep-research-driven query-generation** strategy that grounds task queries in real application functionality — improving the accuracy, validity, and executability of generated instructions.
-- 🖥️ **Computer use, built from the ground up:** Dedicated desktop operating-system capabilities constructed from scratch through computer-use data collection and task-specific training, extending the UI-Venus family to **mobile, web, and OS interaction in one unified end-to-end agent**.
-- 🎯 **Keypoint-grounded verification:** Task completion is judged on **task-relevant visual keypoints** rather than a coarse holistic look at the final screen, with **multi-model voting** aggregating heterogeneous judges — reducing single-judge bias and making the reward signal robust to reward hacking.
-- 🔄 **Verification-augmented reflection:** Verified feedback is distilled back into training as **reflection supervision**, so the agent can distinguish partial progress from true completion, avoid premature termination caused by observation misinterpretation, and recover during long-horizon interaction.
-
----
-
-# 📰 News
-
-* [2026/08] We release **UI-Venus-2**, a 9B/27B general-purpose foundation GUI agent that unifies mobile, web, and desktop interaction with scaled multilingual environments, keypoint-grounded verification, and verification-augmented reflection.
-* [2026/02] We release **[UI-Venus-1.5](https://ui-venus.github.io/UI-Venus-1.5/)**, an end-to-end GUI Agent designed for robust real-world applications.
-* [2026/02] We release **VenusBench-Mobile**, a challenging online benchmark for mobile GUI agents. See branch [VenusBench-Mobile](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-Mobile).
-* [2025/12] We release [VenusBench-GD](https://ui-venus.github.io/VenusBench-GD/), a comprehensive multi-platform GUI grounding benchmark. See branch [VenusBench-GD](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-GD).
-* [2025/8] We release **[UI-Venus](https://github.com/inclusionAI/UI-Venus/tree/UI-Venus-1.0)**, the first version of our UI agent model.
+- 📱 **规模化的多语言移动环境：** 大幅扩展可执行移动应用池，覆盖中英文应用生态；同时采用**深度研究驱动的查询生成**策略，让任务查询以真实应用功能为依据，从而提升生成指令的准确性、有效性和可执行性。
+- 🖥️ **从零构建的计算机操作能力：** 通过计算机操作数据采集和专项训练，从头构建桌面操作系统能力，使 UI-Venus 系列能够通过**一个统一的端到端智能体完成移动端、Web 和操作系统交互**。
+- 🎯 **基于关键点的验证：** 不再粗略地整体观察最终画面，而是依据**与任务相关的视觉关键点**判断任务是否完成；同时通过**多模型投票**聚合不同类型的评判模型，减少单一评判模型的偏差，并增强奖励信号抵御奖励作弊（reward hacking）的能力。
+- 🔄 **验证增强的反思：** 将经过验证的反馈提炼为训练中的**反思监督**，使智能体能够区分部分进展与真正完成，避免因错误理解观察结果而过早终止，并能在长程交互中恢复执行。
 
 ---
 
-# 🧭 Overview
+# 📰 最新动态
 
-* [Demo](#-demo)
-* [Venus Framework](#-venus-framework)
-* [Quick Start](#-quick-start)
-* [Benchmark Results](#-benchmark-results)
-* [Contact](#-contact)
-* [Citation](#-citation)
-
----
-
-# ✨ Demo
-
-[See more demos](https://ui-venus.github.io/UI-Venus-2/#demos)
-
-<img src="https://ui-venus.github.io/UI-Venus-2/assets/demo_gifs/mobile_cn_weather_train_booking.gif" alt="UI-Venus-2 mobile demo" width="1200">
+* [2026/08] 发布 **UI-Venus-2**：一款 9B/27B 通用基础 GUI 智能体，通过规模化多语言环境、基于关键点的验证和验证增强的反思，统一移动端、Web 和桌面端交互。
+* [2026/02] 发布 **[UI-Venus-1.5](https://ui-venus.github.io/UI-Venus-1.5/)**：一款专为稳定执行真实世界应用任务而设计的端到端 GUI 智能体。
+* [2026/02] 发布 **VenusBench-Mobile**：一个具有挑战性的移动端 GUI 智能体在线基准。参见 [VenusBench-Mobile 分支](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-Mobile)。
+* [2025/12] 发布 [VenusBench-GD](https://ui-venus.github.io/VenusBench-GD/)：一个全面的多平台 GUI 定位基准。参见 [VenusBench-GD 分支](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-GD)。
+* [2025/8] 发布 **[UI-Venus](https://github.com/inclusionAI/UI-Venus/tree/UI-Venus-1.0)**：我们的第一版 UI 智能体模型。
 
 ---
 
-# 🛠️ Venus Framework
+# 🧭 目录
 
-We provide two frameworks for running agents in real environments:
+* [演示](#-演示)
+* [Venus 框架](#-venus-框架)
+* [快速开始](#-快速开始)
+* [基准测试结果](#-基准测试结果)
+* [联系方式](#-联系方式)
+* [引用](#-引用)
 
-| Framework | Description | Documentation |
+---
+
+# ✨ 演示
+
+[查看更多演示](https://ui-venus.github.io/UI-Venus-2/#demos)
+
+<img src="https://ui-venus.github.io/UI-Venus-2/assets/demo_gifs/mobile_cn_weather_train_booking.gif" alt="UI-Venus-2 移动端演示" width="1200">
+
+---
+
+# 🛠️ Venus 框架
+
+我们提供了两套用于在真实环境中运行智能体的框架：
+
+| 框架 | 说明 | 文档 |
 |---|---|---|
-| Mobile Framework | Android/ADB agent framework for single-task execution, multi-device batch execution, trajectory recording, and reflection. | [English](./Venus_framework/Venus_framework_mobile/README.md) · [中文](./Venus_framework/Venus_framework_mobile/README_CN.md) |
-| Browser Plugin | Chrome Side Panel extension that connects UI-Venus to the active browser tab and executes browser tasks interactively. | [English](./Venus_framework/Venus_plugin_browser/README.md) · [中文](./Venus_framework/Venus_plugin_browser/README_CN.md) |
+| 移动端框架 | 基于 Android/ADB 的智能体框架，支持单任务执行、多设备批量执行、轨迹记录和反思。 | [中文](./Venus_framework/Venus_framework_mobile/README_CN.md) · [English](./Venus_framework/Venus_framework_mobile/README.md) |
+| 浏览器插件 | 一款 Chrome 侧边栏扩展，可将 UI-Venus 连接到当前浏览器标签页并以交互方式执行浏览器任务。 | [中文](./Venus_framework/Venus_plugin_browser/README_CN.md) · [English](./Venus_framework/Venus_plugin_browser/README.md) |
 
-See the [Venus Framework overview](./Venus_framework/README.md) for the directory layout and entry points. The lightweight domain examples below can be used without either framework unless their individual requirements state otherwise.
+目录结构和入口说明请参阅 [Venus 框架概览](./Venus_framework/README_CN.md)。除非各示例的要求另有说明，否则下方的轻量级领域示例无需依赖这两套框架。
 
 ---
 
-# 🚀 Quick Start
+# 🚀 快速开始
 
-### Installation
+### 安装
 
 ```bash
 conda create -n ui-venus-2 python=3.11 -y
@@ -81,11 +81,11 @@ conda activate ui-venus-2
 pip install -r requirements.txt
 ```
 
-Python 3.10 or newer is required. All commands below are executed from the repository root. Configure the OpenAI-compatible model service through `MODEL_URL`, `MODEL_NAME`, and either `API_KEY` or `MODEL_API_KEY`; the same values can also be edited at the top of each domain script. `API_KEY` takes precedence when both key variables are set. Set `MODEL_NAME` to the served name of your UI-Venus-2 9B or 27B model.
+需要 Python 3.10 或更高版本。以下所有命令均在仓库根目录执行。通过 `MODEL_URL`、`MODEL_NAME` 以及 `API_KEY` 或 `MODEL_API_KEY` 配置兼容 OpenAI 接口的模型服务；也可以在各领域脚本顶部修改相同配置。同时设置两个密钥变量时，`API_KEY` 的优先级更高。请将 `MODEL_NAME` 设置为部署 UI-Venus-2 9B 或 27B 模型时使用的服务名称。
 
-### Mobile
+### 移动端
 
-Run multi-turn inference over the included prerecorded screenshot sequence. `N_IMG` controls how many recent historical screenshots are retained:
+使用仓库内预先录制的截图序列运行多轮推理。`N_IMG` 用于控制保留最近多少张历史截图：
 
 ```bash
 MODEL_URL=http://127.0.0.1:8000/v1 \
@@ -94,13 +94,13 @@ N_IMG=2 \
 bash scripts/mobile.sh
 ```
 
-This example performs model inference only and does not execute actions on a device. Use the Mobile Framework above for real-device ADB automation.
+此示例仅执行模型推理，不会在设备上执行操作。如需通过 ADB 自动操作真实设备，请使用上方的移动端框架。
 
-[Mobile multi-turn example and input/output format](./models/mobile/README.md)
+[移动端多轮示例及输入/输出格式](./models/mobile/README_CN.md)
 
-### Computer
+### 计算机
 
-Run multi-turn Computer inference over a prerecorded desktop screenshot sequence:
+使用预先录制的桌面截图序列运行多轮计算机操作推理：
 
 ```bash
 MODEL_URL=http://127.0.0.1:8000/v1 \
@@ -109,25 +109,25 @@ N_IMG=2 \
 bash scripts/computer.sh
 ```
 
-The default command uses the included desktop screenshot sample. The standalone example validates and normalizes model actions but does not execute them on the host. It has no runtime dependency on OSWorld.
+默认命令使用仓库内附带的桌面截图样例。该独立示例会校验并规范化模型操作，但不会在宿主机上执行这些操作；运行时也不依赖 OSWorld。
 
-[Computer multi-turn example and action format](./models/computer/README.md)
+[计算机多轮示例及操作格式](./models/computer/README_CN.md)
 
-### Browser
+### 浏览器
 
-Start Chrome with a CDP port as described in the domain documentation, then run one natural-language browser task:
+按照领域文档的说明，以 CDP 端口启动 Chrome，然后运行一个自然语言浏览器任务：
 
 ```bash
 MODEL_URL=http://127.0.0.1:8000/v1 \
 MODEL_NAME=UI-Venus-2 \
-bash scripts/browser.sh "Open https://example.com and report the page title"
+bash scripts/browser.sh "打开 https://example.com 并报告页面标题"
 ```
 
-[Browser usage and CDP setup](./models/browser/README.md)
+[浏览器用法及 CDP 配置](./models/browser/README.md)
 
-### Grounding
+### 定位
 
-Run the direct grounding evaluation on the three samples included with the repository:
+在仓库内附带的三个样例上运行直接定位评测：
 
 ```bash
 MODEL_URL=http://127.0.0.1:8000/v1 \
@@ -135,11 +135,11 @@ MODEL_NAME=UI-Venus-2 \
 bash scripts/grounding.sh
 ```
 
-[Grounding evaluation, smoke test, and benchmark configuration](./models/grounding/README.md)
+[定位评测、冒烟测试及基准配置](./models/grounding/README.md)
 
 ### CAPTCHA
 
-Run inference on the included CAPTCHA image and save the parsed JSON and visualization under `results/captcha/`:
+对仓库内附带的 CAPTCHA 图片运行推理，并将解析后的 JSON 和可视化结果保存到 `results/captcha/`：
 
 ```bash
 MODEL_URL=http://127.0.0.1:8000/v1 \
@@ -147,20 +147,20 @@ MODEL_NAME=UI-Venus-2 \
 bash scripts/captcha.sh
 ```
 
-[CAPTCHA usage, prompt, action format, and visualization](./models/captcha/README.md)
+[CAPTCHA 用法、提示词、操作格式及可视化](./models/captcha/README_CN.md)
 
 ---
 
-# 📊 Benchmark Results
+# 📊 基准测试结果
 
-### Mobile
+### 移动端
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>Models</sub></th>
+      <th align="left"><sub>模型</sub></th>
       <th align="center"><sub>MobileGym</sub></th>
       <th align="center"><sub>VenusBench&#8209;Mobile</sub></th>
       <th align="center"><sub>AndroidWorld</sub></th>
@@ -171,7 +171,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="7" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="7" align="left"><sub><em>通用视觉语言模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -219,7 +219,7 @@ bash scripts/captcha.sh
       <td align="center"><ins>65.6</ins></td>
     </tr>
     <tr>
-      <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="7" align="left"><sub><em>GUI 专用模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;8B</sub></td>
@@ -267,7 +267,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="7" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="7" align="left"><sub><em>我们的方法</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -292,25 +292,25 @@ bash scripts/captcha.sh
 
 </div>
 
-> In the MobileWorld column, success rates on the GUI-only subset are reported for maximum step limits of 50 and 100 (with the 100-step results shown in parentheses). MemGUI reports Main Results Pass@1.
+> MobileWorld 列报告了仅 GUI 子集在最大步数为 50 和 100 时的成功率（括号内为 100 步的结果）。MemGUI 报告主结果的 Pass@1。
 
-### Computer
+### 计算机
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>Models</sub></th>
+      <th align="left"><sub>模型</sub></th>
       <th align="center"><sub>OSWorld&#8209;Verified</sub></th>
-      <th align="center"><sub>OSWorld&#8209;V2(150 Steps)</sub></th>
+      <th align="center"><sub>OSWorld&#8209;V2（150 步）</sub></th>
       <th align="center"><sub>DeskCraft</sub></th>
       <th align="center"><sub>OpenComputer</sub></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="5" align="left"><sub><em>通用视觉语言模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -341,7 +341,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="5" align="left"><sub><em>GUI 专用模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
@@ -358,35 +358,35 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="5" align="left"><sub><em>我们的方法</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center">70.8</td>
-      <td align="center">comming soon</td>
+      <td align="center">即将公布</td>
       <td align="center"><ins>48.0</ins></td>
-      <td align="center">comming soon</td>
+      <td align="center">即将公布</td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
       <td align="center"><strong>80.5</strong></td>
-      <td align="center">comming soon</td>
+      <td align="center">即将公布</td>
       <td align="center"><strong>55.5</strong></td>
-      <td align="center">comming soon</td>
+      <td align="center">即将公布</td>
     </tr>
   </tbody>
 </table>
 
 </div>
 
-### Browser
+### 浏览器
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>Models</sub></th>
+      <th align="left"><sub>模型</sub></th>
       <th align="center"><sub>WebVoyager</sub></th>
       <th align="center"><sub>Online&#8209;Mind2Web</sub></th>
       <th align="center"><sub>REAL</sub></th>
@@ -395,7 +395,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="5" align="left"><sub><em>通用视觉语言模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -447,7 +447,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="5" align="left"><sub><em>GUI 专用模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;TARS&#8209;1.5</sub></td>
@@ -492,7 +492,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="5" align="left"><sub><em>我们的方法</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -513,16 +513,16 @@ bash scripts/captcha.sh
 
 </div>
 
-> For Odysseys, we report the perfect rubric score (Perfect).
+> 对于 Odysseys，我们报告满分评分标准得分（Perfect）。
 
-### Grounding
+### 定位
 
 <div align="center">
 
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>Models</sub></th>
+      <th align="left"><sub>模型</sub></th>
       <th align="center"><sub>VenusBench&#8209;GD</sub></th>
       <th align="center"><sub>ScreenSpot&#8209;Pro</sub></th>
       <th align="center"><sub>OSWorld&#8209;G&#8209;R</sub></th>
@@ -531,7 +531,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="5" align="left"><sub><em>通用视觉语言模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen&nbsp;3.7&nbsp;Plus</sub></td>
@@ -562,7 +562,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr> -->
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="5" align="left"><sub><em>GUI 专用模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.0&#8209;72B</sub></td>
@@ -607,7 +607,7 @@ bash scripts/captcha.sh
       <td align="center"><strong>70.0</strong></td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="5" align="left"><sub><em>我们的方法</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
@@ -628,7 +628,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates results that may require verification with the original sources.
+> 对于每项基准测试，粗体和下划线分数分别表示最佳和次佳结果。`*` 表示可能需要通过原始来源进一步核实的结果。
 
 ### CAPTCHA
 
@@ -637,7 +637,7 @@ bash scripts/captcha.sh
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>Models</sub></th>
+      <th align="left"><sub>模型</sub></th>
       <th align="center"><sub>VenusBench&#8209;CAPTCHA</sub></th>
       <th align="center"><sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub></th>
       <th align="center"><sub>MCA&#8209;Bench</sub></th>
@@ -647,7 +647,7 @@ bash scripts/captcha.sh
   </thead>
   <tbody>
     <tr>
-      <td colspan="6" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="6" align="left"><sub><em>通用视觉语言模型</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
@@ -690,7 +690,7 @@ bash scripts/captcha.sh
       <td align="center">23.3</td>
     </tr>
     <tr>
-      <td colspan="6" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="6" align="left"><sub><em>我们的方法</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;9B</strong></sub></td>
@@ -713,55 +713,55 @@ bash scripts/captcha.sh
 
 </div>
 
-> All results are Pass@1 percentages, and higher is better. We evaluate on VenusBench-CAPTCHA and four public benchmarks: Spatial-CAPTCHA-Bench, MCA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 OpenCaptcha task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best results in each column, respectively.
+> 所有结果均为 Pass@1 百分比，数值越高越好。我们在 VenusBench-CAPTCHA 以及 Spatial-CAPTCHA-Bench、MCA-Bench、NextGen-CAPTCHAs 和 Open CaptchaWorld 四个公开基准上进行评测。评测采用从 MCA-Bench 中抽取的 1,000 个样例、NextGen-CAPTCHAs 的 15 种任务类型，以及 OpenCaptcha 的 16 种任务类型；筛选详情请参阅附录。每列中的粗体和下划线分数分别表示最佳和次佳结果。
 
 ---
 
-# 📬 Contact
+# 📬 联系方式
 
-For any questions or collaboration, please contact the maintainers.
+如有任何问题或合作意向，请联系项目维护者。
 
 ---
 
-# 📚 Citation
+# 📚 引用
 
 ```bibtex
 # UI-Venus-2
 @misc{venusteam2026uivenus2technicalreport,
-      title={UI-Venus-2 Technical Report}, 
+      title={UI-Venus-2 Technical Report},
       author={Venus-Team and xxx},
       year={2026},
       eprint={xxx},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={comming soon}, 
+      url={comming soon},
 }
 
 # UI-Venus-1.5
 @misc{venusteam2026uivenus15technicalreport,
-      title={UI-Venus-1.5 Technical Report}, 
+      title={UI-Venus-1.5 Technical Report},
       author={Venus-Team and Changlong Gao and Zhangxuan Gu and Yulin Liu and Xinyu Qiu and Shuheng Shen and Yue Wen and Tianyu Xia and Zhenyu Xu and Zhengwen Zeng and Beitong Zhou and Xingran Zhou and Weizhi Chen and Sunhao Dai and Jingya Dou and Yichen Gong and Yuan Guo and Zhenlin Guo and Feng Li and Qian Li and Jinzhen Lin and Yuqi Zhou and Linchao Zhu and Liang Chen and Zhenyu Guo and Changhua Meng and Weiqiang Wang},
       year={2026},
       eprint={2602.09082},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2602.09082}, 
+      url={https://arxiv.org/abs/2602.09082},
 }
 
 # UI-Venus 1.0
 @misc{gu2025uivenustechnicalreportbuilding,
-      title={UI-Venus Technical Report: Building High-performance UI Agents with RFT}, 
+      title={UI-Venus Technical Report: Building High-performance UI Agents with RFT},
       author={Zhangxuan Gu and Zhengwen Zeng and Zhenyu Xu and others},
       year={2025},
       eprint={2508.10833},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2508.10833}, 
+      url={https://arxiv.org/abs/2508.10833},
 }
 ```
 
 ---
 
-# ⚖️ License
+# ⚖️ 许可证
 
-This project is for research and educational purposes only.
+本项目仅供研究和教育用途。
