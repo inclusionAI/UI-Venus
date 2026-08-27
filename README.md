@@ -37,7 +37,7 @@ Compared with UI-Venus-1.5, we introduce:
   <img src="assets/venus2_page1_v7_minimal_editorial.png" alt="UI-Venus-2 Benchmark Performance" width="1200" />
 </p>
 
-> **Figure:** Performance comparison of UI-Venus-2 across representative mobile, browser, computer, CAPTCHA, and grounding benchmarks.
+> **Figure** UI-Venus-2 on eight GUI-agent benchmarks. Each panel compares UI-Venus-2-27B and UI-Venus-2-9B with four selected strong external baselines. We favor standalone end-to-end systems evaluated on the closest available task subset and step budget; source-reported action scaffolds may still differ. Bars start at zero and scales vary by panel. MobileWorld uses GUI-only success rate on 117 tasks with 50 steps, WebVoyager uses the refreshed 595-task split, Odysseys uses average rubric score over 200 tasks, VenusBench-CAPTCHA uses micro Pass@1 over all 219 examples, and VenusBench-GD uses English-instruction micro-average accuracy. Live-site results may vary with evaluation date. “*” denotes external-model results evaluated or reproduced by us under the stated protocol, not statistical significance.
 
 ---
 
@@ -204,7 +204,7 @@ bash scripts/captcha.sh
       <td align="center">25.7*</td>
     </tr>
     <tr>
-      <td align="left"><sub>Opus&nbsp;4.6</sub></td>
+      <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
       <td align="center">-</td>
       <td align="center">36.5*</td>
       <td align="center">-</td>
@@ -213,7 +213,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">38.7*</td>
       <td align="center">31.2*</td>
       <td align="center">-</td>
@@ -222,13 +222,40 @@ bash scripts/captcha.sh
       <td align="center">39.1</td>
     </tr>
     <tr>
-      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="left"><sub>Kimi&#8209;K3</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">74.4</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
       <td align="center">52.0</td>
       <td align="center">20.1*</td>
       <td align="center">-</td>
       <td align="center">63.2</td>
       <td align="center">51.6</td>
       <td align="center"><ins>65.6</ins>*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.1&#8209;Pro</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">73.2</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.6&#8209;Sol</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">70.1</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
@@ -304,7 +331,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> In the MobileWorld column, success rates on the GUI-only subset are reported for maximum step limits of 50 and 100 (with the 100-step results shown in parentheses). MemGUI reports Main Results Pass@1. `*` indicates our reproduced results.
+> Performance comparison on various mobile GUI benchmarks. VenusBench-Mobile reports success rate on its 149-task primary pool. For MobileWorld, we report GUI-only success rate on 117 tasks under the 50-step setting; values in parentheses, when available, use 100 steps. MemGUI reports Main Results Pass@1. `*` denotes external-model results evaluated or reproduced by us; it does not denote statistical significance.
 
 ### Computer
 
@@ -324,6 +351,12 @@ bash scripts/captcha.sh
       <td colspan="4" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
+      <td align="left"><sub>Claude&#8209;Opus&#8209;4.8</sub></td>
+      <td align="center"><strong>83.4</strong></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
       <td align="center">41.8</td>
       <td align="center">2.5</td>
@@ -336,16 +369,28 @@ bash scripts/captcha.sh
       <td align="center">28.7*</td>
     </tr>
     <tr>
-      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">73.1</td>
       <td align="center">7.1</td>
       <td align="center">41.4*</td>
     </tr>
     <tr>
-      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
       <td align="center">62.3</td>
       <td align="center">6.3</td>
       <td align="center">40.0*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.1&#8209;Pro</sub></td>
+      <td align="center">78.8</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.5</sub></td>
+      <td align="center">78.7</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td colspan="4" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
@@ -373,7 +418,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
-      <td align="center">80.5</td>
+      <td align="center"><ins>80.5</ins></td>
       <td align="center">13.24</td>
       <td align="center">55.5</td>
     </tr>
@@ -382,7 +427,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> Performance comparison on various computer use agent benchmarks. For DeskCraft, we report the overall performance on the full benchmark of 538 tasks.
+> Performance comparison on various computer-use agent benchmarks. Reported OSWorld-Verified baselines use the 361-task setting in their cited source and may use model-specific action scaffolds. For DeskCraft, we report an author-evaluated aggregate over the 538-task union of the Standard and Interactive splits; this differs from the benchmark's official split-level reporting. `*` indicates external-model results evaluated by us and does not denote statistical significance.
 
 ### Browser
 
@@ -412,6 +457,14 @@ bash scripts/captcha.sh
       <td align="center">13.5*</td>
     </tr>
     <tr>
+      <td align="left"><sub>Qwen3.5&#8209;4B</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">42.9</td>
+      <td align="center">10.7</td>
+    </tr>
+    <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
       <td align="center">84.3*</td>
       <td align="center">55.3*</td>
@@ -426,6 +479,22 @@ bash scripts/captcha.sh
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5&nbsp;(SoM)</sub></td>
+      <td align="center">90.6</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.4</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">55.4</td>
+      <td align="center">33.5</td>
     </tr>
     <tr>
       <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
@@ -450,6 +519,14 @@ bash scripts/captcha.sh
       <td align="center">-</td>
       <td align="center">68.9</td>
       <td align="center">44.5</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&#8209;Sonnet&#8209;4.6</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">49.8</td>
+      <td align="center">31.0</td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
@@ -495,7 +572,15 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Fara&#8209;1.5&#8209;9B</sub></td>
+      <td align="left"><sub>Fara1.5&#8209;4B</sub></td>
+      <td align="center">80.8</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Fara1.5&#8209;9B</sub></td>
       <td align="center">86.6</td>
       <td align="center">63.4</td>
       <td align="center">-</td>
@@ -503,7 +588,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Fara&#8209;1.5&#8209;27B</sub></td>
+      <td align="left"><sub>Fara1.5&#8209;27B</sub></td>
       <td align="center">89.3</td>
       <td align="center">72.3</td>
       <td align="center">-</td>
@@ -534,7 +619,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> Performance comparison on four live-web benchmarks: WebVoyager, Online-Mind2Web, REAL, and Odysseys. For Odysseys, we report both the averaged rubric score (Avg.) and the perfect rubric score (Perfect). Bold and underlined scores indicate the best and second-best reported results in each column, respectively. `*` indicates our reproduced results, which are not available from official reports.
+> Performance comparison on four live-web benchmarks: WebVoyager, Online-Mind2Web, REAL, and Odysseys. The Fara1.5 and GPT-5 (SoM) WebVoyager entries use the refreshed 595-task, 100-step robust protocol and are averaged over three runs; live-site states may vary by evaluation date. For Odysseys, we report both the averaged rubric score (Avg.) and the perfect rubric score (Perfect). Bold and underlined scores indicate the best and second-best reported results in each column, respectively. `*` indicates our reproduced results, which are not available from official reports.
 
 ### Grounding
 
@@ -569,10 +654,10 @@ bash scripts/captcha.sh
       <td align="center">62.0</td>
     </tr>
     <tr>
-      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">73.1*</td>
       <td align="center">52.0*</td>
-      <td align="center">-*</td>
+      <td align="center">69.7*</td>
       <td align="center">-*</td>
     </tr>
     <tr>
@@ -607,6 +692,13 @@ bash scripts/captcha.sh
       <td align="center">30.0*</td>
     </tr>
     <tr>
+      <td align="left"><sub>MAI&#8209;UI&#8209;8B</sub></td>
+      <td align="center">65.2*</td>
+      <td align="center">65.8</td>
+      <td align="center">68.6</td>
+      <td align="center">40.7</td>
+    </tr>
+    <tr>
       <td align="left"><sub>MAI&#8209;UI&#8209;32B</sub></td>
       <td align="center">-</td>
       <td align="center">67.9</td>
@@ -632,9 +724,9 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
-      <td align="center">77.1</td>
+      <td align="center"><ins>77.1</ins></td>
       <td align="center">73.0</td>
-      <td align="center"><ins>78.5</ins></td>
+      <td align="center">78.5</td>
       <td align="center">53.2</td>
     </tr>
     <tr>
@@ -649,7 +741,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates the results we reproduced.
+> Performance comparison on various Grounding Benchmarks. VenusBench-GD reports English-instruction micro-average point-in-box accuracy. For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates external-model results evaluated or reproduced by us under the stated protocol; it does not denote statistical significance.
 
 ### CAPTCHA
 
@@ -672,7 +764,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
-      <td align="center">28.3</td>
+      <td align="center">28.3*</td>
       <td align="center">30.4</td>
       <td align="center">4.9</td>
       <td align="center">2.8</td>
@@ -680,7 +772,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
-      <td align="center">53.0</td>
+      <td align="center">53.0*</td>
       <td align="center">51.7</td>
       <td align="center">31.0</td>
       <td align="center">14.1</td>
@@ -688,7 +780,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub></td>
-      <td align="center">47.9</td>
+      <td align="center">47.9*</td>
       <td align="center">35.5</td>
       <td align="center"><ins>43.6</ins></td>
       <td align="center">20.4</td>
@@ -696,7 +788,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
-      <td align="center">39.7</td>
+      <td align="center">39.7*</td>
       <td align="center">38.7</td>
       <td align="center">24.8</td>
       <td align="center">7.2</td>
@@ -704,7 +796,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
-      <td align="center">16.0</td>
+      <td align="center">16.0*</td>
       <td align="center">25.9</td>
       <td align="center">9.5</td>
       <td align="center">2.8</td>
@@ -734,7 +826,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> All results are Pass@1 percentages, and higher is better. We evaluate on VenusBench-CAPTCHA and four public benchmarks: MCA-Bench, Spatial-CAPTCHA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 Open CaptchaWorld task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best reported results in each column, respectively.
+> All results are Pass@1 percentages, and higher is better. VenusBench-CAPTCHA reports the micro-average over all 219 fixed examples. We evaluate on VenusBench-CAPTCHA and four public benchmarks: MCA-Bench, Spatial-CAPTCHA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 Open CaptchaWorld task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best reported results in each column, respectively. For the VenusBench-CAPTCHA column, `*` denotes external-model results evaluated by us under the same protocol; it is not a significance marker.
 
 ---
 

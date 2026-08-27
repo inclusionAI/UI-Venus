@@ -37,7 +37,7 @@
   <img src="assets/venus2_page1_v7_minimal_editorial.png" alt="UI-Venus-2 基准测试表现" width="1200" />
 </p>
 
-> **图：** UI-Venus-2 在代表性移动端、浏览器、计算机、CAPTCHA 和定位基准上的性能对比。
+> **图** UI-Venus-2 在八项 GUI 智能体基准上的表现。每个面板将 UI-Venus-2-27B 和 UI-Venus-2-9B 与四个精选的强外部基线进行比较。我们优先选择在最接近的任务子集和步数预算下评测的独立端到端系统，但来源报告所使用的 action scaffold 仍可能存在差异。所有柱状图均从零开始，各面板的刻度范围不同。MobileWorld 使用 117 个任务、50 步设置下的纯 GUI 成功率；WebVoyager 使用更新后的 595 任务划分；Odysseys 使用 200 个任务的平均 rubric 分数；VenusBench-CAPTCHA 使用全部 219 个样例的 micro Pass@1；VenusBench-GD 使用英文指令的微平均准确率。在线网站结果可能随评测日期而变化。“*”表示由我们按照所述协议评测或复现的外部模型结果，并不表示统计显著性。
 
 ---
 
@@ -204,7 +204,7 @@ bash scripts/captcha.sh
       <td align="center">25.7*</td>
     </tr>
     <tr>
-      <td align="left"><sub>Opus&nbsp;4.6</sub></td>
+      <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
       <td align="center">-</td>
       <td align="center">36.5*</td>
       <td align="center">-</td>
@@ -213,7 +213,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">38.7*</td>
       <td align="center">31.2*</td>
       <td align="center">-</td>
@@ -222,13 +222,40 @@ bash scripts/captcha.sh
       <td align="center">39.1</td>
     </tr>
     <tr>
-      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="left"><sub>Kimi&#8209;K3</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">74.4</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
       <td align="center">52.0</td>
       <td align="center">20.1*</td>
       <td align="center">-</td>
       <td align="center">63.2</td>
       <td align="center">51.6</td>
       <td align="center"><ins>65.6</ins>*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.1&#8209;Pro</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">73.2</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.6&#8209;Sol</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">70.1</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
@@ -304,7 +331,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> MobileWorld 列报告了仅 GUI 子集在最大步数为 50 和 100 时的成功率（括号内为 100 步的结果）。MemGUI 报告主结果的 Pass@1。`*` 表示我们复现的结果。
+> 各类移动端 GUI 基准的性能对比。VenusBench-Mobile 报告其 149 个任务主池上的成功率。MobileWorld 报告 117 个纯 GUI 任务在 50 步设置下的成功率；括号中的数值（如有）使用 100 步设置。MemGUI 报告主结果的 Pass@1。`*` 表示由我们评测或复现的外部模型结果，并不表示统计显著性。
 
 ### Computer
 
@@ -324,6 +351,12 @@ bash scripts/captcha.sh
       <td colspan="4" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
+      <td align="left"><sub>Claude&#8209;Opus&#8209;4.8</sub></td>
+      <td align="center"><strong>83.4</strong></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
       <td align="center">41.8</td>
       <td align="center">2.5</td>
@@ -336,16 +369,28 @@ bash scripts/captcha.sh
       <td align="center">28.7*</td>
     </tr>
     <tr>
-      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">73.1</td>
       <td align="center">7.1</td>
       <td align="center">41.4*</td>
     </tr>
     <tr>
-      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
       <td align="center">62.3</td>
       <td align="center">6.3</td>
       <td align="center">40.0*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.1&#8209;Pro</sub></td>
+      <td align="center">78.8</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.5</sub></td>
+      <td align="center">78.7</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td colspan="4" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
@@ -373,7 +418,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
-      <td align="center">80.5</td>
+      <td align="center"><ins>80.5</ins></td>
       <td align="center">13.24</td>
       <td align="center">55.5</td>
     </tr>
@@ -382,7 +427,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 各类计算机使用智能体基准的性能对比。对于 DeskCraft，我们报告完整基准中全部 538 个任务的总体性能。
+> 各类计算机使用智能体基准的性能对比。OSWorld-Verified 基线采用其引用来源中的 361 个任务设置，并可能使用各模型特定的 action scaffold。对于 DeskCraft，我们报告 Standard 和 Interactive 两个划分合计 538 个任务上由作者评测的汇总结果；这一口径与基准官方按划分报告的方式不同。`*` 表示由我们评测的外部模型结果，并不表示统计显著性。
 
 ### Browser
 
@@ -412,6 +457,14 @@ bash scripts/captcha.sh
       <td align="center">13.5*</td>
     </tr>
     <tr>
+      <td align="left"><sub>Qwen3.5&#8209;4B</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">42.9</td>
+      <td align="center">10.7</td>
+    </tr>
+    <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
       <td align="center">84.3*</td>
       <td align="center">55.3*</td>
@@ -426,6 +479,22 @@ bash scripts/captcha.sh
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5&nbsp;(SoM)</sub></td>
+      <td align="center">90.6</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.4</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">55.4</td>
+      <td align="center">33.5</td>
     </tr>
     <tr>
       <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
@@ -450,6 +519,14 @@ bash scripts/captcha.sh
       <td align="center">-</td>
       <td align="center">68.9</td>
       <td align="center">44.5</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&#8209;Sonnet&#8209;4.6</sub></td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">49.8</td>
+      <td align="center">31.0</td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
@@ -495,7 +572,15 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Fara&#8209;1.5&#8209;9B</sub></td>
+      <td align="left"><sub>Fara1.5&#8209;4B</sub></td>
+      <td align="center">80.8</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Fara1.5&#8209;9B</sub></td>
       <td align="center">86.6</td>
       <td align="center">63.4</td>
       <td align="center">-</td>
@@ -503,7 +588,7 @@ bash scripts/captcha.sh
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Fara&#8209;1.5&#8209;27B</sub></td>
+      <td align="left"><sub>Fara1.5&#8209;27B</sub></td>
       <td align="center">89.3</td>
       <td align="center">72.3</td>
       <td align="center">-</td>
@@ -534,7 +619,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 四个实时网页基准（WebVoyager、Online-Mind2Web、REAL 和 Odysseys）的性能对比。对于 Odysseys，我们同时报告平均评分（Avg.）和满分评分（Perfect）。每列中的粗体和下划线分数分别表示最佳和次佳公开结果。`*` 表示我们复现且官方报告中未提供的结果。
+> 四个实时网页基准（WebVoyager、Online-Mind2Web、REAL 和 Odysseys）的性能对比。Fara1.5 和 GPT-5 (SoM) 的 WebVoyager 结果采用更新后的 595 个任务、100 步 robust protocol，并取三次运行的平均值；在线网站状态可能随评测日期变化。对于 Odysseys，我们同时报告平均评分（Avg.）和满分评分（Perfect）。每列中的粗体和下划线分数分别表示最佳和次佳公开结果。`*` 表示我们复现且官方报告中未提供的结果。
 
 ### Grounding
 
@@ -569,10 +654,10 @@ bash scripts/captcha.sh
       <td align="center">62.0</td>
     </tr>
     <tr>
-      <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">73.1*</td>
       <td align="center">52.0*</td>
-      <td align="center">-*</td>
+      <td align="center">69.7*</td>
       <td align="center">-*</td>
     </tr>
     <tr>
@@ -607,6 +692,13 @@ bash scripts/captcha.sh
       <td align="center">30.0*</td>
     </tr>
     <tr>
+      <td align="left"><sub>MAI&#8209;UI&#8209;8B</sub></td>
+      <td align="center">65.2*</td>
+      <td align="center">65.8</td>
+      <td align="center">68.6</td>
+      <td align="center">40.7</td>
+    </tr>
+    <tr>
       <td align="left"><sub>MAI&#8209;UI&#8209;32B</sub></td>
       <td align="center">-</td>
       <td align="center">67.9</td>
@@ -632,9 +724,9 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
-      <td align="center">77.1</td>
+      <td align="center"><ins>77.1</ins></td>
       <td align="center">73.0</td>
-      <td align="center"><ins>78.5</ins></td>
+      <td align="center">78.5</td>
       <td align="center">53.2</td>
     </tr>
     <tr>
@@ -649,7 +741,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 对于每项基准测试，粗体和下划线分数分别表示最佳和次佳结果。`*` 表示我们复现的结果。
+> 各类定位基准的性能对比。VenusBench-GD 报告英文指令下的 point-in-box 微平均准确率。对于每项基准测试，粗体和下划线分数分别表示最佳和次佳结果。`*` 表示由我们按照所述协议评测或复现的外部模型结果，并不表示统计显著性。
 
 ### CAPTCHA
 
@@ -672,7 +764,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
-      <td align="center">28.3</td>
+      <td align="center">28.3*</td>
       <td align="center">30.4</td>
       <td align="center">4.9</td>
       <td align="center">2.8</td>
@@ -680,7 +772,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
-      <td align="center">53.0</td>
+      <td align="center">53.0*</td>
       <td align="center">51.7</td>
       <td align="center">31.0</td>
       <td align="center">14.1</td>
@@ -688,7 +780,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub></td>
-      <td align="center">47.9</td>
+      <td align="center">47.9*</td>
       <td align="center">35.5</td>
       <td align="center"><ins>43.6</ins></td>
       <td align="center">20.4</td>
@@ -696,7 +788,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
-      <td align="center">39.7</td>
+      <td align="center">39.7*</td>
       <td align="center">38.7</td>
       <td align="center">24.8</td>
       <td align="center">7.2</td>
@@ -704,7 +796,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
-      <td align="center">16.0</td>
+      <td align="center">16.0*</td>
       <td align="center">25.9</td>
       <td align="center">9.5</td>
       <td align="center">2.8</td>
@@ -734,7 +826,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 所有结果均为 Pass@1 百分比，数值越高越好。我们在 VenusBench-CAPTCHA 以及 MCA-Bench、Spatial-CAPTCHA-Bench、NextGen-CAPTCHAs 和 Open CaptchaWorld 四个公开基准上进行评测。评测采用从 MCA-Bench 中抽取的 1,000 个样例、NextGen-CAPTCHAs 的 15 种任务类型，以及 Open CaptchaWorld 的 16 种任务类型；筛选详情请参阅附录。每列中的粗体和下划线分数分别表示最佳和次佳公开结果。
+> 所有结果均为 Pass@1 百分比，数值越高越好。VenusBench-CAPTCHA 报告全部 219 个固定样例的微平均结果。我们在 VenusBench-CAPTCHA 以及 MCA-Bench、Spatial-CAPTCHA-Bench、NextGen-CAPTCHAs 和 Open CaptchaWorld 四个公开基准上进行评测。评测采用从 MCA-Bench 中抽取的 1,000 个样例、NextGen-CAPTCHAs 的 15 种任务类型，以及 Open CaptchaWorld 的 16 种任务类型；筛选详情请参阅附录。每列中的粗体和下划线分数分别表示最佳和次佳公开结果。对于 VenusBench-CAPTCHA 列，`*` 表示由我们按照相同协议评测的外部模型结果，并不表示统计显著性。
 
 ---
 
