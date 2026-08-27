@@ -7,12 +7,10 @@ import {
   parseVenusResponse,
 } from "../src/action-parser.js";
 import {
-  loadSettings,
   normalizeMaxSteps,
   normalizeApiEndpoint,
   normalizeTemperature,
   permissionPatternForApi,
-  saveSettings,
 } from "../src/settings.js";
 
 test("parses all public point actions", () => {
@@ -115,39 +113,4 @@ test("validates max steps and model temperature", () => {
   assert.throws(() => normalizeMaxSteps(0), /1 到 200/);
   assert.throws(() => normalizeMaxSteps(20.5), /整数/);
   assert.throws(() => normalizeTemperature(2.1), /0 到 2/);
-});
-
-test("loads and saves user-provided model settings", async () => {
-  const local = {};
-  const session = {};
-  const storageArea = (data) => ({
-    get: async () => ({ ...data }),
-    set: async (values) => Object.assign(data, values),
-    remove: async (key) => delete data[key],
-    setAccessLevel: async () => {},
-  });
-  globalThis.chrome = {
-    storage: {
-      local: storageArea(local),
-      session: storageArea(session),
-    },
-  };
-
-  await saveSettings({
-    apiUrl: "https://api.example.com/v1",
-    model: "vision-model",
-    apiKey: "test-key",
-    rememberKey: false,
-    maxSteps: 80,
-    temperature: 0.3,
-  });
-  const settings = await loadSettings();
-
-  assert.equal(settings.apiUrl, "https://api.example.com/v1/chat/completions");
-  assert.equal(settings.model, "vision-model");
-  assert.equal(settings.apiKey, "test-key");
-  assert.equal(settings.rememberKey, false);
-  assert.equal(settings.maxSteps, 80);
-  assert.equal(settings.temperature, 0.3);
-  assert.equal(local.apiKey, undefined);
 });

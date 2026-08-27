@@ -14,7 +14,7 @@ to the upstream configured through `VENUS_UPSTREAM_BASE`, for example:
 https://example.com/v1/chat/completions
 ```
 
-It listens only on `127.0.0.1`, does not forward the browser's `Origin`, cookies, or referrer to the upstream model, and accepts requests only from the configured Chrome extension origin. The relay is optional and handles only model API forwarding; file workspaces do not depend on it.
+It listens only on `127.0.0.1` and does not forward the browser's `Origin`, cookies, or referrer to the upstream model. Browser requests must come from the configured Chrome extension origin; local clients that omit the `Origin` header are also accepted. The relay is optional and handles only model API forwarding; file workspaces do not depend on it.
 
 ## Run
 

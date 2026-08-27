@@ -1,5 +1,5 @@
 /**
- * Usage: Open the Side Panel, enter a task in Page Assistant, and click the left icon during execution to stop.
+ * 使用示例：打开 Side Panel 后可直接在网页底部的页面助手输入任务，运行时点击左侧图形可停止。
  */
 import {
   findWorkspaceFile,
@@ -115,15 +115,18 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message?.type === "venus_page_assistant_ready") {
     chrome.storage.local.get(["controlPanelEnabled"]).then((stored) => {
       const visibleSession = [...sessions.values()].reverse().find((session) => {
-        if (session.closed || !session.panelVisible || !session.controlEnabled) return false;
+        if (session.closed || session.assistantTabId !== tabId) return false;
         if (session.windowId !== sender.tab.windowId) return false;
-        const busy = ["running", "starting"].includes(session.controlState.mode);
-        return !busy || session.assistantTabId === tabId;
+        return isTaskControlActive(session) || (session.panelVisible && session.controlEnabled);
       });
+      const panelVisible = Boolean(visibleSession)
+        && visibleSession.panelVisible
+        && visibleSession.controlEnabled
+        && stored.controlPanelEnabled !== false
+        && !hiddenPageAssistantTabs.has(tabId);
       sendResponse({
-        enabled: Boolean(visibleSession)
-          && stored.controlPanelEnabled !== false
-          && !hiddenPageAssistantTabs.has(tabId),
+        enabled: Boolean(visibleSession) && (isTaskControlActive(visibleSession) || panelVisible),
+        panelVisible,
         state: visibleSession?.controlState
           ?? pageAssistantStates.get(tabId)
           ?? readyControlState(),
@@ -221,7 +224,13 @@ async function handleRequest(session, message) {
       result = await captureObservation(session);
       break;
     case "execute":
-      result = await executeAction(session, message.action);
+      try {
+        result = await executeAction(session, message.action);
+      } finally {
+        // Give animations, layout and navigation state a short time to settle
+        // before AgentSession captures the next observation.
+        await sleep(500);
+      }
       break;
     case "update_control":
       result = await updateControlIndicator(session, message.payload);
@@ -372,11 +381,12 @@ async function claimPendingPageTask(session, requestedTabId = null) {
 async function setPanelVisibility(session, visible) {
   session.panelVisible = Boolean(visible);
   if (!session.assistantTabId) return { visible: session.panelVisible };
-  const shouldShow = session.panelVisible && session.controlEnabled;
-  if (shouldShow) hiddenPageAssistantTabs.delete(session.assistantTabId);
+  const shouldShowPanel = session.panelVisible && session.controlEnabled;
+  if (shouldShowPanel) hiddenPageAssistantTabs.delete(session.assistantTabId);
   else hiddenPageAssistantTabs.add(session.assistantTabId);
-  await setPageAssistantEnabled(session.assistantTabId, shouldShow);
-  if (shouldShow) {
+  const shouldMount = isTaskControlActive(session) || shouldShowPanel;
+  await setPageAssistantEnabled(session.assistantTabId, shouldMount, shouldShowPanel);
+  if (shouldMount) {
     await sendPageAssistantUpdate(session.assistantTabId, session.controlState);
   }
   return { visible: session.panelVisible };
@@ -390,9 +400,11 @@ async function setControlEnabled(session, enabled) {
   if (session.assistantTabId) {
     if (session.controlEnabled) hiddenPageAssistantTabs.delete(session.assistantTabId);
     else hiddenPageAssistantTabs.add(session.assistantTabId);
+    const shouldShowPanel = session.controlEnabled && session.panelVisible;
     await setPageAssistantEnabled(
       session.assistantTabId,
-      session.controlEnabled && session.panelVisible,
+      isTaskControlActive(session) || shouldShowPanel,
+      shouldShowPanel,
     );
   }
   return { enabled: session.controlEnabled };
@@ -440,14 +452,15 @@ async function bindPageAssistantToTab(session, tab) {
       expression: `document.getElementById('__venus_control_indicator__')?.remove()`,
     }).catch(() => {});
   }
-  const shouldShow = session.controlEnabled && session.panelVisible;
-  if (shouldShow) {
+  const shouldShowPanel = session.controlEnabled && session.panelVisible;
+  if (shouldShowPanel) {
     hiddenPageAssistantTabs.delete(tab.id);
-    await sendPageAssistantUpdate(tab.id, session.controlState);
   } else {
     hiddenPageAssistantTabs.add(tab.id);
-    await setPageAssistantEnabled(tab.id, false);
   }
+  const shouldMount = isTaskControlActive(session) || shouldShowPanel;
+  await setPageAssistantEnabled(tab.id, shouldMount, shouldShowPanel);
+  if (shouldMount) await sendPageAssistantUpdate(tab.id, session.controlState);
 }
 
 async function syncIdlePageAssistantTab(tabId, windowId) {
@@ -541,11 +554,16 @@ async function renewControlIndicatorLeases(session) {
   })));
 }
 
-async function setPageAssistantEnabled(tabId, visible) {
+async function setPageAssistantEnabled(tabId, visible, panelVisible = visible) {
   await chrome.tabs.sendMessage(tabId, {
     type: "venus_page_assistant_visible",
     visible,
+    panelVisible,
   }).catch(() => {});
+}
+
+function isTaskControlActive(session) {
+  return ["running", "starting"].includes(session?.controlState?.mode);
 }
 
 async function setControlIndicatorVisible(tabId, visible) {
@@ -757,6 +775,7 @@ function controlIndicatorSource(initialState, controlBinding, controlToken) {
       const resultTitle = shadow.querySelector('.venus-result-title');
       const resultContent = shadow.querySelector('.venus-result-content');
       const stopButton = shadow.querySelector('.venus-mark');
+      let noticeTimer = null;
       const isolatedEvents = [
         'keydown', 'keyup', 'keypress',
         'beforeinput', 'input', 'change',
@@ -776,6 +795,8 @@ function controlIndicatorSource(initialState, controlBinding, controlToken) {
         }));
       };
       const applyState = (nextState = {}) => {
+        clearTimeout(noticeTimer);
+        noticeTimer = null;
         const mode = ['running', 'starting', 'complete', 'ready'].includes(nextState.mode)
           ? nextState.mode
           : 'running';
@@ -791,11 +812,17 @@ function controlIndicatorSource(initialState, controlBinding, controlToken) {
           result.hidden = false;
           resultTitle.textContent = nextState.outcome === 'call_user' ? '需要用户处理' : '任务完成';
           resultContent.textContent = nextState.content;
+          if (nextState.noticeTimeoutMs > 0) {
+            noticeTimer = setTimeout(() => { result.hidden = true; }, nextState.noticeTimeoutMs);
+          }
         } else if (mode === 'ready' && nextState.notice) {
           result.hidden = false;
           resultTitle.textContent = '无法运行任务';
           resultContent.textContent = nextState.notice;
-        } else if (mode === 'running' || mode === 'starting') {
+          if (nextState.noticeTimeoutMs > 0) {
+            noticeTimer = setTimeout(() => { result.hidden = true; }, nextState.noticeTimeoutMs);
+          }
+        } else {
           result.hidden = true;
         }
       };
@@ -968,11 +995,6 @@ async function executeAction(session, action) {
           await sleep(250);
         } else {
           result.page = await settlePageAfterClick(tabId, beforeClick?.url || "");
-          if (shouldFallbackToLinkNavigation(result.clickTarget, result.page.url)) {
-            await sendCdp(tabId, "Page.navigate", { url: result.clickTarget.url });
-            result.page = await settlePageAfterClick(tabId, beforeClick?.url || "");
-            result.page.fallback = "direct_link_navigation";
-          }
         }
         await settleInteraction(interaction);
         if (interaction.events.length) {
@@ -1115,18 +1137,6 @@ function publicClickTarget(target) {
     mimeType: target?.mimeType || "",
     hasDownloadAttribute: Boolean(target?.hasDownloadAttribute),
   };
-}
-
-function shouldFallbackToLinkNavigation(target, currentUrl) {
-  if (!target?.url || isLikelyDownloadLink(target)) return false;
-  if (!['http:', 'https:'].includes(safeUrlProtocol(target.url))) return false;
-  try {
-    const targetUrl = new URL(target.url);
-    const current = new URL(currentUrl);
-    return targetUrl.href !== current.href;
-  } catch {
-    return false;
-  }
 }
 
 async function settlePageAfterClick(tabId, initialUrl, timeoutMs = 3500) {

@@ -43,6 +43,8 @@ export class ConversationStore {
       nextSequence: 1,
       summary: "",
       summaryThrough: 0,
+      promptTokens: 0,
+      completionTokens: 0,
     };
     const db = await this.#db();
     const tx = db.transaction(CONVERSATIONS, "readwrite");
@@ -132,6 +134,27 @@ export class ConversationStore {
       ...conversation,
       summary: String(summary ?? "").trim(),
       summaryThrough: Math.max(conversation.summaryThrough ?? 0, Number(summaryThrough) || 0),
+      promptTokens: 0,
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
+  async updatePromptTokens(conversationId, promptTokens) {
+    const value = Number(promptTokens);
+    if (!Number.isFinite(value) || value < 0) return this.getConversation(conversationId);
+    return this.#updateConversation(conversationId, (conversation) => ({
+      ...conversation,
+      promptTokens: Math.round(value),
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
+  async addCompletionTokens(conversationId, completionTokens) {
+    const increment = Number(completionTokens);
+    if (!Number.isFinite(increment) || increment <= 0) return this.getConversation(conversationId);
+    return this.#updateConversation(conversationId, (conversation) => ({
+      ...conversation,
+      completionTokens: Math.max(0, Number(conversation.completionTokens) || 0) + Math.round(increment),
       updatedAt: new Date().toISOString(),
     }));
   }

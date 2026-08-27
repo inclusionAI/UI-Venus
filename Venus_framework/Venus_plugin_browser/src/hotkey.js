@@ -19,13 +19,23 @@ export function editingCommandsForHotkey(keys, platformOs) {
   const modifiers = normalized.filter((key) => ["alt", "ctrl", "meta", "shift"].includes(key));
   const primaryKeys = normalized.filter((key) => !["alt", "ctrl", "meta", "shift"].includes(key));
 
+  if (primaryKeys.length !== 1) return [];
+  if (modifiers.length === 1 && modifiers[0] === primaryModifier) {
+    const command = {
+      a: "selectAll",
+      c: "Copy",
+      v: "Paste",
+      x: "Cut",
+    }[primaryKeys[0]];
+    return command ? [command] : [];
+  }
   if (
-    primaryKeys.length === 1
-    && primaryKeys[0] === "a"
-    && modifiers.length === 1
-    && modifiers[0] === primaryModifier
+    primaryKeys[0] === "v"
+    && modifiers.length === 2
+    && modifiers.includes(primaryModifier)
+    && modifiers.includes("shift")
   ) {
-    return ["selectAll"];
+    return ["PasteAndMatchStyle"];
   }
   return [];
 }

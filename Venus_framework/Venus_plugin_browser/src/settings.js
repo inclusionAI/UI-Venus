@@ -1,7 +1,7 @@
 const LOCAL_KEYS = ["apiUrl", "model", "rememberKey", "apiKey", "maxSteps", "temperature"];
 const SESSION_KEYS = ["apiKey"];
 export const DEFAULT_MAX_STEPS = 100;
-export const DEFAULT_TEMPERATURE = 0.5;
+export const DEFAULT_TEMPERATURE = 0;
 
 export function normalizeApiEndpoint(input) {
   const raw = String(input ?? "").trim();
@@ -59,11 +59,13 @@ export async function loadSettings() {
     chrome.storage.local.get(LOCAL_KEYS),
     chrome.storage.session.get(SESSION_KEYS),
   ]);
+  const rememberKey = Boolean(local.rememberKey);
+  const savedKey = session.apiKey || (rememberKey ? local.apiKey : "");
   return {
-    apiUrl: local.apiUrl ?? "",
-    model: local.model ?? "",
-    rememberKey: Boolean(local.rememberKey),
-    apiKey: session.apiKey ?? local.apiKey ?? "",
+    apiUrl: safeSetting(normalizeApiEndpoint, local.apiUrl, ""),
+    model: String(local.model ?? "").trim(),
+    rememberKey,
+    apiKey: String(savedKey || ""),
     maxSteps: safeSetting(normalizeMaxSteps, local.maxSteps, DEFAULT_MAX_STEPS),
     temperature: safeSetting(normalizeTemperature, local.temperature, DEFAULT_TEMPERATURE),
   };

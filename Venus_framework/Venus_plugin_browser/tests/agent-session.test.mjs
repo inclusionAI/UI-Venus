@@ -31,17 +31,20 @@ test("injects persisted conversation context into a new task run", async () => {
       receivedMessages = messages;
       return {
         content: "<think>Done already.</think><action>Finished(content='done')</action>",
+        usage: { prompt_tokens: 48_321, completion_tokens: 12 },
       };
     },
   };
   const states = [];
+  let finalPayload = null;
   const session = new AgentSession({
     browser,
     modelClient,
     promptTemplate: "Task: {task} Date: {current_date}",
     conversationContext: "User task: remember the red product\nMessage (agent): saved",
     onState: ({ state }) => states.push(state),
-    onFinal: () => {
+    onFinal: (payload) => {
+      finalPayload = payload;
       assert.equal(detached, true, "the browser must be released before completion is rendered");
     },
   });
@@ -54,6 +57,11 @@ test("injects persisted conversation context into a new task run", async () => {
   assert.equal(detached, true);
   assert.equal(detachCalls, 1);
   assert.equal(states.at(-1), AgentState.FINISHED);
+  assert.equal(session.promptTokens, 48_321);
+  assert.equal(session.contextTokens, 48_321);
+  assert.equal(session.hasPromptTokenUsage, true);
+  assert.equal(finalPayload.contextTokens, 48_321);
+  assert.equal(finalPayload.outputTokens, 12);
 });
 
 test("releases the debugger before publishing a terminal result", async () => {
@@ -130,6 +138,139 @@ test("forwards the current step think while the model is streaming", async () =>
     { step: 1, think: "正在检查" },
     { step: 1, think: "正在检查页面" },
   ]);
+});
+
+test("uses reasoning_content as the persisted step analysis when content has no think block", async () => {
+  let proposed = null;
+  const browser = {
+    async attachCurrentTab() {
+      return { id: 1, title: "Example", url: "https://example.com" };
+    },
+    async capture() {
+      return {
+        tab: { id: 1, title: "Example", url: "https://example.com" },
+        viewport: { width: 1000, height: 700 },
+        screenshot: "shot",
+      };
+    },
+    async detach() {},
+  };
+  const session = new AgentSession({
+    browser,
+    modelClient: {
+      async complete() {
+        return {
+          content: "<action>Finished(content='done')</action>",
+          reasoningContent: "先确认任务已经完成，再结束操作。",
+        };
+      },
+    },
+    promptTemplate: "Task: {task}",
+    onStep: (entry) => {
+      if (entry.phase === "proposed") proposed = entry;
+    },
+  });
+
+  await session.run("finish");
+
+  assert.equal(proposed.think, "先确认任务已经完成，再结束操作。");
+  assert.equal(
+    proposed.rawResponse,
+    "<think>先确认任务已经完成，再结束操作。</think>\n<action>Finished(content='done')</action>",
+  );
+});
+
+test("sends canonical think and action assistant history on the next model request", async () => {
+  const requests = [];
+  let call = 0;
+  const browser = {
+    async attachCurrentTab() {
+      return { id: 1, title: "Example", url: "https://example.com" };
+    },
+    async capture() {
+      return {
+        tab: { id: 1, title: "Example", url: "https://example.com" },
+        viewport: { width: 1000, height: 700 },
+        screenshot: `shot-${call}`,
+      };
+    },
+    async execute() {
+      return { action: "wait" };
+    },
+    async detach() {},
+  };
+  const session = new AgentSession({
+    browser,
+    modelClient: {
+      async complete(messages) {
+        requests.push(messages);
+        call += 1;
+        return call === 1
+          ? {
+              content: "<action>Wait()</action>",
+              reasoningContent: "等待页面稳定。",
+            }
+          : {
+              content: "<think>页面已稳定。</think><action>Finished(content='done')</action>",
+            };
+      },
+    },
+    promptTemplate: "Task: {task}",
+  });
+
+  await session.run("wait then finish");
+
+  const assistantHistory = requests[1].find((message) => (
+    message.role === "assistant" && message.content.includes("Wait()")
+  ));
+  assert.equal(
+    assistantHistory.content,
+    "<think>等待页面稳定。</think>\n<action>Wait()</action>",
+  );
+});
+
+test("sends at most 30 prior action rounds to the model", async () => {
+  let calls = 0;
+  let finalMessages = null;
+  const browser = {
+    async attachCurrentTab() {
+      return { id: 1, title: "Example", url: "https://example.com" };
+    },
+    async capture() {
+      return {
+        tab: { id: 1, title: "Example", url: "https://example.com" },
+        viewport: { width: 1000, height: 700 },
+        screenshot: `shot-${calls}`,
+      };
+    },
+    async execute() {
+      return { action: "wait" };
+    },
+    async detach() {},
+  };
+  const session = new AgentSession({
+    browser,
+    modelClient: {
+      async complete(messages) {
+        calls += 1;
+        if (calls === 32) {
+          finalMessages = messages;
+          return { content: "<think>done</think><action>Finished(content='done')</action>" };
+        }
+        return { content: `<think>step ${calls}</think><action>Wait()</action>` };
+      },
+    },
+    promptTemplate: "Task: {task}",
+    maxSteps: 32,
+  });
+
+  await session.run("exercise the history window");
+
+  const historyAssistants = finalMessages.filter((message) => message.role === "assistant");
+  assert.equal(historyAssistants.length, 30);
+  assert.doesNotMatch(historyAssistants[0].content, /step 1<\/think>/);
+  assert.match(historyAssistants[0].content, /step 2<\/think>/);
+  assert.match(historyAssistants.at(-1).content, /step 31<\/think>/);
 });
 
 test("sends user-attached images before the live browser screenshot", async () => {

@@ -1,5 +1,5 @@
 /**
- * Usage: Enter a task in the Side Panel or Page Assistant, then press Ctrl/Command + Enter or click the arrow.
+ * 使用示例：可在 Side Panel 或网页底部的页面助手输入任务，按 Ctrl/⌘ + Enter 或点击箭头运行。
  */
 import { AgentSession, AgentState } from "./src/agent-session.js";
 import { BrowserBridge } from "./src/browser-bridge.js";
@@ -104,8 +104,7 @@ async function initialize() {
       }
     } else if (event === "disconnect" && activeSession?.running) {
       stopControlHeartbeat();
-      renderError(payload.reason ?? "插件后台连接已断开");
-      activeSession.stop();
+      stopTask(payload.reason ?? "插件后台连接已断开，任务已终止。").catch(handleUiError);
     } else if (event === "stop_requested" && activeSession?.running) {
       stopTask().catch(handleUiError);
     } else if (event === "page_task_available") {
@@ -292,8 +291,8 @@ async function testModelConnection() {
     }
     currentSettings = await saveSettings(draft);
     const client = new OpenAICompatibleClient(currentSettings);
-    const response = await client.test(controller.signal);
-    feedback(`连接成功：${response.slice(0, 80)}`, "success");
+    await client.test(controller.signal);
+    feedback("连接成功", "success");
   } catch (error) {
     feedback(error.message, "error");
   } finally {
@@ -373,7 +372,16 @@ async function runTask({ task: taskOverride = null, source = "sidepanel" } = {})
     const runId = makeId();
     let conversationContext;
     try {
-      conversationContext = await prepareConversationContext(modelClient);
+      conversationContext = await prepareConversationContext(modelClient, async () => {
+        setStatus(AgentState.THINKING, "正在压缩上下文");
+        const statusMessage = renderMessage("system", "正在压缩上下文…");
+        await browser.updateControl({
+          mode: "starting",
+          task,
+          think: "正在压缩上下文…",
+        }).catch(() => {});
+        return () => statusMessage.remove();
+      });
       if (currentConversation.title === "新会话" && currentConversation.nextSequence === 1) {
         currentConversation = await conversationStore.renameConversation(conversationId, task);
         await refreshConversationList();
@@ -403,6 +411,7 @@ async function runTask({ task: taskOverride = null, source = "sidepanel" } = {})
       conversationContext: conversationContext.text,
       conversationImages: conversationContext.images,
       taskImages,
+      previousCompletionTokens: currentConversation.completionTokens,
       runId,
       maxSteps: currentSettings.maxSteps,
       onState: ({ state, label }) => {
@@ -441,13 +450,14 @@ async function runTask({ task: taskOverride = null, source = "sidepanel" } = {})
           think,
         }).catch(() => {});
       },
-      onFinal: async ({ type, content, outputTokens }) => {
+      onFinal: async ({ type, content, outputTokens, contextTokens }) => {
         const role = type === "call_user" ? "system" : "agent";
         const finalText = content || (type === "call_user" ? "需要用户接管" : "任务完成");
-        const tokenText = outputTokens == null
-          ? "累计输出 token：未提供"
-          : `累计输出 token：${outputTokens.toLocaleString("en-US")}`;
-        const text = `${finalText}\n\n${tokenText}`;
+        const text = `${finalText}\n\n${formatTokenStatistics({
+          contextTokens,
+          outputTokens,
+          previousCompletionTokens: activeSession.previousCompletionTokens,
+        })}`;
         await conversationStore.appendEntry(conversationId, {
           kind: "message",
           role,
@@ -474,16 +484,33 @@ async function runTask({ task: taskOverride = null, source = "sidepanel" } = {})
       await activeSession.run(task);
     } catch (error) {
       controlNotice = error.message;
+      const errorText = `${error.message}\n\n${formatSessionTokenStatistics(activeSession)}`;
       await conversationStore.appendEntry(conversationId, {
         kind: "message",
         role: "error",
-        text: error.message,
+        text: errorText,
         runId,
       }).catch(() => {});
-      renderError(error.message);
+      renderError(errorText);
       await restoreControlComposer(error.message);
     } finally {
       stopControlHeartbeat();
+      if (activeSession?.hasPromptTokenUsage) {
+        await conversationStore.updatePromptTokens(
+          conversationId,
+          activeSession.promptTokens,
+        ).catch((error) => {
+          console.warn("Venus could not persist prompt token usage", error);
+        });
+      }
+      if (activeSession?.hasOutputTokenUsage) {
+        await conversationStore.addCompletionTokens(
+          conversationId,
+          activeSession.outputTokens,
+        ).catch((error) => {
+          console.warn("Venus could not persist completion token usage", error);
+        });
+      }
       currentConversation = await conversationStore.getConversation(conversationId).catch(() => currentConversation);
       await refreshConversationList().catch(() => {});
     }
@@ -641,7 +668,7 @@ async function stopTask(message = "用户已停止任务，浏览器控制已释
   stopControlHeartbeat();
   try {
     await activeSession?.stop();
-    const text = String(message || "用户已停止任务，浏览器控制已释放。");
+    const text = `${String(message || "用户已停止任务，浏览器控制已释放。")}\n\n${formatSessionTokenStatistics(activeSession)}`;
     if (currentConversation) {
       await conversationStore.appendEntry(currentConversation.id, {
         kind: "message",
@@ -659,6 +686,31 @@ async function stopTask(message = "用户已停止任务，浏览器控制已释
     setRunningUi(false);
     elements.stopTask.disabled = false;
   }
+}
+
+function formatSessionTokenStatistics(session) {
+  return formatTokenStatistics({
+    contextTokens: session?.hasPromptTokenUsage ? session.contextTokens : null,
+    outputTokens: session?.hasOutputTokenUsage ? session.outputTokens : null,
+    previousCompletionTokens: session?.previousCompletionTokens,
+  });
+}
+
+function formatTokenStatistics({
+  contextTokens = null,
+  outputTokens = null,
+  previousCompletionTokens = 0,
+} = {}) {
+  const contextText = contextTokens == null
+    ? "当前上下文 token：未提供"
+    : `当前上下文 token：${Number(contextTokens).toLocaleString("en-US")}`;
+  const previous = Math.max(0, Number(previousCompletionTokens) || 0);
+  const completionText = outputTokens == null
+    ? (previous > 0
+        ? `会话累计 completion token：${previous.toLocaleString("en-US")}（本任务未提供，统计可能不完整）`
+        : "会话累计 completion token：未提供")
+    : `会话累计 completion token：${(previous + Number(outputTokens)).toLocaleString("en-US")}`;
+  return `${contextText}\n${completionText}`;
 }
 
 function startControlHeartbeat() {
@@ -751,6 +803,7 @@ function renderMessage(role, text, attachments = []) {
   }
   elements.messages.append(message);
   scrollConversationToBottom();
+  return message;
 }
 
 async function addImageFiles(fileList) {
@@ -967,14 +1020,16 @@ async function restoreConversation(conversationId) {
   }
 }
 
-async function prepareConversationContext(modelClient) {
+async function prepareConversationContext(modelClient, onCompacting = async () => {}) {
   currentConversation = await conversationStore.getConversation(currentConversation.id);
   let entries = await conversationStore.listEntries(currentConversation.id, {
     afterSequence: currentConversation.summaryThrough,
   });
   const plan = planCompaction(currentConversation, entries);
   if (plan) {
+    let finishCompacting = () => {};
     try {
+      finishCompacting = await onCompacting() || finishCompacting;
       const summary = await modelClient.summarize(
         buildCompactionMessages(currentConversation, plan),
       );
@@ -986,6 +1041,8 @@ async function prepareConversationContext(modelClient) {
       entries = entries.filter((entry) => entry.sequence > plan.throughSequence);
     } catch (error) {
       console.warn("Venus context compaction failed; using bounded recent history", error);
+    } finally {
+      await finishCompacting();
     }
   }
   return {
@@ -1042,9 +1099,13 @@ function populateSettings(settings) {
   elements.apiUrl.value = settings.apiUrl ?? "";
   elements.model.value = settings.model ?? "";
   elements.maxSteps.value = String(settings.maxSteps ?? 100);
-  elements.temperature.value = String(settings.temperature ?? 0.5);
+  elements.temperature.value = String(settings.temperature ?? 0);
   elements.apiKey.value = settings.apiKey ?? "";
   elements.rememberKey.checked = Boolean(settings.rememberKey);
+  elements.apiUrl.disabled = false;
+  elements.model.disabled = false;
+  elements.apiKey.disabled = false;
+  elements.rememberKey.disabled = false;
 }
 
 async function chooseWorkspace() {

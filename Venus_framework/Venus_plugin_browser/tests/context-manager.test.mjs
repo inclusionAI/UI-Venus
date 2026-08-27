@@ -4,7 +4,6 @@ import assert from "node:assert/strict";
 import {
   buildCompactionMessages,
   buildConversationContext,
-  estimateTokens,
   formatTranscript,
   planCompaction,
 } from "../src/context-manager.js";
@@ -28,31 +27,38 @@ test("builds context from summary and entries after the compacted boundary", () 
   assert.match(context, /Click\(point=\(10,20\)\)/);
 });
 
-test("plans compaction while retaining recent entries", () => {
+test("compacts all raw history and leaves zero uncompressed entries", () => {
   const entries = Array.from({ length: 8 }, (_, index) => (
     entry(index + 1, "message", { role: "user", text: `task-${index + 1}` })
   ));
   const limits = {
-    compactAfterChars: 1_000_000,
-    compactAfterEntries: 6,
-    keepRecentEntries: 3,
-    requestContextChars: 1_000,
-    compactionInputChars: 1_000,
+    compactAfterPromptTokens: 6,
   };
-  const plan = planCompaction({ summaryThrough: 0 }, entries, limits);
-  assert.equal(plan.throughSequence, 5);
-  assert.equal(plan.entries.length, 5);
+  const plan = planCompaction({ summaryThrough: 0, promptTokens: 7 }, entries, limits);
+  assert.equal(plan.throughSequence, 8);
+  assert.equal(plan.entries.length, 8);
   assert.match(plan.transcript, /task-1/);
-  assert.doesNotMatch(plan.transcript, /task-8/);
+  assert.match(plan.transcript, /task-8/);
 });
 
-test("creates a focused compaction request and estimates tokens", () => {
+test("creates a focused chronological compaction request", () => {
   const plan = { transcript: "User task: find the price" };
   const messages = buildCompactionMessages({ summary: "Opened the store." }, plan);
   assert.equal(messages.length, 2);
   assert.match(messages[1].content, /Opened the store/);
   assert.match(messages[1].content, /find the price/);
-  assert.equal(estimateTokens("12345678"), 2);
+  assert.match(messages[0].content, /用户让我查询了/);
+  assert.match(messages[0].content, /按时间顺序/);
+});
+
+test("does not compact merely because the conversation has many short entries", () => {
+  const entries = Array.from({ length: 100 }, (_, index) => (
+    entry(index + 1, "message", { role: "user", text: "x" })
+  ));
+  const plan = planCompaction({ summaryThrough: 0, promptTokens: 1_000 }, entries, {
+    compactAfterPromptTokens: 1_000,
+  });
+  assert.equal(plan, null);
 });
 
 test("includes image names without embedding image data in transcript", () => {

@@ -35,8 +35,8 @@ The extension requires the `debugger` permission to perform real mouse, keyboard
 - Running another task appends to the active conversation by default. Use the conversation selector to restore an older conversation or **New conversation** to start with clean context.
 - The complete transcript is retained locally for UI restoration, but old screenshots are not persisted.
 - Model requests do not replay the complete transcript. They contain a compressed summary, limited recent text history, and the current screenshot.
-- Each action request includes at most three images: observations from the preceding two steps and the current screenshot. Older steps retain only text and actions.
-- When uncompacted history exceeds 60 records or approximately 48,000 characters, Venus asks the current model to summarize older records while preserving the latest 24 records verbatim.
+- Each action request includes at most three observation screenshots: the preceding two steps and the current screenshot. User-provided reference images are additional; each message accepts up to four images, with a 10 MiB limit per image and a 20 MiB combined limit.
+- A task replays at most the latest 30 action rounds. When the previous request's prompt usage exceeds 32,000 tokens, Venus asks the current model to compact all unsummarized conversation records before the next task.
 - **Delete** permanently removes the selected conversation after confirmation.
 
 ## Model Configuration
@@ -61,7 +61,7 @@ The extension sends OpenAI-compatible Chat Completions requests:
 
 When **Remember Key on this device** is selected, the key is stored in `chrome.storage.local`. Because the extension is a client application, it cannot provide server-grade secret protection; this option is recommended only for personal local demos.
 
-### Local Aistudio Relay
+### Local Relay
 
 If a model gateway rejects the `chrome-extension://` origin, use the local loopback relay under [`relay/`](relay/):
 
@@ -91,7 +91,7 @@ The extension can read and write only the directory explicitly authorized by the
 - It does not support `chrome://` pages, the Chrome Web Store, other extension pages, or native operating-system windows.
 - Closing the Side Panel, clicking Stop, or reloading the extension stops the active session and detaches the debugger.
 - Model output must contain `<action>...</action>` and use `point` coordinate arguments.
-- DOM trees, a reflection supervisor, and trajectory ZIP export are not currently included.
+- DOM trees, a separate reflection supervisor, and trajectory ZIP export are not currently included. The agent only adds a loop-recovery warning after two identical consecutive responses.
 
 ## Development Checks
 
@@ -107,17 +107,26 @@ npm run check
 
 ```text
 manifest.json
+page-assistant.js            # In-page task composer and running state
 service-worker.js           # Browser attachment, screenshots, and action execution
 sidepanel.html/css/js       # UI and settings
+assets/icons/               # Extension icons
 src/
   action-parser.js          # Strict Venus action parser without eval
   agent-session.js          # Agent loop
   browser-bridge.js         # Side Panel to Service Worker RPC
+  config-validation.js      # Task configuration validation
   context-manager.js        # Context selection and compaction planning
   conversation-store.js     # IndexedDB transcripts and conversation metadata
+  file-transfer.js          # Upload and download path handling
+  hotkey.js                 # Cross-platform hotkey normalization
   model-client.js           # OpenAI-compatible model client
   settings.js               # Permissions and credential storage
+  workspace-store.js        # Authorized workspace persistence
 prompts/venus_system.txt
-tests/action-parser.test.mjs
+tests/                      # Unit and contract tests
+scripts/check.mjs           # Static extension checks
+package.json/package-lock.json
 relay/                      # Local model forwarding on 127.0.0.1
+workspace/.gitkeep          # Empty workspace placeholder
 ```

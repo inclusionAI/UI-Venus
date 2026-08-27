@@ -30,6 +30,53 @@ test("uses configured temperature for action completions", async () => {
   }
 });
 
+test("uses zero temperature by default for action completions", async () => {
+  const originalFetch = globalThis.fetch;
+  let payload = null;
+  globalThis.fetch = async (_url, options) => {
+    payload = JSON.parse(options.body);
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: "<think>ok</think><action>Wait()</action>" } }],
+    }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  };
+
+  try {
+    const client = new OpenAICompatibleClient({
+      apiUrl: "https://api.example.com/v1/chat/completions",
+      model: "vision-model",
+      apiKey: "test",
+    });
+    await client.complete([{ role: "user", content: "test" }]);
+    assert.equal(payload.temperature, 0);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("treats a successful model response without content as a valid connection", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    choices: [{ message: { content: "", reasoning_content: "internal reasoning" } }],
+  }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+
+  try {
+    const client = new OpenAICompatibleClient({
+      apiUrl: "https://api.example.com/v1/chat/completions",
+      model: "vision-model",
+      apiKey: "test",
+    });
+    assert.equal(await client.test(), "");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("streams cumulative model output through onProgress", async () => {
   const originalFetch = globalThis.fetch;
   let payload = null;

@@ -138,7 +138,7 @@ def make_handler(config: argparse.Namespace) -> type[BaseHTTPRequestHandler]:
 
         def _origin_allowed(self) -> bool:
             origin = self.headers.get("Origin")
-            return origin == config.allow_origin
+            return origin is None or origin == config.allow_origin
 
         def _send_cors_headers(self) -> None:
             origin = self.headers.get("Origin")

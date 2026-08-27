@@ -14,7 +14,7 @@ http://127.0.0.1:8765/v1/chat/completions
 https://example.com/v1/chat/completions
 ```
 
-它只监听 `127.0.0.1`，不会把浏览器的 `Origin`、Cookie 或 Referer 转发到模型上游，并且只允许指定的 Chrome 插件 Origin 调用。它只负责可选的模型 API 转发，文件 workspace 不依赖 relay。
+它只监听 `127.0.0.1`，不会把浏览器的 `Origin`、Cookie 或 Referer 转发到模型上游。浏览器请求必须来自指定的 Chrome 插件 Origin；未携带 `Origin` 请求头的本机客户端也可以访问。它只负责可选的模型 API 转发，文件 workspace 不依赖 relay。
 
 ## 运行
 

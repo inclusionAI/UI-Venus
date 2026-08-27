@@ -3,6 +3,7 @@ import { ActionParseError, parseVenusResponse } from "./action-parser.js";
 // Give the vision model a short visual timeline: the two preceding
 // observations plus the current screenshot.
 const HISTORY_IMAGE_WINDOW = 2;
+const HISTORY_ROUND_WINDOW = 30;
 const LOOP_REFLECTION = [
   "⚠️ REFLECTION: You have output the exact same response for 2 consecutive steps. ",
   "This indicates you are stuck in a loop. Carefully review the actions and SUMMARIZE the thoughts in previous steps. Analyze why your previous action did not change ",
@@ -32,6 +33,7 @@ export class AgentSession {
     conversationContext = "",
     conversationImages = [],
     taskImages = [],
+    previousCompletionTokens = 0,
     runId = globalThis.crypto?.randomUUID?.() ?? String(Date.now()),
     maxSteps = 100,
     onState = () => {},
@@ -47,6 +49,7 @@ export class AgentSession {
     this.conversationContext = String(conversationContext ?? "").trim();
     this.conversationImages = normalizeImageAttachments(conversationImages);
     this.taskImages = normalizeImageAttachments(taskImages);
+    this.previousCompletionTokens = Math.max(0, Number(previousCompletionTokens) || 0);
     this.runId = runId;
     this.maxSteps = maxSteps;
     this.onState = onState;
@@ -60,6 +63,9 @@ export class AgentSession {
     this.runHistory = [];
     this.outputTokens = 0;
     this.hasOutputTokenUsage = false;
+    this.promptTokens = 0;
+    this.hasPromptTokenUsage = false;
+    this.contextTokens = 0;
     this.abortController = null;
     this.releasePromise = null;
     this.task = "";
@@ -78,6 +84,9 @@ export class AgentSession {
     this.runHistory = [];
     this.outputTokens = 0;
     this.hasOutputTokenUsage = false;
+    this.promptTokens = 0;
+    this.hasPromptTokenUsage = false;
+    this.contextTokens = 0;
     this.abortController = new AbortController();
     this.releasePromise = null;
     let terminalState = AgentState.STOPPED;
@@ -121,6 +130,7 @@ export class AgentSession {
             content: parsed.action.content,
             step,
             outputTokens: this.hasOutputTokenUsage ? this.outputTokens : null,
+            contextTokens: this.hasPromptTokenUsage ? this.contextTokens : null,
           });
           break;
         }
@@ -135,6 +145,7 @@ export class AgentSession {
             content: parsed.action.content,
             step,
             outputTokens: this.hasOutputTokenUsage ? this.outputTokens : null,
+            contextTokens: this.hasPromptTokenUsage ? this.contextTokens : null,
           });
           break;
         }
@@ -218,8 +229,19 @@ export class AgentSession {
         this.outputTokens += outputTokens;
         this.hasOutputTokenUsage = true;
       }
+      const promptTokens = Number(response?.usage?.prompt_tokens ?? response?.usage?.input_tokens);
+      if (Number.isFinite(promptTokens) && promptTokens >= 0) {
+        this.contextTokens = promptTokens;
+        this.promptTokens = Math.max(this.promptTokens, promptTokens);
+        this.hasPromptTokenUsage = true;
+      }
       try {
         const parsed = parseVenusResponse(response.content);
+        const reasoningThink = String(response?.reasoningContent ?? "").trim();
+        if (!parsed.think && reasoningThink) {
+          parsed.think = reasoningThink;
+        }
+        parsed.rawResponse = canonicalAssistantResponse(parsed.think, parsed.rawAction);
         const requiredAction = requiredActionForPendingTransfer(
           this.runHistory.at(-1)?.result,
           observation.fileTransfers,
@@ -281,7 +303,7 @@ export class AgentSession {
       });
     }
 
-    const recentHistory = this.runHistory.slice(-12);
+    const recentHistory = this.runHistory.slice(-HISTORY_ROUND_WINDOW);
     const imageStart = Math.max(0, recentHistory.length - HISTORY_IMAGE_WINDOW);
     for (const [index, entry] of recentHistory.entries()) {
       const includeScreenshot = index >= imageStart && Boolean(entry.screenshot);
@@ -355,6 +377,10 @@ function extractStreamedThink(content, reasoningContent) {
   const streamed = text.slice(start + "<think>".length);
   const end = streamed.indexOf("</think>");
   return (end < 0 ? streamed : streamed.slice(0, end)).trim();
+}
+
+function canonicalAssistantResponse(think, rawAction) {
+  return `<think>${String(think ?? "").trim()}</think>\n<action>${String(rawAction ?? "").trim()}</action>`;
 }
 
 function normalizeImageAttachments(images) {

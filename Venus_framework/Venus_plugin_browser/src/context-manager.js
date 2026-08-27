@@ -1,29 +1,22 @@
 export const CONTEXT_LIMITS = Object.freeze({
-  compactAfterChars: 48_000,
-  compactAfterEntries: 60,
-  keepRecentEntries: 24,
-  requestContextChars: 36_000,
-  compactionInputChars: 52_000,
+  compactAfterPromptTokens: 32_000,
 });
 
 export function planCompaction(conversation, entries, limits = CONTEXT_LIMITS) {
   const active = entries.filter(
     (entry) => entry.sequence > Number(conversation?.summaryThrough ?? 0),
   );
-  const text = formatTranscript(active);
-  if (
-    active.length <= limits.compactAfterEntries
-    && text.length <= limits.compactAfterChars
-  ) {
+  const promptTokens = Number(conversation?.promptTokens);
+  if (!Number.isFinite(promptTokens) || promptTokens <= limits.compactAfterPromptTokens) {
     return null;
   }
+  if (active.length === 0) return null;
 
-  const compactCount = Math.max(1, active.length - limits.keepRecentEntries);
-  const compactEntries = active.slice(0, compactCount);
+  const compactEntries = active;
   return {
     entries: compactEntries,
     throughSequence: compactEntries.at(-1).sequence,
-    transcript: clipText(formatTranscript(compactEntries), limits.compactionInputChars, "start"),
+    transcript: formatTranscript(compactEntries),
   };
 }
 
@@ -37,11 +30,7 @@ export function buildConversationContext(conversation, entries, limits = CONTEXT
   const active = entries.filter(
     (entry) => entry.sequence > Number(conversation?.summaryThrough ?? 0),
   );
-  const recentTranscript = clipText(
-    formatTranscript(active),
-    limits.requestContextChars,
-    "end",
-  );
+  const recentTranscript = formatTranscript(active);
   if (recentTranscript) {
     sections.push(`Recent conversation transcript:\n${recentTranscript}`);
   }
@@ -54,10 +43,11 @@ export function buildCompactionMessages(conversation, plan) {
     {
       role: "system",
       content: [
-        "Summarize a browser-agent conversation for future context.",
-        "Preserve user goals, completed work, important facts, current browser state, unresolved tasks, failures, and explicit preferences.",
-        "Do not invent facts. Omit repetitive low-level mouse movements unless they matter.",
-        "Return concise plain text only, without XML tags or an action.",
+        "请将浏览器代理对话压缩为简洁、按时间顺序的中文任务摘要。",
+        "使用类似“用户让我查询了……，结果是……；用户继续要求……，我进一步给出结果……”的叙述形式。",
+        "重点保留用户目标、关键条件、最终结果、后续要求、尚未解决事项和明确偏好。",
+        "合并连续的低层点击、滚动和等待动作，除非它们与失败原因或最终结果直接相关。",
+        "不要虚构信息，不要输出思考过程、XML 标签或 action，只返回摘要正文。",
       ].join(" "),
     },
     {
@@ -65,10 +55,6 @@ export function buildCompactionMessages(conversation, plan) {
       content: `Previous summary:\n${previousSummary}\n\nTranscript to compact:\n${plan.transcript}`,
     },
   ];
-}
-
-export function estimateTokens(text) {
-  return Math.ceil(String(text ?? "").length / 4);
 }
 
 export function formatTranscript(entries) {

@@ -12,7 +12,7 @@ export class OpenAICompatibleClient {
     apiUrl,
     model,
     apiKey,
-    temperature = 0.5,
+    temperature = 0,
     timeoutMs = 180_000,
     retryBaseDelayMs = 1_000,
     retryMaxDelayMs = 30_000,
@@ -21,7 +21,7 @@ export class OpenAICompatibleClient {
     this.apiUrl = apiUrl;
     this.model = model;
     this.apiKey = apiKey;
-    this.temperature = Number.isFinite(Number(temperature)) ? Number(temperature) : 0.5;
+    this.temperature = Number.isFinite(Number(temperature)) ? Number(temperature) : 0;
     this.timeoutMs = timeoutMs;
     this.retryBaseDelayMs = retryBaseDelayMs;
     this.retryMaxDelayMs = retryMaxDelayMs;
@@ -186,9 +186,6 @@ export class OpenAICompatibleClient {
       max_tokens: 16,
     }, signal);
     const content = normalizeContent(data?.choices?.[0]?.message?.content);
-    if (!content.trim()) {
-      throw new ModelApiError("连接成功，但模型没有返回文本");
-    }
     return content.trim();
   }
 

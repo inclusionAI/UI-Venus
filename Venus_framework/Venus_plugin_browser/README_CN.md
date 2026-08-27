@@ -35,8 +35,8 @@
 - 再次运行任务默认追加到当前 conversation；可以通过会话选择器恢复旧会话，也可以点击“新会话”获得干净上下文。
 - 完整 transcript 保留在本机用于恢复 UI，但不持久化旧截图。
 - 模型请求不会重放完整 transcript，只携带压缩摘要、有限的近期文本历史以及当前截图。
-- 每次 action 请求最多携带 3 张图：前两个 step 的 observation 截图和当前 step 截图；更老 step 只保留文本/action。
-- 未压缩记录超过 60 条或约 48,000 字符时，Venus 会让当前模型总结较老记录，并原样保留最近 24 条。
+- 每次 action 请求最多携带 3 张 observation 截图：前两个 step 的截图和当前 step 截图。用户提供的参考图不计入这 3 张；每条消息最多添加 4 张参考图，每张不超过 10 MiB，总计不超过 20 MiB。
+- 单次任务最多回放最近 30 轮 action。当上一次请求的 prompt 用量超过 32,000 tokens 时，Venus 会在下一个任务开始前让当前模型压缩全部尚未总结的 conversation 记录。
 - “删除”会在确认后永久删除选中的 conversation。
 
 ## 模型配置
@@ -61,7 +61,7 @@
 
 如果勾选“在本机记住 Key”，Key 会写入 `chrome.storage.local`。插件是客户端应用，无法提供服务端级别的密钥保密；只建议用于个人本地 Demo。
 
-### Aistudio 本地 relay
+### 本地 relay
 
 如果模型网关拒绝 `chrome-extension://` Origin，可以使用 [`relay/`](relay/) 中的本地 loopback relay：
 
@@ -91,7 +91,7 @@ VENUS_UPSTREAM_BASE="https://example.com/v1" ./start.sh
 - 不支持 `chrome://`、Chrome Web Store、其他扩展页面和操作系统原生窗口。
 - 用户关闭 Side Panel、点击停止或刷新插件时，当前 session 会停止并 detach。
 - 模型输出必须包含 `<action>...</action>`，并使用 `point` 坐标参数。
-- 当前不包含 DOM tree、reflection supervisor 和轨迹 ZIP 导出。
+- 当前不包含 DOM tree、独立的 reflection supervisor 和轨迹 ZIP 导出；只有在模型连续两次输出完全相同响应时，Agent 才会加入一条循环恢复提示。
 
 ## 开发检查
 
@@ -107,17 +107,26 @@ npm run check
 
 ```text
 manifest.json
+page-assistant.js            # 网页内任务输入框与运行状态
 service-worker.js           # 浏览器 attach、截图和 action 执行
 sidepanel.html/css/js       # UI 与设置
+assets/icons/               # 插件图标
 src/
   action-parser.js          # 严格解析 Venus action，不使用 eval
   agent-session.js          # Agent loop
   browser-bridge.js         # Side Panel ↔ Service Worker RPC
+  config-validation.js      # 任务配置校验
   context-manager.js        # 上下文选择与压缩规划
   conversation-store.js     # IndexedDB transcript 与会话元数据
+  file-transfer.js          # 上传和下载路径处理
+  hotkey.js                 # 跨平台快捷键归一化
   model-client.js           # OpenAI-compatible model client
   settings.js               # 权限和密钥存储
+  workspace-store.js        # 已授权 workspace 持久化
 prompts/venus_system.txt
-tests/action-parser.test.mjs
+tests/                      # 单元测试与契约测试
+scripts/check.mjs           # 插件静态检查
+package.json/package-lock.json
 relay/                      # 127.0.0.1 本地模型转发
+workspace/.gitkeep          # 空 workspace 占位文件
 ```

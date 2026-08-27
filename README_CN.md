@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/ui-venus-logo-3.png" width="60" align="center"> UI-Venus-2
+  <img src="assets/ui-venus-logo-3.png" height="32"> UI-Venus-2
 </h1>
 
 <p align="center">
@@ -29,6 +29,18 @@
 
 ---
 
+<p align="center">
+  📈 <strong>UI-Venus-2 基准测试表现</strong>
+</p>
+
+<p align="center">
+  <img src="assets/venus2_page1_v7_minimal_editorial.png" alt="UI-Venus-2 基准测试表现" width="1200" />
+</p>
+
+> **图：** UI-Venus-2 在代表性移动端、浏览器、计算机、CAPTCHA 和定位基准上的性能对比。
+
+---
+
 # 📰 最新动态
 
 * [2026/08] 发布 **UI-Venus-2**：一款 9B/27B 通用基础 GUI 智能体，通过规模化多语言环境、基于关键点的验证和验证增强的反思，统一移动端、Web 和桌面端交互。
@@ -54,7 +66,7 @@
 
 [查看更多演示](https://ui-venus.github.io/UI-Venus-2/#demos)
 
-<img src="https://ui-venus.github.io/UI-Venus-2/assets/demo_gifs/mobile_cn_weather_train_booking.gif" alt="UI-Venus-2 移动端演示" width="1200">
+<img src="assets/demo_gifs/mobile_cn_weather_train_booking.gif" alt="UI-Venus-2 移动端演示" width="1200">
 
 ---
 
@@ -175,26 +187,26 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
-      <td align="center">9.0</td>
-      <td align="center">15.3</td>
+      <td align="center">9.0*</td>
+      <td align="center">15.3*</td>
       <td align="center">57.8</td>
-      <td align="center">17.9</td>
+      <td align="center">18.0 (18.0)*</td>
       <td align="center">33.3</td>
-      <td align="center">6.2</td>
+      <td align="center">6.2*</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
-      <td align="center">24.6</td>
-      <td align="center">28.0</td>
+      <td align="center">24.6*</td>
+      <td align="center">28.0*</td>
       <td align="center">70.3</td>
-      <td align="center">41.9</td>
+      <td align="center">36.8 (41.9)*</td>
       <td align="center">-</td>
-      <td align="center">25.7</td>
+      <td align="center">25.7*</td>
     </tr>
     <tr>
       <td align="left"><sub>Opus&nbsp;4.6</sub></td>
       <td align="center">-</td>
-      <td align="center">36.5</td>
+      <td align="center">36.5*</td>
       <td align="center">-</td>
       <td align="center">44.5</td>
       <td align="center">-</td>
@@ -202,8 +214,8 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
-      <td align="center">38.7</td>
-      <td align="center">31.2</td>
+      <td align="center">38.7*</td>
+      <td align="center">31.2*</td>
       <td align="center">-</td>
       <td align="center">55.6</td>
       <td align="center">-</td>
@@ -212,36 +224,36 @@ bash scripts/captcha.sh
     <tr>
       <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
       <td align="center">52.0</td>
-      <td align="center">20.1</td>
+      <td align="center">20.1*</td>
       <td align="center">-</td>
       <td align="center">63.2</td>
       <td align="center">51.6</td>
-      <td align="center"><ins>65.6</ins></td>
+      <td align="center"><ins>65.6</ins>*</td>
     </tr>
     <tr>
       <td colspan="7" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;8B</sub></td>
-      <td align="center">18.4</td>
+      <td align="center">18.4*</td>
       <td align="center">16.1</td>
       <td align="center">73.7</td>
-      <td align="center">22.2</td>
+      <td align="center">22.2*</td>
       <td align="center">26.0</td>
-      <td align="center">3.9</td>
+      <td align="center">3.9*</td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub></td>
-      <td align="center">21.5</td>
+      <td align="center">21.5*</td>
       <td align="center">21.5</td>
       <td align="center">77.6</td>
       <td align="center">17.1</td>
       <td align="center">-</td>
-      <td align="center">10.9</td>
+      <td align="center">10.9*</td>
     </tr>
     <tr>
       <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
-      <td align="center">20.3</td>
+      <td align="center">20.3*</td>
       <td align="center">-</td>
       <td align="center">69.8</td>
       <td align="center">43.9</td>
@@ -250,19 +262,19 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>MAI&#8209;UI&#8209;8B</sub></td>
-      <td align="center">21.5</td>
+      <td align="center">21.5*</td>
       <td align="center">12.7</td>
       <td align="center">70.7</td>
-      <td align="center">27.5†</td>
+      <td align="center">27.5</td>
       <td align="center">26.0</td>
-      <td align="center">12.0</td>
+      <td align="center">17.2*</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center"><strong>82.1</strong></td>
+      <td align="center"><strong>82.1 (85.5)</strong></td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
@@ -292,7 +304,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> MobileWorld 列报告了仅 GUI 子集在最大步数为 50 和 100 时的成功率（括号内为 100 步的结果）。MemGUI 报告主结果的 Pass@1。
+> MobileWorld 列报告了仅 GUI 子集在最大步数为 50 和 100 时的成功率（括号内为 100 步的结果）。MemGUI 报告主结果的 Pass@1。`*` 表示我们复现的结果。
 
 ### Computer
 
@@ -303,81 +315,74 @@ bash scripts/captcha.sh
     <tr>
       <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>OSWorld&#8209;Verified</sub></th>
-      <th align="center"><sub>OSWorld&#8209;V2(150 Steps)</sub></th>
+      <th align="center"><sub>OSWorld&#8209;V2</sub></th>
       <th align="center"><sub>DeskCraft</sub></th>
-      <th align="center"><sub>OpenComputer</sub></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="4" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
       <td align="center">41.8</td>
-      <td align="center">0/2.53</td>
-      <td align="center">14.6</td>
-      <td align="center">7.8</td>
+      <td align="center">2.5</td>
+      <td align="center">14.6*</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
       <td align="center">62.0</td>
-      <td align="center">-</td>
-      <td align="center">28.7</td>
-      <td align="center">-</td>
+      <td align="center">3.8</td>
+      <td align="center">28.7*</td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
       <td align="center">73.1</td>
-      <td align="center"><strong>1.9/7.1</strong></td>
-      <td align="center">41.4</td>
-      <td align="center">58.8</td>
+      <td align="center">7.1</td>
+      <td align="center">41.4*</td>
     </tr>
     <tr>
       <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
-      <td align="center">-</td>
-      <td align="center"><ins>-/6.3</ins></td>
-      <td align="center">40.0</td>
-      <td align="center">-</td>
+      <td align="center">62.3</td>
+      <td align="center">6.3</td>
+      <td align="center">40.0*</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="4" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
       <td align="center">56.5</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
-      <td align="center"><ins>79.5</ins></td>
-      <td align="center">-</td>
+      <td align="center">79.5</td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="4" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center">70.8</td>
-      <td align="center">即将公布</td>
-      <td align="center"><ins>48.0</ins></td>
-      <td align="center">即将公布</td>
+      <td align="center">7.52</td>
+      <td align="center">48.0</td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
-      <td align="center"><strong>80.5</strong></td>
-      <td align="center">即将公布</td>
-      <td align="center"><strong>55.5</strong></td>
-      <td align="center">即将公布</td>
+      <td align="center">80.5</td>
+      <td align="center">13.24</td>
+      <td align="center">55.5</td>
     </tr>
   </tbody>
 </table>
 
 </div>
+
+> 各类计算机使用智能体基准的性能对比。对于 DeskCraft，我们报告完整基准中全部 538 个任务的总体性能。
 
 ### Browser
 
@@ -390,26 +395,29 @@ bash scripts/captcha.sh
       <th align="center"><sub>WebVoyager</sub></th>
       <th align="center"><sub>Online&#8209;Mind2Web</sub></th>
       <th align="center"><sub>REAL</sub></th>
-      <th align="center"><sub>Odysseys</sub></th>
+      <th align="center"><sub>Odysseys&nbsp;Avg.</sub></th>
+      <th align="center"><sub>Odysseys&nbsp;Perfect</sub></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="5" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="6" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
-      <td align="center">46.9</td>
-      <td align="center">27.3</td>
-      <td align="center">18.2</td>
-      <td align="center">13.5</td>
+      <td align="center">46.9*</td>
+      <td align="center">27.3*</td>
+      <td align="center">18.2*</td>
+      <td align="center">42.6*</td>
+      <td align="center">13.5*</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
-      <td align="center">84.3</td>
-      <td align="center">55.3</td>
-      <td align="center">27.3</td>
-      <td align="center">18.5</td>
+      <td align="center">84.3*</td>
+      <td align="center">55.3*</td>
+      <td align="center">27.3*</td>
+      <td align="center">39.5*</td>
+      <td align="center">18.5*</td>
     </tr>
     <tr>
       <td align="left"><sub>OpenAI&nbsp;Operator</sub></td>
@@ -417,17 +425,20 @@ bash scripts/captcha.sh
       <td align="center">61.3</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><sub>Seed&#8209;2.0</sub></td>
-      <td align="center">85.1</td>
-      <td align="center">68.5</td>
-      <td align="center">74.4</td>
-      <td align="center">30.1</td>
+      <td align="left"><sub>Seed2.0&nbsp;Pro</sub></td>
+      <td align="center">85.1*</td>
+      <td align="center">68.5*</td>
+      <td align="center">74.4*</td>
+      <td align="center">60.2*</td>
+      <td align="center">30.1*</td>
     </tr>
     <tr>
       <td align="left"><sub>GLM&#8209;5V&#8209;Turbo</sub></td>
       <td align="center">88.5</td>
+      <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -437,17 +448,19 @@ bash scripts/captcha.sh
       <td align="center">88.0</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">68.9</td>
       <td align="center">44.5</td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
-      <td align="center">76.8</td>
+      <td align="center">76.8*</td>
       <td align="center">-</td>
-      <td align="center">74.4</td>
+      <td align="center">74.4*</td>
+      <td align="center">-</td>
       <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="6" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;TARS&#8209;1.5</sub></td>
@@ -455,25 +468,29 @@ bash scripts/captcha.sh
       <td align="center"><ins>75.8</ins></td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>UI&#8209;Venus&#8209;1.5&#8209;30B&#8209;A3B</sub></td>
       <td align="center">76.0</td>
       <td align="center">-</td>
-      <td align="center">38.0</td>
+      <td align="center">38.0*</td>
+      <td align="center">-</td>
       <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Thinking</sub></td>
       <td align="center">82.1</td>
       <td align="center">-</td>
-      <td align="center">44.6</td>
+      <td align="center">44.6*</td>
+      <td align="center">-</td>
       <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>MolmoWeb&#8209;8B</sub></td>
       <td align="center">78.2</td>
       <td align="center">35.3</td>
+      <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
@@ -483,6 +500,7 @@ bash scripts/captcha.sh
       <td align="center">63.4</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>Fara&#8209;1.5&#8209;27B</sub></td>
@@ -490,15 +508,17 @@ bash scripts/captcha.sh
       <td align="center">72.3</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="5" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="6" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center"><ins>90.8</ins></td>
       <td align="center">74.0</td>
       <td align="center"><ins>76.9</ins></td>
+      <td align="center"><ins>77.3</ins></td>
       <td align="center"><ins>62.0</ins></td>
     </tr>
     <tr>
@@ -506,6 +526,7 @@ bash scripts/captcha.sh
       <td align="center"><strong>93.4</strong></td>
       <td align="center"><strong>78.3</strong></td>
       <td align="center"><strong>80.2</strong></td>
+      <td align="center"><strong>80.4</strong></td>
       <td align="center"><strong>66.3</strong></td>
     </tr>
   </tbody>
@@ -513,7 +534,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 对于 Odysseys，我们报告满分评分标准得分（Perfect）。
+> 四个实时网页基准（WebVoyager、Online-Mind2Web、REAL 和 Odysseys）的性能对比。对于 Odysseys，我们同时报告平均评分（Avg.）和满分评分（Perfect）。每列中的粗体和下划线分数分别表示最佳和次佳公开结果。`*` 表示我们复现且官方报告中未提供的结果。
 
 ### Grounding
 
@@ -547,25 +568,25 @@ bash scripts/captcha.sh
       <td align="center">78.0</td>
       <td align="center">62.0</td>
     </tr>
-    <!-- <tr>
-      <td align="left"><sub>Claude&nbsp;Opus&nbsp;4.6</sub></td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-    </tr> -->
-    <!-- <tr>
+    <tr>
       <td align="left"><sub>Kimi&nbsp;K2.6</sub></td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-    </tr> -->
+      <td align="center">73.1*</td>
+      <td align="center">52.0*</td>
+      <td align="center">-*</td>
+      <td align="center">-*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
+      <td align="center">67.7*</td>
+      <td align="center">65.2*</td>
+      <td align="center">76.9*</td>
+      <td align="center">58.3*</td>
+    </tr>
     <tr>
       <td colspan="5" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
-      <td align="left"><sub>UI&#8209;Venus&#8209;1.0&#8209;72B</sub></td>
+      <td align="left"><sub>UI&#8209;Venus&#8209;Ground&#8209;72B</sub></td>
       <td align="center">70.2</td>
       <td align="center">61.9</td>
       <td align="center">69.5</td>
@@ -603,7 +624,7 @@ bash scripts/captcha.sh
       <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
       <td align="center">-</td>
       <td align="center"><strong>76.6</strong></td>
-      <td align="center"><ins>78.5</ins></td>
+      <td align="center">78.5</td>
       <td align="center"><strong>70.0</strong></td>
     </tr>
     <tr>
@@ -611,7 +632,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
-      <td align="center"><ins>77.1</ins></td>
+      <td align="center">77.1</td>
       <td align="center">73.0</td>
       <td align="center"><ins>78.5</ins></td>
       <td align="center">53.2</td>
@@ -628,7 +649,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 对于每项基准测试，粗体和下划线分数分别表示最佳和次佳结果。`*` 表示可能需要通过原始来源进一步核实的结果。
+> 对于每项基准测试，粗体和下划线分数分别表示最佳和次佳结果。`*` 表示我们复现的结果。
 
 ### CAPTCHA
 
@@ -639,10 +660,10 @@ bash scripts/captcha.sh
     <tr>
       <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>VenusBench&#8209;CAPTCHA</sub></th>
-      <th align="center"><sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub></th>
       <th align="center"><sub>MCA&#8209;Bench</sub></th>
+      <th align="center"><sub>Spatial&#8209;CAPTCHA&#8209;Bench</sub></th>
       <th align="center"><sub>NextGen&#8209;CAPTCHAs</sub></th>
-      <th align="center"><sub>OpenCaptcha</sub></th>
+      <th align="center"><sub>Open&nbsp;CaptchaWorld</sub></th>
     </tr>
   </thead>
   <tbody>
@@ -651,41 +672,41 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
-      <td align="center">29.7</td>
-      <td align="center">4.9</td>
+      <td align="center">28.3</td>
       <td align="center">30.4</td>
+      <td align="center">4.9</td>
       <td align="center">2.8</td>
       <td align="center">36.4</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
-      <td align="center">54.8</td>
-      <td align="center">31.0</td>
+      <td align="center">53.0</td>
       <td align="center">51.7</td>
+      <td align="center">31.0</td>
       <td align="center">14.1</td>
       <td align="center">47.7</td>
     </tr>
     <tr>
       <td align="left"><sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub></td>
-      <td align="center">48.4</td>
-      <td align="center"><ins>43.6</ins></td>
+      <td align="center">47.9</td>
       <td align="center">35.5</td>
+      <td align="center"><ins>43.6</ins></td>
       <td align="center">20.4</td>
       <td align="center"><ins>55.6</ins></td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
-      <td align="center">40.6</td>
-      <td align="center">24.8</td>
+      <td align="center">39.7</td>
       <td align="center">38.7</td>
+      <td align="center">24.8</td>
       <td align="center">7.2</td>
       <td align="center">47.8</td>
     </tr>
     <tr>
       <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
-      <td align="center">15.4</td>
-      <td align="center">9.5</td>
+      <td align="center">16.0</td>
       <td align="center">25.9</td>
+      <td align="center">9.5</td>
       <td align="center">2.8</td>
       <td align="center">23.3</td>
     </tr>
@@ -693,18 +714,18 @@ bash scripts/captcha.sh
       <td colspan="6" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
-      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;9B</strong></sub></td>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center"><ins>78.1</ins></td>
-      <td align="center">42.8</td>
       <td align="center"><ins>75.7</ins></td>
+      <td align="center">42.8</td>
       <td align="center"><ins>47.6</ins></td>
       <td align="center">50.7</td>
     </tr>
     <tr>
-      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2.0&#8209;27B</strong></sub></td>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
       <td align="center"><strong>79.9</strong></td>
-      <td align="center"><strong>48.6</strong></td>
       <td align="center"><strong>79.6</strong></td>
+      <td align="center"><strong>48.6</strong></td>
       <td align="center"><strong>54.5</strong></td>
       <td align="center"><strong>56.3</strong></td>
     </tr>
@@ -713,7 +734,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> 所有结果均为 Pass@1 百分比，数值越高越好。我们在 VenusBench-CAPTCHA 以及 Spatial-CAPTCHA-Bench、MCA-Bench、NextGen-CAPTCHAs 和 Open CaptchaWorld 四个公开基准上进行评测。评测采用从 MCA-Bench 中抽取的 1,000 个样例、NextGen-CAPTCHAs 的 15 种任务类型，以及 OpenCaptcha 的 16 种任务类型；筛选详情请参阅附录。每列中的粗体和下划线分数分别表示最佳和次佳结果。
+> 所有结果均为 Pass@1 百分比，数值越高越好。我们在 VenusBench-CAPTCHA 以及 MCA-Bench、Spatial-CAPTCHA-Bench、NextGen-CAPTCHAs 和 Open CaptchaWorld 四个公开基准上进行评测。评测采用从 MCA-Bench 中抽取的 1,000 个样例、NextGen-CAPTCHAs 的 15 种任务类型，以及 Open CaptchaWorld 的 16 种任务类型；筛选详情请参阅附录。每列中的粗体和下划线分数分别表示最佳和次佳公开结果。
 
 ---
 
@@ -748,7 +769,7 @@ bash scripts/captcha.sh
       url={https://arxiv.org/abs/2602.09082},
 }
 
-# UI-Venus 1.0
+# UI-Venus
 @misc{gu2025uivenustechnicalreportbuilding,
       title={UI-Venus Technical Report: Building High-performance UI Agents with RFT},
       author={Zhangxuan Gu and Zhengwen Zeng and Zhenyu Xu and others},

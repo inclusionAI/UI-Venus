@@ -1,6 +1,15 @@
 /**
- * Usage: Enable Page Assistant at the top of the Side Panel, enter a task at the bottom of the page, and press Ctrl/Command + Enter.
+ * 使用示例：开启 Side Panel 顶部的“页面助手”后，可在网页底部输入任务并按 Ctrl/⌘ + Enter 运行。
  */
+(() => {
+const INSTANCE_KEY = "__venusPageAssistantInstance__";
+try {
+  globalThis[INSTANCE_KEY]?.dispose?.();
+} catch {
+  // The previous content-script context may have been invalidated by an
+  // extension reload. Its DOM is still safe to replace below.
+}
+
 const HOST_ID = "__venus_page_assistant__";
 const LEGACY_HOST_ID = "__venus_control_indicator__";
 const DEFAULT_STATE = {
@@ -10,29 +19,37 @@ const DEFAULT_STATE = {
 };
 
 let enabled = false;
+let panelVisible = false;
 let state = DEFAULT_STATE;
 let view = null;
 let leaseTimer = null;
 let noticeTimer = null;
+let watchdogFailures = 0;
 
+globalThis[INSTANCE_KEY] = { dispose };
 initialize();
 
 async function initialize() {
   document.getElementById(LEGACY_HOST_ID)?.remove();
   const response = await chrome.runtime.sendMessage({ type: "venus_page_assistant_ready" }).catch(() => null);
   enabled = response?.enabled === true;
+  panelVisible = response?.panelVisible === true;
   if (enabled) mount();
   if (response?.state) applyState(response.state);
   if (enabled) renewLease();
 }
 
-chrome.runtime.onMessage.addListener((message) => {
+chrome.runtime.onMessage.addListener(handleRuntimeMessage);
+
+function handleRuntimeMessage(message) {
   if (message?.type === "venus_page_assistant_update") {
     applyState(message.state);
   } else if (message?.type === "venus_page_assistant_visible") {
     enabled = Boolean(message.visible);
+    panelVisible = Boolean(message.panelVisible);
     if (enabled) {
       mount();
+      applyPanelVisibility();
       applyState(state);
       renewLease();
     } else {
@@ -43,7 +60,17 @@ chrome.runtime.onMessage.addListener((message) => {
   } else if (message?.type === "venus_page_assistant_interactive") {
     if (view) view.host.dataset.interactive = message.interactive ? "true" : "false";
   }
-});
+}
+
+function dispose() {
+  try {
+    chrome.runtime.onMessage.removeListener(handleRuntimeMessage);
+  } catch {
+    // Expected when this instance belongs to an invalidated extension context.
+  }
+  enabled = false;
+  remove();
+}
 
 function mount() {
   if (!enabled || view || !document.documentElement) return;
@@ -52,11 +79,12 @@ function mount() {
   host.id = HOST_ID;
   host.dataset.mode = "ready";
   host.dataset.interactive = "false";
+  host.dataset.panelVisible = panelVisible ? "true" : "false";
   host.style.cssText = "all:initial;position:fixed;inset:0;z-index:2147483647;pointer-events:none;display:block;";
   const shadow = host.attachShadow({ mode: "closed" });
   shadow.innerHTML = `
     <style>
-      :host { all: initial; animation: assistant-lease-expire 0s step-end 12s forwards; }
+      :host { all: initial; }
       .layer { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
       .grid { position: absolute; inset: 0; background-image: radial-gradient(circle, rgb(111 145 255 / 34%) 1px, transparent 1.25px); background-size: 11px 11px; opacity: .19; animation: grid-breathe 2.8s ease-in-out infinite; }
       .frame { position: absolute; inset: 0; border: 3px solid rgb(103 139 255 / 62%); border-radius: 8px; box-shadow: inset 0 0 24px rgb(88 119 255 / 34%), inset 0 0 70px rgb(112 76 220 / 16%); animation: frame-pulse 1.8s ease-in-out infinite; }
@@ -92,11 +120,11 @@ function mount() {
       .close { all: initial; position: absolute; top: 7px; right: 9px; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: #cbd3f5; cursor: pointer; pointer-events: auto; font: 18px/1 sans-serif; transition: color .18s ease, background .18s ease, transform .18s ease; }
       .close:hover, .close:focus-visible { color: #fff; background: rgb(255 255 255 / 10%); transform: scale(1.08); }
       [hidden] { display: none !important; }
+      :host([data-panel-visible='false']) .panel, :host([data-panel-visible='false']) .result { display: none !important; }
       :host(:not([data-mode='running'])) .grid, :host(:not([data-mode='running'])) .frame { display: none; }
       @keyframes grid-breathe { 50% { opacity: .1; } }
       @keyframes frame-pulse { 50% { border-color: rgb(150 119 255 / 78%); box-shadow: inset 0 0 34px rgb(100 135 255 / 42%); } }
       @keyframes dot { 50% { opacity: .35; transform: scale(.72); } }
-      @keyframes assistant-lease-expire { to { opacity: 0; visibility: hidden; pointer-events: none; } }
       @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
     </style>
     <div class="layer"><div class="grid"></div><div class="frame"></div><div class="shell">
@@ -155,20 +183,34 @@ function remove() {
 
 function renewLease() {
   if (!enabled || !view) return;
-  view.host.style.animation = "none";
-  view.host.getBoundingClientRect();
-  view.host.style.removeProperty("animation");
   clearTimeout(leaseTimer);
   leaseTimer = setTimeout(async () => {
     const response = await chrome.runtime.sendMessage({ type: "venus_page_assistant_ready" }).catch(() => null);
-    if (response?.enabled !== true) {
+    if (!response) {
+      watchdogFailures += 1;
+      if (watchdogFailures < 3) {
+        renewLease();
+        return;
+      }
       enabled = false;
       remove();
       return;
     }
+    watchdogFailures = 0;
+    enabled = response.enabled === true;
+    panelVisible = response.panelVisible === true;
+    if (!enabled) {
+      remove();
+      return;
+    }
+    applyPanelVisibility();
     if (response.state) applyState(response.state);
     renewLease();
   }, 4_000);
+}
+
+function applyPanelVisibility() {
+  if (view) view.host.dataset.panelVisible = panelVisible ? "true" : "false";
 }
 
 function applyState(next = {}) {
@@ -208,7 +250,7 @@ function applyState(next = {}) {
         if (view) view.result.hidden = true;
       }, state.noticeTimeoutMs);
     }
-  } else if (mode === "running" || mode === "starting") {
+  } else {
     view.result.hidden = true;
   }
 }
@@ -216,3 +258,4 @@ function applyState(next = {}) {
 function sendEvent(event, payload = {}) {
   chrome.runtime.sendMessage({ type: "venus_page_assistant_event", event, ...payload }).catch(() => {});
 }
+})();

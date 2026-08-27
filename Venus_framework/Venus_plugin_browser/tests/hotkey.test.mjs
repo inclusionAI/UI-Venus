@@ -19,14 +19,19 @@ test("allows the physical Control and Option keys to be requested on macOS", () 
   assert.deepEqual(normalizeHotkeyKeys(["option", "x"], "mac"), ["alt", "x"]);
 });
 
-test("adds an explicit selectAll editing command for the platform shortcut", () => {
+test("adds explicit editing commands for platform clipboard shortcuts", () => {
   assert.deepEqual(editingCommandsForHotkey(["ctrl", "a"], "linux"), ["selectAll"]);
   assert.deepEqual(editingCommandsForHotkey(["ctrl", "a"], "win"), ["selectAll"]);
   assert.deepEqual(editingCommandsForHotkey(["meta", "a"], "mac"), ["selectAll"]);
+  assert.deepEqual(editingCommandsForHotkey(["ctrl", "c"], "linux"), ["Copy"]);
+  assert.deepEqual(editingCommandsForHotkey(["ctrl", "v"], "win"), ["Paste"]);
+  assert.deepEqual(editingCommandsForHotkey(["meta", "c"], "mac"), ["Copy"]);
+  assert.deepEqual(editingCommandsForHotkey(["meta", "v"], "mac"), ["Paste"]);
+  assert.deepEqual(editingCommandsForHotkey(["meta", "shift", "v"], "mac"), ["PasteAndMatchStyle"]);
 });
 
 test("does not reinterpret other shortcuts or physical Control+A on macOS", () => {
   assert.deepEqual(editingCommandsForHotkey(["ctrl", "a"], "mac"), []);
   assert.deepEqual(editingCommandsForHotkey(["ctrl", "shift", "a"], "linux"), []);
-  assert.deepEqual(editingCommandsForHotkey(["ctrl", "c"], "linux"), []);
+  assert.deepEqual(editingCommandsForHotkey(["ctrl", "alt", "c"], "linux"), []);
 });

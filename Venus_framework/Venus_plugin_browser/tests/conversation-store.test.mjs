@@ -26,6 +26,33 @@ test("deletes a conversation together with its existing entries", async () => {
   assert.equal(storage.data.activeConversationId, undefined);
 });
 
+test("persists actual prompt usage and clears it after compaction", async () => {
+  const store = new ConversationStore({
+    indexedDBFactory: new IDBFactory(),
+    storageArea: new MemoryStorage(),
+  });
+  const conversation = await store.createConversation("长会话");
+
+  await store.updatePromptTokens(conversation.id, 51_234);
+  assert.equal((await store.getConversation(conversation.id)).promptTokens, 51_234);
+
+  await store.updateSummary(conversation.id, "用户让我查询商品，结果已给出。", 10);
+  assert.equal((await store.getConversation(conversation.id)).promptTokens, 0);
+});
+
+test("accumulates completion tokens across tasks in one conversation", async () => {
+  const store = new ConversationStore({
+    indexedDBFactory: new IDBFactory(),
+    storageArea: new MemoryStorage(),
+  });
+  const conversation = await store.createConversation("多任务会话");
+
+  await store.addCompletionTokens(conversation.id, 120);
+  await store.addCompletionTokens(conversation.id, 80);
+
+  assert.equal((await store.getConversation(conversation.id)).completionTokens, 200);
+});
+
 class MemoryStorage {
   constructor() {
     this.data = {};

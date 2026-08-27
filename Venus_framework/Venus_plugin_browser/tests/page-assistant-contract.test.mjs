@@ -12,19 +12,38 @@ test("uses a directly mounted textarea without an iframe initialization race", (
   assert.match(pageAssistantSource, /const acceptsTask = mode === "ready" \|\| mode === "complete"/);
 });
 
+test("is safe to reinject into a tab after an extension reload or message race", () => {
+  assert.match(pageAssistantSource, /^\/\*\*[\s\S]*\(\(\) => \{/);
+  assert.match(pageAssistantSource, /globalThis\[INSTANCE_KEY\]\?\.dispose\?\.\(\)/);
+  assert.match(pageAssistantSource, /onMessage\.removeListener\(handleRuntimeMessage\)/);
+  assert.match(pageAssistantSource, /\}\)\(\);\s*$/);
+});
+
 test("fails closed when the extension backend is unavailable", () => {
   assert.match(pageAssistantSource, /let enabled = false/);
   assert.match(pageAssistantSource, /enabled = response\?\.enabled === true/);
-  assert.match(pageAssistantSource, /assistant-lease-expire/);
-  assert.match(pageAssistantSource, /response\?\.enabled !== true[\s\S]*remove\(\)/);
+  assert.doesNotMatch(pageAssistantSource, /assistant-lease-expire/);
+  assert.match(pageAssistantSource, /watchdogFailures \+= 1[\s\S]*watchdogFailures < 3[\s\S]*remove\(\)/);
+});
+
+test("separates task border visibility from side-panel assistant visibility", () => {
+  assert.match(pageAssistantSource, /data-panel-visible/);
+  assert.match(pageAssistantSource, /panelVisible = response\?\.panelVisible === true/);
+  assert.match(serviceWorkerSource, /isTaskControlActive\(session\) \|\| shouldShowPanel/);
+  assert.match(
+    serviceWorkerSource,
+    /enabled: Boolean\(visibleSession\) && \(isTaskControlActive\(visibleSession\) \|\| panelVisible\)/,
+  );
 });
 
 test("renders transient notices as a top-centered toast", () => {
   assert.match(pageAssistantSource, /\.result \{ position: fixed; top: 24px; left: 50%; transform: translateX\(-50%\)/);
   assert.match(pageAssistantSource, /<\/div><aside class="result"/);
   assert.match(pageAssistantSource, /state\.noticeTimeoutMs > 0[\s\S]*view\.result\.hidden = true/);
+  assert.match(pageAssistantSource, /else \{\s+view\.result\.hidden = true;/);
   assert.match(sidePanelSource, /restoreControlComposer\(text, 3_000\)/);
   assert.match(sidePanelSource, /mode: "complete"[\s\S]*noticeTimeoutMs: 3_000/);
+  assert.match(sidePanelSource, /renderMessage\("system", "正在压缩上下文…"\)/);
 });
 
 test("removes the legacy debugger-injected control panel", () => {
@@ -51,10 +70,10 @@ test("hides the page assistant when its side-panel session disconnects", () => {
   );
 });
 
-test("requires a visible side-panel session before enabling a new tab assistant", () => {
+test("requires a visible side panel for the composer but not for a running-task border", () => {
   assert.match(
     serviceWorkerSource,
-    /!session\.panelVisible \|\| !session\.controlEnabled[\s\S]*Boolean\(visibleSession\)/,
+    /return isTaskControlActive\(session\) \|\| \(session\.panelVisible && session\.controlEnabled\)/,
   );
   assert.match(serviceWorkerSource, /panelVisible: false/);
 });
@@ -146,4 +165,11 @@ test("requests a workspace only when a download action needs it", () => {
   );
   assert.match(sidePanelSource, /下载文件需要设置 Workspace 目录/);
   assert.match(serviceWorkerSource, /if \(isLikelyDownloadLink\(inspectedTarget\)\)/);
+});
+
+test("waits 500ms after every executed action before the next observation", () => {
+  assert.match(
+    serviceWorkerSource,
+    /case "execute":\s+try \{\s+result = await executeAction\(session, message\.action\);\s+\} finally \{[\s\S]*await sleep\(500\);\s+\}\s+break;/,
+  );
 });
