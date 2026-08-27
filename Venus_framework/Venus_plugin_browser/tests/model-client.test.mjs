@@ -30,7 +30,7 @@ test("uses configured temperature for action completions", async () => {
   }
 });
 
-test("uses zero temperature by default for action completions", async () => {
+test("uses the default temperature for action completions", async () => {
   const originalFetch = globalThis.fetch;
   let payload = null;
   globalThis.fetch = async (_url, options) => {
@@ -50,7 +50,7 @@ test("uses zero temperature by default for action completions", async () => {
       apiKey: "test",
     });
     await client.complete([{ role: "user", content: "test" }]);
-    assert.equal(payload.temperature, 0);
+    assert.equal(payload.temperature, 0.5);
   } finally {
     globalThis.fetch = originalFetch;
   }

@@ -222,9 +222,16 @@ function bindEvents() {
     stopControlHeartbeat();
     activeSession?.stop();
   });
+  window.addEventListener("focus", assertPanelOpenVisibility);
+  window.addEventListener("pageshow", assertPanelOpenVisibility);
   if (!HAS_NATIVE_SIDE_PANEL_VISIBILITY) {
     document.addEventListener("visibilitychange", syncPanelVisibility);
   }
+}
+
+function assertPanelOpenVisibility() {
+  if (document.visibilityState !== "visible") return;
+  browser.setPanelVisibility(true).catch(() => {});
 }
 
 function syncPanelVisibility() {
@@ -1099,7 +1106,7 @@ function populateSettings(settings) {
   elements.apiUrl.value = settings.apiUrl ?? "";
   elements.model.value = settings.model ?? "";
   elements.maxSteps.value = String(settings.maxSteps ?? 100);
-  elements.temperature.value = String(settings.temperature ?? 0);
+  elements.temperature.value = String(settings.temperature ?? 0.5);
   elements.apiKey.value = settings.apiKey ?? "";
   elements.rememberKey.checked = Boolean(settings.rememberKey);
   elements.apiUrl.disabled = false;
@@ -1239,3 +1246,4 @@ function byId(id) {
   }
   return element;
 }
+

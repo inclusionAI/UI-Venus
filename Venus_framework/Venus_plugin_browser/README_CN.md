@@ -47,7 +47,7 @@
 - Model：支持视觉输入的模型名称。
 - API Key：默认只保存在 `chrome.storage.session`，浏览器重启或插件重载后清除。
 - 最大步数：每次任务最多执行多少个 Agent step，范围 1～200，默认 100。
-- Temperature：正常 action 请求使用的采样温度，范围 0～2，默认 0；连接测试和上下文压缩固定为 0。
+- Temperature：正常 action 请求使用的采样温度，范围 0～2，默认 0.5；连接测试和上下文压缩固定为 0。
 
 使用 OpenAI-compatible Chat Completions 请求格式：
 
@@ -55,7 +55,7 @@
 {
   "model": "your-vision-model",
   "messages": [],
-  "temperature": 0
+  "temperature": 0.5
 }
 ```
 

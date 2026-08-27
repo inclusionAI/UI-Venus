@@ -22,9 +22,8 @@ let enabled = false;
 let panelVisible = false;
 let state = DEFAULT_STATE;
 let view = null;
-let leaseTimer = null;
+let contextWatchdogTimer = null;
 let noticeTimer = null;
-let watchdogFailures = 0;
 
 globalThis[INSTANCE_KEY] = { dispose };
 initialize();
@@ -36,7 +35,7 @@ async function initialize() {
   panelVisible = response?.panelVisible === true;
   if (enabled) mount();
   if (response?.state) applyState(response.state);
-  if (enabled) renewLease();
+  if (enabled) startContextWatchdog();
 }
 
 chrome.runtime.onMessage.addListener(handleRuntimeMessage);
@@ -51,7 +50,7 @@ function handleRuntimeMessage(message) {
       mount();
       applyPanelVisibility();
       applyState(state);
-      renewLease();
+      startContextWatchdog();
     } else {
       remove();
     }
@@ -169,43 +168,34 @@ function mount() {
   });
   shadow.querySelector(".close").addEventListener("click", () => { view.result.hidden = true; });
   applyState(state);
-  renewLease();
+  startContextWatchdog();
 }
 
 function remove() {
-  clearTimeout(leaseTimer);
+  clearTimeout(contextWatchdogTimer);
   clearTimeout(noticeTimer);
-  leaseTimer = null;
+  contextWatchdogTimer = null;
   noticeTimer = null;
   document.getElementById(HOST_ID)?.remove();
   view = null;
 }
 
-function renewLease() {
+function startContextWatchdog() {
   if (!enabled || !view) return;
-  clearTimeout(leaseTimer);
-  leaseTimer = setTimeout(async () => {
-    const response = await chrome.runtime.sendMessage({ type: "venus_page_assistant_ready" }).catch(() => null);
-    if (!response) {
-      watchdogFailures += 1;
-      if (watchdogFailures < 3) {
-        renewLease();
-        return;
-      }
+  clearTimeout(contextWatchdogTimer);
+  contextWatchdogTimer = setTimeout(() => {
+    let extensionContextAvailable = false;
+    try {
+      extensionContextAvailable = Boolean(chrome.runtime?.id);
+    } catch {
+      // The extension was reloaded, disabled or removed.
+    }
+    if (!extensionContextAvailable) {
       enabled = false;
       remove();
       return;
     }
-    watchdogFailures = 0;
-    enabled = response.enabled === true;
-    panelVisible = response.panelVisible === true;
-    if (!enabled) {
-      remove();
-      return;
-    }
-    applyPanelVisibility();
-    if (response.state) applyState(response.state);
-    renewLease();
+    startContextWatchdog();
   }, 4_000);
 }
 
@@ -259,3 +249,4 @@ function sendEvent(event, payload = {}) {
   chrome.runtime.sendMessage({ type: "venus_page_assistant_event", event, ...payload }).catch(() => {});
 }
 })();
+

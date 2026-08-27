@@ -47,7 +47,7 @@ Configure:
 - **Model:** The name of a model that supports visual input.
 - **API Key:** Stored only in `chrome.storage.session` by default and cleared after a browser restart or extension reload.
 - **Maximum steps:** The maximum number of agent steps per task, from 1 to 200; default 100.
-- **Temperature:** Sampling temperature for normal action requests, from 0 to 2; default 0. Connection tests and context compression always use 0.
+- **Temperature:** Sampling temperature for normal action requests, from 0 to 2; default 0.5. Connection tests and context compression always use 0.
 
 The extension sends OpenAI-compatible Chat Completions requests:
 
@@ -55,7 +55,7 @@ The extension sends OpenAI-compatible Chat Completions requests:
 {
   "model": "your-vision-model",
   "messages": [],
-  "temperature": 0
+  "temperature": 0.5
 }
 ```
 

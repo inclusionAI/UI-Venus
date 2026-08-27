@@ -1,7 +1,7 @@
 const LOCAL_KEYS = ["apiUrl", "model", "rememberKey", "apiKey", "maxSteps", "temperature"];
 const SESSION_KEYS = ["apiKey"];
 export const DEFAULT_MAX_STEPS = 100;
-export const DEFAULT_TEMPERATURE = 0;
+export const DEFAULT_TEMPERATURE = 0.5;
 
 export function normalizeApiEndpoint(input) {
   const raw = String(input ?? "").trim();

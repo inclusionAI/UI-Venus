@@ -355,6 +355,7 @@ async function showIdleControl(session) {
   session.windowId = tab.windowId;
   hiddenPageAssistantTabs.delete(tab.id);
   session.controlState = readyControlState();
+  await setPageAssistantEnabled(tab.id, true, true);
   await sendPageAssistantUpdate(tab.id, session.controlState);
   return { shown: true, tabId: tab.id };
 }
@@ -2642,3 +2643,4 @@ function isMethodUnavailable(error) {
 function sleep(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
+

@@ -16,7 +16,7 @@ test("starts with empty model credentials and remember-key disabled", async () =
   assert.equal(loaded.model, "");
   assert.equal(loaded.apiKey, "");
   assert.equal(loaded.rememberKey, false);
-  assert.equal(loaded.temperature, 0);
+  assert.equal(loaded.temperature, 0.5);
 });
 
 test("saves and reloads editable API URL, model and key", async () => {

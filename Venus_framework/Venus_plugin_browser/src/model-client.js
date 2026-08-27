@@ -12,7 +12,7 @@ export class OpenAICompatibleClient {
     apiUrl,
     model,
     apiKey,
-    temperature = 0,
+    temperature = 0.5,
     timeoutMs = 180_000,
     retryBaseDelayMs = 1_000,
     retryMaxDelayMs = 30_000,
@@ -21,7 +21,7 @@ export class OpenAICompatibleClient {
     this.apiUrl = apiUrl;
     this.model = model;
     this.apiKey = apiKey;
-    this.temperature = Number.isFinite(Number(temperature)) ? Number(temperature) : 0;
+    this.temperature = Number.isFinite(Number(temperature)) ? Number(temperature) : 0.5;
     this.timeoutMs = timeoutMs;
     this.retryBaseDelayMs = retryBaseDelayMs;
     this.retryMaxDelayMs = retryMaxDelayMs;
