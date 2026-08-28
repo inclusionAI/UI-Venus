@@ -34,10 +34,10 @@ Compared with UI-Venus-1.5, we introduce:
 </p>
 
 <p align="center">
-  <img src="assets/venus2_page1_v7_minimal_editorial.png" alt="UI-Venus-2 Benchmark Performance" width="1200" />
+  <img src="assets/venus2_page1_v9_leaderboard.png" alt="UI-Venus-2 Benchmark Performance" width="1200" />
 </p>
 
-> **Figure** UI-Venus-2 on eight GUI-agent benchmarks. Each panel compares UI-Venus-2-27B and UI-Venus-2-9B with four selected strong external baselines. We favor standalone end-to-end systems evaluated on the closest available task subset and step budget; source-reported action scaffolds may still differ. Bars start at zero and scales vary by panel. MobileWorld uses GUI-only success rate on 117 tasks with 50 steps, WebVoyager uses the refreshed 595-task split, Odysseys uses average rubric score over 200 tasks, VenusBench-CAPTCHA uses micro Pass@1 over all 219 examples, and VenusBench-GD uses English-instruction micro-average accuracy. Live-site results may vary with evaluation date. “*” denotes external-model results evaluated or reproduced by us under the stated protocol, not statistical significance.
+> **Performances of UI-Venus-2 on GUI-agent benchmarks.** Each panel compares UI-Venus-2-27B and UI-Venus-2-9B with some selected strong baselines. We favor standalone end-to-end systems evaluated on the closest available task subset and step budget; source-reported action scaffolds may still differ. MobileWorld uses GUI-only success rate on 117 tasks with 50 steps, WebVoyager uses the refreshed 595-task split, Odysseys uses average rubric score over 200 tasks, VenusBench-CAPTCHA uses micro Pass@1 over all 219 examples, and VenusBench-GD uses English-instruction micro-average accuracy. “*” denotes results reproduced by us.
 
 ---
 
@@ -331,103 +331,173 @@ bash scripts/captcha.sh
 
 </div>
 
-> Performance comparison on various mobile GUI benchmarks. VenusBench-Mobile reports success rate on its 149-task primary pool. For MobileWorld, we report GUI-only success rate on 117 tasks under the 50-step setting; values in parentheses, when available, use 100 steps. MemGUI reports Main Results Pass@1. `*` denotes external-model results evaluated or reproduced by us; it does not denote statistical significance.
+> Performance comparison on various mobile GUI benchmarks. VenusBench-Mobile reports success rate on its 149-task primary pool. For MobileWorld, we report GUI-only success rate on 117 tasks under the 50-step setting; values in parentheses, when available, use 100 steps. MemGUI reports Main Results Pass@1. `*` denotes baseline results evaluated or reproduced by us.
 
 ### Computer
 
 <div align="center">
 
+<table width="100%">
+<tbody>
+<tr>
+<td width="50%" valign="top" align="right">
 <table>
   <thead>
     <tr>
       <th align="left"><sub>Models</sub></th>
       <th align="center"><sub>OSWorld&#8209;Verified</sub></th>
-      <th align="center"><sub>OSWorld&#8209;V2</sub></th>
       <th align="center"><sub>DeskCraft</sub></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="4" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+      <td colspan="3" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>Claude&#8209;Opus&#8209;4.8</sub></td>
       <td align="center"><strong>83.4</strong></td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
       <td align="center">41.8</td>
-      <td align="center">2.5</td>
       <td align="center">14.6*</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
       <td align="center">62.0</td>
-      <td align="center">3.8</td>
       <td align="center">28.7*</td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
       <td align="center">73.1</td>
-      <td align="center">7.1</td>
       <td align="center">41.4*</td>
     </tr>
     <tr>
       <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
       <td align="center">62.3</td>
-      <td align="center">6.3</td>
       <td align="center">40.0*</td>
     </tr>
     <tr>
       <td align="left"><sub>Seed&#8209;2.1&#8209;Pro</sub></td>
       <td align="center">78.8</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>GPT&#8209;5.5</sub></td>
       <td align="center">78.7</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="4" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
+      <td colspan="3" align="left"><sub><em>GUI&#8209;specific&nbsp;Models</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub>GUI&#8209;Owl&#8209;1.5&#8209;32B&#8209;Instruct</sub></td>
       <td align="center">56.5</td>
-      <td align="center">-</td>
       <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen&#8209;UI&#8209;Agent&#8209;27B</sub></td>
       <td align="center">79.5</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
-      <td colspan="4" align="left"><sub><em>Ours</em></sub></td>
+      <td colspan="3" align="left"><sub><em>Ours</em></sub></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center">70.8</td>
-      <td align="center">7.52</td>
-      <td align="center">48.0</td>
+      <td align="center"><ins>48.0</ins></td>
     </tr>
     <tr>
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
       <td align="center"><ins>80.5</ins></td>
-      <td align="center">13.24</td>
-      <td align="center">55.5</td>
+      <td align="center"><strong>55.5</strong></td>
     </tr>
   </tbody>
+</table>
+</td>
+<td width="50%" valign="top" align="left">
+<table>
+  <thead>
+    <tr>
+      <th align="left"><sub>Models</sub></th>
+      <th align="center"><sub>Binary Acc.</sub></th>
+      <th align="center"><sub>Partial Score</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" align="left"><sub><em>General&nbsp;VLMs</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>GPT&#8209;5.5</sub></td>
+      <td align="center"><strong>13.0</strong></td>
+      <td align="center"><strong>46.7</strong></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&#8209;Opus&#8209;4.7</sub></td>
+      <td align="center"><ins>4.6</ins></td>
+      <td align="center"><ins>20.3</ins></td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&#8209;Sonnet&#8209;4.6&nbsp;(max)</sub></td>
+      <td align="center"><ins>4.6</ins></td>
+      <td align="center">20.0</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Claude&#8209;Sonnet&#8209;4.6&nbsp;(medium)</sub></td>
+      <td align="center"><ins>4.6</ins></td>
+      <td align="center">14.2</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>MiniMax&#8209;M3</sub></td>
+      <td align="center">1.9</td>
+      <td align="center">8.2</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
+      <td align="center">1.9</td>
+      <td align="center">7.1</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
+      <td align="center">0.0*</td>
+      <td align="center">2.5*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
+      <td align="center">0.0*</td>
+      <td align="center">3.8*</td>
+    </tr>
+    <tr>
+      <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
+      <td align="center">0.0*</td>
+      <td align="center">6.3*</td>
+    </tr>
+    <tr>
+      <td colspan="3" align="left"><sub><em>Ours</em></sub></td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
+      <td align="center">0.0</td>
+      <td align="center">7.5</td>
+    </tr>
+    <tr>
+      <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;27B</strong></sub></td>
+      <td align="center">2.8</td>
+      <td align="center">13.2</td>
+    </tr>
+  </tbody>
+</table>
+</td>
+</tr>
+</tbody>
 </table>
 
 </div>
 
-> Performance comparison on various computer-use agent benchmarks. Reported OSWorld-Verified baselines use the 361-task setting in their cited source and may use model-specific action scaffolds. For DeskCraft, we report an author-evaluated aggregate over the 538-task union of the Standard and Interactive splits; this differs from the benchmark's official split-level reporting. `*` indicates external-model results evaluated by us and does not denote statistical significance.
+> Performance comparison on computer-use agent benchmarks: **OSWorld-Verified** and **DeskCraft** (left), and **OSWorld 2.0** (right) under the official 150-step budget with 108 tasks. Reported OSWorld-Verified baselines use the 361-task setting in their cited source and may use model-specific action scaffolds. For DeskCraft, we report an author-evaluated aggregate over the 538-task union of the Standard and Interactive splits, which differs from the benchmark's official split-level reporting. OSWorld 2.0 results report the official Binary Accuracy and Partial Score metrics; baselines are taken from the official leaderboard, possibly with model-specific tool settings, and the reasoning-effort setting is labeled in parentheses for models with multiple official entries. `*` indicates baseline results evaluated by us.
 
 ### Browser
 
@@ -436,12 +506,15 @@ bash scripts/captcha.sh
 <table>
   <thead>
     <tr>
-      <th align="left"><sub>Models</sub></th>
-      <th align="center"><sub>WebVoyager</sub></th>
-      <th align="center"><sub>Online&#8209;Mind2Web</sub></th>
-      <th align="center"><sub>REAL</sub></th>
-      <th align="center"><sub>Odysseys&nbsp;Avg.</sub></th>
-      <th align="center"><sub>Odysseys&nbsp;Perfect</sub></th>
+      <th rowspan="2" align="left"><sub>Models</sub></th>
+      <th rowspan="2" align="center"><sub>WebVoyager</sub></th>
+      <th rowspan="2" align="center"><sub>Online&#8209;Mind2Web</sub></th>
+      <th rowspan="2" align="center"><sub>REAL</sub></th>
+      <th colspan="2" align="center"><sub>Odysseys</sub></th>
+    </tr>
+    <tr>
+      <th align="center"><sub>Avg.</sub></th>
+      <th align="center"><sub>Perfect</sub></th>
     </tr>
   </thead>
   <tbody>
@@ -619,7 +692,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> Performance comparison on four live-web benchmarks: WebVoyager, Online-Mind2Web, REAL, and Odysseys. The Fara1.5 and GPT-5 (SoM) WebVoyager entries use the refreshed 595-task, 100-step robust protocol and are averaged over three runs; live-site states may vary by evaluation date. For Odysseys, we report both the averaged rubric score (Avg.) and the perfect rubric score (Perfect). Bold and underlined scores indicate the best and second-best reported results in each column, respectively. `*` indicates our reproduced results, which are not available from official reports.
+> Performance comparison on four live-web benchmarks: WebVoyager, Online-Mind2Web, REAL, and Odysseys. The Fara1.5 and GPT-5 (SoM) WebVoyager entries use the refreshed 595-task, 100-step robust protocol and are averaged over three runs; live-site states may vary by evaluation date. For Odysseys, we report both the averaged rubric score (Avg.) and the perfect rubric score (Perfect). `*` indicates our reproduced results.
 
 ### Grounding
 
@@ -641,14 +714,14 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen&nbsp;3.7&nbsp;Plus</sub></td>
-      <td align="center">-</td>
+      <td align="center">75.2*</td>
       <td align="center">68.9</td>
       <td align="center">78.2</td>
       <td align="center"><ins>68.0</ins></td>
     </tr>
     <tr>
       <td align="left"><sub>Seed&nbsp;2.1&nbsp;Pro</sub></td>
-      <td align="center">-</td>
+      <td align="center">73.9*</td>
       <td align="center">65.3</td>
       <td align="center">78.0</td>
       <td align="center">62.0</td>
@@ -658,7 +731,7 @@ bash scripts/captcha.sh
       <td align="center">73.1*</td>
       <td align="center">52.0*</td>
       <td align="center">69.7*</td>
-      <td align="center">-*</td>
+      <td align="center">51.7*</td>
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
@@ -726,7 +799,7 @@ bash scripts/captcha.sh
       <td align="left"><sub><strong>UI&#8209;Venus&#8209;2&#8209;9B</strong></sub></td>
       <td align="center"><ins>77.1</ins></td>
       <td align="center">73.0</td>
-      <td align="center">78.5</td>
+      <td align="center"><ins>78.5</ins></td>
       <td align="center">53.2</td>
     </tr>
     <tr>
@@ -741,7 +814,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> Performance comparison on various Grounding Benchmarks. VenusBench-GD reports English-instruction micro-average point-in-box accuracy. For each benchmark, bold and underlined scores indicate the best and second-best results, respectively. `*` indicates external-model results evaluated or reproduced by us under the stated protocol; it does not denote statistical significance.
+> Performance comparison on various Grounding Benchmarks. VenusBench-GD reports English-instruction micro-average point-in-box accuracy. `*` indicates baselines evaluated or reproduced by us.
 
 ### CAPTCHA
 
@@ -764,7 +837,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.5&#8209;9B</sub></td>
-      <td align="center">28.3*</td>
+      <td align="center">28.3</td>
       <td align="center">30.4</td>
       <td align="center">4.9</td>
       <td align="center">2.8</td>
@@ -772,23 +845,23 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Qwen3.6&#8209;27B</sub></td>
-      <td align="center">53.0*</td>
+      <td align="center">53.0</td>
       <td align="center">51.7</td>
       <td align="center">31.0</td>
       <td align="center">14.1</td>
       <td align="center">47.7</td>
     </tr>
     <tr>
-      <td align="left"><sub>Doubao&#8209;Seed&#8209;2.0&#8209;Pro</sub></td>
-      <td align="center">47.9*</td>
-      <td align="center">35.5</td>
-      <td align="center"><ins>43.6</ins></td>
+      <td align="left"><sub>Seed&#8209;2.0&#8209;Pro</sub></td>
+      <td align="center">47.9</td>
+      <td align="center">36.5</td>
+      <td align="center"><ins>43.8</ins></td>
       <td align="center">20.4</td>
       <td align="center"><ins>55.6</ins></td>
     </tr>
     <tr>
       <td align="left"><sub>Kimi&#8209;K2.6</sub></td>
-      <td align="center">39.7*</td>
+      <td align="center">39.7</td>
       <td align="center">38.7</td>
       <td align="center">24.8</td>
       <td align="center">7.2</td>
@@ -796,7 +869,7 @@ bash scripts/captcha.sh
     </tr>
     <tr>
       <td align="left"><sub>Claude&#8209;Opus&#8209;4.6</sub></td>
-      <td align="center">16.0*</td>
+      <td align="center">16.0</td>
       <td align="center">25.9</td>
       <td align="center">9.5</td>
       <td align="center">2.8</td>
@@ -826,7 +899,7 @@ bash scripts/captcha.sh
 
 </div>
 
-> All results are Pass@1 percentages, and higher is better. VenusBench-CAPTCHA reports the micro-average over all 219 fixed examples. We evaluate on VenusBench-CAPTCHA and four public benchmarks: MCA-Bench, Spatial-CAPTCHA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 Open CaptchaWorld task types; see the appendix for selection details. Bold and underlined scores indicate the best and second-best reported results in each column, respectively. For the VenusBench-CAPTCHA column, `*` denotes external-model results evaluated by us under the same protocol; it is not a significance marker.
+> Performance Comparison across CAPTCHA Benchmarks. All results are Pass@1 percentages, and higher is better. We evaluate on VenusBench-CAPTCHA and four public benchmarks: MCA-Bench, Spatial-CAPTCHA-Bench, NextGen-CAPTCHAs, and Open CaptchaWorld. We use 1,000 sampled MCA-Bench examples, 15 NextGen-CAPTCHAs task types, and 16 Open CaptchaWorld task types.
 
 ---
 
