@@ -43,6 +43,7 @@ Compared with UI-Venus-1.5, we introduce:
 
 # 📰 News
 
+* [2026/09] We release **VenusBench-CAPTCHA**, a comprehensive benchmark for evaluating GUI agents on diverse CAPTCHA tasks. See branch [VenusBench-CAPTCHA](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-CAPTCHA).
 * [2026/08] We release **UI-Venus-2**, a 9B/27B general-purpose foundation GUI agent that unifies mobile, web, and desktop interaction with scaled multilingual environments, keypoint-grounded verification, and verification-augmented reflection.
 * [2026/02] We release **[UI-Venus-1.5](https://ui-venus.github.io/UI-Venus-1.5/)**, an end-to-end GUI Agent designed for robust real-world applications.
 * [2026/02] We release **VenusBench-Mobile**, a challenging online benchmark for mobile GUI agents. See branch [VenusBench-Mobile](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-Mobile).

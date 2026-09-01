@@ -43,6 +43,7 @@
 
 # 📰 最新动态
 
+* [2026/09] 发布 **VenusBench-CAPTCHA**：一个用于评测 GUI 智能体处理多样化验证码任务能力的综合基准。参见 [VenusBench-CAPTCHA 分支](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-CAPTCHA)。
 * [2026/08] 发布 **UI-Venus-2**：一款 9B/27B 通用基础 GUI 智能体，通过规模化多语言环境、基于关键点的验证和验证增强的反思，统一移动端、Web 和桌面端交互。
 * [2026/02] 发布 **[UI-Venus-1.5](https://ui-venus.github.io/UI-Venus-1.5/)**：一款专为稳定执行真实世界应用任务而设计的端到端 GUI 智能体。
 * [2026/02] 发布 **VenusBench-Mobile**：一个具有挑战性的移动端 GUI 智能体在线基准。参见 [VenusBench-Mobile 分支](https://github.com/inclusionAI/UI-Venus/tree/VenusBench-Mobile)。
