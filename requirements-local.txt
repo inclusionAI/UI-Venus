@@ -1,0 +1,3 @@
+# Local batched inference through the vLLM Python API.
+-r requirements-eval.txt
+vllm>=0.8.5

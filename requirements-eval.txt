@@ -1,0 +1,3 @@
+# Lightweight dependencies for validation, scoring, reports, and API inference.
+# Install requirements-local.txt only when loading model weights in this process.
+Pillow>=10.0.0
