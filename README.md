@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
-  <img src="https://img.shields.io/badge/Report-Coming%20Soon-lightgrey" alt="Report: Coming Soon">
+  <a href="https://arxiv.org/abs/2609.00028"><img src="https://img.shields.io/badge/Report-arXiv-blueviolet?logo=arxiv" alt="Report"></a>
   <a href="https://ui-venus.github.io/UI-Venus-2"><img src="https://img.shields.io/badge/🌐%20Website-UI--Venus--2-blue" alt="Website: UI-Venus-2"></a>
   <a href="https://github.com/inclusionAI/UI-Venus"><img src="https://img.shields.io/badge/GitHub-Repository-green?logo=github" alt="GitHub"></a>
   <a href="https://huggingface.co/inclusionAI/UI-Venus-2-9b"><img src="https://img.shields.io/badge/Hugging%20Face-Model-orange?logo=huggingface" alt="Hugging Face Model"></a>
@@ -916,12 +916,12 @@ For any questions or collaboration, please contact the maintainers.
 # UI-Venus-2
 @misc{venusteam2026uivenus2technicalreport,
       title={UI-Venus-2 Technical Report}, 
-      author={Venus-Team and xxx},
+      author={Venus Team and Zhuohan Cai and Haoxing Chen and Jiaxuan Chen and Weizhi Chen and Changlong Gao and Zhangxuan Gu and Yuan Guo and Yusong Hu and Jianrong Jiang and Jianguo Li and Runze Li and Jinzhen Lin and Zhenyu Ma and Changhua Meng and Han Peng and Xinyu Qiu and Shuheng Shen and Zhongyi Shui and Weiqiang Wang and Ming Wen and Zhuoer Xu and Hang Yan and Kaiwen Yang and Ruilin Yao and Nanjun Yu and Zhengwen Zeng and Lianrui Zhang and Yunzhu Zhang and Zhe Zhao and Beitong Zhou},
       year={2026},
-      eprint={xxx},
+      eprint={2609.00028},
       archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={comming soon}, 
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2609.00028},
 }
 
 # UI-Venus-1.5
