@@ -11,10 +11,10 @@ Start Chrome with a CDP port, then configure the agent:
   export LLM_MODEL="your-vision-model"
 
 Run:
-  bash scripts/browser.sh \
+  python venus_browser_mini.py \
     "Open https://example.com and report the page title"
 
-Artifacts are saved to results/browser/<timestamp>/ by the unified script.
+Artifacts are saved to venus_mini_runs/<timestamp>/.
 The example is fully standalone.
 """
 
@@ -27,7 +27,6 @@ import json
 import os
 import re
 import sys
-from collections import deque
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -72,7 +71,7 @@ You may execute one of the following functions:
 - PressBack()
 > Return to the previous page.
 - PressHome()
-> Press the Home key to scroll to the top of the current page.
+> Return to the browser home page.
 - PressEnter()
 > Perform an Enter key action.
 - Hover(point=(x1,y1))
@@ -131,15 +130,24 @@ def parse_action(text: str, reasoning: str = "") -> tuple[str, dict, str]:
         args[item.arg] = ast.literal_eval(item.value)
     think = re.search(r"<think>\s*(.*?)\s*</think>", text, re.I | re.S)
     thought = reasoning.strip() or (think.group(1).strip() if think else "")
+    wrapped = re.fullmatch(r"<think>\s*(.*?)\s*</think>", thought, re.I | re.S)
+    if wrapped:
+        thought = wrapped.group(1).strip()
     return call.func.id.lower(), args, thought
+
+
+def history_reply(text: str, thought: str) -> str:
+    """Replay the selected CoT alongside the original, validated action."""
+    action = re.search(r"<action>\s*(.*?)\s*</action>", text, re.I | re.S)
+    return f"<think>{thought}</think><action>{action.group(1).strip()}</action>"
 
 
 def point(value: Any, width: int = WIDTH, height: int = HEIGHT) -> tuple[int, int]:
     if not isinstance(value, (tuple, list)) or len(value) != 2:
         raise ValueError("point must contain two coordinates")
     x, y = map(float, value)
-    if not (0 <= x < NORM and 0 <= y < NORM):
-        raise ValueError("coordinates must be within [0, 999]")
+    if not (0 <= x <= NORM and 0 <= y <= NORM):
+        raise ValueError("coordinates must be within [0, 1000]")
     return min(width - 1, round(x / NORM * width)), min(
         height - 1, round(y / NORM * height)
     )
@@ -258,7 +266,8 @@ def execute(page, name: str, args: dict, state: dict):
             "ctrl": "ControlOrMeta", "cmd": "Meta", "meta": "Meta",
             "alt": "Alt", "shift": "Shift", "enter": "Enter",
             "tab": "Tab", "escape": "Escape", "backspace": "Backspace",
-            "delete": "Delete", "arrowup": "ArrowUp",
+            "delete": "Delete", "home": "Home", "end": "End",
+            "arrowup": "ArrowUp",
             "arrowdown": "ArrowDown", "arrowleft": "ArrowLeft",
             "arrowright": "ArrowRight",
         }
@@ -354,6 +363,25 @@ def make_user(image: str, feedback: str = "", notes: list | None = None) -> dict
     return {"role": "user", "content": content}
 
 
+def build_messages(
+    prompt: str, history: list[tuple[dict, str]], user: dict,
+    history_images: int = 2,
+) -> list[dict]:
+    """Keep all Venus turns; only the latest history_images turns carry images."""
+    messages = [{"role": "system", "content": [{"type": "text", "text": prompt}]}]
+    for i, (old_user, old_reply) in enumerate(history):
+        # Like the full Venus agent, replay screenshots without transient feedback.
+        content = [
+            part for part in old_user["content"] if part["type"] == "image_url"
+        ] if len(history) - i <= history_images else []
+        messages.extend([
+            {"role": "user", "content": content or ""},
+            {"role": "assistant", "content": old_reply},
+        ])
+    messages.append(user)
+    return messages
+
+
 def run(args: argparse.Namespace) -> tuple[int, Path]:
     try:
         from openai import OpenAI
@@ -383,7 +411,7 @@ def run(args: argparse.Namespace) -> tuple[int, Path]:
     shots = run_dir / "screenshots"
     shots.mkdir(parents=True)
     history_file = run_dir / "history.jsonl"
-    history = deque(maxlen=2)  # two previous (screenshot, response) turns
+    history = []  # max_history_step=null in configs/venus.yaml: keep every turn
     state = {"notes": []}
     system_prompt = PROMPT.format(
         current_date=datetime.now().date().isoformat(), task=task
@@ -392,12 +420,6 @@ def run(args: argparse.Namespace) -> tuple[int, Path]:
     finished = False
     steps = 0
     cdp_url = os.getenv("CDP_URL", "http://127.0.0.1:9222")
-    for variable in ("NO_PROXY", "no_proxy"):
-        entries = [item.strip() for item in os.getenv(variable, "").split(",") if item.strip()]
-        for host in ("127.0.0.1", "localhost"):
-            if host not in entries:
-                entries.append(host)
-        os.environ[variable] = ",".join(entries)
     print(f"Task: {task}\nCDP: {cdp_url}\nArtifacts: {run_dir}")
 
     with sync_playwright() as pw:
@@ -424,10 +446,9 @@ def run(args: argparse.Namespace) -> tuple[int, Path]:
                 shot = shots / f"step_{step:03d}.png"
                 page.screenshot(path=str(shot), animations="disabled")
                 user = make_user(image_url(shot), feedback, state["notes"])
-                messages = [{"role": "system", "content": system_prompt}]
-                for old_user, old_reply in history:
-                    messages += [old_user, {"role": "assistant", "content": old_reply}]
-                messages.append(user)
+                messages = build_messages(
+                    system_prompt, history, user, args.history_images
+                )
 
                 record = {
                     "step": step, "url_before": page.url,
@@ -442,14 +463,12 @@ def run(args: argparse.Namespace) -> tuple[int, Path]:
                         max_tokens=int(os.getenv("LLM_MAX_TOKENS", "4096")),
                         temperature=0,
                     )
-                    thinking_enabled = os.getenv("LLM_THINKING", "false").lower() in (
+                    if os.getenv("LLM_THINKING", "false").lower() in (
                         "1", "true", "yes"
-                    )
-                    request["extra_body"] = {
-                        "chat_template_kwargs": {
-                            "enable_thinking": thinking_enabled
+                    ):
+                        request["extra_body"] = {
+                            "chat_template_kwargs": {"thinking": True}
                         }
-                    }
                     response = client.chat.completions.create(**request)
                     msg = response.choices[0].message
                     reasoning = str(getattr(msg, "reasoning_content", "") or "")
@@ -466,6 +485,7 @@ def run(args: argparse.Namespace) -> tuple[int, Path]:
                 history.append((user, reply))
                 try:
                     name, action_args, thought = parse_action(reply, reasoning)
+                    history[-1] = (user, history_reply(reply, thought))
                     record.update(action=name, action_args=action_args, thought=thought)
                     print(f"[{step}] {name}({action_args})")
                     finished, answer, feedback, page = execute(
@@ -503,13 +523,20 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run one browser vision task.")
     parser.add_argument("task", nargs="+", help="natural-language browser task")
     parser.add_argument("--max-steps", type=int, default=30)
-    parser.add_argument("--output", default="results/browser")
+    parser.add_argument(
+        "--history-images", type=int, default=2,
+        help="previous screenshots to include, excluding the current one (default: 2)",
+    )
+    parser.add_argument("--output", default="venus_mini_runs")
     args = parser.parse_args()
     if args.max_steps < 1:
         parser.error("--max-steps must be at least 1")
+    if args.history_images < 0:
+        parser.error("--history-images must be at least 0")
     return args
 
 
 if __name__ == "__main__":
     code, _ = run(parse_args())
     raise SystemExit(code)
+
