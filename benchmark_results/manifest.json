@@ -1,0 +1,1115 @@
+{
+  "schema_version": 1,
+  "artifact_type": "publication_export",
+  "model_label": "released-checkpoint",
+  "model_label_is_alias": true,
+  "perceptionbench_judge": "Deepseekv4-flash-0731",
+  "judge_note": "Self-hosted; stochastic judging can vary between runs.",
+  "selection": "LBS-release-v1; curated examples plus deterministic category/outcome/behavior balancing",
+  "redactions": [
+    "machine paths",
+    "internal checkpoint alias",
+    "endpoint addresses",
+    "response request IDs and timestamps",
+    "exception tracebacks"
+  ],
+  "path_semantics": "Image references are repository-relative dataset paths or logical crop references; see docs/TRAJECTORIES.md.",
+  "benchmarks": {
+    "sspro": {
+      "evaluated_count": 1581,
+      "selected_count": 20,
+      "metrics": "metrics/sspro.json",
+      "per_sample": "per_sample/sspro.jsonl",
+      "samples": [
+        {
+          "release_id": "sspro-00024",
+          "path": "trajectories/sspro/sspro-00024.json",
+          "category": "pycharm",
+          "passed": false,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-00076",
+          "path": "trajectories/sspro/sspro-00076.json",
+          "category": "blender",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-00206",
+          "path": "trajectories/sspro/sspro-00206.json",
+          "category": "autocad",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-00299",
+          "path": "trajectories/sspro/sspro-00299.json",
+          "category": "solidworks",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-00505",
+          "path": "trajectories/sspro/sspro-00505.json",
+          "category": "macos_common",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-00811",
+          "path": "trajectories/sspro/sspro-00811.json",
+          "category": "quartus",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "sspro-00831",
+          "path": "trajectories/sspro/sspro-00831.json",
+          "category": "android_studio",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-00880",
+          "path": "trajectories/sspro/sspro-00880.json",
+          "category": "premiere",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01004",
+          "path": "trajectories/sspro/sspro-01004.json",
+          "category": "inventor",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01120",
+          "path": "trajectories/sspro/sspro-01120.json",
+          "category": "unreal_engine",
+          "passed": false,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01134",
+          "path": "trajectories/sspro/sspro-01134.json",
+          "category": "powerpoint",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01140",
+          "path": "trajectories/sspro/sspro-01140.json",
+          "category": "stata",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01211",
+          "path": "trajectories/sspro/sspro-01211.json",
+          "category": "fruitloops",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01279",
+          "path": "trajectories/sspro/sspro-01279.json",
+          "category": "davinci",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01329",
+          "path": "trajectories/sspro/sspro-01329.json",
+          "category": "linux_common",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01383",
+          "path": "trajectories/sspro/sspro-01383.json",
+          "category": "matlab",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01457",
+          "path": "trajectories/sspro/sspro-01457.json",
+          "category": "origin",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01473",
+          "path": "trajectories/sspro/sspro-01473.json",
+          "category": "excel",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01504",
+          "path": "trajectories/sspro/sspro-01504.json",
+          "category": "vscode",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "sspro-01533",
+          "path": "trajectories/sspro/sspro-01533.json",
+          "category": "windows_common",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        }
+      ]
+    },
+    "osworld": {
+      "evaluated_count": 564,
+      "selected_count": 20,
+      "metrics": "metrics/osworld.json",
+      "per_sample": "per_sample/osworld.jsonl",
+      "samples": [
+        {
+          "release_id": "osworld-00013",
+          "path": "trajectories/osworld/osworld-00013.json",
+          "category": "bbox",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00101",
+          "path": "trajectories/osworld/osworld-00101.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00103",
+          "path": "trajectories/osworld/osworld-00103.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "osworld-00105",
+          "path": "trajectories/osworld/osworld-00105.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00114",
+          "path": "trajectories/osworld/osworld-00114.json",
+          "category": "polygon",
+          "passed": false,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00117",
+          "path": "trajectories/osworld/osworld-00117.json",
+          "category": "polygon",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00150",
+          "path": "trajectories/osworld/osworld-00150.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00210",
+          "path": "trajectories/osworld/osworld-00210.json",
+          "category": "polygon",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00239",
+          "path": "trajectories/osworld/osworld-00239.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00344",
+          "path": "trajectories/osworld/osworld-00344.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "osworld-00351",
+          "path": "trajectories/osworld/osworld-00351.json",
+          "category": "bbox",
+          "passed": false,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00364",
+          "path": "trajectories/osworld/osworld-00364.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00395",
+          "path": "trajectories/osworld/osworld-00395.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00425",
+          "path": "trajectories/osworld/osworld-00425.json",
+          "category": "bbox",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00439",
+          "path": "trajectories/osworld/osworld-00439.json",
+          "category": "polygon",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00488",
+          "path": "trajectories/osworld/osworld-00488.json",
+          "category": "bbox",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00516",
+          "path": "trajectories/osworld/osworld-00516.json",
+          "category": "refusal",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00522",
+          "path": "trajectories/osworld/osworld-00522.json",
+          "category": "refusal",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00523",
+          "path": "trajectories/osworld/osworld-00523.json",
+          "category": "refusal",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "osworld-00558",
+          "path": "trajectories/osworld/osworld-00558.json",
+          "category": "refusal",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        }
+      ]
+    },
+    "perceptionbench": {
+      "evaluated_count": 3000,
+      "selected_count": 40,
+      "metrics": "metrics/perceptionbench.json",
+      "per_sample": "per_sample/perceptionbench.jsonl",
+      "samples": [
+        {
+          "release_id": "perceptionbench-00007",
+          "path": "trajectories/perceptionbench/perceptionbench-00007.json",
+          "category": "visual_relation_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "perceptionbench-00031",
+          "path": "trajectories/perceptionbench/perceptionbench-00031.json",
+          "category": "visual_counting_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "perceptionbench-00036",
+          "path": "trajectories/perceptionbench/perceptionbench-00036.json",
+          "category": "visual_attribute_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00171",
+          "path": "trajectories/perceptionbench/perceptionbench-00171.json",
+          "category": "visual_localization_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00199",
+          "path": "trajectories/perceptionbench/perceptionbench-00199.json",
+          "category": "fine_grained_recognition_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00255",
+          "path": "trajectories/perceptionbench/perceptionbench-00255.json",
+          "category": "hallucination",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00366",
+          "path": "trajectories/perceptionbench/perceptionbench-00366.json",
+          "category": "ocr_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00506",
+          "path": "trajectories/perceptionbench/perceptionbench-00506.json",
+          "category": "visual_localization_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00534",
+          "path": "trajectories/perceptionbench/perceptionbench-00534.json",
+          "category": "hallucination",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00544",
+          "path": "trajectories/perceptionbench/perceptionbench-00544.json",
+          "category": "visual_counting_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00545",
+          "path": "trajectories/perceptionbench/perceptionbench-00545.json",
+          "category": "ocr_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-00786",
+          "path": "trajectories/perceptionbench/perceptionbench-00786.json",
+          "category": "fine_grained_recognition_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01003",
+          "path": "trajectories/perceptionbench/perceptionbench-01003.json",
+          "category": "visual_relation_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01058",
+          "path": "trajectories/perceptionbench/perceptionbench-01058.json",
+          "category": "visual_comparison_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01094",
+          "path": "trajectories/perceptionbench/perceptionbench-01094.json",
+          "category": "visual_localization_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01145",
+          "path": "trajectories/perceptionbench/perceptionbench-01145.json",
+          "category": "depth_3d_perception_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01159",
+          "path": "trajectories/perceptionbench/perceptionbench-01159.json",
+          "category": "visual_comparison_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01162",
+          "path": "trajectories/perceptionbench/perceptionbench-01162.json",
+          "category": "visual_attribute_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01235",
+          "path": "trajectories/perceptionbench/perceptionbench-01235.json",
+          "category": "depth_3d_perception_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01249",
+          "path": "trajectories/perceptionbench/perceptionbench-01249.json",
+          "category": "visual_attribute_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01258",
+          "path": "trajectories/perceptionbench/perceptionbench-01258.json",
+          "category": "context_integration_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01268",
+          "path": "trajectories/perceptionbench/perceptionbench-01268.json",
+          "category": "depth_3d_perception_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01269",
+          "path": "trajectories/perceptionbench/perceptionbench-01269.json",
+          "category": "visual_localization_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01311",
+          "path": "trajectories/perceptionbench/perceptionbench-01311.json",
+          "category": "fine_grained_recognition_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01320",
+          "path": "trajectories/perceptionbench/perceptionbench-01320.json",
+          "category": "context_integration_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01349",
+          "path": "trajectories/perceptionbench/perceptionbench-01349.json",
+          "category": "hallucination",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01379",
+          "path": "trajectories/perceptionbench/perceptionbench-01379.json",
+          "category": "ocr_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01431",
+          "path": "trajectories/perceptionbench/perceptionbench-01431.json",
+          "category": "visual_comparison_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01512",
+          "path": "trajectories/perceptionbench/perceptionbench-01512.json",
+          "category": "ocr_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01745",
+          "path": "trajectories/perceptionbench/perceptionbench-01745.json",
+          "category": "fine_grained_recognition_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01748",
+          "path": "trajectories/perceptionbench/perceptionbench-01748.json",
+          "category": "visual_comparison_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-01798",
+          "path": "trajectories/perceptionbench/perceptionbench-01798.json",
+          "category": "hallucination",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02085",
+          "path": "trajectories/perceptionbench/perceptionbench-02085.json",
+          "category": "context_integration_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02101",
+          "path": "trajectories/perceptionbench/perceptionbench-02101.json",
+          "category": "visual_counting_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02109",
+          "path": "trajectories/perceptionbench/perceptionbench-02109.json",
+          "category": "context_integration_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02188",
+          "path": "trajectories/perceptionbench/perceptionbench-02188.json",
+          "category": "visual_relation_error",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02436",
+          "path": "trajectories/perceptionbench/perceptionbench-02436.json",
+          "category": "depth_3d_perception_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02501",
+          "path": "trajectories/perceptionbench/perceptionbench-02501.json",
+          "category": "visual_relation_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02553",
+          "path": "trajectories/perceptionbench/perceptionbench-02553.json",
+          "category": "visual_attribute_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "perceptionbench-02851",
+          "path": "trajectories/perceptionbench/perceptionbench-02851.json",
+          "category": "visual_counting_error",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        }
+      ]
+    },
+    "hrbench_4k": {
+      "evaluated_count": 800,
+      "selected_count": 10,
+      "metrics": "metrics/hrbench_4k.json",
+      "per_sample": "per_sample/hrbench_4k.jsonl",
+      "samples": [
+        {
+          "release_id": "hrbench_4k-00004",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00004.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00045",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00045.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "hrbench_4k-00305",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00305.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00376",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00376.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00383",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00383.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00592",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00592.json",
+          "category": "cross",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00603",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00603.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00643",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00643.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00708",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00708.json",
+          "category": "single",
+          "passed": false,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_4k-00749",
+          "path": "trajectories/hrbench_4k/hrbench_4k-00749.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        }
+      ]
+    },
+    "hrbench_8k": {
+      "evaluated_count": 800,
+      "selected_count": 10,
+      "metrics": "metrics/hrbench_8k.json",
+      "per_sample": "per_sample/hrbench_8k.jsonl",
+      "samples": [
+        {
+          "release_id": "hrbench_8k-00067",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00067.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "nested_zoom",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00091",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00091.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn",
+            "nested_zoom"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00132",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00132.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2",
+            "self_correction_candidate"
+          ],
+          "featured_candidate": true
+        },
+        {
+          "release_id": "hrbench_8k-00178",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00178.json",
+          "category": "single",
+          "passed": true,
+          "behavior_tags": [
+            "crops_3"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00458",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00458.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00540",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00540.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_0"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00629",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00629.json",
+          "category": "cross",
+          "passed": false,
+          "behavior_tags": [
+            "crops_3",
+            "multiple_regions_same_turn"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00694",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00694.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_2"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00701",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00701.json",
+          "category": "cross",
+          "passed": true,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        },
+        {
+          "release_id": "hrbench_8k-00747",
+          "path": "trajectories/hrbench_8k/hrbench_8k-00747.json",
+          "category": "single",
+          "passed": false,
+          "behavior_tags": [
+            "crops_1"
+          ],
+          "featured_candidate": false
+        }
+      ]
+    }
+  }
+}

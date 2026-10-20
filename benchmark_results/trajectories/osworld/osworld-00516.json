@@ -1,0 +1,627 @@
+{
+  "release_id": "osworld-00516",
+  "source_row_zero_based": 516,
+  "passed": true,
+  "behavior_tags": [
+    "crops_2",
+    "multiple_regions_same_turn"
+  ],
+  "record": {
+    "img_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+    "group": "osworld_g",
+    "platform": "desktop",
+    "application": "mixed",
+    "lang": "en",
+    "instruction_style": "instruction",
+    "prompt_to_evaluate": "Enlarge and bold the title.",
+    "gt_type": "negative",
+    "ui_type": "unknown",
+    "task_filename": "osworld_g_refusal",
+    "pred": null,
+    "raw_response": "<think>\nFrom the cropped image, I can confirm that the document starts directly with the body paragraph \"Compared to a short story, a novel has main characters...\" and there is no title line at the top of the page. The paragraph style box shows \"normal\", and the font is Times New Roman 12pt, which is consistent with body text rather than a title. Since the document has no title element, the instruction \"enlarge and bold the title\" cannot be executed.\n</think>\n\n[-1.00,-1.00]",
+    "inference_mode": "agentic",
+    "model_type": "agentic_pipeline",
+    "sample_count": 1,
+    "samples": [
+      {
+        "sample_index": 0,
+        "pred": null,
+        "correctness": "correct",
+        "result": "negative",
+        "error": null,
+        "conversation_id": "2ec35967f0bcf4ae",
+        "model_turn_count": 2,
+        "crop_action_count": 2,
+        "tool_attempt_count": 2,
+        "total_reasoning_tokens": 0
+      }
+    ],
+    "trajectories": [
+      {
+        "task_id": "esiHUQwNzp_negative_instruction_en",
+        "sample_index": 0,
+        "conversation_id": "2ec35967f0bcf4ae",
+        "model": "released-checkpoint",
+        "reasoning_effort": "xhigh",
+        "instruction": "Enlarge and bold the title.",
+        "original_image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+        "original_image_width": 1920,
+        "original_image_height": 1080,
+        "answer_mode": "point",
+        "coordinate_system": "original_image_relative_0_1000",
+        "system_prompt": "You are an agentic GUI grounding model.\n\nTask instruction:\nEnlarge and bold the title\n\nOriginal image metadata:\n- image_path: evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\n- resolution: 1920x1080 pixels (width x height)\n- origin: [0,0] at the top-left\n\nGoal:\nOutput the center point of the position corresponding to the task instruction. The final\ncoordinate MUST be relative to the ORIGINAL image and normalized to [0.00,1000.00], where\n[0.00,0.00] is the original image's top-left and [1000.00,1000.00] is its bottom-right.\nNever output absolute pixels or coordinates local to a crop. Preserve sub-unit precision:\nthe two final coordinate values MUST each have exactly two digits after the decimal point\n(for example, [512.34,76.50]). If the task is infeasible (for example, the requested UI\nelement or action is absent from the image), use [-1.00,-1.00].\n\nAvailable local action:\n- crop_image: Crop an image that has already been supplied in this conversation. image_path must be the exact original path or a path returned by an earlier crop_image call. x1, y1, x2, y2 are absolute pixel coordinates in that referenced image's LOCAL coordinate system, with (x1,y1) at the top-left and (x2,y2) at the bottom-right. The result provides a new image path, dimensions, and the crop region mapped into the ORIGINAL image. Returned crops are resized for inspection, so nested crops must use the returned width and height. Crops may be nested. The final answer must always use relative coordinates of the ORIGINAL image normalized to the [0,1000] range, never crop-local coordinates. When writing a crop_image action, format each of x1, y1, x2, and y2 with exactly two digits after the decimal point.\n\nText-action protocol:\nEvery turn must first emit visible reasoning inside <think>...</think>, then end with\nexactly one of these choices:\n- To inspect one region:\n  <think>brief reasoning for the crop</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n- To inspect two independent regions in the same turn:\n  <think>brief reasoning for both crops</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n  <action>crop_image(image_path=\"exact path\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>\n- To return the final point:\n  <think>brief reasoning for the final point</think>\n  [x.xx,y.yy]\n\ncrop_image is a textual action interpreted locally after your answer. It is NOT an API\nfunction call. Do not emit JSON, <tool_call> XML, or native tool_calls. Keep x1, y1, x2,\nand y2 as four separately named numeric arguments.\n\nTool rules:\n1. Before returning the final coordinate, you SHOULD make at least one successful\n   crop_image call to inspect the target more precisely. A direct first-turn coordinate is\n   discouraged. Skip cropping only when the task is clearly infeasible or cropping cannot\n   reasonably improve localization.\n2. You may make at most 3 crop_image calls in total. Never exceed this\n   budget; use each crop purposefully and return the final coordinate as soon as the target\n   is localized. A single assistant turn may contain one or two crop_image actions, and\n   every action counts separately toward the total budget. Never emit more than two\n   actions in one turn or mix crop actions with a final coordinate.\n3. Tool arguments are local absolute pixels in the image_path passed to that call. Write\n   x1, y1, x2, and y2 with exactly two digits after the decimal point, including trailing\n   zeros (for example, x1=100.00). Two actions emitted in the same turn must refer only\n   to image paths already available before that turn; the second action cannot depend on\n   the result of the first action from the same turn.\n4. Each result states the crop's region both in original-image pixels and original-image\n   normalized [0,1000] coordinates. Use that mapping to convert any point found in a crop\n   back to the ORIGINAL image's normalized [0,1000] coordinate system.\n5. After crop_image actions, the following single user message contains all result\n   metadata and all successful crop images in action order.\n\nFinal-answer rule:\nWhen ready, output exactly <think>...</think> followed by a newline and [x.xx,y.yy], with\nno prose, Markdown, or action wrapper after the coordinate. Both values must contain\nexactly two digits after the decimal point, including trailing zeros. The point must be in\nthe ORIGINAL image's normalized [0,1000] coordinate system. If the task is infeasible, use\n[-1.00,-1.00].\n",
+        "initial_user_message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "image_path: evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png"
+              }
+            }
+          ]
+        },
+        "tool_schema": null,
+        "text_action_protocol": {
+          "crop": "<think>...</think>\\n<action>crop_image(image_path=\"...\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>",
+          "crop_batch": "<think>...</think>\\n<action>crop_image(image_path=\"...\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\\n<action>crop_image(image_path=\"...\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>",
+          "final": "<think>...</think>\\n[x.xx,y.yy]"
+        },
+        "request_config": {
+          "api_url": "http://localhost:8000/v1/chat/completions",
+          "stream": true,
+          "initial_request_n": 1,
+          "temperature": 0.0,
+          "max_tokens_per_turn": 4096,
+          "reasoning_effort": "xhigh",
+          "chat_template_kwargs": {
+            "thinking": true,
+            "reasoning_effort": "xhigh",
+            "max_thinking_tokens": 4096
+          },
+          "max_tool_calls": 3,
+          "max_tool_calls_per_turn": 2,
+          "max_action_corrections": 2,
+          "answer_mode": "point",
+          "api_image_format": "jpeg",
+          "api_image_quality": 90,
+          "crop_upscale_factor": 4.0,
+          "crop_max_pixels": 4000000,
+          "crop_max_dimension": 4096,
+          "native_api_tools": false,
+          "action_protocol": "assistant_text_then_user_crop_image",
+          "proxy_mode": "direct (httpx trust_env=False)",
+          "persist_crops": false,
+          "crop_root": "[redacted-path]"
+        },
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an agentic GUI grounding model.\n\nTask instruction:\nEnlarge and bold the title\n\nOriginal image metadata:\n- image_path: evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\n- resolution: 1920x1080 pixels (width x height)\n- origin: [0,0] at the top-left\n\nGoal:\nOutput the center point of the position corresponding to the task instruction. The final\ncoordinate MUST be relative to the ORIGINAL image and normalized to [0.00,1000.00], where\n[0.00,0.00] is the original image's top-left and [1000.00,1000.00] is its bottom-right.\nNever output absolute pixels or coordinates local to a crop. Preserve sub-unit precision:\nthe two final coordinate values MUST each have exactly two digits after the decimal point\n(for example, [512.34,76.50]). If the task is infeasible (for example, the requested UI\nelement or action is absent from the image), use [-1.00,-1.00].\n\nAvailable local action:\n- crop_image: Crop an image that has already been supplied in this conversation. image_path must be the exact original path or a path returned by an earlier crop_image call. x1, y1, x2, y2 are absolute pixel coordinates in that referenced image's LOCAL coordinate system, with (x1,y1) at the top-left and (x2,y2) at the bottom-right. The result provides a new image path, dimensions, and the crop region mapped into the ORIGINAL image. Returned crops are resized for inspection, so nested crops must use the returned width and height. Crops may be nested. The final answer must always use relative coordinates of the ORIGINAL image normalized to the [0,1000] range, never crop-local coordinates. When writing a crop_image action, format each of x1, y1, x2, and y2 with exactly two digits after the decimal point.\n\nText-action protocol:\nEvery turn must first emit visible reasoning inside <think>...</think>, then end with\nexactly one of these choices:\n- To inspect one region:\n  <think>brief reasoning for the crop</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n- To inspect two independent regions in the same turn:\n  <think>brief reasoning for both crops</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n  <action>crop_image(image_path=\"exact path\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>\n- To return the final point:\n  <think>brief reasoning for the final point</think>\n  [x.xx,y.yy]\n\ncrop_image is a textual action interpreted locally after your answer. It is NOT an API\nfunction call. Do not emit JSON, <tool_call> XML, or native tool_calls. Keep x1, y1, x2,\nand y2 as four separately named numeric arguments.\n\nTool rules:\n1. Before returning the final coordinate, you SHOULD make at least one successful\n   crop_image call to inspect the target more precisely. A direct first-turn coordinate is\n   discouraged. Skip cropping only when the task is clearly infeasible or cropping cannot\n   reasonably improve localization.\n2. You may make at most 3 crop_image calls in total. Never exceed this\n   budget; use each crop purposefully and return the final coordinate as soon as the target\n   is localized. A single assistant turn may contain one or two crop_image actions, and\n   every action counts separately toward the total budget. Never emit more than two\n   actions in one turn or mix crop actions with a final coordinate.\n3. Tool arguments are local absolute pixels in the image_path passed to that call. Write\n   x1, y1, x2, and y2 with exactly two digits after the decimal point, including trailing\n   zeros (for example, x1=100.00). Two actions emitted in the same turn must refer only\n   to image paths already available before that turn; the second action cannot depend on\n   the result of the first action from the same turn.\n4. Each result states the crop's region both in original-image pixels and original-image\n   normalized [0,1000] coordinates. Use that mapping to convert any point found in a crop\n   back to the ORIGINAL image's normalized [0,1000] coordinate system.\n5. After crop_image actions, the following single user message contains all result\n   metadata and all successful crop images in action order.\n\nFinal-answer rule:\nWhen ready, output exactly <think>...</think> followed by a newline and [x.xx,y.yy], with\nno prose, Markdown, or action wrapper after the coordinate. Both values must contain\nexactly two digits after the decimal point, including trailing zeros. The point must be in\nthe ORIGINAL image's normalized [0,1000] coordinate system. If the task is infeasible, use\n[-1.00,-1.00].\n"
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "image_path: evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png"
+                }
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "<think>\nThe task asks to enlarge and bold the title. The document currently shows body paragraphs, and I don't see a distinct title at the top of the page. I need to inspect the top of the document to check whether a title exists, and also inspect the toolbar to identify the bold and font-size controls. Let me crop the top of the document area and the toolbar.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)</action>\n<action>crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)</action>",
+            "reasoning_content": "The task asks to enlarge and bold the title. The document currently shows body paragraphs, and I don't see a distinct title at the top of the page. I need to inspect the top of the document to check whether a title exists, and also inspect the toolbar to identify the bold and font-size controls. Let me crop the top of the document area and the toolbar.",
+            "finish_reason": "stop",
+            "parsed_action": {
+              "type": "crop_batch",
+              "name": "crop_image",
+              "actions": [
+                {
+                  "type": "crop",
+                  "name": "crop_image",
+                  "arguments": {
+                    "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                    "x1": 540.0,
+                    "y1": 230.0,
+                    "x2": 1370.0,
+                    "y2": 420.0
+                  },
+                  "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)"
+                },
+                {
+                  "type": "crop",
+                  "name": "crop_image",
+                  "arguments": {
+                    "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                    "x1": 60.0,
+                    "y1": 120.0,
+                    "x2": 700.0,
+                    "y2": 170.0
+                  },
+                  "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)"
+                }
+              ],
+              "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)\ncrop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)",
+              "call_count": 2
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                  "x1": 540.0,
+                  "y1": 230.0,
+                  "x2": 1370.0,
+                  "y2": 420.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)"
+              },
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                  "x1": 60.0,
+                  "y1": 120.0,
+                  "x2": 700.0,
+                  "y2": 170.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "crop_image action result 1/2 (tool_call_index=1):\n{\"ok\": true, \"image_path\": \"crops/osworld-00516/crop_01.png\", \"width\": 3320, \"height\": 760, \"crop_in_parent\": [540, 230, 1370, 420], \"crop_size_before_resize\": [830, 190], \"resize_scale\": 4.00, \"original_image_region_pixels\": [540.00, 230.00, 1370.00, 420.00], \"original_image_region_0_1000\": [281.25, 212.96, 713.54, 388.89], \"mapping_to_original_0_1000\": {\"x\": \"(540.00 + crop_x * 0.25) * 1000 / 1920\", \"y\": \"(230.00 + crop_y * 0.25) * 1000 / 1080\"}, \"reminder\": \"Final coordinates must be normalized [0,1000] in the original image.\"}\nimage_path: crops/osworld-00516/crop_01.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "crops/osworld-00516/crop_01.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": "crop_image action result 2/2 (tool_call_index=2):\n{\"ok\": true, \"image_path\": \"crops/osworld-00516/crop_02.png\", \"width\": 2560, \"height\": 200, \"crop_in_parent\": [60, 120, 700, 170], \"crop_size_before_resize\": [640, 50], \"resize_scale\": 4.00, \"original_image_region_pixels\": [60.00, 120.00, 700.00, 170.00], \"original_image_region_0_1000\": [31.25, 111.11, 364.58, 157.41], \"mapping_to_original_0_1000\": {\"x\": \"(60.00 + crop_x * 0.25) * 1000 / 1920\", \"y\": \"(120.00 + crop_y * 0.25) * 1000 / 1080\"}, \"reminder\": \"Final coordinates must be normalized [0,1000] in the original image.\"}\nimage_path: crops/osworld-00516/crop_02.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "crops/osworld-00516/crop_02.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": "Inspect all successful crops and account for any failed actions. Reply with <think>...</think>, then either one or two independent crop_image <action> blocks whose coordinates have exactly two decimal places, or the final [x.xx,y.yy]. Do not mix crop actions with a final answer."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "<think>\nFrom the cropped image, I can confirm that the document starts directly with the body paragraph \"Compared to a short story, a novel has main characters...\" and there is no title line at the top of the page. The paragraph style box shows \"normal\", and the font is Times New Roman 12pt, which is consistent with body text rather than a title. Since the document has no title element, the instruction \"enlarge and bold the title\" cannot be executed.\n</think>\n\n[-1.00,-1.00]",
+            "reasoning_content": "From the cropped image, I can confirm that the document starts directly with the body paragraph \"Compared to a short story, a novel has main characters...\" and there is no title line at the top of the page. The paragraph style box shows \"normal\", and the font is Times New Roman 12pt, which is consistent with body text rather than a title. Since the document has no title element, the instruction \"enlarge and bold the title\" cannot be executed.",
+            "finish_reason": "stop",
+            "parsed_action": {
+              "type": "final",
+              "name": "Click",
+              "point": [
+                -1.0,
+                -1.0
+              ],
+              "source": "[-1.00,-1.00]",
+              "compatibility_format": "coordinate_after_think"
+            },
+            "parsed_actions": [
+              {
+                "type": "final",
+                "name": "Click",
+                "point": [
+                  -1.0,
+                  -1.0
+                ],
+                "source": "[-1.00,-1.00]",
+                "compatibility_format": "coordinate_after_think"
+              }
+            ]
+          }
+        ],
+        "rounds": [
+          {
+            "model_turn": 1,
+            "sample_index": 0,
+            "initial_request_n": 1,
+            "native_tools_enabled": false,
+            "attempts": 1,
+            "scheduler_elapsed_seconds": 23.47,
+            "error": null,
+            "response": {
+              "choice_index": 0,
+              "reasoning_content": "",
+              "content": "The task asks to enlarge and bold the title. The document currently shows body paragraphs, and I don't see a distinct title at the top of the page. I need to inspect the top of the document to check whether a title exists, and also inspect the toolbar to identify the bold and font-size controls. Let me crop the top of the document area and the toolbar.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)</action>\n<action>crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)</action>",
+              "finish_reason": "stop",
+              "event_count": 242,
+              "stream_delta_fields": [
+                "content",
+                "role"
+              ],
+              "response_metadata": {
+                "object": "chat.completion.chunk",
+                "model": "released-checkpoint",
+                "usage": {
+                  "prompt_tokens": 3346,
+                  "total_tokens": 3586,
+                  "completion_tokens": 240
+                }
+              }
+            },
+            "parsed_action": {
+              "type": "crop_batch",
+              "name": "crop_image",
+              "actions": [
+                {
+                  "type": "crop",
+                  "name": "crop_image",
+                  "arguments": {
+                    "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                    "x1": 540.0,
+                    "y1": 230.0,
+                    "x2": 1370.0,
+                    "y2": 420.0
+                  },
+                  "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)"
+                },
+                {
+                  "type": "crop",
+                  "name": "crop_image",
+                  "arguments": {
+                    "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                    "x1": 60.0,
+                    "y1": 120.0,
+                    "x2": 700.0,
+                    "y2": 170.0
+                  },
+                  "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)"
+                }
+              ],
+              "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)\ncrop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)",
+              "call_count": 2
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                  "x1": 540.0,
+                  "y1": 230.0,
+                  "x2": 1370.0,
+                  "y2": 420.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)"
+              },
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+                  "x1": 60.0,
+                  "y1": 120.0,
+                  "x2": 700.0,
+                  "y2": 170.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)"
+              }
+            ],
+            "reasoning_stats": {
+              "characters": 354,
+              "reported_reasoning_tokens": null,
+              "completion_tokens": 240
+            }
+          },
+          {
+            "model_turn": 2,
+            "sample_index": 0,
+            "initial_request_n": 1,
+            "native_tools_enabled": false,
+            "attempts": 1,
+            "scheduler_elapsed_seconds": 4.07,
+            "error": null,
+            "response": {
+              "choice_index": 0,
+              "reasoning_content": "",
+              "content": "From the cropped image, I can confirm that the document starts directly with the body paragraph \"Compared to a short story, a novel has main characters...\" and there is no title line at the top of the page. The paragraph style box shows \"normal\", and the font is Times New Roman 12pt, which is consistent with body text rather than a title. Since the document has no title element, the instruction \"enlarge and bold the title\" cannot be executed.\n</think>\n\n[-1.00,-1.00]",
+              "finish_reason": "stop",
+              "event_count": 114,
+              "stream_delta_fields": [
+                "content",
+                "role"
+              ],
+              "response_metadata": {
+                "object": "chat.completion.chunk",
+                "model": "released-checkpoint",
+                "usage": {
+                  "prompt_tokens": 7353,
+                  "total_tokens": 7465,
+                  "completion_tokens": 112
+                }
+              }
+            },
+            "parsed_action": {
+              "type": "final",
+              "name": "Click",
+              "point": [
+                -1.0,
+                -1.0
+              ],
+              "source": "[-1.00,-1.00]",
+              "compatibility_format": "coordinate_after_think"
+            },
+            "parsed_actions": [
+              {
+                "type": "final",
+                "name": "Click",
+                "point": [
+                  -1.0,
+                  -1.0
+                ],
+                "source": "[-1.00,-1.00]",
+                "compatibility_format": "coordinate_after_think"
+              }
+            ],
+            "reasoning_stats": {
+              "characters": 446,
+              "reported_reasoning_tokens": null,
+              "completion_tokens": 112
+            }
+          }
+        ],
+        "action_events": [
+          {
+            "tool_call_index": 1,
+            "tool_budget_index": 1,
+            "model_turn": 1,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)",
+            "arguments": {
+              "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+              "x1": 540.0,
+              "y1": 230.0,
+              "x2": 1370.0,
+              "y2": 420.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/osworld-00516/crop_01.png",
+              "width": 3320,
+              "height": 760,
+              "crop_in_parent": [
+                540,
+                230,
+                1370,
+                420
+              ],
+              "crop_size_before_resize": [
+                830,
+                190
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                540.0,
+                230.0,
+                1370.0,
+                420.0
+              ],
+              "original_image_region_0_1000": [
+                281.25,
+                212.96,
+                713.54,
+                388.89
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(540.00 + crop_x * 0.25) * 1000 / 1920",
+                "y": "(230.00 + crop_y * 0.25) * 1000 / 1080"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          },
+          {
+            "tool_call_index": 2,
+            "tool_budget_index": 2,
+            "model_turn": 1,
+            "batch_index": 1,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)",
+            "arguments": {
+              "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+              "x1": 60.0,
+              "y1": 120.0,
+              "x2": 700.0,
+              "y2": 170.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/osworld-00516/crop_02.png",
+              "width": 2560,
+              "height": 200,
+              "crop_in_parent": [
+                60,
+                120,
+                700,
+                170
+              ],
+              "crop_size_before_resize": [
+                640,
+                50
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                60.0,
+                120.0,
+                700.0,
+                170.0
+              ],
+              "original_image_region_0_1000": [
+                31.25,
+                111.11,
+                364.58,
+                157.41
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(60.00 + crop_x * 0.25) * 1000 / 1920",
+                "y": "(120.00 + crop_y * 0.25) * 1000 / 1080"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          }
+        ],
+        "tool_events": [
+          {
+            "tool_call_index": 1,
+            "tool_budget_index": 1,
+            "model_turn": 1,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=540.00, y1=230.00, x2=1370.00, y2=420.00)",
+            "arguments": {
+              "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+              "x1": 540.0,
+              "y1": 230.0,
+              "x2": 1370.0,
+              "y2": 420.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/osworld-00516/crop_01.png",
+              "width": 3320,
+              "height": 760,
+              "crop_in_parent": [
+                540,
+                230,
+                1370,
+                420
+              ],
+              "crop_size_before_resize": [
+                830,
+                190
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                540.0,
+                230.0,
+                1370.0,
+                420.0
+              ],
+              "original_image_region_0_1000": [
+                281.25,
+                212.96,
+                713.54,
+                388.89
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(540.00 + crop_x * 0.25) * 1000 / 1920",
+                "y": "(230.00 + crop_y * 0.25) * 1000 / 1080"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          },
+          {
+            "tool_call_index": 2,
+            "tool_budget_index": 2,
+            "model_turn": 1,
+            "batch_index": 1,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png\", x1=60.00, y1=120.00, x2=700.00, y2=170.00)",
+            "arguments": {
+              "image_path": "evaluation/data/osworld_g/os-world-g-images/esiHUQwNzp.png",
+              "x1": 60.0,
+              "y1": 120.0,
+              "x2": 700.0,
+              "y2": 170.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/osworld-00516/crop_02.png",
+              "width": 2560,
+              "height": 200,
+              "crop_in_parent": [
+                60,
+                120,
+                700,
+                170
+              ],
+              "crop_size_before_resize": [
+                640,
+                50
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                60.0,
+                120.0,
+                700.0,
+                170.0
+              ],
+              "original_image_region_0_1000": [
+                31.25,
+                111.11,
+                364.58,
+                157.41
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(60.00 + crop_x * 0.25) * 1000 / 1920",
+                "y": "(120.00 + crop_y * 0.25) * 1000 / 1080"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          }
+        ],
+        "model_turn_count": 2,
+        "crop_action_count": 2,
+        "tool_call_count": 2,
+        "tool_attempt_count": 2,
+        "crop_image_paths": [
+          "crops/osworld-00516/crop_01.png",
+          "crops/osworld-00516/crop_02.png"
+        ],
+        "crop_directory": "crops/osworld-00516",
+        "final_content": "<think>\nFrom the cropped image, I can confirm that the document starts directly with the body paragraph \"Compared to a short story, a novel has main characters...\" and there is no title line at the top of the page. The paragraph style box shows \"normal\", and the font is Times New Roman 12pt, which is consistent with body text rather than a title. Since the document has no title element, the instruction \"enlarge and bold the title\" cannot be executed.\n</think>\n\n[-1.00,-1.00]",
+        "prediction_relative_0_1000": [
+          -1.0,
+          -1.0
+        ],
+        "prediction_option": null,
+        "prediction_text": null,
+        "reasoning_stats": {
+          "per_turn_reported_reasoning_tokens": [
+            null,
+            null
+          ],
+          "total_reported_reasoning_tokens": 0,
+          "max_reported_reasoning_tokens_in_one_turn": null
+        },
+        "error": null
+      }
+    ],
+    "correctness": "correct",
+    "data_type": "refusal"
+  }
+}

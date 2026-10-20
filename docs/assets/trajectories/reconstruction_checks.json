@@ -1,0 +1,284 @@
+[
+  {
+    "release_id": "osworld-00344",
+    "figure": "docs/assets/trajectories/osworld-00344.png",
+    "crop_checks": [
+      {
+        "event": 1,
+        "dimensions": [
+          880,
+          400
+        ],
+        "crop_in_parent": [
+          440,
+          660,
+          660,
+          760
+        ],
+        "original_image_region_pixels": [
+          440.0,
+          660.0,
+          660.0,
+          760.0
+        ]
+      },
+      {
+        "event": 2,
+        "dimensions": [
+          800,
+          480
+        ],
+        "crop_in_parent": [
+          880,
+          660,
+          1080,
+          780
+        ],
+        "original_image_region_pixels": [
+          880.0,
+          660.0,
+          1080.0,
+          780.0
+        ]
+      }
+    ],
+    "recorded_outcome": "correct",
+    "visual_review_notes": "docs/TRAJECTORIES.md",
+    "layout": "sequential_reframing"
+  },
+  {
+    "release_id": "sspro-00811",
+    "figure": "docs/assets/trajectories/sspro-00811.png",
+    "crop_checks": [
+      {
+        "event": 1,
+        "dimensions": [
+          3600,
+          160
+        ],
+        "crop_in_parent": [
+          0,
+          40,
+          900,
+          80
+        ],
+        "original_image_region_pixels": [
+          0.0,
+          40.0,
+          900.0,
+          80.0
+        ]
+      },
+      {
+        "event": 2,
+        "dimensions": [
+          1800,
+          480
+        ],
+        "crop_in_parent": [
+          3150,
+          20,
+          3600,
+          140
+        ],
+        "original_image_region_pixels": [
+          787.5,
+          45.0,
+          900.0,
+          75.0
+        ]
+      }
+    ],
+    "recorded_outcome": "correct",
+    "visual_review_notes": "docs/TRAJECTORIES.md",
+    "layout": "nested_toolbar"
+  },
+  {
+    "release_id": "perceptionbench-00031",
+    "figure": "docs/assets/trajectories/perceptionbench-00031.png",
+    "crop_checks": [
+      {
+        "event": 1,
+        "dimensions": [
+          2196,
+          1320
+        ],
+        "crop_in_parent": [
+          0,
+          0,
+          549,
+          330
+        ],
+        "original_image_region_pixels": [
+          0.0,
+          0.0,
+          549.0,
+          330.0
+        ]
+      },
+      {
+        "event": 2,
+        "dimensions": [
+          2196,
+          1296
+        ],
+        "crop_in_parent": [
+          0,
+          330,
+          549,
+          654
+        ],
+        "original_image_region_pixels": [
+          0.0,
+          330.0,
+          549.0,
+          654.0
+        ]
+      }
+    ],
+    "recorded_outcome": "correct",
+    "visual_review_notes": "docs/TRAJECTORIES.md",
+    "layout": "parallel_regions"
+  },
+  {
+    "release_id": "hrbench_8k-00132",
+    "figure": "docs/assets/trajectories/hrbench_8k-00132.png",
+    "crop_checks": [
+      {
+        "event": 1,
+        "dimensions": [
+          760,
+          840
+        ],
+        "crop_in_parent": [
+          330,
+          3020,
+          520,
+          3230
+        ],
+        "original_image_region_pixels": [
+          330.0,
+          3020.0,
+          520.0,
+          3230.0
+        ]
+      },
+      {
+        "event": 2,
+        "dimensions": [
+          2236,
+          1788
+        ],
+        "crop_in_parent": [
+          400,
+          5600,
+          1400,
+          6400
+        ],
+        "original_image_region_pixels": [
+          400.0,
+          5600.0,
+          1400.0,
+          6400.0
+        ]
+      }
+    ],
+    "recorded_outcome": "correct",
+    "visual_review_notes": "docs/TRAJECTORIES.md",
+    "layout": "sequential_reframing"
+  },
+  {
+    "release_id": "osworld-00103",
+    "figure": "docs/assets/trajectories/osworld-00103.png",
+    "crop_checks": [
+      {
+        "event": 1,
+        "dimensions": [
+          560,
+          600
+        ],
+        "crop_in_parent": [
+          1780,
+          880,
+          1920,
+          1030
+        ],
+        "original_image_region_pixels": [
+          1780.0,
+          880.0,
+          1920.0,
+          1030.0
+        ]
+      },
+      {
+        "event": 2,
+        "dimensions": [
+          1264,
+          3162
+        ],
+        "crop_in_parent": [
+          1600,
+          230,
+          1920,
+          1030
+        ],
+        "original_image_region_pixels": [
+          1600.0,
+          230.0,
+          1920.0,
+          1030.0
+        ]
+      }
+    ],
+    "recorded_outcome": "correct",
+    "visual_review_notes": "docs/TRAJECTORIES.md",
+    "layout": "portrait_detail"
+  },
+  {
+    "release_id": "hrbench_4k-00045",
+    "figure": "docs/assets/trajectories/hrbench_4k-00045.png",
+    "crop_checks": [
+      {
+        "event": 1,
+        "dimensions": [
+          2309,
+          1732
+        ],
+        "crop_in_parent": [
+          1700,
+          1400,
+          2500,
+          2000
+        ],
+        "original_image_region_pixels": [
+          1700.0,
+          1400.0,
+          2500.0,
+          2000.0
+        ]
+      },
+      {
+        "event": 2,
+        "dimensions": [
+          1476,
+          2708
+        ],
+        "crop_in_parent": [
+          1900,
+          850,
+          2309,
+          1600
+        ],
+        "original_image_region_pixels": [
+          2358.29,
+          1694.46,
+          2500.0,
+          1954.27
+        ]
+      }
+    ],
+    "recorded_outcome": "correct",
+    "visual_review_notes": "docs/TRAJECTORIES.md",
+    "layout": "portrait_detail"
+  }
+]

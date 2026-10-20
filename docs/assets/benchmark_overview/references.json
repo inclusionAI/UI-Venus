@@ -1,0 +1,37 @@
+{
+  "retrieved_on": "2026-10-15",
+  "selection": "Selected reference scores from technical reports and the ScreenSpot-Pro leaderboard; three zoom-in values were supplied by the repository author. Not an exhaustive leaderboard or a controlled ablation.",
+  "sspro": {
+    "source_url": "https://gui-agent.github.io/grounding-leaderboard/",
+    "data_url": "https://raw.githubusercontent.com/gui-agent/grounding-leaderboard/main/results/screenspot_pro.json",
+    "source_field": "results.overall.avg * 100 for published entries; author-supplied overall percentages for entries marked author_reported",
+    "metric": "Overall action accuracy (%)",
+    "references": [
+      {"model": "MAI-UI-32B", "label": "MAI-UI\n32B", "score_percent": 67.86843769765972},
+      {"model": "UI-Venus2-27B", "label": "UI-Venus\n2-27B", "score_percent": 74.1, "precision": 1,
+       "source_kind": "technical_report", "source_url": "https://github.com/inclusionAI/UI-Venus/blob/UI-Venus-2/README.md", "source_field": "Grounding table: UI-Venus-2-27B, ScreenSpot-Pro"},
+      {"model": "Holo2-235B-A22B (Agentic)", "label": "Holo2\n235B\nA22B$^{*}$", "score_percent": 78.49462365591397, "setup_marker": "*"},
+      {"model": "Qwen 3.7-Plus", "label": "Qwen3.7\nPlus$^{*}$", "score_percent": 80.7, "precision": 1, "setup_marker": "*",
+       "source_kind": "author_reported", "provided_on": "2026-10-15", "setup": "zoom-in", "source": "Repository author."},
+      {"model": "Seed 2.1 Pro", "label": "Seed2.1\nPro$^{*}$", "score_percent": 80.7, "precision": 1, "setup_marker": "*",
+       "source_kind": "author_reported", "provided_on": "2026-10-15", "setup": "zoom-in", "source": "Repository author."},
+      {"model": "Qwen-UI-Agent-27B", "label": "Qwen-UI\nAgent\n27B$^{*}$", "score_percent": 81.5, "precision": 1, "setup_marker": "*",
+       "source_kind": "author_reported", "provided_on": "2026-10-15", "setup": "zoom-in", "source": "Repository author."}
+    ]
+  },
+  "perceptionbench": {
+    "source_url": "https://github.com/MoonshotAI/PerceptionBench#leaderboard",
+    "source_field": "Leaderboard Overall column (percent, published to one decimal place)",
+    "metric": "Overall judge accuracy (%)",
+    "reference_judge": "GPT-oss-120B",
+    "ours_judge": "Self-hosted Deepseekv4-flash-0731",
+    "references": [
+      {"model": "Qwen3.5-397B-A17B", "label": "Qwen3.5\n397B\nA17B", "score_percent": 47.5},
+      {"model": "GPT-5.5", "label": "GPT-5.5", "score_percent": 55.8},
+      {"model": "Gemini-3.1-Pro", "label": "Gemini\n3.1 Pro", "score_percent": 56.2},
+      {"model": "Claude-Fable-5", "label": "Claude\nFable 5", "score_percent": 57.2},
+      {"model": "Kimi K3", "label": "Kimi K3", "score_percent": 58.5},
+      {"model": "GPT-5.6-Sol", "label": "GPT-5.6\nSol", "score_percent": 59.7}
+    ]
+  }
+}

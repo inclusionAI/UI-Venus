@@ -1,0 +1,844 @@
+{
+  "release_id": "hrbench_8k-00091",
+  "source_row_zero_based": 91,
+  "passed": true,
+  "behavior_tags": [
+    "crops_3",
+    "multiple_regions_same_turn",
+    "nested_zoom"
+  ],
+  "record": {
+    "eval_key": "hrbench8k:91",
+    "order": 91,
+    "index": 91,
+    "group_index": 22,
+    "split": "8k",
+    "category": "single",
+    "cycle_category": 3,
+    "question": "What's color of the bike in the image?",
+    "options": {
+      "A": "Red",
+      "B": "Blue",
+      "C": "Black",
+      "D": "Yellow"
+    },
+    "answer": "D",
+    "answer_text": "Yellow",
+    "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+    "img_size": [
+      7680,
+      4388
+    ],
+    "prompt_to_evaluate": "Question: What's color of the bike in the image?\nOptions:\nA. Red\nB. Blue\nC. Black\nD. Yellow\nPlease select the correct answer from the options above.",
+    "pass_at": 1,
+    "num_candidates": 1,
+    "prediction_option": "D",
+    "parse_method": "trajectory",
+    "strict_score": 1,
+    "wrong_format": false,
+    "pass_at_hit": 1,
+    "error": null,
+    "exception_traceback": null,
+    "final_content": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+    "trajectory": {
+      "task_id": "hrbench8k_91",
+      "sample_index": 0,
+      "conversation_id": "53aeec0fda59824b",
+      "model": "released-checkpoint",
+      "reasoning_effort": "xhigh",
+      "instruction": "Question: What's color of the bike in the image?\nOptions:\nA. Red\nB. Blue\nC. Black\nD. Yellow\nPlease select the correct answer from the options above.",
+      "original_image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+      "original_image_width": 7680,
+      "original_image_height": 4388,
+      "answer_mode": "mcq",
+      "coordinate_system": null,
+      "system_prompt": "You are an agentic high-resolution image question-answering model.\n\nMultiple-choice task:\nQuestion: What's color of the bike in the image?\nOptions:\nA. Red\nB. Blue\nC. Black\nD. Yellow\nPlease select the correct answer from the options above\n\nOriginal image metadata:\n- image_path: evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\n- resolution: 7680x4388 pixels (width x height)\n- origin: [0,0] at the top-left\n\nGoal:\nDetermine the single correct option from A, B, C, and D. Inspect the original image and\nuse crop_image when magnifying one or more regions would improve confidence. Do not alter,\nreorder, or invent options. The final answer must identify exactly one option letter.\n\nAvailable local action:\n- crop_image: Crop an image that has already been supplied in this conversation. image_path must be the exact original path or a path returned by an earlier crop_image call. x1, y1, x2, y2 are absolute pixel coordinates in that referenced image's LOCAL coordinate system, with (x1,y1) at the top-left and (x2,y2) at the bottom-right. The result provides a new image path and dimensions. Returned crops are resized for inspection, so nested crops must use the returned width and height. Crops may be nested. When writing a crop_image action, format x1, y1, x2, and y2 with exactly two digits after the decimal point. The final answer must be one option letter.\n\nText-action protocol:\nEvery turn must first emit visible reasoning inside <think>...</think>, then end with\nexactly one of these choices:\n- To inspect one region:\n  <think>brief reasoning for the crop</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n- To inspect two independent regions in the same turn:\n  <think>brief reasoning for both crops</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n  <action>crop_image(image_path=\"exact path\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>\n- To return the final option:\n  <think>brief reasoning for the answer</think>\n  <answer>A</answer>\n\ncrop_image is a textual action interpreted locally after your answer. It is NOT an API\nfunction call. Do not emit JSON, <tool_call> XML, or native tool_calls. Keep x1, y1, x2,\nand y2 as four separately named numeric arguments.\n\nTool rules:\n1. Use crop_image when small text, fine visual attributes, charts, maps, or comparisons\n   cannot be resolved confidently from the full image. Return the answer directly when\n   cropping cannot reasonably help.\n2. You may make at most 3 crop_image calls in total. A single assistant\n   turn may contain one or two crop_image actions, and every action counts separately.\n   Never mix crop actions with a final answer.\n3. Tool arguments are local absolute pixels in the image_path passed to that call. Write\n   x1, y1, x2, and y2 with exactly two digits after the decimal point. Two actions in the\n   same turn may only refer to paths available before that turn.\n4. After crop_image actions, the following user message contains all result metadata and\n   all successful crop images in action order.\n\nFinal-answer rule:\nWhen ready, output exactly <think>...</think> followed by a newline and one\n<answer>LETTER</answer> tag, with LETTER replaced by A, B, C, or D. Do not include prose,\nMarkdown, coordinates, or an action after the answer tag.\n",
+      "initial_user_message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "image_path: evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg"
+            }
+          }
+        ]
+      },
+      "tool_schema": null,
+      "text_action_protocol": {
+        "crop": "<think>...</think>\\n<action>crop_image(image_path=\"...\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>",
+        "crop_batch": "<think>...</think>\\n<action>crop_image(image_path=\"...\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\\n<action>crop_image(image_path=\"...\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>",
+        "final": "<think>...</think>\\n<answer>LETTER</answer>"
+      },
+      "request_config": {
+        "api_url": "http://localhost:8000/v1/chat/completions",
+        "stream": true,
+        "initial_request_n": 1,
+        "temperature": 0.0,
+        "max_tokens_per_turn": 5120,
+        "reasoning_effort": "xhigh",
+        "chat_template_kwargs": {
+          "thinking": true,
+          "reasoning_effort": "xhigh",
+          "max_thinking_tokens": 4096
+        },
+        "max_tool_calls": 3,
+        "max_tool_calls_per_turn": 2,
+        "max_action_corrections": 4,
+        "answer_mode": "mcq",
+        "api_image_format": "jpeg",
+        "api_image_quality": 95,
+        "crop_upscale_factor": 4.0,
+        "crop_max_pixels": 4000000,
+        "crop_max_dimension": 4096,
+        "native_api_tools": false,
+        "action_protocol": "assistant_text_then_user_crop_image",
+        "proxy_mode": "direct (httpx trust_env=False)",
+        "persist_crops": true,
+        "crop_root": "crops/8k"
+      },
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an agentic high-resolution image question-answering model.\n\nMultiple-choice task:\nQuestion: What's color of the bike in the image?\nOptions:\nA. Red\nB. Blue\nC. Black\nD. Yellow\nPlease select the correct answer from the options above\n\nOriginal image metadata:\n- image_path: evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\n- resolution: 7680x4388 pixels (width x height)\n- origin: [0,0] at the top-left\n\nGoal:\nDetermine the single correct option from A, B, C, and D. Inspect the original image and\nuse crop_image when magnifying one or more regions would improve confidence. Do not alter,\nreorder, or invent options. The final answer must identify exactly one option letter.\n\nAvailable local action:\n- crop_image: Crop an image that has already been supplied in this conversation. image_path must be the exact original path or a path returned by an earlier crop_image call. x1, y1, x2, y2 are absolute pixel coordinates in that referenced image's LOCAL coordinate system, with (x1,y1) at the top-left and (x2,y2) at the bottom-right. The result provides a new image path and dimensions. Returned crops are resized for inspection, so nested crops must use the returned width and height. Crops may be nested. When writing a crop_image action, format x1, y1, x2, and y2 with exactly two digits after the decimal point. The final answer must be one option letter.\n\nText-action protocol:\nEvery turn must first emit visible reasoning inside <think>...</think>, then end with\nexactly one of these choices:\n- To inspect one region:\n  <think>brief reasoning for the crop</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n- To inspect two independent regions in the same turn:\n  <think>brief reasoning for both crops</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n  <action>crop_image(image_path=\"exact path\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>\n- To return the final option:\n  <think>brief reasoning for the answer</think>\n  <answer>A</answer>\n\ncrop_image is a textual action interpreted locally after your answer. It is NOT an API\nfunction call. Do not emit JSON, <tool_call> XML, or native tool_calls. Keep x1, y1, x2,\nand y2 as four separately named numeric arguments.\n\nTool rules:\n1. Use crop_image when small text, fine visual attributes, charts, maps, or comparisons\n   cannot be resolved confidently from the full image. Return the answer directly when\n   cropping cannot reasonably help.\n2. You may make at most 3 crop_image calls in total. A single assistant\n   turn may contain one or two crop_image actions, and every action counts separately.\n   Never mix crop actions with a final answer.\n3. Tool arguments are local absolute pixels in the image_path passed to that call. Write\n   x1, y1, x2, and y2 with exactly two digits after the decimal point. Two actions in the\n   same turn may only refer to paths available before that turn.\n4. After crop_image actions, the following user message contains all result metadata and\n   all successful crop images in action order.\n\nFinal-answer rule:\nWhen ready, output exactly <think>...</think> followed by a newline and one\n<answer>LETTER</answer> tag, with LETTER replaced by A, B, C, or D. Do not include prose,\nMarkdown, coordinates, or an action after the answer tag.\n"
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "image_path: evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg"
+              }
+            }
+          ]
+        },
+        {
+          "role": "assistant",
+          "content": "<think>\nThe question asks about a bike's color, but the full image is a wide cityscape with no obvious bike. Bikes would likely be tiny objects near the riverbank promenade or park paths. I'll crop the riverside walkway area near the base of the tower and the park path on the right to look for a bicycle.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)</action>\n<action>crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)</action>",
+          "reasoning_content": "The question asks about a bike's color, but the full image is a wide cityscape with no obvious bike. Bikes would likely be tiny objects near the riverbank promenade or park paths. I'll crop the riverside walkway area near the base of the tower and the park path on the right to look for a bicycle.",
+          "finish_reason": "stop",
+          "parsed_action": {
+            "type": "crop_batch",
+            "name": "crop_image",
+            "actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                  "x1": 4200.0,
+                  "y1": 3300.0,
+                  "x2": 5600.0,
+                  "y2": 3700.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)"
+              },
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                  "x1": 5600.0,
+                  "y1": 3300.0,
+                  "x2": 7000.0,
+                  "y2": 3700.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)"
+              }
+            ],
+            "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)\ncrop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)",
+            "call_count": 2
+          },
+          "parsed_actions": [
+            {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                "x1": 4200.0,
+                "y1": 3300.0,
+                "x2": 5600.0,
+                "y2": 3700.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)"
+            },
+            {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                "x1": 5600.0,
+                "y1": 3300.0,
+                "x2": 7000.0,
+                "y2": 3700.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "crop_image action result 1/2 (tool_call_index=1):\n{\"ok\": true, \"image_path\": \"crops/hrbench_8k-00091/crop_01.png\", \"width\": 3741, \"height\": 1069, \"crop_in_parent\": [4200, 3300, 5600, 3700], \"crop_size_before_resize\": [1400, 400], \"resize_scale\": 2.67, \"original_image_region_pixels\": [4200.00, 3300.00, 5600.00, 3700.00], \"original_image_region_0_1000\": [546.88, 752.05, 729.17, 843.21], \"mapping_to_original_0_1000\": {\"x\": \"(4200.00 + crop_x * 0.37) * 1000 / 7680\", \"y\": \"(3300.00 + crop_y * 0.37) * 1000 / 4388\"}, \"reminder\": \"Use the inspected evidence to return exactly one option letter.\"}\nimage_path: crops/hrbench_8k-00091/crop_01.png"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "path": "crops/hrbench_8k-00091/crop_01.png"
+              }
+            },
+            {
+              "type": "text",
+              "text": "crop_image action result 2/2 (tool_call_index=2):\n{\"ok\": true, \"image_path\": \"crops/hrbench_8k-00091/crop_02.png\", \"width\": 3741, \"height\": 1069, \"crop_in_parent\": [5600, 3300, 7000, 3700], \"crop_size_before_resize\": [1400, 400], \"resize_scale\": 2.67, \"original_image_region_pixels\": [5600.00, 3300.00, 7000.00, 3700.00], \"original_image_region_0_1000\": [729.17, 752.05, 911.46, 843.21], \"mapping_to_original_0_1000\": {\"x\": \"(5600.00 + crop_x * 0.37) * 1000 / 7680\", \"y\": \"(3300.00 + crop_y * 0.37) * 1000 / 4388\"}, \"reminder\": \"Use the inspected evidence to return exactly one option letter.\"}\nimage_path: crops/hrbench_8k-00091/crop_02.png"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "path": "crops/hrbench_8k-00091/crop_02.png"
+              }
+            },
+            {
+              "type": "text",
+              "text": "Inspect all successful crops and account for any failed actions. Reply with <think>...</think>, then either one or two independent crop_image <action> blocks whose coordinates have exactly two decimal places, or the final <answer>LETTER</answer> with LETTER set to A, B, C, or D. Do not mix crop actions with a final answer."
+            }
+          ]
+        },
+        {
+          "role": "assistant",
+          "content": "<think>\nIn the second crop, near the left side, there is a person sitting on a bench next to what appears to be a bicycle. The bicycle frame looks yellowish. Let me zoom in further to confirm the color.\n</think>\n\n<action>crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)</action>",
+          "reasoning_content": "In the second crop, near the left side, there is a person sitting on a bench next to what appears to be a bicycle. The bicycle frame looks yellowish. Let me zoom in further to confirm the color.",
+          "finish_reason": "stop",
+          "parsed_action": {
+            "type": "crop",
+            "name": "crop_image",
+            "arguments": {
+              "image_path": "crops/hrbench_8k-00091/crop_02.png",
+              "x1": 400.0,
+              "y1": 450.0,
+              "x2": 800.0,
+              "y2": 700.0
+            },
+            "source": "crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)"
+          },
+          "parsed_actions": [
+            {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "crops/hrbench_8k-00091/crop_02.png",
+                "x1": 400.0,
+                "y1": 450.0,
+                "x2": 800.0,
+                "y2": 700.0
+              },
+              "source": "crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "crop_image action result:\n{\"ok\": true, \"image_path\": \"crops/hrbench_8k-00091/crop_03.png\", \"width\": 1600, \"height\": 1000, \"crop_in_parent\": [400, 450, 800, 700], \"crop_size_before_resize\": [400, 250], \"resize_scale\": 4.00, \"original_image_region_pixels\": [5749.69, 3468.38, 5899.39, 3561.93], \"original_image_region_0_1000\": [748.66, 790.42, 768.15, 811.74], \"mapping_to_original_0_1000\": {\"x\": \"(5749.69 + crop_x * 0.09) * 1000 / 7680\", \"y\": \"(3468.38 + crop_y * 0.09) * 1000 / 4388\"}, \"reminder\": \"Use the inspected evidence to return exactly one option letter.\"}\nimage_path: crops/hrbench_8k-00091/crop_03.png"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "path": "crops/hrbench_8k-00091/crop_03.png"
+              }
+            },
+            {
+              "type": "text",
+              "text": "Inspect all successful crops and account for any failed actions. Reply with <think>...</think>, then either one or two independent crop_image <action> blocks whose coordinates have exactly two decimal places, or the final <answer>LETTER</answer> with LETTER set to A, B, C, or D. Do not mix crop actions with a final answer."
+            }
+          ]
+        },
+        {
+          "role": "assistant",
+          "content": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+          "reasoning_content": "The zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.",
+          "finish_reason": "stop",
+          "parsed_action": {
+            "type": "final",
+            "name": "Answer",
+            "option": "D",
+            "source": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+            "compatibility_format": "answer_tag"
+          },
+          "parsed_actions": [
+            {
+              "type": "final",
+              "name": "Answer",
+              "option": "D",
+              "source": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+              "compatibility_format": "answer_tag"
+            }
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "model_turn": 1,
+          "sample_index": 0,
+          "initial_request_n": 1,
+          "native_tools_enabled": false,
+          "attempts": 1,
+          "scheduler_elapsed_seconds": 20.997,
+          "error": null,
+          "response": {
+            "choice_index": 0,
+            "reasoning_content": "",
+            "content": "The question asks about a bike's color, but the full image is a wide cityscape with no obvious bike. Bikes would likely be tiny objects near the riverbank promenade or park paths. I'll crop the riverside walkway area near the base of the tower and the park path on the right to look for a bicycle.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)</action>\n<action>crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)</action>",
+            "finish_reason": "stop",
+            "event_count": 339,
+            "stream_delta_fields": [
+              "content",
+              "role"
+            ],
+            "response_metadata": {
+              "object": "chat.completion.chunk",
+              "model": "released-checkpoint",
+              "usage": {
+                "prompt_tokens": 17326,
+                "total_tokens": 17663,
+                "completion_tokens": 337
+              }
+            }
+          },
+          "parsed_action": {
+            "type": "crop_batch",
+            "name": "crop_image",
+            "actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                  "x1": 4200.0,
+                  "y1": 3300.0,
+                  "x2": 5600.0,
+                  "y2": 3700.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)"
+              },
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                  "x1": 5600.0,
+                  "y1": 3300.0,
+                  "x2": 7000.0,
+                  "y2": 3700.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)"
+              }
+            ],
+            "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)\ncrop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)",
+            "call_count": 2
+          },
+          "parsed_actions": [
+            {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                "x1": 4200.0,
+                "y1": 3300.0,
+                "x2": 5600.0,
+                "y2": 3700.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)"
+            },
+            {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+                "x1": 5600.0,
+                "y1": 3300.0,
+                "x2": 7000.0,
+                "y2": 3700.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)"
+            }
+          ],
+          "reasoning_stats": {
+            "characters": 297,
+            "reported_reasoning_tokens": null,
+            "completion_tokens": 337
+          }
+        },
+        {
+          "model_turn": 2,
+          "sample_index": 0,
+          "initial_request_n": 1,
+          "native_tools_enabled": false,
+          "attempts": 1,
+          "scheduler_elapsed_seconds": 26.332,
+          "error": null,
+          "response": {
+            "choice_index": 0,
+            "reasoning_content": "",
+            "content": "In the second crop, near the left side, there is a person sitting on a bench next to what appears to be a bicycle. The bicycle frame looks yellowish. Let me zoom in further to confirm the color.\n</think>\n\n<action>crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)</action>",
+            "finish_reason": "stop",
+            "event_count": 169,
+            "stream_delta_fields": [
+              "content",
+              "role"
+            ],
+            "response_metadata": {
+              "object": "chat.completion.chunk",
+              "model": "released-checkpoint",
+              "usage": {
+                "prompt_tokens": 26328,
+                "total_tokens": 26495,
+                "completion_tokens": 167
+              }
+            }
+          },
+          "parsed_action": {
+            "type": "crop",
+            "name": "crop_image",
+            "arguments": {
+              "image_path": "crops/hrbench_8k-00091/crop_02.png",
+              "x1": 400.0,
+              "y1": 450.0,
+              "x2": 800.0,
+              "y2": 700.0
+            },
+            "source": "crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)"
+          },
+          "parsed_actions": [
+            {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "crops/hrbench_8k-00091/crop_02.png",
+                "x1": 400.0,
+                "y1": 450.0,
+                "x2": 800.0,
+                "y2": 700.0
+              },
+              "source": "crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)"
+            }
+          ],
+          "reasoning_stats": {
+            "characters": 194,
+            "reported_reasoning_tokens": null,
+            "completion_tokens": 167
+          }
+        },
+        {
+          "model_turn": 3,
+          "sample_index": 0,
+          "initial_request_n": 1,
+          "native_tools_enabled": false,
+          "attempts": 1,
+          "scheduler_elapsed_seconds": 33.152,
+          "error": null,
+          "response": {
+            "choice_index": 0,
+            "reasoning_content": "",
+            "content": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+            "finish_reason": "stop",
+            "event_count": 80,
+            "stream_delta_fields": [
+              "content",
+              "role"
+            ],
+            "response_metadata": {
+              "object": "chat.completion.chunk",
+              "model": "released-checkpoint",
+              "usage": {
+                "prompt_tokens": 28545,
+                "total_tokens": 28623,
+                "completion_tokens": 78
+              }
+            }
+          },
+          "parsed_action": {
+            "type": "final",
+            "name": "Answer",
+            "option": "D",
+            "source": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+            "compatibility_format": "answer_tag"
+          },
+          "parsed_actions": [
+            {
+              "type": "final",
+              "name": "Answer",
+              "option": "D",
+              "source": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+              "compatibility_format": "answer_tag"
+            }
+          ],
+          "reasoning_stats": {
+            "characters": 303,
+            "reported_reasoning_tokens": null,
+            "completion_tokens": 78
+          }
+        }
+      ],
+      "action_events": [
+        {
+          "tool_call_index": 1,
+          "tool_budget_index": 1,
+          "model_turn": 1,
+          "batch_index": 0,
+          "protocol": "text_action",
+          "name": "crop_image",
+          "raw_action": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)",
+          "arguments": {
+            "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+            "x1": 4200.0,
+            "y1": 3300.0,
+            "x2": 5600.0,
+            "y2": 3700.0
+          },
+          "result": {
+            "ok": true,
+            "image_path": "crops/hrbench_8k-00091/crop_01.png",
+            "width": 3741,
+            "height": 1069,
+            "crop_in_parent": [
+              4200,
+              3300,
+              5600,
+              3700
+            ],
+            "crop_size_before_resize": [
+              1400,
+              400
+            ],
+            "resize_scale": 2.67,
+            "original_image_region_pixels": [
+              4200.0,
+              3300.0,
+              5600.0,
+              3700.0
+            ],
+            "original_image_region_0_1000": [
+              546.88,
+              752.05,
+              729.17,
+              843.21
+            ],
+            "mapping_to_original_0_1000": {
+              "x": "(4200.00 + crop_x * 0.37) * 1000 / 7680",
+              "y": "(3300.00 + crop_y * 0.37) * 1000 / 4388"
+            },
+            "reminder": "Use the inspected evidence to return exactly one option letter."
+          }
+        },
+        {
+          "tool_call_index": 2,
+          "tool_budget_index": 2,
+          "model_turn": 1,
+          "batch_index": 1,
+          "protocol": "text_action",
+          "name": "crop_image",
+          "raw_action": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)",
+          "arguments": {
+            "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+            "x1": 5600.0,
+            "y1": 3300.0,
+            "x2": 7000.0,
+            "y2": 3700.0
+          },
+          "result": {
+            "ok": true,
+            "image_path": "crops/hrbench_8k-00091/crop_02.png",
+            "width": 3741,
+            "height": 1069,
+            "crop_in_parent": [
+              5600,
+              3300,
+              7000,
+              3700
+            ],
+            "crop_size_before_resize": [
+              1400,
+              400
+            ],
+            "resize_scale": 2.67,
+            "original_image_region_pixels": [
+              5600.0,
+              3300.0,
+              7000.0,
+              3700.0
+            ],
+            "original_image_region_0_1000": [
+              729.17,
+              752.05,
+              911.46,
+              843.21
+            ],
+            "mapping_to_original_0_1000": {
+              "x": "(5600.00 + crop_x * 0.37) * 1000 / 7680",
+              "y": "(3300.00 + crop_y * 0.37) * 1000 / 4388"
+            },
+            "reminder": "Use the inspected evidence to return exactly one option letter."
+          }
+        },
+        {
+          "tool_call_index": 3,
+          "tool_budget_index": 3,
+          "model_turn": 2,
+          "batch_index": 0,
+          "protocol": "text_action",
+          "name": "crop_image",
+          "raw_action": "crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)",
+          "arguments": {
+            "image_path": "crops/hrbench_8k-00091/crop_02.png",
+            "x1": 400.0,
+            "y1": 450.0,
+            "x2": 800.0,
+            "y2": 700.0
+          },
+          "result": {
+            "ok": true,
+            "image_path": "crops/hrbench_8k-00091/crop_03.png",
+            "width": 1600,
+            "height": 1000,
+            "crop_in_parent": [
+              400,
+              450,
+              800,
+              700
+            ],
+            "crop_size_before_resize": [
+              400,
+              250
+            ],
+            "resize_scale": 4.0,
+            "original_image_region_pixels": [
+              5749.69,
+              3468.38,
+              5899.39,
+              3561.93
+            ],
+            "original_image_region_0_1000": [
+              748.66,
+              790.42,
+              768.15,
+              811.74
+            ],
+            "mapping_to_original_0_1000": {
+              "x": "(5749.69 + crop_x * 0.09) * 1000 / 7680",
+              "y": "(3468.38 + crop_y * 0.09) * 1000 / 4388"
+            },
+            "reminder": "Use the inspected evidence to return exactly one option letter."
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "tool_call_index": 1,
+          "tool_budget_index": 1,
+          "model_turn": 1,
+          "batch_index": 0,
+          "protocol": "text_action",
+          "name": "crop_image",
+          "raw_action": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=4200.00, y1=3300.00, x2=5600.00, y2=3700.00)",
+          "arguments": {
+            "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+            "x1": 4200.0,
+            "y1": 3300.0,
+            "x2": 5600.0,
+            "y2": 3700.0
+          },
+          "result": {
+            "ok": true,
+            "image_path": "crops/hrbench_8k-00091/crop_01.png",
+            "width": 3741,
+            "height": 1069,
+            "crop_in_parent": [
+              4200,
+              3300,
+              5600,
+              3700
+            ],
+            "crop_size_before_resize": [
+              1400,
+              400
+            ],
+            "resize_scale": 2.67,
+            "original_image_region_pixels": [
+              4200.0,
+              3300.0,
+              5600.0,
+              3700.0
+            ],
+            "original_image_region_0_1000": [
+              546.88,
+              752.05,
+              729.17,
+              843.21
+            ],
+            "mapping_to_original_0_1000": {
+              "x": "(4200.00 + crop_x * 0.37) * 1000 / 7680",
+              "y": "(3300.00 + crop_y * 0.37) * 1000 / 4388"
+            },
+            "reminder": "Use the inspected evidence to return exactly one option letter."
+          }
+        },
+        {
+          "tool_call_index": 2,
+          "tool_budget_index": 2,
+          "model_turn": 1,
+          "batch_index": 1,
+          "protocol": "text_action",
+          "name": "crop_image",
+          "raw_action": "crop_image(image_path=\"evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg\", x1=5600.00, y1=3300.00, x2=7000.00, y2=3700.00)",
+          "arguments": {
+            "image_path": "evaluation/data/hrbench/images/21290b2ae8437c6709650240a1e18f608bd777eedd63dc0a8f61a4c7f699fc04.jpg",
+            "x1": 5600.0,
+            "y1": 3300.0,
+            "x2": 7000.0,
+            "y2": 3700.0
+          },
+          "result": {
+            "ok": true,
+            "image_path": "crops/hrbench_8k-00091/crop_02.png",
+            "width": 3741,
+            "height": 1069,
+            "crop_in_parent": [
+              5600,
+              3300,
+              7000,
+              3700
+            ],
+            "crop_size_before_resize": [
+              1400,
+              400
+            ],
+            "resize_scale": 2.67,
+            "original_image_region_pixels": [
+              5600.0,
+              3300.0,
+              7000.0,
+              3700.0
+            ],
+            "original_image_region_0_1000": [
+              729.17,
+              752.05,
+              911.46,
+              843.21
+            ],
+            "mapping_to_original_0_1000": {
+              "x": "(5600.00 + crop_x * 0.37) * 1000 / 7680",
+              "y": "(3300.00 + crop_y * 0.37) * 1000 / 4388"
+            },
+            "reminder": "Use the inspected evidence to return exactly one option letter."
+          }
+        },
+        {
+          "tool_call_index": 3,
+          "tool_budget_index": 3,
+          "model_turn": 2,
+          "batch_index": 0,
+          "protocol": "text_action",
+          "name": "crop_image",
+          "raw_action": "crop_image(image_path=\"crops/hrbench_8k-00091/crop_02.png\", x1=400.00, y1=450.00, x2=800.00, y2=700.00)",
+          "arguments": {
+            "image_path": "crops/hrbench_8k-00091/crop_02.png",
+            "x1": 400.0,
+            "y1": 450.0,
+            "x2": 800.0,
+            "y2": 700.0
+          },
+          "result": {
+            "ok": true,
+            "image_path": "crops/hrbench_8k-00091/crop_03.png",
+            "width": 1600,
+            "height": 1000,
+            "crop_in_parent": [
+              400,
+              450,
+              800,
+              700
+            ],
+            "crop_size_before_resize": [
+              400,
+              250
+            ],
+            "resize_scale": 4.0,
+            "original_image_region_pixels": [
+              5749.69,
+              3468.38,
+              5899.39,
+              3561.93
+            ],
+            "original_image_region_0_1000": [
+              748.66,
+              790.42,
+              768.15,
+              811.74
+            ],
+            "mapping_to_original_0_1000": {
+              "x": "(5749.69 + crop_x * 0.09) * 1000 / 7680",
+              "y": "(3468.38 + crop_y * 0.09) * 1000 / 4388"
+            },
+            "reminder": "Use the inspected evidence to return exactly one option letter."
+          }
+        }
+      ],
+      "model_turn_count": 3,
+      "crop_action_count": 3,
+      "tool_call_count": 3,
+      "tool_attempt_count": 3,
+      "crop_image_paths": [
+        "crops/hrbench_8k-00091/crop_01.png",
+        "crops/hrbench_8k-00091/crop_02.png",
+        "crops/hrbench_8k-00091/crop_03.png"
+      ],
+      "crop_directory": "crops/hrbench_8k-00091",
+      "final_content": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>",
+      "prediction_relative_0_1000": null,
+      "prediction_option": "D",
+      "prediction_text": null,
+      "reasoning_stats": {
+        "per_turn_reported_reasoning_tokens": [
+          null,
+          null,
+          null
+        ],
+        "total_reported_reasoning_tokens": 0,
+        "max_reported_reasoning_tokens_in_one_turn": null
+      },
+      "error": null
+    },
+    "additional_trajectories": [],
+    "candidates": [
+      {
+        "prediction_option": "D",
+        "parse_method": "trajectory",
+        "strict_score": 1,
+        "wrong_format": false,
+        "error": null,
+        "final_content": "<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>"
+      }
+    ],
+    "run_fingerprint": "254c4659909f22b192dddc34225ee5bdbd6cbe6387f6f0ba4c0df8bee65f5f8a",
+    "judge_fingerprint": "f391f3869b0931fe8353b9b1e7eeab99a386e19d455fd3562e1486d6114906a5",
+    "official_judge_score": 1,
+    "official_judge_answer": "Yes",
+    "official_judge_error": null,
+    "official_judge_format_error": false,
+    "official_judge_attempts": 1,
+    "official_judge_prompt": "You are a helpful and precise assistant for checking the quality of the answer. Please answer in only yes or no. Given the following question: What's color of the bike in the image?\nOptions:\nA. Red\nB. Blue\nC. Black\nD. Yellow\nPlease select the correct answer from the options above. \n, the correct answer is: D. Yellow. Does the following answer correctly answers the question, answer:<think>\nThe zoomed-in crop clearly shows a bicycle next to a person sitting on a bench. The bicycle frame is bright yellow (a yellowish-green frame tube is visible). Among the options (red, blue, black, yellow), the bicycle is yellow. The person is wearing red clothing, but the bicycle frame is clearly yellow.\n</think>\n\n<answer>D</answer>?"
+  }
+}

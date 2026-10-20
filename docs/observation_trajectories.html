@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore six visually reviewed LBS observation trajectories: recorded reasoning, crop actions, image evidence, and outcomes.">
+  <title>Observation trajectories · LBS</title>
+  <link rel="stylesheet" href="assets/trajectory_explorer/explorer.css">
+  <script defer src="assets/trajectory_explorer/data.js"></script>
+  <script defer src="assets/trajectory_explorer/explorer.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#explorer">Skip to trajectory explorer</a>
+  <div class="page">
+    <header class="masthead"><a href="observation_trajectories.html" class="wordmark">LBS<span>Learning to Look Beyond Screens</span></a><a href="TRAJECTORIES.md">Sources & reconstruction ↗</a></header>
+    <main>
+      <section class="introduction" aria-labelledby="page-title">
+        <div><p class="eyebrow">A closer look at visual observation</p><h1 id="page-title">Observation <em>trajectories.</em></h1><p class="dek">Follow how a model chooses where to look, revises its view,<br class="desktop-break"> and connects visual evidence to an answer.</p></div>
+        <div class="intro-note"><span class="note-number">06</span><p>Reviewed cases<br>from recorded evaluations</p><span class="note-rule"></span><p>Real images. Saved responses.<br>No new model inference.</p></div>
+      </section>
+      <div class="reading-key" aria-label="Text color legend"><span class="key-title">Reading the trace</span><span class="key question-key">Question</span><span class="key reasoning-key">Model reasoning</span><span class="key action-key">Crop action</span><span class="key answer-key">Answer</span><span class="key editorial-key">Editorial analysis</span></div>
+      <div class="workspace" id="explorer">
+        <aside class="case-sidebar"><p class="eyebrow">Select a case</p><nav id="case-list" aria-label="Reviewed trajectories"></nav><p class="sidebar-note">A curated reading of behavior.<br>These cases are not a performance estimate.</p></aside>
+        <article class="case-content" aria-labelledby="case-title">
+          <header class="case-header"><div><p id="case-meta" class="eyebrow"></p><h2 id="case-title"></h2></div><a id="figure-link" class="quiet-link" href="#">Static figure ↗</a></header>
+          <div class="editorial-intro"><span class="editorial-label">Editorial analysis</span><p id="case-analysis"></p></div>
+          <section class="question-block" aria-labelledby="question-heading"><h3 id="question-heading">Q <span>Question · recorded instruction</span></h3><p id="question-text"></p></section>
+          <div class="sequence-header"><h3>Walk through the observation</h3><span id="sequence-count"></span></div>
+          <div id="step-list" class="step-list" role="tablist" aria-label="Observation steps"></div>
+          <section id="step-panel" class="step-panel" role="tabpanel" tabindex="0">
+            <div class="evidence-column"><div class="column-heading"><h3>Visual evidence</h3><label class="overlay-toggle"><input type="checkbox" id="show-overlays" checked> Region overlays</label></div><div id="image-evidence"></div></div>
+            <div class="reasoning-column"><div class="column-heading"><h3>Recorded trace</h3><span id="turn-label"></span></div><div id="transcript"></div></div>
+          </section>
+          <div class="step-footer"><button type="button" id="previous-step">← Previous</button><p id="step-position" aria-live="polite"></p><button type="button" id="next-step">Next →</button></div>
+          <section class="interpretation"><div><p class="eyebrow">What this case tells us</p><h3 id="interpretation-title"></h3></div><p id="case-limitation"></p></section>
+          <details class="provenance"><summary>Evidence, scoring & provenance</summary><div id="provenance-content"></div></details>
+        </article>
+      </div>
+      <noscript><p>This explorer needs JavaScript to switch cases. The <a href="TRAJECTORIES.md">verified static figures and complete source records</a> remain available.</p><img src="assets/trajectories/osworld-00344.png" alt="Recorded OS-World-G trajectory recovering from an incorrect crop" style="max-width:100%"></noscript>
+    </main>
+    <footer><span>LBS / Observation trajectories</span><div><p>Crops are reconstructions before API JPEG encoding. Model text is quoted from saved records; editorial observations are labeled separately.</p><p>Benchmark excerpts are included solely to display recorded results and observation trajectories, with no other use intended. Original ownership, licenses and terms remain unchanged. <a href="LICENSE_AUDIT.md">Data use scope</a> · <a href="../NOTICE">Source attribution</a></p></div><a href="TRAJECTORIES.md">Sources &amp; verification ↗</a></footer>
+  </div>
+  <dialog id="image-dialog"><div class="dialog-header"><p id="dialog-caption"></p><button type="button" id="close-dialog" autofocus>Close ×</button></div><div class="dialog-image-wrap"><img id="dialog-image" alt=""></div><p class="dialog-note">Scroll to inspect the image. Original-image previews are reduced for display; crop images retain their reconstructed dimensions.</p></dialog>
+</body>
+</html>

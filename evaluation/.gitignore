@@ -1,0 +1,18 @@
+# Official datasets and local runtime artifacts
+data/
+data_sources/
+results/
+logs/
+tmp/
+sspro/crops_agentic/
+perceptionbench/debug/rejudge_log.txt
+
+# Endpoint configuration; only the template is public
+.env
+.env.*
+!.env.example
+
+# Python and operating-system caches
+__pycache__/
+*.pyc
+.DS_Store

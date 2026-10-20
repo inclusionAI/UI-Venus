@@ -1,0 +1,22 @@
+{
+  "benchmark": "HRBench",
+  "splits": {
+    "HRBench4K": {
+      "primary_metric": "official_judge",
+      "primary_accuracy": 0.86875,
+      "strict_accuracy": 0.89125,
+      "official_judge_accuracy": 0.86875
+    },
+    "HRBench8K": {
+      "primary_metric": "official_judge",
+      "primary_accuracy": 0.8574999999999999,
+      "strict_accuracy": 0.8775,
+      "official_judge_accuracy": 0.8574999999999999
+    }
+  },
+  "average": {
+    "primary_accuracy": 0.8631249999999999,
+    "strict_accuracy": 0.8843749999999999,
+    "official_judge_accuracy": 0.8631249999999999
+  }
+}

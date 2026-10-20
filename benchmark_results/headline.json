@@ -1,0 +1,8 @@
+{
+  "model": "released-checkpoint",
+  "sspro_action_accuracy": 0.8115117014547755,
+  "osworld_action_accuracy": 0.8457446808510638,
+  "perceptionbench_accuracy": 0.5967,
+  "hrbench_4k_strict_accuracy": 0.89125,
+  "hrbench_8k_strict_accuracy": 0.8775
+}

@@ -1,0 +1,35 @@
+# Local release backups and full evaluation runs
+/_release_archive/
+/results/
+**/results/
+**/logs/
+*.log
+
+# Downloaded benchmark data and model artifacts (training examples stay tracked)
+/evaluation/data/
+/evaluation/data_sources/
+/evaluation/tmp/
+/agentic_gui_grounding_rl/output/
+/agentic_gui_grounding_rl/deployed_plugins/
+**/checkpoints/
+*.safetensors
+*.ckpt.json
+*.progress.jsonl
+
+# Raw TensorBoard event logs
+events.out.tfevents.*
+
+# Endpoint credentials; the public template is intentional
+.env
+.env.*
+!.env.example
+
+# Local tooling
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.pytest_cache/
+
+# Reconstructed intermediate images; final documentation figures are tracked
+/docs/assets/trajectories/_work/

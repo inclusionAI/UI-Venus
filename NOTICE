@@ -1,0 +1,74 @@
+Learning to Look Beyond Screens: Transferable Visual Observation from GUI Grounding
+Copyright 2026 the LBS contributors.
+
+Release destination: a branch of https://github.com/inclusionAI/UI-Venus
+UI-Venus publishes its software under Apache-2.0. This statement describes the
+intended release destination; it does not transfer ownership or imply endorsement.
+
+Training component: Copyright 2026 the Agentic GUI Grounding RL authors.
+The training crop protocol includes material attributed to the verl recipe
+contributors. Existing source copyright and Apache-2.0 notices are retained.
+Upstream: https://github.com/volcengine/verl
+
+PerceptionBench evaluation code and judge prompt templates include material adapted
+from MoonshotAI/PerceptionBench, distributed under Apache-2.0.
+Upstream: https://github.com/MoonshotAI/PerceptionBench
+Prompt: https://github.com/MoonshotAI/PerceptionBench/blob/master/eval/judge_prompt.txt
+The local eval/eval.py modifies the upstream evaluator for multiprocessing,
+configuration, agentic evaluation integration, and resumable result handling.
+The zoom-in variant adds instructions for extracting and grading the final answer
+from an agentic crop trajectory. Attribution is external to the runtime template
+so it does not change the judge input.
+
+Benchmark display materials
+---------------------------
+Benchmark excerpts in benchmark_results and the documentation/HTML explorer are
+included solely to display recorded evaluation results and observation
+trajectories, with no other use intended. Original ownership, licenses, and terms
+remain unchanged. The repository's Apache-2.0 software license does not relicense
+benchmark data or screenshot content. This use statement is not a new license grant.
+
+Sources:
+- ScreenSpot-Pro: https://huggingface.co/datasets/likaixin/ScreenSpot-Pro
+- OS-World-G (Refine): https://github.com/xlang-ai/OSWorld-G
+- PerceptionBench: https://huggingface.co/datasets/moonshotai/PerceptionBench
+- HR-Bench: https://huggingface.co/datasets/DreamMr/HR-Bench
+Sample identifiers and reconstruction details: docs/TRAJECTORIES.md.
+
+PerceptionBench data attribution: MoonshotAI / PerceptionBench and original source
+contributors identified by source_bmk and source_idx, where available.
+Data license: CC BY-NC 4.0, https://creativecommons.org/licenses/by-nc/4.0/
+The featured flowchart is record 31 (source_bmk: NA). Display adaptations include
+selection, cropped/resized previews, reconstructed crops, labels and overlays.
+No endorsement by the original source owners is implied.
+
+Training sample screenshots also retain their original ownership and terms.
+
+ScreenSpot-Pro dataset excerpts
+-------------------------------
+The dataset card labels ScreenSpot-Pro as MIT. Retained screenshot excerpts and
+benchmark text remain subject to their original rights. For the upstream notice:
+https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding/blob/main/LICENSE
+This MIT notice applies to upstream material only, not to LBS software as a whole.
+
+MIT License
+
+Copyright (c) 2026 Kaixin Li
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

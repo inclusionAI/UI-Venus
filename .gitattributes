@@ -1,0 +1,14 @@
+/_release_archive export-ignore
+/evaluation/data export-ignore
+/evaluation/data_sources export-ignore
+/evaluation/results export-ignore
+/results export-ignore
+/evaluation/tmp export-ignore
+/evaluation/logs export-ignore
+/evaluation/sspro/crops_agentic export-ignore
+/agentic_gui_grounding_rl/output export-ignore
+/agentic_gui_grounding_rl/deployed_plugins export-ignore
+/agentic_gui_grounding_rl/events.out.tfevents.* export-ignore
+
+# Preserve renderer-generated SVG path formatting.
+*.svg -whitespace

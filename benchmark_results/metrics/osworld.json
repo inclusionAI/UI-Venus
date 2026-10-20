@@ -1,0 +1,125 @@
+{
+  "metrics": {
+    "fine_grained": {
+      "plat:desktop app:mixed inst_style:instruction gt_type:negative": {
+        "num_correct_action": 26,
+        "num_total": 54,
+        "wrong_format_num": 0,
+        "action_acc": 0.48148148148148145,
+        "text_acc": 0,
+        "icon_acc": 0
+      },
+      "plat:desktop app:mixed inst_style:instruction gt_type:positive": {
+        "num_correct_action": 451,
+        "num_total": 510,
+        "wrong_format_num": 0,
+        "action_acc": 0.884313725490196,
+        "text_acc": 0,
+        "icon_acc": 0
+      }
+    },
+    "seeclick_style": {
+      "plat:desktop inst_style:instruction gt_type:negative": {
+        "num_correct_action": 26,
+        "num_total": 54,
+        "wrong_format_num": 0,
+        "action_acc": 0.48148148148148145,
+        "text_acc": 0,
+        "icon_acc": 0
+      },
+      "plat:desktop inst_style:instruction gt_type:positive": {
+        "num_correct_action": 451,
+        "num_total": 510,
+        "wrong_format_num": 0,
+        "action_acc": 0.884313725490196,
+        "text_acc": 0,
+        "icon_acc": 0
+      }
+    },
+    "leaderboard_simple_style": {
+      "group:osworld_g": {
+        "num_correct_action": 477,
+        "num_total": 564,
+        "wrong_format_num": 0,
+        "action_acc": 0.8457446808510638,
+        "text_acc": 0,
+        "icon_acc": 0
+      }
+    },
+    "leaderboard_detailed_style": {
+      "app:mixed": {
+        "num_correct_action": 477,
+        "num_total": 564,
+        "wrong_format_num": 0,
+        "action_acc": 0.8457446808510638,
+        "text_acc": 0,
+        "icon_acc": 0
+      }
+    },
+    "overall": {
+      "num_correct_action": 477,
+      "num_total": 564,
+      "wrong_format_num": 0,
+      "action_acc": 0.8457446808510638,
+      "text_acc": 0,
+      "icon_acc": 0
+    },
+    "by_data_type": {
+      "bbox": {
+        "num_total": 470,
+        "num_correct_action": 413,
+        "wrong_format_num": 0,
+        "action_acc": 0.8787234042553191
+      },
+      "polygon": {
+        "num_total": 40,
+        "num_correct_action": 38,
+        "wrong_format_num": 0,
+        "action_acc": 0.95
+      },
+      "refusal": {
+        "num_total": 54,
+        "num_correct_action": 26,
+        "wrong_format_num": 0,
+        "action_acc": 0.48148148148148145
+      }
+    },
+    "refusal_behavior": {
+      "negative": 26,
+      "positive": 28,
+      "no_answer": 0
+    }
+  },
+  "run_config": {
+    "api_url": "http://localhost:8000/v1/chat/completions",
+    "model": "released-checkpoint",
+    "prompt_mode": "agentic",
+    "answer_mode": "point",
+    "max_tool_calls": 3,
+    "max_action_corrections": 2,
+    "reasoning_effort": "xhigh",
+    "thinking_budget": 4096,
+    "max_completion_tokens": null,
+    "temperature": 0.0,
+    "sample_count": 1,
+    "sample_temperature": null,
+    "crop_root": "[redacted-path]",
+    "persist_crops": false,
+    "crop_upscale_factor": 4.0,
+    "crop_max_pixels": 4000000,
+    "crop_max_dimension": 4096,
+    "api_image_quality": 90,
+    "qpm": 60,
+    "rps": 5,
+    "timeout": 600.0,
+    "max_attempts": 5,
+    "num_workers": 8,
+    "num_processes": 8,
+    "model_type": "agentic_pipeline",
+    "dataset": "OS-World-G GD_evaluation (os-world-g-refine/annotation.json, 564 条; positive=bbox470+polygon40 外接矩形包含判定, negative=refusal54 拒识判定; 两段 --gt_type positive/negative 分别评测后本脚本合并)",
+    "merged_from": [
+      "osworld_pos.partial.json",
+      "osworld_neg.partial.json"
+    ]
+  }
+}

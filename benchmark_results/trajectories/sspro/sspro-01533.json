@@ -1,0 +1,888 @@
+{
+  "release_id": "sspro-01533",
+  "source_row_zero_based": 1533,
+  "passed": true,
+  "behavior_tags": [
+    "crops_3"
+  ],
+  "record": {
+    "img_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+    "group": "OS",
+    "platform": "windows",
+    "application": "windows_common",
+    "lang": "en",
+    "instruction_style": "instruction",
+    "prompt_to_evaluate": "change ondrive backup strategy",
+    "gt_type": "positive",
+    "ui_type": "text",
+    "task_filename": "windows_common_windows",
+    "pred": [
+      2180.0064,
+      529.9992
+    ],
+    "raw_response": "<think>\n\n</think>\n\nThe crops confirm the OneDrive card with the \"Back up files\" status. The control to change the OneDrive backup strategy is the chevron/dropdown on the right side of the OneDrive card, located at approximately (2180, 530) in original pixels. Normalizing: x = 2180/3840*1000 ≈ 567.71, y = 530/2160*1000 ≈ 245.37.\n[567.71,245.37]",
+    "inference_mode": "agentic",
+    "model_type": "agentic_pipeline",
+    "sample_count": 1,
+    "samples": [
+      {
+        "sample_index": 0,
+        "pred": [
+          2180.0064,
+          529.9992
+        ],
+        "correctness": "correct",
+        "result": "positive",
+        "error": null,
+        "conversation_id": "0018fabd88dc1fef",
+        "model_turn_count": 4,
+        "crop_action_count": 3,
+        "tool_attempt_count": 3,
+        "total_reasoning_tokens": 0
+      }
+    ],
+    "trajectories": [
+      {
+        "task_id": "common_windows_screenshot_2024-12-10_12-38-22_positive_instruction_en",
+        "sample_index": 0,
+        "conversation_id": "0018fabd88dc1fef",
+        "model": "released-checkpoint",
+        "reasoning_effort": "xhigh",
+        "instruction": "change ondrive backup strategy",
+        "original_image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+        "original_image_width": 3840,
+        "original_image_height": 2160,
+        "answer_mode": "point",
+        "coordinate_system": "original_image_relative_0_1000",
+        "system_prompt": "You are an agentic GUI grounding model.\n\nTask instruction:\nchange ondrive backup strategy\n\nOriginal image metadata:\n- image_path: evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\n- resolution: 3840x2160 pixels (width x height)\n- origin: [0,0] at the top-left\n\nGoal:\nOutput the center point of the position corresponding to the task instruction. The final\ncoordinate MUST be relative to the ORIGINAL image and normalized to [0.00,1000.00], where\n[0.00,0.00] is the original image's top-left and [1000.00,1000.00] is its bottom-right.\nNever output absolute pixels or coordinates local to a crop. Preserve sub-unit precision:\nthe two final coordinate values MUST each have exactly two digits after the decimal point\n(for example, [512.34,76.50]). If the task is infeasible (for example, the requested UI\nelement or action is absent from the image), use [-1.00,-1.00].\n\nAvailable local action:\n- crop_image: Crop an image that has already been supplied in this conversation. image_path must be the exact original path or a path returned by an earlier crop_image call. x1, y1, x2, y2 are absolute pixel coordinates in that referenced image's LOCAL coordinate system, with (x1,y1) at the top-left and (x2,y2) at the bottom-right. The result provides a new image path, dimensions, and the crop region mapped into the ORIGINAL image. Returned crops are resized for inspection, so nested crops must use the returned width and height. Crops may be nested. The final answer must always use relative coordinates of the ORIGINAL image normalized to the [0,1000] range, never crop-local coordinates. When writing a crop_image action, format each of x1, y1, x2, and y2 with exactly two digits after the decimal point.\n\nText-action protocol:\nEvery turn must first emit visible reasoning inside <think>...</think>, then end with\nexactly one of these choices:\n- To inspect one region:\n  <think>brief reasoning for the crop</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n- To inspect two independent regions in the same turn:\n  <think>brief reasoning for both crops</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n  <action>crop_image(image_path=\"exact path\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>\n- To return the final point:\n  <think>brief reasoning for the final point</think>\n  [x.xx,y.yy]\n\ncrop_image is a textual action interpreted locally after your answer. It is NOT an API\nfunction call. Do not emit JSON, <tool_call> XML, or native tool_calls. Keep x1, y1, x2,\nand y2 as four separately named numeric arguments.\n\nTool rules:\n1. Before returning the final coordinate, you SHOULD make at least one successful\n   crop_image call to inspect the target more precisely. A direct first-turn coordinate is\n   discouraged. Skip cropping only when the task is clearly infeasible or cropping cannot\n   reasonably improve localization.\n2. You may make at most 3 crop_image calls in total. Never exceed this\n   budget; use each crop purposefully and return the final coordinate as soon as the target\n   is localized. A single assistant turn may contain one or two crop_image actions, and\n   every action counts separately toward the total budget. Never emit more than two\n   actions in one turn or mix crop actions with a final coordinate.\n3. Tool arguments are local absolute pixels in the image_path passed to that call. Write\n   x1, y1, x2, and y2 with exactly two digits after the decimal point, including trailing\n   zeros (for example, x1=100.00). Two actions emitted in the same turn must refer only\n   to image paths already available before that turn; the second action cannot depend on\n   the result of the first action from the same turn.\n4. Each result states the crop's region both in original-image pixels and original-image\n   normalized [0,1000] coordinates. Use that mapping to convert any point found in a crop\n   back to the ORIGINAL image's normalized [0,1000] coordinate system.\n5. After crop_image actions, the following single user message contains all result\n   metadata and all successful crop images in action order.\n\nFinal-answer rule:\nWhen ready, output exactly <think>...</think> followed by a newline and [x.xx,y.yy], with\nno prose, Markdown, or action wrapper after the coordinate. Both values must contain\nexactly two digits after the decimal point, including trailing zeros. The point must be in\nthe ORIGINAL image's normalized [0,1000] coordinate system. If the task is infeasible, use\n[-1.00,-1.00].\n",
+        "initial_user_message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "image_path: evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png"
+              }
+            }
+          ]
+        },
+        "tool_schema": null,
+        "text_action_protocol": {
+          "crop": "<think>...</think>\\n<action>crop_image(image_path=\"...\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>",
+          "crop_batch": "<think>...</think>\\n<action>crop_image(image_path=\"...\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\\n<action>crop_image(image_path=\"...\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>",
+          "final": "<think>...</think>\\n[x.xx,y.yy]"
+        },
+        "request_config": {
+          "api_url": "http://localhost:8000/v1/chat/completions",
+          "stream": true,
+          "initial_request_n": 1,
+          "temperature": 0.0,
+          "max_tokens_per_turn": 4096,
+          "reasoning_effort": "xhigh",
+          "chat_template_kwargs": {
+            "thinking": true,
+            "reasoning_effort": "xhigh",
+            "max_thinking_tokens": 4096
+          },
+          "max_tool_calls": 3,
+          "max_tool_calls_per_turn": 2,
+          "max_action_corrections": 2,
+          "answer_mode": "point",
+          "api_image_format": "jpeg",
+          "api_image_quality": 90,
+          "crop_upscale_factor": 4.0,
+          "crop_max_pixels": 4000000,
+          "crop_max_dimension": 4096,
+          "native_api_tools": false,
+          "action_protocol": "assistant_text_then_user_crop_image",
+          "proxy_mode": "direct (httpx trust_env=False)",
+          "persist_crops": false,
+          "crop_root": "[redacted-path]"
+        },
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an agentic GUI grounding model.\n\nTask instruction:\nchange ondrive backup strategy\n\nOriginal image metadata:\n- image_path: evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\n- resolution: 3840x2160 pixels (width x height)\n- origin: [0,0] at the top-left\n\nGoal:\nOutput the center point of the position corresponding to the task instruction. The final\ncoordinate MUST be relative to the ORIGINAL image and normalized to [0.00,1000.00], where\n[0.00,0.00] is the original image's top-left and [1000.00,1000.00] is its bottom-right.\nNever output absolute pixels or coordinates local to a crop. Preserve sub-unit precision:\nthe two final coordinate values MUST each have exactly two digits after the decimal point\n(for example, [512.34,76.50]). If the task is infeasible (for example, the requested UI\nelement or action is absent from the image), use [-1.00,-1.00].\n\nAvailable local action:\n- crop_image: Crop an image that has already been supplied in this conversation. image_path must be the exact original path or a path returned by an earlier crop_image call. x1, y1, x2, y2 are absolute pixel coordinates in that referenced image's LOCAL coordinate system, with (x1,y1) at the top-left and (x2,y2) at the bottom-right. The result provides a new image path, dimensions, and the crop region mapped into the ORIGINAL image. Returned crops are resized for inspection, so nested crops must use the returned width and height. Crops may be nested. The final answer must always use relative coordinates of the ORIGINAL image normalized to the [0,1000] range, never crop-local coordinates. When writing a crop_image action, format each of x1, y1, x2, and y2 with exactly two digits after the decimal point.\n\nText-action protocol:\nEvery turn must first emit visible reasoning inside <think>...</think>, then end with\nexactly one of these choices:\n- To inspect one region:\n  <think>brief reasoning for the crop</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n- To inspect two independent regions in the same turn:\n  <think>brief reasoning for both crops</think>\n  <action>crop_image(image_path=\"exact path\", x1=100.00, y1=200.00, x2=500.00, y2=600.00)</action>\n  <action>crop_image(image_path=\"exact path\", x1=600.00, y1=200.00, x2=900.00, y2=600.00)</action>\n- To return the final point:\n  <think>brief reasoning for the final point</think>\n  [x.xx,y.yy]\n\ncrop_image is a textual action interpreted locally after your answer. It is NOT an API\nfunction call. Do not emit JSON, <tool_call> XML, or native tool_calls. Keep x1, y1, x2,\nand y2 as four separately named numeric arguments.\n\nTool rules:\n1. Before returning the final coordinate, you SHOULD make at least one successful\n   crop_image call to inspect the target more precisely. A direct first-turn coordinate is\n   discouraged. Skip cropping only when the task is clearly infeasible or cropping cannot\n   reasonably improve localization.\n2. You may make at most 3 crop_image calls in total. Never exceed this\n   budget; use each crop purposefully and return the final coordinate as soon as the target\n   is localized. A single assistant turn may contain one or two crop_image actions, and\n   every action counts separately toward the total budget. Never emit more than two\n   actions in one turn or mix crop actions with a final coordinate.\n3. Tool arguments are local absolute pixels in the image_path passed to that call. Write\n   x1, y1, x2, and y2 with exactly two digits after the decimal point, including trailing\n   zeros (for example, x1=100.00). Two actions emitted in the same turn must refer only\n   to image paths already available before that turn; the second action cannot depend on\n   the result of the first action from the same turn.\n4. Each result states the crop's region both in original-image pixels and original-image\n   normalized [0,1000] coordinates. Use that mapping to convert any point found in a crop\n   back to the ORIGINAL image's normalized [0,1000] coordinate system.\n5. After crop_image actions, the following single user message contains all result\n   metadata and all successful crop images in action order.\n\nFinal-answer rule:\nWhen ready, output exactly <think>...</think> followed by a newline and [x.xx,y.yy], with\nno prose, Markdown, or action wrapper after the coordinate. Both values must contain\nexactly two digits after the decimal point, including trailing zeros. The point must be in\nthe ORIGINAL image's normalized [0,1000] coordinate system. If the task is infeasible, use\n[-1.00,-1.00].\n"
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "image_path: evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png"
+                }
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "<think>\nThe task is to change the OneDrive backup strategy. In the Settings > Accounts page, there is a OneDrive card showing \"Back up files\" with a chevron that likely opens backup options. I need to inspect that region closely to locate the exact clickable control.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)</action>",
+            "reasoning_content": "The task is to change the OneDrive backup strategy. In the Settings > Accounts page, there is a OneDrive card showing \"Back up files\" with a chevron that likely opens backup options. I need to inspect that region closely to locate the exact clickable control.",
+            "finish_reason": "stop",
+            "parsed_action": {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                "x1": 1950.0,
+                "y1": 480.0,
+                "x2": 2250.0,
+                "y2": 600.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)"
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                  "x1": 1950.0,
+                  "y1": 480.0,
+                  "x2": 2250.0,
+                  "y2": 600.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "crop_image action result:\n{\"ok\": true, \"image_path\": \"crops/sspro-01533/crop_01.png\", \"width\": 1200, \"height\": 480, \"crop_in_parent\": [1950, 480, 2250, 600], \"crop_size_before_resize\": [300, 120], \"resize_scale\": 4.00, \"original_image_region_pixels\": [1950.00, 480.00, 2250.00, 600.00], \"original_image_region_0_1000\": [507.81, 222.22, 585.94, 277.78], \"mapping_to_original_0_1000\": {\"x\": \"(1950.00 + crop_x * 0.25) * 1000 / 3840\", \"y\": \"(480.00 + crop_y * 0.25) * 1000 / 2160\"}, \"reminder\": \"Final coordinates must be normalized [0,1000] in the original image.\"}\nimage_path: crops/sspro-01533/crop_01.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "crops/sspro-01533/crop_01.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": "Inspect all successful crops and account for any failed actions. Reply with <think>...</think>, then either one or two independent crop_image <action> blocks whose coordinates have exactly two decimal places, or the final [x.xx,y.yy]. Do not mix crop actions with a final answer."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "<think>\nThe crop shows the OneDrive card with the \"Back up files\" status. To change the backup strategy, the clickable control is the chevron/dropdown on the right side of this OneDrive card. I'll crop the right edge of the card to locate the chevron precisely.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)</action>",
+            "reasoning_content": "The crop shows the OneDrive card with the \"Back up files\" status. To change the backup strategy, the clickable control is the chevron/dropdown on the right side of this OneDrive card. I'll crop the right edge of the card to locate the chevron precisely.",
+            "finish_reason": "stop",
+            "parsed_action": {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                "x1": 2150.0,
+                "y1": 490.0,
+                "x2": 2230.0,
+                "y2": 570.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)"
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                  "x1": 2150.0,
+                  "y1": 490.0,
+                  "x2": 2230.0,
+                  "y2": 570.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "crop_image action result:\n{\"ok\": true, \"image_path\": \"crops/sspro-01533/crop_02.png\", \"width\": 320, \"height\": 320, \"crop_in_parent\": [2150, 490, 2230, 570], \"crop_size_before_resize\": [80, 80], \"resize_scale\": 4.00, \"original_image_region_pixels\": [2150.00, 490.00, 2230.00, 570.00], \"original_image_region_0_1000\": [559.90, 226.85, 580.73, 263.89], \"mapping_to_original_0_1000\": {\"x\": \"(2150.00 + crop_x * 0.25) * 1000 / 3840\", \"y\": \"(490.00 + crop_y * 0.25) * 1000 / 2160\"}, \"reminder\": \"Final coordinates must be normalized [0,1000] in the original image.\"}\nimage_path: crops/sspro-01533/crop_02.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "crops/sspro-01533/crop_02.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": "Inspect all successful crops and account for any failed actions. Reply with <think>...</think>, then either one or two independent crop_image <action> blocks whose coordinates have exactly two decimal places, or the final [x.xx,y.yy]. Do not mix crop actions with a final answer."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "<think>\nThe second crop only shows the text \"ive\" and \"up files\" — the chevron/dropdown control on the right side of the OneDrive card is not visible in that region. The OneDrive card's expand chevron should be further to the right, near the right edge of the card (around x≈2170-2190 in the original image). Let me crop a wider region to the right of the \"Back up files\" text to find the chevron.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)</action>",
+            "reasoning_content": "The second crop only shows the text \"ive\" and \"up files\" — the chevron/dropdown control on the right side of the OneDrive card is not visible in that region. The OneDrive card's expand chevron should be further to the right, near the right edge of the card (around x≈2170-2190 in the original image). Let me crop a wider region to the right of the \"Back up files\" text to find the chevron.",
+            "finish_reason": "stop",
+            "parsed_action": {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                "x1": 2160.0,
+                "y1": 495.0,
+                "x2": 2220.0,
+                "y2": 565.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)"
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                  "x1": 2160.0,
+                  "y1": 495.0,
+                  "x2": 2220.0,
+                  "y2": 565.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "crop_image action result:\n{\"ok\": true, \"image_path\": \"crops/sspro-01533/crop_03.png\", \"width\": 240, \"height\": 280, \"crop_in_parent\": [2160, 495, 2220, 565], \"crop_size_before_resize\": [60, 70], \"resize_scale\": 4.00, \"original_image_region_pixels\": [2160.00, 495.00, 2220.00, 565.00], \"original_image_region_0_1000\": [562.50, 229.17, 578.12, 261.57], \"mapping_to_original_0_1000\": {\"x\": \"(2160.00 + crop_x * 0.25) * 1000 / 3840\", \"y\": \"(495.00 + crop_y * 0.25) * 1000 / 2160\"}, \"reminder\": \"Final coordinates must be normalized [0,1000] in the original image.\"}\nimage_path: crops/sspro-01533/crop_03.png"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "path": "crops/sspro-01533/crop_03.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": "Inspect all successful crops and account for any failed actions. Reply with <think>...</think>, then either one or two independent crop_image <action> blocks whose coordinates have exactly two decimal places, or the final [x.xx,y.yy]. Do not mix crop actions with a final answer."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": "<think>\n\n</think>\n\nThe crops confirm the OneDrive card with the \"Back up files\" status. The control to change the OneDrive backup strategy is the chevron/dropdown on the right side of the OneDrive card, located at approximately (2180, 530) in original pixels. Normalizing: x = 2180/3840*1000 ≈ 567.71, y = 530/2160*1000 ≈ 245.37.\n[567.71,245.37]",
+            "reasoning_content": "",
+            "finish_reason": "stop",
+            "parsed_action": {
+              "type": "final",
+              "name": "Click",
+              "point": [
+                567.71,
+                245.37
+              ],
+              "source": "[567.71,245.37]",
+              "compatibility_format": "coordinate_after_think"
+            },
+            "parsed_actions": [
+              {
+                "type": "final",
+                "name": "Click",
+                "point": [
+                  567.71,
+                  245.37
+                ],
+                "source": "[567.71,245.37]",
+                "compatibility_format": "coordinate_after_think"
+              }
+            ]
+          }
+        ],
+        "rounds": [
+          {
+            "model_turn": 1,
+            "sample_index": 0,
+            "initial_request_n": 1,
+            "native_tools_enabled": false,
+            "attempts": 1,
+            "scheduler_elapsed_seconds": 42.644,
+            "error": null,
+            "response": {
+              "choice_index": 0,
+              "reasoning_content": "",
+              "content": "The task is to change the OneDrive backup strategy. In the Settings > Accounts page, there is a OneDrive card showing \"Back up files\" with a chevron that likely opens backup options. I need to inspect that region closely to locate the exact clickable control.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)</action>",
+              "finish_reason": "stop",
+              "event_count": 159,
+              "stream_delta_fields": [
+                "content",
+                "role"
+              ],
+              "response_metadata": {
+                "object": "chat.completion.chunk",
+                "model": "released-checkpoint",
+                "usage": {
+                  "prompt_tokens": 9500,
+                  "total_tokens": 9657,
+                  "completion_tokens": 157
+                }
+              }
+            },
+            "parsed_action": {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                "x1": 1950.0,
+                "y1": 480.0,
+                "x2": 2250.0,
+                "y2": 600.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)"
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                  "x1": 1950.0,
+                  "y1": 480.0,
+                  "x2": 2250.0,
+                  "y2": 600.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)"
+              }
+            ],
+            "reasoning_stats": {
+              "characters": 259,
+              "reported_reasoning_tokens": null,
+              "completion_tokens": 157
+            }
+          },
+          {
+            "model_turn": 2,
+            "sample_index": 0,
+            "initial_request_n": 1,
+            "native_tools_enabled": false,
+            "attempts": 1,
+            "scheduler_elapsed_seconds": 23.439,
+            "error": null,
+            "response": {
+              "choice_index": 0,
+              "reasoning_content": "",
+              "content": "The crop shows the OneDrive card with the \"Back up files\" status. To change the backup strategy, the clickable control is the chevron/dropdown on the right side of this OneDrive card. I'll crop the right edge of the card to locate the chevron precisely.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)</action>",
+              "finish_reason": "stop",
+              "event_count": 162,
+              "stream_delta_fields": [
+                "content",
+                "role"
+              ],
+              "response_metadata": {
+                "object": "chat.completion.chunk",
+                "model": "released-checkpoint",
+                "usage": {
+                  "prompt_tokens": 10685,
+                  "total_tokens": 10845,
+                  "completion_tokens": 160
+                }
+              }
+            },
+            "parsed_action": {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                "x1": 2150.0,
+                "y1": 490.0,
+                "x2": 2230.0,
+                "y2": 570.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)"
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                  "x1": 2150.0,
+                  "y1": 490.0,
+                  "x2": 2230.0,
+                  "y2": 570.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)"
+              }
+            ],
+            "reasoning_stats": {
+              "characters": 253,
+              "reported_reasoning_tokens": null,
+              "completion_tokens": 160
+            }
+          },
+          {
+            "model_turn": 3,
+            "sample_index": 0,
+            "initial_request_n": 1,
+            "native_tools_enabled": false,
+            "attempts": 1,
+            "scheduler_elapsed_seconds": 43.062,
+            "error": null,
+            "response": {
+              "choice_index": 0,
+              "reasoning_content": "",
+              "content": "<think>\nThe second crop only shows the text \"ive\" and \"up files\" — the chevron/dropdown control on the right side of the OneDrive card is not visible in that region. The OneDrive card's expand chevron should be further to the right, near the right edge of the card (around x≈2170-2190 in the original image). Let me crop a wider region to the right of the \"Back up files\" text to find the chevron.\n</think>\n\n<action>crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)</action>",
+              "finish_reason": "stop",
+              "event_count": 208,
+              "stream_delta_fields": [
+                "content",
+                "role"
+              ],
+              "response_metadata": {
+                "object": "chat.completion.chunk",
+                "model": "released-checkpoint",
+                "usage": {
+                  "prompt_tokens": 11400,
+                  "total_tokens": 11606,
+                  "completion_tokens": 206
+                }
+              }
+            },
+            "parsed_action": {
+              "type": "crop",
+              "name": "crop_image",
+              "arguments": {
+                "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                "x1": 2160.0,
+                "y1": 495.0,
+                "x2": 2220.0,
+                "y2": 565.0
+              },
+              "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)"
+            },
+            "parsed_actions": [
+              {
+                "type": "crop",
+                "name": "crop_image",
+                "arguments": {
+                  "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+                  "x1": 2160.0,
+                  "y1": 495.0,
+                  "x2": 2220.0,
+                  "y2": 565.0
+                },
+                "source": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)"
+              }
+            ],
+            "reasoning_stats": {
+              "characters": 389,
+              "reported_reasoning_tokens": null,
+              "completion_tokens": 206
+            }
+          },
+          {
+            "model_turn": 4,
+            "sample_index": 0,
+            "initial_request_n": 1,
+            "native_tools_enabled": false,
+            "attempts": 1,
+            "scheduler_elapsed_seconds": 38.748,
+            "error": null,
+            "response": {
+              "choice_index": 0,
+              "reasoning_content": "",
+              "content": "<think>\n\n</think>\n\nThe crops confirm the OneDrive card with the \"Back up files\" status. The control to change the OneDrive backup strategy is the chevron/dropdown on the right side of the OneDrive card, located at approximately (2180, 530) in original pixels. Normalizing: x = 2180/3840*1000 ≈ 567.71, y = 530/2160*1000 ≈ 245.37.\n[567.71,245.37]",
+              "finish_reason": "stop",
+              "event_count": 136,
+              "stream_delta_fields": [
+                "content",
+                "role"
+              ],
+              "response_metadata": {
+                "object": "chat.completion.chunk",
+                "model": "released-checkpoint",
+                "usage": {
+                  "prompt_tokens": 12131,
+                  "total_tokens": 12265,
+                  "completion_tokens": 134
+                }
+              }
+            },
+            "parsed_action": {
+              "type": "final",
+              "name": "Click",
+              "point": [
+                567.71,
+                245.37
+              ],
+              "source": "[567.71,245.37]",
+              "compatibility_format": "coordinate_after_think"
+            },
+            "parsed_actions": [
+              {
+                "type": "final",
+                "name": "Click",
+                "point": [
+                  567.71,
+                  245.37
+                ],
+                "source": "[567.71,245.37]",
+                "compatibility_format": "coordinate_after_think"
+              }
+            ],
+            "reasoning_stats": {
+              "characters": 0,
+              "reported_reasoning_tokens": null,
+              "completion_tokens": 134
+            }
+          }
+        ],
+        "action_events": [
+          {
+            "tool_call_index": 1,
+            "tool_budget_index": 1,
+            "model_turn": 1,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)",
+            "arguments": {
+              "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+              "x1": 1950.0,
+              "y1": 480.0,
+              "x2": 2250.0,
+              "y2": 600.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/sspro-01533/crop_01.png",
+              "width": 1200,
+              "height": 480,
+              "crop_in_parent": [
+                1950,
+                480,
+                2250,
+                600
+              ],
+              "crop_size_before_resize": [
+                300,
+                120
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                1950.0,
+                480.0,
+                2250.0,
+                600.0
+              ],
+              "original_image_region_0_1000": [
+                507.81,
+                222.22,
+                585.94,
+                277.78
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(1950.00 + crop_x * 0.25) * 1000 / 3840",
+                "y": "(480.00 + crop_y * 0.25) * 1000 / 2160"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          },
+          {
+            "tool_call_index": 2,
+            "tool_budget_index": 2,
+            "model_turn": 2,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)",
+            "arguments": {
+              "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+              "x1": 2150.0,
+              "y1": 490.0,
+              "x2": 2230.0,
+              "y2": 570.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/sspro-01533/crop_02.png",
+              "width": 320,
+              "height": 320,
+              "crop_in_parent": [
+                2150,
+                490,
+                2230,
+                570
+              ],
+              "crop_size_before_resize": [
+                80,
+                80
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                2150.0,
+                490.0,
+                2230.0,
+                570.0
+              ],
+              "original_image_region_0_1000": [
+                559.9,
+                226.85,
+                580.73,
+                263.89
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(2150.00 + crop_x * 0.25) * 1000 / 3840",
+                "y": "(490.00 + crop_y * 0.25) * 1000 / 2160"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          },
+          {
+            "tool_call_index": 3,
+            "tool_budget_index": 3,
+            "model_turn": 3,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)",
+            "arguments": {
+              "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+              "x1": 2160.0,
+              "y1": 495.0,
+              "x2": 2220.0,
+              "y2": 565.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/sspro-01533/crop_03.png",
+              "width": 240,
+              "height": 280,
+              "crop_in_parent": [
+                2160,
+                495,
+                2220,
+                565
+              ],
+              "crop_size_before_resize": [
+                60,
+                70
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                2160.0,
+                495.0,
+                2220.0,
+                565.0
+              ],
+              "original_image_region_0_1000": [
+                562.5,
+                229.17,
+                578.12,
+                261.57
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(2160.00 + crop_x * 0.25) * 1000 / 3840",
+                "y": "(495.00 + crop_y * 0.25) * 1000 / 2160"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          }
+        ],
+        "tool_events": [
+          {
+            "tool_call_index": 1,
+            "tool_budget_index": 1,
+            "model_turn": 1,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=1950.00, y1=480.00, x2=2250.00, y2=600.00)",
+            "arguments": {
+              "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+              "x1": 1950.0,
+              "y1": 480.0,
+              "x2": 2250.0,
+              "y2": 600.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/sspro-01533/crop_01.png",
+              "width": 1200,
+              "height": 480,
+              "crop_in_parent": [
+                1950,
+                480,
+                2250,
+                600
+              ],
+              "crop_size_before_resize": [
+                300,
+                120
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                1950.0,
+                480.0,
+                2250.0,
+                600.0
+              ],
+              "original_image_region_0_1000": [
+                507.81,
+                222.22,
+                585.94,
+                277.78
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(1950.00 + crop_x * 0.25) * 1000 / 3840",
+                "y": "(480.00 + crop_y * 0.25) * 1000 / 2160"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          },
+          {
+            "tool_call_index": 2,
+            "tool_budget_index": 2,
+            "model_turn": 2,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2150.00, y1=490.00, x2=2230.00, y2=570.00)",
+            "arguments": {
+              "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+              "x1": 2150.0,
+              "y1": 490.0,
+              "x2": 2230.0,
+              "y2": 570.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/sspro-01533/crop_02.png",
+              "width": 320,
+              "height": 320,
+              "crop_in_parent": [
+                2150,
+                490,
+                2230,
+                570
+              ],
+              "crop_size_before_resize": [
+                80,
+                80
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                2150.0,
+                490.0,
+                2230.0,
+                570.0
+              ],
+              "original_image_region_0_1000": [
+                559.9,
+                226.85,
+                580.73,
+                263.89
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(2150.00 + crop_x * 0.25) * 1000 / 3840",
+                "y": "(490.00 + crop_y * 0.25) * 1000 / 2160"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          },
+          {
+            "tool_call_index": 3,
+            "tool_budget_index": 3,
+            "model_turn": 3,
+            "batch_index": 0,
+            "protocol": "text_action",
+            "name": "crop_image",
+            "raw_action": "crop_image(image_path=\"evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png\", x1=2160.00, y1=495.00, x2=2220.00, y2=565.00)",
+            "arguments": {
+              "image_path": "evaluation/data/sspro/Screenspot-pro/images/common_windows/screenshot_2024-12-10_12-38-22.png",
+              "x1": 2160.0,
+              "y1": 495.0,
+              "x2": 2220.0,
+              "y2": 565.0
+            },
+            "result": {
+              "ok": true,
+              "image_path": "crops/sspro-01533/crop_03.png",
+              "width": 240,
+              "height": 280,
+              "crop_in_parent": [
+                2160,
+                495,
+                2220,
+                565
+              ],
+              "crop_size_before_resize": [
+                60,
+                70
+              ],
+              "resize_scale": 4.0,
+              "original_image_region_pixels": [
+                2160.0,
+                495.0,
+                2220.0,
+                565.0
+              ],
+              "original_image_region_0_1000": [
+                562.5,
+                229.17,
+                578.12,
+                261.57
+              ],
+              "mapping_to_original_0_1000": {
+                "x": "(2160.00 + crop_x * 0.25) * 1000 / 3840",
+                "y": "(495.00 + crop_y * 0.25) * 1000 / 2160"
+              },
+              "reminder": "Final coordinates must be normalized [0,1000] in the original image."
+            }
+          }
+        ],
+        "model_turn_count": 4,
+        "crop_action_count": 3,
+        "tool_call_count": 3,
+        "tool_attempt_count": 3,
+        "crop_image_paths": [
+          "crops/sspro-01533/crop_01.png",
+          "crops/sspro-01533/crop_02.png",
+          "crops/sspro-01533/crop_03.png"
+        ],
+        "crop_directory": "crops/sspro-01533",
+        "final_content": "<think>\n\n</think>\n\nThe crops confirm the OneDrive card with the \"Back up files\" status. The control to change the OneDrive backup strategy is the chevron/dropdown on the right side of the OneDrive card, located at approximately (2180, 530) in original pixels. Normalizing: x = 2180/3840*1000 ≈ 567.71, y = 530/2160*1000 ≈ 245.37.\n[567.71,245.37]",
+        "prediction_relative_0_1000": [
+          567.71,
+          245.37
+        ],
+        "prediction_option": null,
+        "prediction_text": null,
+        "reasoning_stats": {
+          "per_turn_reported_reasoning_tokens": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "total_reported_reasoning_tokens": 0,
+          "max_reported_reasoning_tokens_in_one_turn": null
+        },
+        "error": null
+      }
+    ],
+    "bbox": [
+      2060,
+      511,
+      2196,
+      568
+    ],
+    "correctness": "correct"
+  }
+}
