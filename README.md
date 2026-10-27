@@ -4,17 +4,26 @@
   <strong>English</strong> | <a href="./README_CN.md">简体中文</a>
 </p>
 
-[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache-2.0"></a>
+  <a href="https://github.com/inclusionAI/UI-Venus/tree/LBS"><img src="https://img.shields.io/badge/GitHub-LBS-green?logo=github" alt="GitHub: LBS branch"></a>
+  <a href="https://huggingface.co/inclusionAI/LBS-27B"><img src="https://img.shields.io/badge/Hugging%20Face-LBS--27B-orange?logo=huggingface" alt="Hugging Face Model: LBS-27B"></a>
+</p>
+
+[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,*</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,*</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
 
 <sup>1</sup>Wuhan University of Technology &nbsp; <sup>2</sup>Institute of Automation, Chinese Academy of Sciences (CAS) &nbsp; <sup>3</sup>Zhejiang University &nbsp; <sup>4</sup>Ant Group
+
+<sup>*</sup> Core contributors. <sup>†</sup> Tech lead.
 
 **LBS** provides a GRPO training recipe for learning visual observation through GUI
 grounding, together with evaluation on GUI grounding and broader visual perception.
 Our model is based on **Qwen3.8-27b**, trained with cold-start supervised fine-tuning
 (**SFT**) followed by **Agentic RL (GRPO)**.
 
-Model weights and the full training datasets are not bundled. Paper and citation
-information will be added with the arXiv release.
+Model repository: [inclusionAI/LBS-27B](https://huggingface.co/inclusionAI/LBS-27B).
+Model weights and the full training datasets are not bundled with this repository.
+The technical report link and citation information will be added after the arXiv release.
 
 [Training](agentic_gui_grounding_rl/) · [Evaluation](evaluation/) ·
 [Results](benchmark_results/) · [Verified trajectories](docs/TRAJECTORIES.md) ·

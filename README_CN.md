@@ -4,14 +4,23 @@
   <a href="./README.md">English</a> | <strong>简体中文</strong>
 </p>
 
-[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="协议：Apache-2.0"></a>
+  <a href="https://github.com/inclusionAI/UI-Venus/tree/LBS"><img src="https://img.shields.io/badge/GitHub-LBS-green?logo=github" alt="GitHub：LBS 分支"></a>
+  <a href="https://huggingface.co/inclusionAI/LBS-27B"><img src="https://img.shields.io/badge/Hugging%20Face-LBS--27B-orange?logo=huggingface" alt="Hugging Face 模型：LBS-27B"></a>
+</p>
+
+[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,*</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,*</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
 
 <sup>1</sup>武汉理工大学 &nbsp; <sup>2</sup>中国科学院自动化研究所 &nbsp; <sup>3</sup>浙江大学 &nbsp; <sup>4</sup>蚂蚁集团
+
+<sup>*</sup> 核心贡献者；<sup>†</sup> 技术负责人（Tech lead）。
 
 **LBS** 通过 GUI 定位学习可迁移的视觉观察能力，提供基于 GRPO 的训练方案，以及 GUI 定位和通用视觉感知评测工具。
 模型以 **Qwen3.8-27b** 为基础，先进行冷启动监督微调（**SFT**），再进行 **Agentic RL（GRPO）** 训练。
 
-仓库不包含模型权重和完整训练数据集。论文与引用信息将在 arXiv 发布后补充。
+模型主页：[inclusionAI/LBS-27B](https://huggingface.co/inclusionAI/LBS-27B)。
+本仓库不包含模型权重和完整训练数据集。技术报告链接与引用信息将在 arXiv 发布后补充。
 
 [训练](./agentic_gui_grounding_rl/) · [评测](./evaluation/) ·
 [结果](./benchmark_results/) · [已核验轨迹](./docs/TRAJECTORIES.md) ·
