@@ -11,11 +11,11 @@
   <a href="https://mr-bigworth.github.io/LBS/"><img src="https://img.shields.io/badge/Demo-Trajectory_Explorer-627d8c?logo=githubpages" alt="Live trajectory visualization"></a>
 </p>
 
-[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,*</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,*</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
+[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,&#42;</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,&#42;</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
 
 <sup>1</sup>Wuhan University of Technology &nbsp; <sup>2</sup>Institute of Automation, Chinese Academy of Sciences (CAS) &nbsp; <sup>3</sup>Zhejiang University &nbsp; <sup>4</sup>Ant Group
 
-<sup>*</sup> Core contributors. <sup>†</sup> Tech lead.
+<sup>&#42;</sup> Core contributors. <sup>†</sup> Tech lead.
 
 **LBS** provides a GRPO training recipe for learning visual observation through GUI
 grounding, together with evaluation on GUI grounding and broader visual perception.

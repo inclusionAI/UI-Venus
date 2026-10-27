@@ -11,11 +11,11 @@
   <a href="https://mr-bigworth.github.io/LBS/"><img src="https://img.shields.io/badge/Demo-Trajectory_Explorer-627d8c?logo=githubpages" alt="在线轨迹可视化"></a>
 </p>
 
-[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,*</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,*</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
+[*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,&#42;</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,&#42;</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
 
 <sup>1</sup>武汉理工大学 &nbsp; <sup>2</sup>中国科学院自动化研究所 &nbsp; <sup>3</sup>浙江大学 &nbsp; <sup>4</sup>蚂蚁集团
 
-<sup>*</sup> 核心贡献者；<sup>†</sup> 技术负责人（Tech lead）。
+<sup>&#42;</sup> 核心贡献者；<sup>†</sup> 技术负责人（Tech lead）。
 
 **LBS** 通过 GUI 定位学习可迁移的视觉观察能力，提供基于 GRPO 的训练方案，以及 GUI 定位和通用视觉感知评测工具。
 模型以 **Qwen3.8-27b** 为基础，先进行冷启动监督微调（**SFT**），再进行 **Agentic RL（GRPO）** 训练。
