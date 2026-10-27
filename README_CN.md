@@ -8,6 +8,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="协议：Apache-2.0"></a>
   <a href="https://github.com/inclusionAI/UI-Venus/tree/LBS"><img src="https://img.shields.io/badge/GitHub-LBS-green?logo=github" alt="GitHub：LBS 分支"></a>
   <a href="https://huggingface.co/inclusionAI/LBS-27B"><img src="https://img.shields.io/badge/Hugging%20Face-LBS--27B-orange?logo=huggingface" alt="Hugging Face 模型：LBS-27B"></a>
+  <a href="https://mr-bigworth.github.io/LBS/"><img src="https://img.shields.io/badge/Demo-Trajectory_Explorer-627d8c?logo=githubpages" alt="在线轨迹可视化"></a>
 </p>
 
 [*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,*</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,*</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
@@ -24,7 +25,7 @@
 
 [训练](./agentic_gui_grounding_rl/) · [评测](./evaluation/) ·
 [结果](./benchmark_results/) · [已核验轨迹](./docs/TRAJECTORIES.md) ·
-[HTML 轨迹浏览器](./docs/observation_trajectories.html) · [验证说明](./docs/RELEASE_VALIDATION.md)
+[在线轨迹可视化](https://mr-bigworth.github.io/LBS/) · [验证说明](./docs/RELEASE_VALIDATION.md)
 
 ---
 
@@ -52,7 +53,7 @@ GUI 截图将细小且密集的信息集中在一张高分辨率图像中。
 3. **可组合的放大观察协议。** 策略基于对话历史，通过明确的局部 `image_path` 引用原图或已有裁剪图像，支持**嵌套细化、重新查看先前视图，以及一轮内请求多个区域并统一返回结果**。
    这为灵活观察与多图扩展提供了统一接口；动作通过普通助手文本表达，无需原生工具调用 API。
    [协议与适用范围](#多轮放大观察协议)。
-4. **开放训练与评测工具。** 提供[评测协议](./evaluation/README.md)、[训练插件](./agentic_gui_grounding_rl/plugins/grounding_zoom_in/README.md)、[训练样例](./agentic_gui_grounding_rl/data_samples/README.md)和[评测轨迹](./benchmark_results/README.md)，并配套[已核验图示](./docs/TRAJECTORIES.md)及[交互式浏览器](./docs/observation_trajectories.html)。
+4. **开放训练与评测工具。** 提供[评测协议](./evaluation/README.md)、[训练插件](./agentic_gui_grounding_rl/plugins/grounding_zoom_in/README.md)、[训练样例](./agentic_gui_grounding_rl/data_samples/README.md)和[评测轨迹](./benchmark_results/README.md)，并配套[已核验图示](./docs/TRAJECTORIES.md)及[交互式浏览器](https://mr-bigworth.github.io/LBS/)。
    工具支持多节点训练，以及基于固定默认协议、兼容 OpenAI 服务接口的可续跑评测。
 
 本次发布包含 GRPO 训练方案、评测客户端与已有实验结果：
@@ -174,12 +175,15 @@ LLM 评判可能随运行而变化。这里展示的是发布报告所采用的�
 
 ## 观察轨迹
 
-在[交互式 HTML 浏览器](./docs/observation_trajectories.html)中查看六个经人工视觉核验的案例，切换模型轮次，对齐推理、裁剪动作、返回图像和最终答案。
+在[交互式 HTML 浏览器](https://mr-bigworth.github.io/LBS/)中查看六个经人工视觉核验的案例，切换模型轮次，对齐推理、裁剪动作、返回图像和最终答案。
 浏览器使用低饱和度莫兰迪配色区分问题、推理、动作与答案，并将编者分析单独标注。
-可在本地打开 HTML，也可通过 GitHub Pages 托管；GitHub 仓库文件页只会显示源码。
-参见[预览与托管说明](./docs/TRAJECTORIES.md#interactive-html-explorer)。
+点击下方预览即可打开在线交互页面。源码与本地预览方法见[可视化说明](./docs/TRAJECTORIES.md#interactive-html-explorer)。
 
-[![HTML 轨迹浏览器预览](./docs/assets/trajectory_explorer/preview.png)](./docs/observation_trajectories.html)
+<p align="center">
+  <strong>交互式轨迹可视化</strong><br>
+  <a href="https://mr-bigworth.github.io/LBS/"><img src="./docs/assets/trajectory_explorer/preview.png" alt="交互式轨迹可视化" width="1000"></a><br>
+  <a href="https://mr-bigworth.github.io/LBS/"><strong>打开在线轨迹浏览器 ↗</strong></a>
+</p>
 
 下列图示已与官方图像、记录的工具事件及已保存的评判结果核对。
 裁剪图像依据记录的父图矩形和缩放规则重建，图注概括实际轨迹。

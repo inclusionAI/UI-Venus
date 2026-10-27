@@ -8,6 +8,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache-2.0"></a>
   <a href="https://github.com/inclusionAI/UI-Venus/tree/LBS"><img src="https://img.shields.io/badge/GitHub-LBS-green?logo=github" alt="GitHub: LBS branch"></a>
   <a href="https://huggingface.co/inclusionAI/LBS-27B"><img src="https://img.shields.io/badge/Hugging%20Face-LBS--27B-orange?logo=huggingface" alt="Hugging Face Model: LBS-27B"></a>
+  <a href="https://mr-bigworth.github.io/LBS/"><img src="https://img.shields.io/badge/Demo-Trajectory_Explorer-627d8c?logo=githubpages" alt="Live trajectory visualization"></a>
 </p>
 
 [*Ruilin Yao*](https://mr-bigworth.github.io/)<sup>1,2,*</sup>, [Xinyu Qiu](https://openreview.net/profile?id=~Xinyu_Qiu1)<sup>3,*</sup>, [Tianyu Zou](https://openreview.net/profile?id=~Tianyu_Zou2)<sup>1</sup>, [Yi Rong](https://openreview.net/profile?id=~Yi_Rong3)<sup>1</sup>, [Shengwu Xiong](https://openreview.net/profile?id=~Shengwu_Xiong1)<sup>1</sup>, [Shuheng Shen](https://openreview.net/profile?id=~Shuheng_Shen2)<sup>4,†</sup>, [Changhua Meng](https://openreview.net/profile?id=~Changhua_Meng1)<sup>4</sup>
@@ -27,7 +28,7 @@ The technical report link and citation information will be added after the arXiv
 
 [Training](agentic_gui_grounding_rl/) · [Evaluation](evaluation/) ·
 [Results](benchmark_results/) · [Verified trajectories](docs/TRAJECTORIES.md) ·
-[HTML trajectory explorer](docs/observation_trajectories.html) ·
+[Live trajectory explorer](https://mr-bigworth.github.io/LBS/) ·
 [Validation](docs/RELEASE_VALIDATION.md)
 
 ---
@@ -80,7 +81,7 @@ inspect visual evidence beyond screenshots.
    and [training](agentic_gui_grounding_rl/data_samples/README.md) and
    [evaluation](benchmark_results/README.md) trajectory samples, with
    [verified visual examples](docs/TRAJECTORIES.md) and an
-   [interactive explorer](docs/observation_trajectories.html). The tooling supports
+   [interactive explorer](https://mr-bigworth.github.io/LBS/). The tooling supports
    multi-node training and resumable evaluation with fixed protocol defaults
    against OpenAI-compatible serving endpoints.
 
@@ -220,14 +221,17 @@ and [all per-item scores](benchmark_results/per_sample/perceptionbench.jsonl).
 ## Observation trajectories
 
 Explore the six visually reviewed cases in the
-[interactive HTML explorer](docs/observation_trajectories.html): switch model turns
+[interactive HTML explorer](https://mr-bigworth.github.io/LBS/): switch model turns
 to align recorded reasoning, crop actions, returned images, and final answers.
 A muted Morandi palette distinguishes questions, reasoning, actions, and answers;
-editorial analysis is labeled separately from model text. Open the HTML locally
-or serve it with GitHub Pages; GitHub's repository file view displays the source.
-See [preview and hosting instructions](docs/TRAJECTORIES.md#interactive-html-explorer).
+editorial analysis is labeled separately from model text. Click the preview below
+to open the live interactive page. See [source and local preview instructions](docs/TRAJECTORIES.md#interactive-html-explorer).
 
-[![HTML trajectory explorer preview](docs/assets/trajectory_explorer/preview.png)](docs/observation_trajectories.html)
+<p align="center">
+  <strong>Interactive trajectory visualization</strong><br>
+  <a href="https://mr-bigworth.github.io/LBS/"><img src="./docs/assets/trajectory_explorer/preview.png" alt="Interactive trajectory visualization" width="1000"></a><br>
+  <a href="https://mr-bigworth.github.io/LBS/"><strong>Open the live trajectory explorer ↗</strong></a>
+</p>
 
 The following figures were checked against the downloaded official images,
 recorded tool events, and saved judgments. Crops are reconstructed from the recorded

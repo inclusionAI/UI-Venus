@@ -1,6 +1,6 @@
 # Visually verified observation trajectories
 
-The [HTML explorer](observation_trajectories.html) and static figures present six
+The [live HTML explorer](https://mr-bigworth.github.io/LBS/) and static figures present six
 reviewed cases from saved evaluations. Figures reconstruct crops from official
 images and recorded tool events; no model inference or judging is repeated.
 The crop executor verifies dimensions, parent-image rectangles, and mappings to
@@ -13,6 +13,9 @@ are display annotations, never model inputs. A correct answer alone does not
 establish that a crop was useful, as the blurred-glove example illustrates.
 
 ## Interactive HTML explorer
+
+[Open the live visualization](https://mr-bigworth.github.io/LBS/). The
+[HTML source](observation_trajectories.html) is also included for local use.
 
 Open `docs/observation_trajectories.html` directly, or serve the repository root:
 
