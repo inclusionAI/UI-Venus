@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache-2.0"></a>
+  <a href="https://arxiv.org/abs/2610.37093"><img src="https://img.shields.io/badge/arXiv-2610.37093-b31b1b.svg" alt="arXiv: 2610.37093"></a>
   <a href="https://github.com/inclusionAI/UI-Venus/tree/LBS"><img src="https://img.shields.io/badge/GitHub-LBS-green?logo=github" alt="GitHub: LBS branch"></a>
   <a href="https://huggingface.co/inclusionAI/LBS-27B"><img src="https://img.shields.io/badge/Hugging%20Face-LBS--27B-orange?logo=huggingface" alt="Hugging Face Model: LBS-27B"></a>
   <a href="https://mr-bigworth.github.io/LBS/"><img src="https://img.shields.io/badge/Demo-Trajectory_Explorer-627d8c?logo=githubpages" alt="Live trajectory visualization"></a>
@@ -24,7 +25,7 @@ Our model is based on **Qwen3.8-27b**, trained with cold-start supervised fine-t
 
 Model repository: [inclusionAI/LBS-27B](https://huggingface.co/inclusionAI/LBS-27B).
 Model weights and the full training datasets are not bundled with this repository.
-The technical report link and citation information will be added after the arXiv release.
+Technical report: [Learning to Look Beyond Screens: Transferable Visual Observation from GUI Grounding](https://arxiv.org/abs/2610.37093).
 
 [Training](agentic_gui_grounding_rl/) · [Evaluation](evaluation/) ·
 [Results](benchmark_results/) · [Verified trajectories](docs/TRAJECTORIES.md) ·
@@ -601,4 +602,14 @@ This project builds upon:
 
 ## Citation
 
-Citation information will be added after the arXiv release.
+```bibtex
+@misc{yao2026learning,
+  title={Learning to Look Beyond Screens: Transferable Visual Observation from GUI Grounding},
+  author={Ruilin Yao and Xinyu Qiu and Tianyu Zou and Yi Rong and Shengwu Xiong and Shuheng Shen and Changhua Meng},
+  year={2026},
+  eprint={2610.37093},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.37093}
+}
+```
